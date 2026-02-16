@@ -15,3 +15,10 @@ permalink: /publish-checklist/
 - [ ] Pegar URL de `privacy-policy` en Play Console
 - [ ] Confirmar modelo: compra única, sin anuncios
 - [ ] Revisar texto de privacidad dentro de la app (About) y enlazar a la URL
+
+## Modo “solo lectura” + Releases
+- [ ] Settings → Features → desactivar Issues
+- [ ] Settings → Features → desactivar Discussions
+- [ ] Settings → Features → desactivar Wiki
+- [ ] Publicar Releases con assets STL/STEP (y docs opcional)
+- [ ] Verificar página /downloads/ apunta a Releases
