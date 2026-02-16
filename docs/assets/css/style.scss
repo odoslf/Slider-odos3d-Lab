@@ -1,0 +1,141 @@
+---
+---
+
+/* Importa el CSS del tema actual (Cayman) y luego lo sobrescribimos */
+@import "{{ site.theme }}";
+
+/* Paleta “studio” alineada con la app (DS) */
+:root{
+  --odos-bg-dark: #0B1220;         /* fondo noche */
+  --odos-surface-dark: #0F1B2D;    /* superficie noche */
+  --odos-bg-light: #F5F7FA;        /* fondo día */
+  --odos-surface: #FFFFFF;         /* card */
+  --odos-outline: #CBD5E1;         /* outline */
+  --odos-text: #111827;            /* texto */
+  --odos-muted: #6B7280;           /* texto secundario */
+
+  --odos-primary: #F2B23B;         /* ámbar */
+  --odos-secondary: #1D4ED8;       /* azul */
+  --odos-secondary-soft: #60A5FA;  /* azul suave */
+}
+
+/* Base */
+body{
+  background: var(--odos-bg-light);
+  color: var(--odos-text);
+}
+
+/* Header Cayman -> “Studio” con difuminado */
+.page-header{
+  position: relative;
+  overflow: hidden;
+  background: var(--odos-bg-dark);
+  padding: 3.5rem 1rem 3rem;
+}
+
+/* Capa difuminada (blur) */
+.page-header::before{
+  content:"";
+  position:absolute;
+  inset:-140px;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(29,78,216,0.78), rgba(29,78,216,0) 55%),
+    radial-gradient(circle at 85% 28%, rgba(242,178,59,0.55), rgba(242,178,59,0) 60%),
+    radial-gradient(circle at 55% 92%, rgba(96,165,250,0.35), rgba(96,165,250,0) 62%);
+  filter: blur(60px);
+  transform: scale(1.05);
+  opacity: 0.95;
+  z-index: 0;
+}
+
+/* Capa de oscurecido para que el texto siempre sea legible */
+.page-header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(120deg, rgba(11,18,32,0.92), rgba(15,27,45,0.84));
+  z-index: 0;
+}
+
+/* Asegura que el contenido del header quede encima */
+.page-header .project-name,
+.page-header .project-tagline,
+.page-header .btn{
+  position: relative;
+  z-index: 1;
+}
+
+.project-name{
+  letter-spacing: -0.02em;
+  text-shadow: 0 6px 22px rgba(0,0,0,0.35);
+}
+
+.project-tagline{
+  color: rgba(255,255,255,0.86);
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+
+/* Botones (CTA) premium */
+.btn{
+  border-radius: 14px;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.95);
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(242,178,59,0.55);
+  text-decoration: none;
+}
+
+/* Contenido como “card” encima del header */
+.main-content{
+  background: var(--odos-surface);
+  border: 1px solid var(--odos-outline);
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(2,6,23,0.10);
+  padding: 2rem 1.75rem;
+  margin-top: -1.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Tipografía y enlaces */
+.main-content h1, .main-content h2, .main-content h3{
+  letter-spacing: -0.01em;
+}
+
+a{
+  color: var(--odos-secondary);
+}
+
+a:hover{
+  color: #163EAD;
+}
+
+/* Blockquotes más “DS” */
+blockquote{
+  border-left: 4px solid var(--odos-primary);
+  background: #FFFBF2;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--odos-text);
+}
+
+/* Separadores suaves */
+hr{
+  background: var(--odos-outline);
+}
+
+/* Ajuste móvil */
+@media (max-width: 640px){
+  .page-header{ padding: 3rem 1rem 2.5rem; }
+  .main-content{ padding: 1.5rem 1.25rem; }
+}
