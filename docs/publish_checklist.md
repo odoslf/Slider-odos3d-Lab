@@ -3,6 +3,8 @@ title: "Checklist — Publicación (Pages + Play Console)"
 permalink: /publish-checklist/
 ---
 
+{% include topnav.html %}
+
 # Checklist de publicación
 
 ## Checklist — Activar GitHub Pages

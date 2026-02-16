@@ -1,3 +1,6 @@
+> ⚠️ Este repositorio es **solo distribución** (descargas/documentación).<br>
+> No se aceptan **Issues** ni **Pull Requests**. Para contacto/soporte: **odos3d@gmail.com**.
+
 # Contribuir
 
 ## Estado del repositorio: SOLO LECTURA

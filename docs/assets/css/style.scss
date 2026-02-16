@@ -3,153 +3,189 @@
 
 @import "{{ site.theme }}";
 
-/* =========================================================
-   Slider-odos3d Studio — Paleta APP (oscuro + naranja)
-   ========================================================= */
+/* =========================
+   Slider-odos3d Studio Theme
+   FINAL: mata verdes Cayman
+   ========================= */
 
 :root{
-  --bg0:#070A12;          /* fondo oscuro */
-  --bg1:#0B1020;          /* fondo header */
-  --surface:#ffffff;      /* card */
-  --text:#0f172a;         /* texto card */
-  --muted:#5b6474;
-
-  /* NARANJA “APP” (pro, no amarillo chillón) */
-  --primary:#FF6A00;
-  --primary2:#FF8A2A;
-  --primarySoft: rgba(255,106,0,.12);
-
-  --link:#C84E00;
-  --border: rgba(15,23,42,.10);
-  --shadow: 0 18px 55px rgba(0,0,0,.18);
+  --studio-bg0:#0B1220;
+  --studio-bg1:#0E172A;
+  --studio-accent:#FF8A00;   /* naranja pro */
+  --studio-accent2:#00C2A8;  /* secundario (teal/cyan) */
+  --studio-text:#0B1220;
+  --studio-muted:#4B5563;
+  --studio-surface:rgba(255,255,255,.97);
+  --studio-surface2:rgba(255,255,255,.92);
+  --studio-border:rgba(15,23,42,.10);
+  --studio-shadow:0 18px 60px rgba(0,0,0,.22);
 }
 
-/* Tipografía */
-body, .main-content, .page-header{
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+/* Fondo general */
+body{
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(255,138,0,.18), transparent 55%),
+              radial-gradient(900px 500px at 90% 0%, rgba(0,194,168,.15), transparent 60%),
+              linear-gradient(180deg, var(--studio-bg0), var(--studio-bg1));
 }
 
-/* =========================================================
-   Header (hero) — oscuro con glow naranja como la app
-   ========================================================= */
+/* Header Cayman -> Studio */
 .page-header{
-  position: relative;
-  background:
-    radial-gradient(1100px 480px at 18% 0%, rgba(255,106,0,.30), transparent 60%),
-    radial-gradient(900px 420px at 90% 15%, rgba(255,138,42,.18), transparent 55%),
-    linear-gradient(180deg, #0E1730 0%, var(--bg1) 45%, var(--bg0) 100%);
-  color: rgba(255,255,255,.92);
-  padding: 2.2rem 1.2rem 2.3rem 1.2rem;
+  position:relative;
+  background: linear-gradient(120deg, rgba(255,138,0,.35), rgba(0,194,168,.22)),
+              radial-gradient(900px 600px at 15% 10%, rgba(255,138,0,.35), transparent 55%),
+              radial-gradient(900px 600px at 85% 0%, rgba(0,194,168,.22), transparent 60%),
+              linear-gradient(180deg, #0B1220, #0E172A);
+  color:#fff !important;
+  padding: 2.25rem 1.25rem 4.25rem;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  overflow:hidden;
 }
 
-.page-header .project-name{
-  color: rgba(255,255,255,.95);
-  letter-spacing: -0.02em;
-}
-.page-header .project-tagline{
-  color: rgba(255,255,255,.68);
-}
-
-/* Botón del tema */
-.page-header .btn{
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.16);
-  color: rgba(255,255,255,.92);
-  border-radius: 14px;
-  padding: .8rem 1rem;
-}
-.page-header .btn:hover{
-  background: rgba(255,255,255,.12);
-  border-color: rgba(255,255,255,.26);
+.page-header::before{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(900px 500px at 30% 0%, rgba(255,255,255,.08), transparent 60%),
+              radial-gradient(700px 400px at 80% 20%, rgba(255,255,255,.06), transparent 65%);
+  pointer-events:none;
 }
 
-/* =========================================================
-   Main “card” premium
-   ========================================================= */
-.main-content{
-  max-width: 980px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-  margin-top: -1.55rem;
-  padding: 1.25rem 1.15rem;
-  color: var(--text);
+.project-name, .project-tagline{
+  position:relative;
+  text-shadow: 0 8px 30px rgba(0,0,0,.45);
 }
 
-/* Cayman duplica H1 dentro del contenido: lo ocultamos */
-.main-content > h1:first-of-type{ display:none; }
-
-/* Títulos */
-.main-content h2, .main-content h3{
-  color: var(--primary);
-  letter-spacing: -0.01em;
-  margin-top: 1.25rem;
-}
-.main-content p{ color: var(--text); }
-.main-content small, .main-content .muted{ color: var(--muted); }
-
-/* Links (cero verde Cayman) */
-.main-content a{
-  color: var(--link);
-  text-decoration: none;
-  font-weight: 600;
-}
-.main-content a:hover{ text-decoration: underline; }
-
-/* Quote / aviso */
-.main-content blockquote{
-  border-left: 6px solid var(--primary);
-  background: var(--primarySoft);
-  color: #1f2937;
-  border-radius: 14px;
-  padding: .95rem 1rem;
+.project-tagline{
+  opacity:.88;
 }
 
-/* =========================================================
-   “Cards” de enlaces (nivel app)
-   ========================================================= */
-.link-grid{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: .65rem;
-  margin: .9rem 0 1.1rem 0;
+/* Botón Cayman */
+.btn{
+  position:relative;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  background: rgba(11,18,32,.32) !important;
+  color:#fff !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
 }
-@media (min-width: 720px){
-  .link-grid{ grid-template-columns: 1fr 1fr; }
-}
-
-.link-card{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: .75rem;
-
-  padding: .95rem 1rem;
-  border-radius: 14px;
-  border: 1px solid rgba(15,23,42,.10);
-  background: #fff;
-  box-shadow: 0 10px 26px rgba(0,0,0,.06);
-  color: #111827 !important;
-  font-weight: 700;
-}
-.link-card::after{
-  content: "→";
-  color: var(--primary);
-  font-weight: 900;
-}
-.link-card:hover{
+.btn:hover{
   transform: translateY(-1px);
-  border-color: rgba(255,106,0,.55);
-  box-shadow: 0 16px 38px rgba(0,0,0,.10);
+  background: rgba(11,18,32,.42) !important;
+  border-color: rgba(255,255,255,.28) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,.30);
+}
+
+/* Card principal */
+.main-content{
+  background: var(--studio-surface);
+  border: 1px solid var(--studio-border);
+  border-radius: 22px;
+  box-shadow: var(--studio-shadow);
+  margin-top: -58px;
+  padding-top: 1.35rem;
+}
+
+/* Tipografía / enlaces: matar verdes */
+.main-content, .main-content p, .main-content li{
+  color: var(--studio-text);
+}
+a{
+  color: var(--studio-accent) !important;
   text-decoration: none;
+  border-bottom: 1px solid rgba(255,138,0,.28);
+}
+a:hover{
+  color: #ff9c26 !important;
+  border-bottom-color: rgba(255,138,0,.55);
 }
 
-/* Bullets (por si quedan listas) */
-.main-content li::marker{ color: var(--primary); }
+/* Títulos (sin verde Cayman) */
+.main-content h1,
+.main-content h2,
+.main-content h3{
+  color: var(--studio-accent) !important;
+}
+.main-content h2{
+  border-bottom: 1px solid rgba(255,138,0,.18);
+  padding-bottom: .35rem;
+}
 
-/* Footer Cayman */
+/* Bullets */
+li::marker{
+  color: var(--studio-accent) !important;
+}
+
+/* Bloques/quotes pro */
+blockquote{
+  background: linear-gradient(180deg, rgba(255,138,0,.08), rgba(0,194,168,.06));
+  border-left: 4px solid rgba(255,138,0,.55);
+  border-radius: 14px;
+  padding: .9rem 1rem;
+  color: var(--studio-text);
+}
+
+/* Código */
+pre, code{
+  border-radius: 14px;
+}
+pre{
+  background: rgba(15,23,42,.06) !important;
+  border: 1px solid rgba(15,23,42,.10) !important;
+}
+code{
+  background: rgba(255,138,0,.10);
+  border: 1px solid rgba(255,138,0,.14);
+  padding: .08rem .35rem;
+}
+
+/* Top nav (incluida en páginas) */
+.topnav{
+  display:flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  padding: .7rem .85rem;
+  margin: .25rem 0 1rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(11,18,32,.96), rgba(14,23,42,.92));
+  border: 1px solid rgba(255,255,255,.08);
+}
+.topnav a{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  font-weight: 700;
+  border-bottom: none !important;
+  padding: .45rem .75rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  color: #fff !important;
+  transition: transform .15s ease, background .15s ease;
+}
+.topnav a:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+}
+.topnav a.is-accent{
+  background: linear-gradient(90deg, rgba(255,138,0,.90), rgba(255,156,38,.90));
+  color: #0B1220 !important;
+}
+
+/* Footer */
 .site-footer{
-  opacity: .9;
+  color: rgba(255,255,255,.70);
 }
-.site-footer a{ color: var(--link); }
+.site-footer a{
+  color: rgba(255,138,0,.95) !important;
+  border-bottom: none !important;
+}
+
+/* Responsive */
+@media (max-width: 600px){
+  .page-header{
+    padding-bottom: 4.75rem;
+  }
+  .main-content{
+    margin-top: -46px;
+    border-radius: 18px;
+  }
+}

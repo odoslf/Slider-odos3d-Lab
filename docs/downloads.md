@@ -1,13 +1,21 @@
 ---
-title: Descargas oficiales
+layout: default
+title: "Descargas oficiales"
 permalink: /downloads/
 ---
 
-Aquí se publican las **descargas oficiales** (STL/STEP/OBJ, BOM, guías).
+{% include topnav.html %}
 
-- Recomendado: **Releases** del repo (cuando publiques packs versionados).
-- También encontrarás material en: `/prints`, `/cad`, `/hardware`, `/docs`.
+# Descargas oficiales
 
-> Nota: este repo es público para **descargar y consultar**.
+Aquí publicaremos **solo** ficheros oficiales del proyecto (piezas 3D, STEP/STL y docs).
 
-[Volver al inicio]({{ site.baseurl }}/)
+## Piezas 3D (STL/STEP)
+- *(Pendiente de publicar)*
+
+## GRBL / Configuración
+- *(Pendiente de publicar)*
+
+## Notas
+- Este repo es público para **descargar**.
+- Si tienes dudas: [odos3d@gmail.com](mailto:odos3d@gmail.com).
