@@ -3,6 +3,11 @@
 > ⚠️ Repo público SOLO de hardware/3D/GRBL del ecosistema Slider-odos3d.  
 > El **código de la app (X1)** es un proyecto separado y **NO se publica aquí**.
 
+## 🌐 Web (GitHub Pages)
+- La web pública de documentación vive en **/docs**.
+- URL final esperada (cuando Pages esté activo): **https://odoslf.github.io/Slider-odos3d-Lab/**
+- Política de privacidad (ruta web): **/privacy-policy/**
+
 ## Qué incluye
 - Piezas 3D listas para imprimir (**STL/STEP**) por versión.
 - Fuentes CAD cuando existan (Fusion/FreeCAD/otros).
