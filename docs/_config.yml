@@ -1,4 +1,13 @@
 title: "ODOS3D Lab — Slider-odos3d"
-description: "Repositorio público de hardware/3D/GRBL + web con la Política de Privacidad de la app Slider-odos3d."
+description: "Hardware/3D/GRBL + web legal (privacidad/términos) para Slider-odos3d."
 theme: jekyll-theme-cayman
 markdown: kramdown
+lang: es-ES
+
+# Project Pages (muy importante)
+url: "https://odoslf.github.io"
+baseurl: "/Slider-odos3d-Lab"
+
+# SASS
+sass:
+  style: compressed

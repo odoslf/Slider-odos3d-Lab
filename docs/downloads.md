@@ -1,18 +1,13 @@
 ---
-layout: default
-title: Descargas
+title: Descargas oficiales
 permalink: /downloads/
 ---
 
-# Descargas oficiales
+Aquí se publican las **descargas oficiales** (STL/STEP/OBJ, BOM, guías).
 
-Las descargas recomendadas están en **GitHub Releases** (versiones oficiales).
+- Recomendado: **Releases** del repo (cuando publiques packs versionados).
+- También encontrarás material en: `/prints`, `/cad`, `/hardware`, `/docs`.
 
-- **Releases (oficial):** https://github.com/odoslf/Slider-odos3d-Lab/releases
+> Nota: este repo es público para **descargar y consultar**.
 
-## Qué descargar
-- **STL (impresión):** paquete STL de la versión
-- **STEP (CAD):** paquete STEP de la versión
-- **Docs (opcional):** BOM / montaje / calibración / GRBL
-
-> Consejo: usa siempre la última versión estable publicada.
+[Volver al inicio]({{ site.baseurl }}/)
