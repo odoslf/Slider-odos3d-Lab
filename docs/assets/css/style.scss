@@ -1,141 +1,182 @@
 ---
 ---
-
-/* Importa el CSS del tema actual (Cayman) y luego lo sobrescribimos */
 @import "{{ site.theme }}";
 
-/* Paleta “studio” alineada con la app (DS) */
+/* ============================
+   Slider-odos3d Lab — Studio Clean
+   - Sin verdes Cayman
+   - Sin tipografías gigantes
+   - Acento naranja app
+   ============================ */
+
 :root{
-  --odos-bg-dark: #0B1220;         /* fondo noche */
-  --odos-surface-dark: #0F1B2D;    /* superficie noche */
-  --odos-bg-light: #F5F7FA;        /* fondo día */
-  --odos-surface: #FFFFFF;         /* card */
-  --odos-outline: #CBD5E1;         /* outline */
-  --odos-text: #111827;            /* texto */
-  --odos-muted: #6B7280;           /* texto secundario */
+  --bg0:#070B14;
+  --bg1:#0B1220;
+  --bg2:#0F1B33;
 
-  --odos-primary: #F2B23B;         /* ámbar */
-  --odos-secondary: #1D4ED8;       /* azul */
-  --odos-secondary-soft: #60A5FA;  /* azul suave */
+  --accent:#FF8A00;     /* naranja app */
+  --accent2:#FFB300;    /* ámbar */
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.68);
+
+  --surface:#ffffff;
+  --surface2:#F6F7FB;
+  --border:rgba(15,23,42,.10);
+  --shadow:0 18px 45px rgba(2,6,23,.20);
 }
 
-/* Base */
+/* Fondo general más “studio” */
 body{
-  background: var(--odos-bg-light);
-  color: var(--odos-text);
+  background: linear-gradient(180deg, var(--bg1) 0%, #0b1220 35%, #0b1220 100%) !important;
 }
 
-/* Header Cayman -> “Studio” con difuminado */
+/* HEADER */
 .page-header{
-  position: relative;
-  overflow: hidden;
-  background: var(--odos-bg-dark);
-  padding: 3.5rem 1rem 3rem;
+  position:relative;
+  background: linear-gradient(135deg, var(--bg0) 0%, var(--bg2) 60%, #2a1b0a 100%) !important;
+  color: var(--text) !important;
+  padding: 3.0rem 1rem 4.0rem !important;
+  overflow:hidden;
+  border-bottom: 1px solid rgba(255,255,255,.06);
 }
-
-/* Capa difuminada (blur) */
 .page-header::before{
   content:"";
   position:absolute;
-  inset:-140px;
+  inset:-60px;
   background:
-    radial-gradient(circle at 18% 22%, rgba(29,78,216,0.78), rgba(29,78,216,0) 55%),
-    radial-gradient(circle at 85% 28%, rgba(242,178,59,0.55), rgba(242,178,59,0) 60%),
-    radial-gradient(circle at 55% 92%, rgba(96,165,250,0.35), rgba(96,165,250,0) 62%);
-  filter: blur(60px);
-  transform: scale(1.05);
-  opacity: 0.95;
-  z-index: 0;
+    radial-gradient(900px 420px at 18% 10%, rgba(255,138,0,.22), transparent 60%),
+    radial-gradient(900px 420px at 82% 0%, rgba(255,179,0,.14), transparent 62%),
+    radial-gradient(1100px 520px at 50% 65%, rgba(64,120,255,.14), transparent 60%);
+  filter: blur(10px);
+  opacity: .95;
+  pointer-events:none;
 }
-
-/* Capa de oscurecido para que el texto siempre sea legible */
 .page-header::after{
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(120deg, rgba(11,18,32,0.92), rgba(15,27,45,0.84));
-  z-index: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.55));
+  pointer-events:none;
 }
-
-/* Asegura que el contenido del header quede encima */
-.page-header .project-name,
-.page-header .project-tagline,
-.page-header .btn{
-  position: relative;
-  z-index: 1;
-}
-
-.project-name{
-  letter-spacing: -0.02em;
-  text-shadow: 0 6px 22px rgba(0,0,0,0.35);
-}
+.project-name,
+.project-tagline,
+.btn{ position:relative; z-index:1; }
 
 .project-tagline{
-  color: rgba(255,255,255,0.86);
-  max-width: 56rem;
-  margin-left: auto;
-  margin-right: auto;
-  text-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  color: var(--muted) !important;
+  max-width: 52rem;
+  margin: .65rem auto 0;
 }
 
-/* Botones (CTA) premium */
+/* Botón header */
 .btn{
-  border-radius: 14px;
-  padding: 0.85rem 1.25rem;
-  border: 1px solid rgba(255,255,255,0.22);
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.95);
+  border-radius: 14px !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  background: rgba(255,255,255,.06) !important;
+  color: var(--text) !important;
   transition: transform .12s ease, background .12s ease, border-color .12s ease;
 }
-
 .btn:hover{
   transform: translateY(-1px);
-  background: rgba(255,255,255,0.14);
-  border-color: rgba(242,178,59,0.55);
-  text-decoration: none;
+  background: rgba(255,255,255,.10) !important;
+  border-color: rgba(255,179,0,.35) !important;
 }
 
-/* Contenido como “card” encima del header */
+/* CARD principal */
 .main-content{
-  background: var(--odos-surface);
-  border: 1px solid var(--odos-outline);
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(2,6,23,0.10);
-  padding: 2rem 1.75rem;
-  margin-top: -1.75rem;
-  position: relative;
-  z-index: 2;
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 22px !important;
+  box-shadow: var(--shadow) !important;
+  margin: -2.15rem auto 2rem !important;
+  padding: 1.8rem 1.5rem !important;
+  max-width: 64rem;
 }
 
-/* Tipografía y enlaces */
-.main-content h1, .main-content h2, .main-content h3{
-  letter-spacing: -0.01em;
+/* Tipografía y escala (evita “gigante feo”) */
+.main-content{
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  color: rgba(15,23,42,.88) !important;
+  line-height: 1.55 !important;
 }
 
-a{
-  color: var(--odos-secondary);
+/* MATA VERDE CAYMAN (duro) */
+.main-content a{
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  font-weight: 650 !important;
+}
+.main-content a:hover{
+  color: var(--accent2) !important;
+  text-decoration: underline !important;
 }
 
-a:hover{
-  color: #163EAD;
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4{
+  letter-spacing: -0.01em !important;
 }
 
-/* Blockquotes más “DS” */
-blockquote{
-  border-left: 4px solid var(--odos-primary);
-  background: #FFFBF2;
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
-  color: var(--odos-text);
+/* OJO: h1 dentro del contenido ya no debería existir,
+   pero si aparece, lo dejamos “clean” */
+.main-content h1{
+  color: #0B1220 !important;
+  font-size: 1.6rem !important;
+  margin-top: 0 !important;
 }
 
-/* Separadores suaves */
-hr{
-  background: var(--odos-outline);
+/* Secciones: naranja app */
+.main-content h2{
+  color: var(--accent) !important;
+  font-size: 1.25rem !important;
+  margin-top: 1.6rem !important;
 }
 
-/* Ajuste móvil */
+/* Subtítulos */
+.main-content h3{
+  color: #0B1220 !important;
+  font-size: 1.05rem !important;
+}
+
+/* Bullets naranjas */
+.main-content ul li::marker,
+.main-content ol li::marker{
+  color: var(--accent) !important;
+}
+
+/* Blockquote “studio” */
+.main-content blockquote{
+  border-left: .30rem solid rgba(255,138,0,.42) !important;
+  background: linear-gradient(90deg, rgba(255,138,0,.09), rgba(255,179,0,.05)) !important;
+  color: rgba(15,23,42,.84) !important;
+  border-radius: 14px !important;
+  padding: .95rem 1rem !important;
+}
+
+/* Code */
+.main-content code{
+  background: var(--surface2) !important;
+  border-radius: 8px !important;
+  padding: .12rem .35rem !important;
+}
+
+/* Responsive móvil */
 @media (max-width: 640px){
-  .page-header{ padding: 3rem 1rem 2.5rem; }
-  .main-content{ padding: 1.5rem 1.25rem; }
+  .page-header{ padding: 2.4rem 1rem 3.4rem !important; }
+  .project-name{ font-size: 2.0rem !important; }
+  .main-content{
+    margin: -1.55rem 1rem 1.6rem !important;
+    padding: 1.25rem 1.0rem !important;
+    border-radius: 18px !important;
+  }
+}
+
+/* Footer */
+.site-footer{
+  color: rgba(255,255,255,.62) !important;
+  background: transparent !important;
+}
+.site-footer a{
+  color: rgba(255,179,0,.85) !important;
 }

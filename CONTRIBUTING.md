@@ -1,5 +1,15 @@
 # Contribuir
 
+## Estado del repositorio: SOLO LECTURA
+
+Este repositorio es **solo lectura** para la comunidad.
+
+- ❌ No se aceptan Pull Requests
+- ❌ No se aceptan Issues
+- ❌ No se aceptan Discussions
+
+Contacto: odos3d@gmail.com
+
 ## Reglas
 - Este repo es hardware/piezas/docs/GRBL. No se sube código de la app aquí.
 - Todo debe ser reproducible: archivos + docs + BOM + ajustes.
