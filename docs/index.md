@@ -1,22 +1,20 @@
 ---
-layout: default
 title: ODOS3D Lab — Slider-odos3d
 permalink: /
 ---
 
 > **Alcance del repo:** solo hardware / piezas 3D / GRBL / documentación.<br>
-> **La app (X1) es privada y NO vive aquí.**
+> **La app (X1) es privada y NO vive aquí.**<br>
+> Este repo es para **descargar** y consultar documentación (no es un portal para que terceros suban contenido).
 
-## Enlaces importantes (Web)
-- **Política de privacidad (App):** [/privacy-policy/](/privacy-policy/)
-- **Términos de uso (App):** [/terms/](/terms/)
-- **Checklist publicación:** [/publish-checklist/](/publish-checklist/)
-- **Descargas oficiales:** [/downloads/](/downloads/)
-- **Soporte:** [/support/](/support/)
-
-## Enlaces importantes (Repo)
-- Docs: [./](/)
-- PRIVACY.md del repo: [../PRIVACY.md](../PRIVACY.md)
+<div class="link-grid">
+  <a class="link-card" href="{{ site.baseurl }}/privacy-policy/">Política de privacidad (App)</a>
+  <a class="link-card" href="{{ site.baseurl }}/terms/">Términos de uso (App)</a>
+  <a class="link-card" href="{{ site.baseurl }}/publish-checklist/">Checklist publicación</a>
+  <a class="link-card" href="{{ site.baseurl }}/downloads/">Descargas oficiales</a>
+  <a class="link-card" href="{{ site.baseurl }}/support/">Soporte</a>
+  <a class="link-card" href="https://github.com/odoslf/Slider-odos3d-Lab">Ver repo en GitHub</a>
+</div>
 
 ## Contacto
 - **odos3d@gmail.com**

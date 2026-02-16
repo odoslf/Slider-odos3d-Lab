@@ -1,182 +1,155 @@
 ---
 ---
+
 @import "{{ site.theme }}";
 
-/* ============================
-   Slider-odos3d Lab — Studio Clean
-   - Sin verdes Cayman
-   - Sin tipografías gigantes
-   - Acento naranja app
-   ============================ */
+/* =========================================================
+   Slider-odos3d Studio — Paleta APP (oscuro + naranja)
+   ========================================================= */
 
 :root{
-  --bg0:#070B14;
-  --bg1:#0B1220;
-  --bg2:#0F1B33;
+  --bg0:#070A12;          /* fondo oscuro */
+  --bg1:#0B1020;          /* fondo header */
+  --surface:#ffffff;      /* card */
+  --text:#0f172a;         /* texto card */
+  --muted:#5b6474;
 
-  --accent:#FF8A00;     /* naranja app */
-  --accent2:#FFB300;    /* ámbar */
-  --text:rgba(255,255,255,.92);
-  --muted:rgba(255,255,255,.68);
+  /* NARANJA “APP” (pro, no amarillo chillón) */
+  --primary:#FF6A00;
+  --primary2:#FF8A2A;
+  --primarySoft: rgba(255,106,0,.12);
 
-  --surface:#ffffff;
-  --surface2:#F6F7FB;
-  --border:rgba(15,23,42,.10);
-  --shadow:0 18px 45px rgba(2,6,23,.20);
+  --link:#C84E00;
+  --border: rgba(15,23,42,.10);
+  --shadow: 0 18px 55px rgba(0,0,0,.18);
 }
 
-/* Fondo general más “studio” */
-body{
-  background: linear-gradient(180deg, var(--bg1) 0%, #0b1220 35%, #0b1220 100%) !important;
+/* Tipografía */
+body, .main-content, .page-header{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* HEADER */
+/* =========================================================
+   Header (hero) — oscuro con glow naranja como la app
+   ========================================================= */
 .page-header{
-  position:relative;
-  background: linear-gradient(135deg, var(--bg0) 0%, var(--bg2) 60%, #2a1b0a 100%) !important;
-  color: var(--text) !important;
-  padding: 3.0rem 1rem 4.0rem !important;
-  overflow:hidden;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-}
-.page-header::before{
-  content:"";
-  position:absolute;
-  inset:-60px;
+  position: relative;
   background:
-    radial-gradient(900px 420px at 18% 10%, rgba(255,138,0,.22), transparent 60%),
-    radial-gradient(900px 420px at 82% 0%, rgba(255,179,0,.14), transparent 62%),
-    radial-gradient(1100px 520px at 50% 65%, rgba(64,120,255,.14), transparent 60%);
-  filter: blur(10px);
-  opacity: .95;
-  pointer-events:none;
-}
-.page-header::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.55));
-  pointer-events:none;
-}
-.project-name,
-.project-tagline,
-.btn{ position:relative; z-index:1; }
-
-.project-tagline{
-  color: var(--muted) !important;
-  max-width: 52rem;
-  margin: .65rem auto 0;
+    radial-gradient(1100px 480px at 18% 0%, rgba(255,106,0,.30), transparent 60%),
+    radial-gradient(900px 420px at 90% 15%, rgba(255,138,42,.18), transparent 55%),
+    linear-gradient(180deg, #0E1730 0%, var(--bg1) 45%, var(--bg0) 100%);
+  color: rgba(255,255,255,.92);
+  padding: 2.2rem 1.2rem 2.3rem 1.2rem;
 }
 
-/* Botón header */
-.btn{
-  border-radius: 14px !important;
-  border: 1px solid rgba(255,255,255,.16) !important;
-  background: rgba(255,255,255,.06) !important;
-  color: var(--text) !important;
-  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+.page-header .project-name{
+  color: rgba(255,255,255,.95);
+  letter-spacing: -0.02em;
 }
-.btn:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,.10) !important;
-  border-color: rgba(255,179,0,.35) !important;
+.page-header .project-tagline{
+  color: rgba(255,255,255,.68);
 }
 
-/* CARD principal */
+/* Botón del tema */
+.page-header .btn{
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.16);
+  color: rgba(255,255,255,.92);
+  border-radius: 14px;
+  padding: .8rem 1rem;
+}
+.page-header .btn:hover{
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.26);
+}
+
+/* =========================================================
+   Main “card” premium
+   ========================================================= */
 .main-content{
-  background: var(--surface) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 22px !important;
-  box-shadow: var(--shadow) !important;
-  margin: -2.15rem auto 2rem !important;
-  padding: 1.8rem 1.5rem !important;
-  max-width: 64rem;
+  max-width: 980px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  margin-top: -1.55rem;
+  padding: 1.25rem 1.15rem;
+  color: var(--text);
 }
 
-/* Tipografía y escala (evita “gigante feo”) */
-.main-content{
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
-  color: rgba(15,23,42,.88) !important;
-  line-height: 1.55 !important;
-}
+/* Cayman duplica H1 dentro del contenido: lo ocultamos */
+.main-content > h1:first-of-type{ display:none; }
 
-/* MATA VERDE CAYMAN (duro) */
+/* Títulos */
+.main-content h2, .main-content h3{
+  color: var(--primary);
+  letter-spacing: -0.01em;
+  margin-top: 1.25rem;
+}
+.main-content p{ color: var(--text); }
+.main-content small, .main-content .muted{ color: var(--muted); }
+
+/* Links (cero verde Cayman) */
 .main-content a{
-  color: var(--accent) !important;
-  text-decoration: none !important;
-  font-weight: 650 !important;
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 600;
 }
-.main-content a:hover{
-  color: var(--accent2) !important;
-  text-decoration: underline !important;
-}
+.main-content a:hover{ text-decoration: underline; }
 
-.main-content h1,
-.main-content h2,
-.main-content h3,
-.main-content h4{
-  letter-spacing: -0.01em !important;
-}
-
-/* OJO: h1 dentro del contenido ya no debería existir,
-   pero si aparece, lo dejamos “clean” */
-.main-content h1{
-  color: #0B1220 !important;
-  font-size: 1.6rem !important;
-  margin-top: 0 !important;
-}
-
-/* Secciones: naranja app */
-.main-content h2{
-  color: var(--accent) !important;
-  font-size: 1.25rem !important;
-  margin-top: 1.6rem !important;
-}
-
-/* Subtítulos */
-.main-content h3{
-  color: #0B1220 !important;
-  font-size: 1.05rem !important;
-}
-
-/* Bullets naranjas */
-.main-content ul li::marker,
-.main-content ol li::marker{
-  color: var(--accent) !important;
-}
-
-/* Blockquote “studio” */
+/* Quote / aviso */
 .main-content blockquote{
-  border-left: .30rem solid rgba(255,138,0,.42) !important;
-  background: linear-gradient(90deg, rgba(255,138,0,.09), rgba(255,179,0,.05)) !important;
-  color: rgba(15,23,42,.84) !important;
-  border-radius: 14px !important;
-  padding: .95rem 1rem !important;
+  border-left: 6px solid var(--primary);
+  background: var(--primarySoft);
+  color: #1f2937;
+  border-radius: 14px;
+  padding: .95rem 1rem;
 }
 
-/* Code */
-.main-content code{
-  background: var(--surface2) !important;
-  border-radius: 8px !important;
-  padding: .12rem .35rem !important;
+/* =========================================================
+   “Cards” de enlaces (nivel app)
+   ========================================================= */
+.link-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .65rem;
+  margin: .9rem 0 1.1rem 0;
+}
+@media (min-width: 720px){
+  .link-grid{ grid-template-columns: 1fr 1fr; }
 }
 
-/* Responsive móvil */
-@media (max-width: 640px){
-  .page-header{ padding: 2.4rem 1rem 3.4rem !important; }
-  .project-name{ font-size: 2.0rem !important; }
-  .main-content{
-    margin: -1.55rem 1rem 1.6rem !important;
-    padding: 1.25rem 1.0rem !important;
-    border-radius: 18px !important;
-  }
+.link-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: .75rem;
+
+  padding: .95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,42,.10);
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.06);
+  color: #111827 !important;
+  font-weight: 700;
+}
+.link-card::after{
+  content: "→";
+  color: var(--primary);
+  font-weight: 900;
+}
+.link-card:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,106,0,.55);
+  box-shadow: 0 16px 38px rgba(0,0,0,.10);
+  text-decoration: none;
 }
 
-/* Footer */
+/* Bullets (por si quedan listas) */
+.main-content li::marker{ color: var(--primary); }
+
+/* Footer Cayman */
 .site-footer{
-  color: rgba(255,255,255,.62) !important;
-  background: transparent !important;
+  opacity: .9;
 }
-.site-footer a{
-  color: rgba(255,179,0,.85) !important;
-}
+.site-footer a{ color: var(--link); }
