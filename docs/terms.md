@@ -3,6 +3,8 @@ title: "Términos de uso — Slider-odos3d"
 permalink: /terms/
 ---
 
+{% include topnav.html %}
+
 # Términos de uso — Slider-odos3d
 
 La app Slider-odos3d se ofrece **tal cual** ("as is"), sin garantías expresas o implícitas sobre disponibilidad continua, compatibilidad total con todos los dispositivos o resultados concretos.

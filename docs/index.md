@@ -1,20 +1,31 @@
 ---
-title: ODOS3D Lab — Slider-odos3d
+layout: default
+title: "ODOS3D Lab — Slider-odos3d"
 permalink: /
 ---
 
-> **Alcance del repo:** solo hardware / piezas 3D / GRBL / documentación.<br>
-> **La app (X1) es privada y NO vive aquí.**<br>
-> Este repo es para **descargar** y consultar documentación (no es un portal para que terceros suban contenido).
+{% include topnav.html %}
 
-<div class="link-grid">
-  <a class="link-card" href="{{ site.baseurl }}/privacy-policy/">Política de privacidad (App)</a>
-  <a class="link-card" href="{{ site.baseurl }}/terms/">Términos de uso (App)</a>
-  <a class="link-card" href="{{ site.baseurl }}/publish-checklist/">Checklist publicación</a>
-  <a class="link-card" href="{{ site.baseurl }}/downloads/">Descargas oficiales</a>
-  <a class="link-card" href="{{ site.baseurl }}/support/">Soporte</a>
-  <a class="link-card" href="https://github.com/odoslf/Slider-odos3d-Lab">Ver repo en GitHub</a>
-</div>
+# ODOS3D Lab — Slider-odos3d
+
+> **Alcance del repo:** solo hardware / piezas 3D / GRBL / documentación.<br>
+> **La app (X1) es privada y NO vive aquí.**
+
+Repositorio público para **descargar piezas** y consultar documentación del slider.
+
+## Enlaces importantes (Web)
+- **Política de privacidad (App):** [ver]({{ "/privacy-policy/" | relative_url }})
+- **Términos de uso (App):** [ver]({{ "/terms/" | relative_url }})
+- **Checklist publicación:** [ver]({{ "/publish-checklist/" | relative_url }})
+- **Descargas oficiales:** [ver]({{ "/downloads/" | relative_url }})
+- **Soporte:** [ver]({{ "/support/" | relative_url }})
+
+## Enlaces importantes (Repo)
+- **Repositorio (GitHub):** https://github.com/odoslf/Slider-odos3d-Lab
+- **PRIVACY.md del repo:** https://github.com/odoslf/Slider-odos3d-Lab/blob/main/PRIVACY.md
 
 ## Contacto
-- **odos3d@gmail.com**
+- **Email:** [odos3d@gmail.com](mailto:odos3d@gmail.com)
+
+> **Nota:** este repositorio es **solo distribución** (descargas/docs).<br>
+> No se aceptan Issues ni PRs. Para soporte: **email**.

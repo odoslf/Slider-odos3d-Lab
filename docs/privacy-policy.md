@@ -3,6 +3,8 @@ title: "Política de privacidad — Slider-odos3d"
 permalink: /privacy-policy/
 ---
 
+{% include topnav.html %}
+
 # Política de privacidad — App Slider-odos3d
 
 **Última actualización:** 2026-02-16  
