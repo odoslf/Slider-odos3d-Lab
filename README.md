@@ -5,7 +5,7 @@
 
 ## 🌐 Web (GitHub Pages)
 - La web pública de documentación vive en **/docs**.
-- URL final esperada (cuando Pages esté activo): **https://odoslf.github.io/Slider-odos3d-Lab/**
+- URL final esperada (Pages está activo): **https://odoslf.github.io/Slider-odos3d-Lab/**
 - Política de privacidad (ruta web): **/privacy-policy/**
 - Términos (ruta web): **/terms/**
 - Nota: privacidad y términos corresponden a la app **Smart Timelapse AI**.
