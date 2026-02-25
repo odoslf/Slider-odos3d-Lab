@@ -8,8 +8,9 @@ permalink: /privacy-policy/
 # Política de privacidad — Smart Timelapse AI
 
 **Última actualización:** 2026-02-16  
-**Responsable:** O2  
-**Contacto:** odos3d@gmail.com  
+Responsable: Javier López Flores  
+Marca / proyecto: ODOS3D (odoslf)  
+Contacto: odos3d@gmail.com  
 **Modelo:** gratis con publicidad + pago único opcional para eliminar anuncios; sin cuentas y sin analítica propia.
 
 ## 1) Alcance

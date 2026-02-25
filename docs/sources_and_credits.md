@@ -10,5 +10,5 @@
 - App: Slider-odos3d (X1) — proyecto separado (no se publica aquí)
 
 ## Créditos
-- Autor principal: O2 / odoslf
+- Autor principal: Javier López Flores / odoslf
 - Contribuidores: (añadir aquí)
