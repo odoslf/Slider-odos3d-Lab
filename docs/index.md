@@ -1,15 +1,16 @@
 ---
 layout: default
-title: "ODOS3D Lab — Slider-odos3d"
+title: "Slider-odos3d Lab"
 permalink: /
 ---
 
 {% include topnav.html %}
 
-# ODOS3D Lab — Slider-odos3d
+# Slider-odos3d Lab
 
 > **Alcance del repo:** solo hardware / piezas 3D / GRBL / documentación.<br>
-> **La app (X1) es privada y NO vive aquí.**
+> La app se llama Smart Timelapse AI y vive en un repositorio aparte (X1).
+> Este repo es solo hardware/piezas/GRBL/documentación del slider Slider-odos3d.
 
 Repositorio público para **descargar piezas** y consultar documentación del slider.
 

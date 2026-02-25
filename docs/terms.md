@@ -1,13 +1,13 @@
 ---
-title: "Términos de uso — Slider-odos3d"
+title: "Términos de uso — Smart Timelapse AI"
 permalink: /terms/
 ---
 
 {% include topnav.html %}
 
-# Términos de uso — Slider-odos3d
+# Términos de uso — Smart Timelapse AI
 
-La app Slider-odos3d se ofrece **tal cual** ("as is"), sin garantías expresas o implícitas sobre disponibilidad continua, compatibilidad total con todos los dispositivos o resultados concretos.
+La app Smart Timelapse AI se ofrece **tal cual** ("as is"), sin garantías expresas o implícitas sobre disponibilidad continua, compatibilidad total con todos los dispositivos o resultados concretos.
 
 ## Uso y responsabilidad
 - El usuario es responsable de cómo utiliza el hardware, firmware y app en su entorno.

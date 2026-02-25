@@ -1,14 +1,10 @@
 ---
-title: "Privacidad (legacy)"
+title: "Privacidad (App) — enlaces antiguos"
 permalink: /privacy-app/
 ---
 
 {% include topnav.html %}
 
-# Privacidad (legacy)
+# Privacidad (App) — enlaces antiguos
 
-Esta página se mantiene por compatibilidad con enlaces antiguos.
-
-La política vigente de la app está en:
-
-- [Política de privacidad]({{ "/privacy-policy/" | relative_url }})
+La política vigente de Smart Timelapse AI está en /privacy-policy/.
