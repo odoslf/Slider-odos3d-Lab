@@ -15,7 +15,7 @@ permalink: /publish-checklist/
 
 ## Checklist — Google Play (cuando toque)
 - [ ] Pegar URL de `privacy-policy` en Play Console
-- [ ] Confirmar modelo: compra única, sin anuncios
+- [ ] Confirmar modelo: gratis con publicidad + pago único opcional (elimina anuncios)
 - [ ] Revisar texto de privacidad dentro de la app (About) y enlazar a la URL
 
 ## Modo “solo lectura” + Releases
