@@ -1,4 +1,4 @@
-Política de privacidad de la APP: ver /docs/privacy-policy.md (GitHub Pages).
+Política de privacidad de la app Smart Timelapse AI: ver /docs/privacy-policy.md (GitHub Pages).
 
 # Privacidad (OBLIGATORIO si subimos fotos)
 

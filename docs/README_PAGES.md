@@ -13,4 +13,7 @@ permalink: /pages-setup/
 
 > Nota: GitHub Pages puede tardar unos minutos en publicar y mostrar la URL final.
 >
-> URL esperada (cuando esté activo): https://odoslf.github.io/Slider-odos3d-Lab/privacy-policy/
+> URL esperada base: https://odoslf.github.io/Slider-odos3d-Lab/
+>
+> Privacidad app: /privacy-policy/
+> Términos app: /terms/

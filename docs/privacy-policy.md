@@ -1,11 +1,11 @@
 ---
-title: "Política de privacidad — Slider-odos3d"
+title: "Política de privacidad — Smart Timelapse AI"
 permalink: /privacy-policy/
 ---
 
 {% include topnav.html %}
 
-# Política de privacidad — App Slider-odos3d
+# Política de privacidad — Smart Timelapse AI
 
 **Última actualización:** 2026-02-16  
 **Responsable:** O2  
@@ -13,10 +13,10 @@ permalink: /privacy-policy/
 **Modelo:** compra única, sin anuncios, sin analíticas, sin cuentas.
 
 ## 1) Alcance
-Esta política aplica a la app **Slider-odos3d**. Este repo público contiene documentación de hardware/3D/GRBL, y esta página existe para dejar clara la política de la app.
+Esta política aplica a la app **Smart Timelapse AI**. Este repo público contiene documentación de hardware/3D/GRBL, y esta página existe para dejar clara la política de la app.
 
 ## 2) Datos y tratamiento
-Slider-odos3d está diseñada para funcionar sin recopilar datos personales.
+Smart Timelapse AI está diseñada para funcionar sin recopilar datos personales.
 
 - **Fotos/Vídeos:** se capturan, editan y guardan localmente en el dispositivo.
 - **Conexión Bluetooth/Wi-Fi/LAN:** se usa solo para buscar, conectar y controlar el slider en red local.
@@ -52,7 +52,7 @@ Para dudas de privacidad: **odos3d@gmail.com**
 ---
 
 ## ENGLISH SUMMARY
-- Slider-odos3d is a one-time purchase app.
+- Smart Timelapse AI is a one-time purchase app.
 - No ads, no analytics, no user accounts.
 - Photos/videos are processed and stored locally on your device.
 - Bluetooth/Wi-Fi/LAN are used only for local slider control.

@@ -3,6 +3,36 @@
 
 @import "{{ site.theme }}";
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.main-content{
+  line-height: 1.6;
+}
+
+.main-content p{
+  margin-bottom: .85rem;
+}
+
+.main-content li{
+  margin: .35rem 0;
+}
+
+details{
+  border: 1px solid rgba(15,23,42,.10);
+  border-radius: 14px;
+  padding: .6rem .85rem;
+  background: rgba(15,23,42,.03);
+}
+
+summary{
+  cursor: pointer;
+  font-weight: 700;
+}
+
 /* =========================
    Slider-odos3d Studio Theme
    FINAL: mata verdes Cayman
