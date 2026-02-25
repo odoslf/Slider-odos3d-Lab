@@ -7,6 +7,9 @@ permalink: /downloads/
 
 # Descargas
 
+> **Estado de hardware:** las carpetas STL/STEP/BOM están preparadas por versión.  
+> Si ves `.gitkeep`, significa que esa versión aún está en preparación y se publicará aquí cuando esté lista.
+
 Repositorio público de archivos del slider **Slider-odos3d** (hardware/3D/GRBL).
 
 ## Última versión
