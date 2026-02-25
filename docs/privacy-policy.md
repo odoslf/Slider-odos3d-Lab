@@ -10,10 +10,19 @@ permalink: /privacy-policy/
 **Última actualización:** 2026-02-16  
 **Responsable:** O2  
 **Contacto:** odos3d@gmail.com  
-**Modelo:** compra única, sin anuncios, sin analíticas, sin cuentas.
+**Modelo:** gratis con publicidad + pago único opcional para eliminar anuncios; sin cuentas y sin analítica propia.
 
 ## 1) Alcance
-Esta política aplica a la app **Smart Timelapse AI**. Este repo público contiene documentación de hardware/3D/GRBL, y esta página existe para dejar clara la política de la app.
+Esta política aplica a la app **Smart Timelapse AI** (Android).
+
+Este repositorio público (**Slider-odos3d Lab**) contiene documentación de hardware/3D/GRBL del slider **Slider-odos3d**. Publicamos esta página aquí únicamente para dejar clara la política de privacidad de la app.
+
+## 1.1 Modelo (publicidad y pago único)
+La app **Smart Timelapse AI** se ofrece en dos modalidades:
+- **Gratis con publicidad**.
+- **Pago único opcional** para eliminar anuncios.
+
+No vendemos datos personales. Si hay publicidad, el proveedor de anuncios puede usar identificadores del dispositivo para mostrar anuncios (según su propia política). Puedes eliminar anuncios con el pago único.
 
 ## 2) Datos y tratamiento
 Smart Timelapse AI está diseñada para funcionar sin recopilar datos personales.
@@ -21,7 +30,9 @@ Smart Timelapse AI está diseñada para funcionar sin recopilar datos personales
 - **Fotos/Vídeos:** se capturan, editan y guardan localmente en el dispositivo.
 - **Conexión Bluetooth/Wi-Fi/LAN:** se usa solo para buscar, conectar y controlar el slider en red local.
 - **Audio (si el usuario lo añade):** se procesa localmente durante la exportación.
-- **No recopilamos:** edad, ubicación, identificadores de publicidad, telemetría ni analítica de uso.
+- **No usamos cuentas.**
+- **No hacemos analítica propia.**
+- **La publicidad (si está activa) puede implicar identificadores del proveedor.**
 
 ## 3) Permisos de Android (para qué se usan)
 - **Cámara:** para capturar fotos o secuencias de timelapse.
@@ -52,8 +63,8 @@ Para dudas de privacidad: **odos3d@gmail.com**
 ---
 
 ## ENGLISH SUMMARY
-- Smart Timelapse AI is a one-time purchase app.
-- No ads, no analytics, no user accounts.
+- Smart Timelapse AI offers a free-with-ads mode and an optional one-time purchase to remove ads.
+- No user accounts and no first-party analytics.
 - Photos/videos are processed and stored locally on your device.
 - Bluetooth/Wi-Fi/LAN are used only for local slider control.
 - Optional audio added by the user is processed locally during export.

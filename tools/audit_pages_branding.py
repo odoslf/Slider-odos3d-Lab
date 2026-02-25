@@ -39,6 +39,36 @@ for route in ["/downloads/", "/gallery/", "/parts/"]:
     else:
         print(f"OK: {route} link found in docs/_includes/topnav.html")
 
+
+privacy = Path("docs/privacy-policy.md").read_text(encoding="utf-8")
+
+for banned in [
+    "aplica a la app **Slider-odos3d",
+    "Slider-odos3d está diseñada",
+]:
+    if banned in privacy:
+        print(f"FAIL: banned phrase '{banned}' found in docs/privacy-policy.md")
+        failed = True
+    else:
+        print(f"OK: banned phrase '{banned}' not found in docs/privacy-policy.md")
+
+for required in ["publicidad", "pago único", "Smart Timelapse AI"]:
+    if required not in privacy:
+        print(f"FAIL: '{required}' not found in docs/privacy-policy.md")
+        failed = True
+    else:
+        print(f"OK: '{required}' found in docs/privacy-policy.md")
+
+config = Path("docs/_config.yml").read_text(encoding="utf-8").lower()
+for line in Path("docs/_config.yml").read_text(encoding="utf-8").splitlines():
+    lower_line = line.lower()
+    if lower_line.startswith("description:") and "legal" in lower_line and "para" in lower_line and "slider-odos3d" in lower_line:
+        print("FAIL: docs/_config.yml description must not say legal para Slider-odos3d")
+        failed = True
+        break
+else:
+    print("OK: docs/_config.yml description does not say legal para Slider-odos3d")
+
 if failed:
     sys.exit(1)
 
