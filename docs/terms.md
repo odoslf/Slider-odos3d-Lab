@@ -7,17 +7,7 @@ permalink: /terms/
 
 # Términos de uso — Smart Timelapse AI
 
-Estos términos aplican a **Smart Timelapse AI**.
-
-La app Smart Timelapse AI se ofrece **tal cual** ("as is"), sin garantías expresas o implícitas sobre disponibilidad continua, compatibilidad total con todos los dispositivos o resultados concretos.
-
-## Contacto y responsable
-**Responsable:** Javier López Flores  
-**Marca / proyecto:** ODOS3D (odoslf)  
-**Contacto:** odos3d@gmail.com
-
-## Modelo
-La app se ofrece **gratis con publicidad** y con **pago único opcional** para eliminar anuncios.
+La app Smart Timelapse AI se ofrece **tal cual**, sin garantías expresas o implícitas sobre disponibilidad continua, compatibilidad total con todos los dispositivos o resultados concretos.
 
 ## Uso y responsabilidad
 - El usuario es responsable de cómo utiliza el hardware, firmware y app en su entorno.

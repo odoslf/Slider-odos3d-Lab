@@ -1,0 +1,24 @@
+Categoria,Elemento,Especificacion,Cantidad,Unidad,Proveedor,Link,Notas
+Estructura,Varillas lisas Ø8mm,Acero liso 8mm (a medida),, , , ,El largo depende del modelo STL y del recorrido (ejemplo típico: slider ~60cm)
+Estructura,Elementos de fijación M8 (si aplica),Tuercas y arandelas M8 (según montaje),, , , ,Solo si tu diseño usa sujeción con métrica 8
+Movimiento,Correa GT2,GT2 6mm (correa abierta),, , , ,Compra 1.2–1.5m para un slider ~60cm (mejor que sobre)
+Movimiento,Poleas GT2 motor,GT2 6mm eje 5mm (para NEMA17),, , , ,Normalmente una por cada motor usado
+Movimiento,Polea loca / idler,Idler GT2 6mm o rodamiento + pieza impresa,, , , ,Según el sistema de tensado del STL
+Movimiento,Rodamiento para idler (si se usa),625ZZ (5x16x5) o similar,, , , ,Solo si tu idler es con rodamiento
+Movimiento,Guiado del carro (según STL),LM8UU o casquillos/bujes impresos,, , , ,Lo define el diseño (STL). Si el STL usa LM8UU, cómpralos
+Movimiento,Motores paso a paso,NEMA17 (eje 5mm),, , , ,Tu montaje usa 2 motores (si alguien quiere 1, se adapta)
+Electronica,Arduino Nano,Compatible ATmega328P,, , , ,Control principal
+Electronica,CNC Shield V4,Para Arduino Nano,, , , ,Placa de drivers
+Electronica,Drivers de motor,A4988 o TMC2209 (a elección),, , , ,Uno por motor. TMC suele ir más fino y silencioso
+Electronica,Modulo Bluetooth,HC-05 o HC-06 (a elección),, , , ,Conexión móvil ⇄ slider
+Electronica,Final de carrera (endstop),Micro-switch CNC (3 cables),, , , ,Homing o seguridad (según configuración)
+Electronica,Fuente de alimentación,12V con margen (según motores),, , , ,Si dudas, compra una de más amperaje (mejor margen)
+Electronica,Regulador DC-DC (opcional),Step-down/step-up (si usas batería),, , , ,Para montaje con batería o ajuste de potencia
+Electronica,Ventilador (opcional),40mm 5V/12V,, , , ,Recomendado si va todo en caja cerrada
+Cableado,Cables para motores,4 hilos NEMA17 (a medida),, , , ,Longitud según tu slider
+Cableado,Cables y conectores,Kits Dupont / JST / bornes,, , , ,Lo que prefiera cada uno
+Cableado,Protector/cubre-cable,Funda espiral o malla,, , , ,Opcional, para que quede limpio y protegido
+Tornilleria,Tornillería M3 (pack),M3 surtido + tuercas + arandelas,, , , ,El STL manda: compra un pack surtido y listo
+Otros,Soporte móvil (opcional),Soporte AliExpress (~2€),, , , ,Referencia barata. El modelo exacto lo elige cada uno
+Piezas impresas,Piezas del slider,Piezas STL/STEP del pack v1,, , , ,Todo el diseño está en prints/STL/v1/ y prints/STEP/v1/
+Nota: he dejado Cantidad/Unidad vacíos a propósito para que no parezca “robot” y porque lo define el STL.

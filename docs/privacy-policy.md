@@ -8,22 +8,13 @@ permalink: /privacy-policy/
 # Política de privacidad — Smart Timelapse AI
 
 **Última actualización:** 2026-02-16  
+**Responsable:** Javier López Flores  
 Responsable: Javier López Flores  
-Marca / proyecto: ODOS3D (odoslf)  
-Contacto: odos3d@gmail.com  
-**Modelo:** gratis con publicidad + pago único opcional para eliminar anuncios; sin cuentas y sin analítica propia.
+**Contacto:** odos3d@gmail.com  
+**Modelo:** pago único, sin anuncios, sin analíticas, sin cuentas.
 
 ## 1) Alcance
-Esta política aplica a la app **Smart Timelapse AI** (Android).
-
-Este repositorio público (**Slider-odos3d Lab**) contiene documentación de hardware/3D/GRBL del slider **Slider-odos3d**. Publicamos esta página aquí únicamente para dejar clara la política de privacidad de la app.
-
-## 1.1 Modelo (publicidad y pago único)
-La app **Smart Timelapse AI** se ofrece en dos modalidades:
-- **Gratis con publicidad**.
-- **Pago único opcional** para eliminar anuncios.
-
-No vendemos datos personales. Si hay publicidad, el proveedor de anuncios puede usar identificadores del dispositivo para mostrar anuncios (según su propia política). Puedes eliminar anuncios con el pago único.
+Esta política aplica a la app **Smart Timelapse AI**. Este repo público contiene documentación de hardware/3D/GRBL, y esta página existe para dejar clara la política de la app.
 
 ## 2) Datos y tratamiento
 Smart Timelapse AI está diseñada para funcionar sin recopilar datos personales.
@@ -31,9 +22,7 @@ Smart Timelapse AI está diseñada para funcionar sin recopilar datos personales
 - **Fotos/Vídeos:** se capturan, editan y guardan localmente en el dispositivo.
 - **Conexión Bluetooth/Wi-Fi/LAN:** se usa solo para buscar, conectar y controlar el slider en red local.
 - **Audio (si el usuario lo añade):** se procesa localmente durante la exportación.
-- **No usamos cuentas.**
-- **No hacemos analítica propia.**
-- **La publicidad (si está activa) puede implicar identificadores del proveedor.**
+- **No recopilamos:** edad, ubicación, identificadores de publicidad, telemetría ni analítica de uso.
 
 ## 3) Permisos de Android (para qué se usan)
 - **Cámara:** para capturar fotos o secuencias de timelapse.
@@ -59,22 +48,21 @@ El contenido generado queda en tu dispositivo. Tú decides cuánto tiempo conser
 Si se modifica esta política, se actualizará esta misma página y su fecha de revisión.
 
 ## 8) Contacto
+Responsable del proyecto: **ODOS3D (odoslf)**.
+
 Para dudas de privacidad: **odos3d@gmail.com**
 
 ---
 
-## ENGLISH SUMMARY
-- Smart Timelapse AI offers a free-with-ads mode and an optional one-time purchase to remove ads.
-- No user accounts and no first-party analytics.
-- Photos/videos are processed and stored locally on your device.
-- Bluetooth/Wi-Fi/LAN are used only for local slider control.
-- Optional audio added by the user is processed locally during export.
-- We do not collect age, location, ad ID, telemetry, or analytics.
-- Android permissions are requested only for camera/media/Bluetooth/network features.
-- The app does not use microphone permission.
-- Google Play handles billing and distribution.
-- We do not run servers to upload your media.
-- You can delete your local files at any time.
-- Security depends on your device practices (updates, lock screen, backups).
-- Policy updates will be published on this same page.
-- Contact: odos3d@gmail.com.
+## Resumen (en español)
+- Smart Timelapse AI es una app de compra única, sin anuncios, sin analíticas y sin cuentas.
+- Fotos/vídeos se procesan y guardan localmente en tu dispositivo.
+- Bluetooth/Wi-Fi/LAN se usan solo para control local del slider.
+- Audio opcional (si lo añade el usuario) se procesa localmente durante la exportación.
+- No recopilamos edad, ubicación, ID de publicidad, telemetría ni analítica.
+- Los permisos se solicitan solo para cámara/medios/Bluetooth/red local.
+- No se usa permiso de micrófono.
+- Google Play gestiona distribución y facturación.
+- No hay servidores propios para subir tu contenido.
+- Puedes borrar tus archivos locales cuando quieras.
+- Contacto: odos3d@gmail.com.

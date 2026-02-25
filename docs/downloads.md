@@ -7,16 +7,13 @@ permalink: /downloads/
 
 # Descargas
 
-> **Estado de hardware:** las carpetas STL/STEP/BOM están preparadas por versión.  
-> Si ves `.gitkeep`, significa que esa versión aún está en preparación y se publicará aquí cuando esté lista.
-
 Repositorio público de archivos del slider **Slider-odos3d** (hardware/3D/GRBL).
 
-## Última versión
+## Última versión ({{ site.latest_pack }})
 
-- **STL v1:** [abrir carpeta](../prints/STL/v1/)
-- **STEP v1:** [abrir carpeta](../prints/STEP/v1/)
-- **BOM v1:** [abrir carpeta](../prints/BOM/v1/)
+- **STL {{ site.latest_pack }}:** [abrir carpeta]({{ site.tree_base }}/prints/STL/{{ site.latest_pack }}/)
+- **STEP {{ site.latest_pack }}:** [abrir carpeta]({{ site.tree_base }}/prints/STEP/{{ site.latest_pack }}/)
+- **BOM {{ site.latest_pack }}:** [abrir carpeta]({{ site.tree_base }}/prints/BOM/{{ site.latest_pack }}/)
 
 ## Versiones anteriores
 
@@ -36,4 +33,7 @@ Cuando publiquemos nuevas versiones (`v2`, `v3`, etc.), las anteriores se manten
    - `prints/BOM/v2/`
 2. Subir los archivos definitivos de esa versión.
 3. Mantener versiones anteriores sin borrar para histórico.
-4. Actualizar esta página para que "Última versión" apunte a la nueva versión.
+4. Cambiar **solo** `latest_pack` en `docs/_config.yml` para que la web apunte a la nueva versión.
+
+
+> Estado de algunos contenidos: **en preparación** hasta completar subidas definitivas.

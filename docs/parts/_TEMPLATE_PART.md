@@ -5,14 +5,14 @@ title: "Plantilla de pieza"
 # NOMBRE DE LA PIEZA
 
 ## Foto
-![NOMBRE](../../images/gallery/REEMPLAZAR.jpg)
+![NOMBRE]({{ site.raw_base }}/images/gallery/REEMPLAZAR.jpg)
 
 ## Para qué sirve
 - (1 frase clara)
 
 ## Archivos
-- STL: `../prints/STL/v1/REEMPLAZAR.stl`
-- STEP: `../prints/STEP/v1/REEMPLAZAR.step`
+- STL: [REEMPLAZAR.stl]({{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/REEMPLAZAR.stl)
+- STEP: [REEMPLAZAR.step]({{ site.blob_base }}/prints/STEP/{{ site.latest_pack }}/REEMPLAZAR.step)
 
 ## Impresión recomendada
 - Material: (PLA / PETG)

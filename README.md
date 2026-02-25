@@ -1,7 +1,7 @@
 # Slider-odos3d-Lab — Hardware, piezas 3D y GRBL (Open Source)
 
 > ⚠️ Repo público SOLO de hardware/3D/GRBL del ecosistema Slider-odos3d.  
-> El **código de la app (Smart Timelapse AI, repo X1)** es un proyecto separado y **NO se publica aquí**.
+> El **código de la app (Smart Timelapse AI, repositorio separado)** es un proyecto separado y **NO se publica aquí**.
 
 ## 🌐 Web (GitHub Pages)
 - La web pública de documentación vive en **/docs**.

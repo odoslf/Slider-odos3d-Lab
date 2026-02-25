@@ -11,12 +11,12 @@ Este repo contiene las piezas y documentación del hardware **Slider-odos3d**.
 
 ## Descargas por versión
 
-### v1
-- STL: [`prints/STL/v1/`](../prints/STL/v1/)
-- STEP: [`prints/STEP/v1/`](../prints/STEP/v1/)
-- BOM: [`prints/BOM/v1/`](../prints/BOM/v1/)
+### Pack actual ({{ site.latest_pack }})
+- STL: [`prints/STL/{{ site.latest_pack }}/`]({{ site.tree_base }}/prints/STL/{{ site.latest_pack }}/)
+- STEP: [`prints/STEP/{{ site.latest_pack }}/`]({{ site.tree_base }}/prints/STEP/{{ site.latest_pack }}/)
+- BOM: [`prints/BOM/{{ site.latest_pack }}/`]({{ site.tree_base }}/prints/BOM/{{ site.latest_pack }}/)
 
-> Para publicar v2/v3, crea carpetas nuevas `v2`, `v3` y enlázalas aquí.
+> Para publicar v2/v3, crea carpetas nuevas `v2`, `v3` y luego cambia `latest_pack` en `docs/_config.yml`.
 
 ---
 

@@ -1,5 +1,5 @@
 title: "Slider-odos3d Lab"
-description: "Hardware/3D/GRBL del slider Slider-odos3d + web legal (privacidad/términos) de la app Smart Timelapse AI."
+description: "Repositorio público de hardware/3D/GRBL del slider Slider-odos3d + páginas legales (Privacidad/Términos) de la app Smart Timelapse AI."
 theme: jekyll-theme-cayman
 markdown: kramdown
 lang: es-ES
@@ -7,6 +7,16 @@ lang: es-ES
 # Project Pages (muy importante)
 url: "https://odoslf.github.io"
 baseurl: "/Slider-odos3d-Lab"
+
+# Enlaces base (para que la web /docs funcione aunque los assets estén fuera de /docs)
+repo_url: "https://github.com/odoslf/Slider-odos3d-Lab"
+repo_branch: "main"
+tree_base: "https://github.com/odoslf/Slider-odos3d-Lab/tree/main"
+blob_base: "https://github.com/odoslf/Slider-odos3d-Lab/blob/main"
+raw_base: "https://raw.githubusercontent.com/odoslf/Slider-odos3d-Lab/main"
+
+# Versión “última” (para que solo tengas que cambiar un sitio al sacar v2/v3…)
+latest_pack: "v1"
 
 # SASS
 sass:
