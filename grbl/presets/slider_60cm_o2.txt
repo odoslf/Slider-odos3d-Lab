@@ -1,0 +1,25 @@
+# Preset recomendado Slider-odos3d (O2) — 60 cm seguros
+# Copiar/pegar líneas en consola (una por una).
+
+$X
+
+# Reporte en mm (recomendado)
+$13=0
+
+# Homing ON (si lo usas)
+$22=1
+$23=0
+$27=1.000
+
+# Recorrido seguro del carril
+$130=600.000
+
+# Opcional: soft limits (solo si homing está bien)
+# $20=1
+
+# Opcional: asegurar mm en arranque
+# (si alguien tiene G20 por startup, esto lo corrige)
+# Verificar con: $N
+# Si aparece G20, dejarlo en G21:
+# $N0=G21
+# $N1=

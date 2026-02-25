@@ -6,7 +6,7 @@ Dejar claro qué piezas y ajustes van con qué configuración.
 ## Tabla (rellenar)
 - Hardware: v1.0
   - Piezas: `prints/STL/v1/...`
-  - GRBL: `grbl/recommended_settings.md`
+  - GRBL: [Ajustes recomendados]({{ site.blob_base }}/grbl/recommended_settings.md)
   - Límites: `docs/limits.md`
 
 ## Notas

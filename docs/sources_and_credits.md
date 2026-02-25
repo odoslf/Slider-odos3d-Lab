@@ -7,8 +7,13 @@
 - Configuración GRBL y notas técnicas
 
 ## Referencias internas
-- App: Slider-odos3d (X1) — proyecto separado (no se publica aquí)
+- App: Smart Timelapse AI (repositorio separado) — proyecto separado (no se publica aquí)
 
 ## Créditos
-- Autor principal: Javier López Flores / odoslf
+- Autor principal: O2 / odoslf
 - Contribuidores: (añadir aquí)
+
+## Firmware (GRBL)
+- GRBL 1.1 (gnea/grbl) — firmware CNC open-source en GPLv3.
+- Créditos: Sungeun “Sonny” Jeon y comunidad.
+- Repo oficial: https://github.com/gnea/grbl

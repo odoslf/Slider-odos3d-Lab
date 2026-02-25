@@ -5,26 +5,61 @@ permalink: /gallery/
 
 {% include topnav.html %}
 
-# Galería
+# Galería (v1)
 
-Aquí verás fotos reales del slider **Slider-odos3d** (montaje, piezas, ejemplos, resultados).
+✅ **Truco para no editar nada:**  
+Sube tus fotos a `images/gallery/` usando EXACTAMENTE estos nombres y la galería se verá automáticamente.
 
-## Cómo añadir fotos (rápido)
-1) Sube imágenes a `images/gallery/` (JPG/PNG).
-2) Añádelas aquí con el formato:
+## Nombres fijos (v1)
 
-```md
-![Descripción](../images/gallery/tu-foto.jpg)
-```
+### 01) Montaje (2 fotos)
+- `slider_v1_01a_montaje.jpg`
+- `slider_v1_01b_montaje.jpg`
 
-## Ejemplos (listo para completar)
-Reemplaza los nombres de archivo por los tuyos cuando los subas.
+### 02) Carro (2 fotos)
+- `slider_v1_02a_carro.jpg`
+- `slider_v1_02b_carro.jpg`
 
-```md
-![Montaje general](../images/gallery/montaje-general.jpg)
-![Carro y guía](../images/gallery/carro-guia.jpg)
-![Detalle pieza impresa](../images/gallery/pieza-impresa.jpg)
-![Slider en uso](../images/gallery/slider-en-uso.jpg)
-```
+### 03) Correa (2 fotos)
+- `slider_v1_03a_correa.jpg`
+- `slider_v1_03b_correa.jpg`
 
-*(Si aún no tienes esas fotos, no pasa nada: cuando subas archivos con esos nombres, la galería se verá sola.)*
+### 04) Electrónica (1 foto)
+- `slider_v1_04_electronica.jpg`
+
+### 05) Endstop X- (1 foto)
+- `slider_v1_05_endstop_x.jpg`
+
+### 06) Soporte móvil (opcional, 1 foto)
+- `slider_v1_06_soporte_movil.jpg`
+
+---
+
+## Fotos v1
+
+## Montaje (2)
+![Montaje completo A]({{ site.raw_base }}/images/gallery/slider_v1_01a_montaje.jpg)
+![Montaje completo B]({{ site.raw_base }}/images/gallery/slider_v1_01b_montaje.jpg)
+
+## Carro (2)
+![Carro y varillas A]({{ site.raw_base }}/images/gallery/slider_v1_02a_carro.jpg)
+![Carro y varillas B]({{ site.raw_base }}/images/gallery/slider_v1_02b_carro.jpg)
+
+## Correa y poleas (2)
+![Correa y poleas A]({{ site.raw_base }}/images/gallery/slider_v1_03a_correa.jpg)
+![Correa y poleas B]({{ site.raw_base }}/images/gallery/slider_v1_03b_correa.jpg)
+
+## Electrónica (1)
+![Electrónica (Nano + Shield + Drivers)]({{ site.raw_base }}/images/gallery/slider_v1_04_electronica.jpg)
+
+## Final de carrera X- (1)
+![Final de carrera X-]({{ site.raw_base }}/images/gallery/slider_v1_05_endstop_x.jpg)
+
+## Soporte móvil (opcional)
+![Soporte móvil]({{ site.raw_base }}/images/gallery/slider_v1_06_soporte_movil.jpg)
+
+---
+
+## Si no se ve alguna foto
+- Verifica que esté en `images/gallery/`
+- Verifica el nombre exacto (mayúsculas/minúsculas y extensión `.jpg`)
