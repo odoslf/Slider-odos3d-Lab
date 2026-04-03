@@ -35,5 +35,5 @@ El disparo DSLR requiere interfaz de relé/opto compatible con tu cámara. La ap
 El eje Z solo aparece si tu hardware/firmware lo soporta. Actívalo en ajustes avanzados y confirma en GRBL que el eje está habilitado.
 
 ## Contacto
-- Email: **[odos3d@gmail.com](mailto:odos3d@gmail.com)**
+- Email: **[odos3d.Lab@gmail.com](mailto:odos3d.Lab@gmail.com)**
 - Qué enviar: **captura + diagnóstico copiado**
