@@ -1,0 +1,194 @@
+---
+layout: null
+permalink: /
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Timelapse AI Slider</title>
+  <meta name="description" content="Smart Timelapse AI Slider: una app para crear timelapses con móvil, slider GRBL y flujo DSLR, con SmartCapture AI, remoto local con PIN y editor integrado.">
+  <style>
+    :root{--bg:#0b1020;--card:#141b31;--text:#e8edff;--muted:#aeb8d6;--accent:#f5a524;--line:#253152}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#080d1a,#0c1327);color:var(--text)}
+    a{color:inherit;text-decoration:none} .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:20;background:rgba(8,13,26,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:74px;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:40px;height:40px;border-radius:10px}
+    .brand-copy{display:flex;flex-direction:column;line-height:1.2}
+    .brand-title{font-weight:800;font-size:1rem}
+    .brand-subtitle{font-size:.74rem;color:var(--muted)}
+    .menu{display:flex;flex-wrap:wrap;gap:14px;font-size:.95rem;color:var(--muted)} .menu a:hover{color:var(--text)}
+    .header-cta{white-space:nowrap}
+    section{padding:72px 0}.hero{padding:88px 0 70px}.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.78rem}
+    h1,h2,h3{margin:.2em 0 .45em}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.08}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+    p{color:var(--muted);line-height:1.6}.lead{font-size:1.08rem;max-width:840px}.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:700;border:1px solid var(--line)}
+    .btn.primary{background:var(--accent);color:#211200;border-color:#e49719}.btn.secondary{background:#1a2342;color:#f2f5ff}
+    .grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.cards3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .cards4{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+    .kpi{font-size:1.7rem;font-weight:800;color:var(--accent)} .gallery .card{min-height:160px;display:flex;flex-direction:column;justify-content:space-between}
+    .faq .item{padding:16px 0;border-bottom:1px solid var(--line)} footer{padding:30px 0 48px;border-top:1px solid var(--line);margin-top:20px}
+    .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}.links{display:flex;flex-wrap:wrap;gap:14px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/img/app-logo-placeholder.svg' | relative_url }}" alt="Smart Timelapse AI Slider logo">
+        <span class="brand-copy">
+          <span class="brand-title">Smart Timelapse AI Slider</span>
+          <span class="brand-subtitle">SmartCapture AI · Slider GRBL · Flujo DSLR · Editor 4K</span>
+        </span>
+      </a>
+      <nav class="menu" aria-label="Navegación principal">
+        <a href="#modos">Modos</a>
+        <a href="#funciones">Funciones</a>
+        <a href="#galeria">Galería</a>
+        <a href="#faq">FAQ</a>
+        <a href="{{ '/hardware/' | relative_url }}">Hardware</a>
+        <a href="https://github.com/odoslf/Slider-odos3d-Lab">GitHub</a>
+      </nav>
+      <a class="btn secondary header-cta" href="#funciones">Ver funciones</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Móvil + slider GRBL + DSLR</div>
+        <h1>Una sola app para crear timelapses de principio a fin.</h1>
+        <p class="lead">Empiezas solo con tu móvil y, cuando quieras, escalas a slider GRBL o flujo DSLR sin cambiar de producto.</p>
+        <p class="lead">SmartCapture AI, control remoto local con PIN, editor integrado y hardware open source dentro de una misma experiencia.</p>
+        <div class="btns">
+          <a class="btn primary" href="#funciones">Ver funciones</a>
+          <a class="btn secondary" href="{{ '/hardware/' | relative_url }}">Ver hardware open source</a>
+        </div>
+        <p>Sin suscripción obligatoria.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">6.3 Stats</div>
+        <h2>Producción completa con un flujo claro</h2>
+        <div class="grid stats">
+          <article class="card"><div class="kpi">3 modos</div><p>Móvil, slider GRBL y flujo DSLR en una sola experiencia.</p></article>
+          <article class="card"><div class="kpi">SmartCapture AI</div><p>Captura solo cuando la escena cambia de verdad.</p></article>
+          <article class="card"><div class="kpi">4K MP4/GIF</div><p>Exportación integrada según el dispositivo.</p></article>
+          <article class="card"><div class="kpi">Remoto local</div><p>Control en red local con PIN.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="modos">
+      <div class="wrap">
+        <div class="eyebrow">6.4 Modos de uso</div>
+        <h2>Elige cómo quieres trabajar hoy</h2>
+        <div class="grid cards3">
+          <article class="card">
+            <h3>Solo con el móvil</h3>
+            <p>Empieza en minutos y valida tus ideas sin depender de hardware adicional.</p>
+            <ul>
+              <li>Inicio rápido desde el móvil.</li>
+              <li>SmartCapture AI para detectar cambio real.</li>
+              <li>Ideal para empezar y validar ideas.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Slider GRBL por Bluetooth</h3>
+            <p>Añade movimiento preciso para elevar el resultado de cada secuencia.</p>
+            <ul>
+              <li>Movimiento estable con control integrado.</li>
+              <li>Escenas y keyframes en el mismo flujo.</li>
+              <li>Pensado para proyectos más avanzados.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Flujo DSLR</h3>
+            <p>Trabaja con mayor control cuando el proyecto exige sesiones largas y finas.</p>
+            <ul>
+              <li>La cámara guarda las fotos.</li>
+              <li>La app coordina todo el flujo.</li>
+              <li>Útil para secuencias largas y trabajo más fino.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="funciones">
+      <div class="wrap">
+        <div class="eyebrow">6.5 Funciones principales</div>
+        <h2>Herramientas clave para producción real</h2>
+        <div class="grid cards4">
+          <article class="card"><h3>SmartCapture AI</h3><p>Detecta cambios reales de escena para capturar solo cuando aporta valor y ahorrar tomas innecesarias.</p></article>
+          <article class="card"><h3>QuickStart</h3><p>Te guía en la configuración inicial para pasar de cero a grabar en pocos pasos.</p></article>
+          <article class="card"><h3>Escenas</h3><p>Organiza cada bloque de tu proyecto para mantener un flujo ordenado de principio a fin.</p></article>
+          <article class="card"><h3>Producto 360</h3><p>Genera secuencias rotacionales limpias para presentar productos con una vista envolvente.</p></article>
+          <article class="card"><h3>Keyframes XY / XYZ</h3><p>Define recorridos precisos por ejes para repetir movimientos con consistencia en cada toma.</p></article>
+          <article class="card"><h3>Editor integrado</h3><p>Revisa y ajusta el resultado final dentro de la app para acelerar la entrega.</p></article>
+          <article class="card"><h3>MP4 / GIF</h3><p>Exporta en MP4 o GIF según el tipo de publicación que quieras compartir.</p></article>
+          <article class="card"><h3>Original, 9:16 y 1:1</h3><p>Elige el encuadre final adecuado para cada plataforma sin rehacer el proyecto.</p></article>
+          <article class="card"><h3>Remoto local con PIN</h3><p>Controla sesiones desde tu red local con acceso protegido para operar con tranquilidad.</p></article>
+          <article class="card"><h3>Hardware open source</h3><p>Escala a hardware abierto y documentado para ampliar tu flujo cuando lo necesites.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="gallery">
+      <div class="wrap">
+        <div class="eyebrow">6.6 Galería / presentación visual</div>
+        <h2>Móvil, slider GRBL y flujo DSLR en una misma propuesta</h2>
+        <div class="grid cards3">
+          <article class="card"><h3>Capturas reales</h3><p>La galería está preparada para mostrar resultados finales creados desde la app.</p></article>
+          <article class="card"><h3>Hardware en contexto</h3><p>Incluye espacio para fotos limpias del slider y su montaje en uso real.</p></article>
+          <article class="card"><h3>Flujo completo</h3><p>Presenta demostraciones claras desde la captura hasta la exportación final.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="eyebrow">6.7 FAQ</div>
+        <h2>Preguntas frecuentes</h2>
+        <div class="item"><h3>¿Necesito un slider para usar Smart Timelapse AI?</h3><p>No. Puedes empezar solo con el móvil y escalar después.</p></div>
+        <div class="item"><h3>¿La app funciona con hardware GRBL?</h3><p>Sí, es compatible con slider basado en GRBL para control de movimiento.</p></div>
+        <div class="item"><h3>¿El control remoto funciona por Internet?</h3><p>No. Funciona en red local y se protege con PIN.</p></div>
+        <div class="item"><h3>¿En modo DSLR el móvil hace las fotos?</h3><p>No. La DSLR captura las fotos y la app coordina la secuencia.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="eyebrow">6.8 CTA final</div>
+        <h2>Empieza con el móvil y escala cuando quieras, en una misma experiencia de principio a fin.</h2>
+        <p class="lead">Smart Timelapse AI Slider te acompaña desde la primera idea hasta producciones más avanzadas sin cambiar de flujo ni de producto.</p>
+        <div class="btns">
+          <a class="btn primary" href="#funciones">Ver funciones</a>
+          <a class="btn secondary" href="{{ '/hardware/' | relative_url }}">Ver hardware open source</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <strong>Smart Timelapse AI Slider</strong><br>
+        <a href="mailto:odos3d.Lab@gmail.com">odos3d.Lab@gmail.com</a>
+      </div>
+      <nav class="links" aria-label="Enlaces legales y soporte">
+        <a href="{{ '/privacy-policy/' | relative_url }}">Privacidad</a>
+        <a href="{{ '/terms/' | relative_url }}">Términos</a>
+        <a href="{{ '/support/' | relative_url }}">Soporte</a>
+        <a href="{{ '/hardware/' | relative_url }}">Hardware</a>
+        <a href="https://github.com/odoslf/Slider-odos3d-Lab">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

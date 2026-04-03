@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Términos de uso — Smart Timelapse AI"
 permalink: /terms/
 ---
@@ -18,4 +19,4 @@ La app Smart Timelapse AI se ofrece **tal cual**, sin garantías expresas o impl
 El responsable de la app no asume responsabilidad por daños indirectos o derivados del uso del software/hardware fuera de prácticas seguras y recomendadas.
 
 ## Contacto
-Consultas: **odos3d@gmail.com**
+Consultas: **odos3d.Lab@gmail.com**

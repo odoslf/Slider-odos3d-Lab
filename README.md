@@ -1,43 +1,21 @@
-# Slider-odos3d-Lab — Hardware, piezas 3D y GRBL (Open Source)
+# Slider-odos3d-Lab
 
-> ⚠️ Repo público SOLO de hardware/3D/GRBL del ecosistema Slider-odos3d.  
-> El **código de la app (Smart Timelapse AI, repositorio separado)** es un proyecto separado y **NO se publica aquí**.
+Este repositorio público reúne la web oficial de Smart Timelapse AI, la documentación legal y la parte open source de hardware del ecosistema.
 
-## 🌐 Web (GitHub Pages)
-- La web pública de documentación vive en **/docs**.
-- URL final esperada (Pages está activo): **https://odoslf.github.io/Slider-odos3d-Lab/**
-- Política de privacidad (ruta web): **/privacy-policy/**
-- Términos (ruta web): **/terms/**
-- Nota: privacidad y términos corresponden a la app **Smart Timelapse AI**.
+## Enlaces públicos
+- Web oficial: https://odoslf.github.io/Slider-odos3d-Lab/
+- Hardware: https://odoslf.github.io/Slider-odos3d-Lab/hardware/
+- Privacidad: https://odoslf.github.io/Slider-odos3d-Lab/privacy-policy/
+- Términos: https://odoslf.github.io/Slider-odos3d-Lab/terms/
+- Soporte: https://odoslf.github.io/Slider-odos3d-Lab/support/
 
-## Qué incluye
-- Piezas 3D listas para imprimir (**STL/STEP**) por versión.
-- Fuentes CAD cuando existan (Fusion/FreeCAD/otros).
-- Guías: montaje, impresión, calibración, troubleshooting.
-- BOM (materiales y tornillería).
-- Documentación GRBL: setup, límites, configuración recomendada y problemas típicos.
-- Imágenes/fotos técnicas con política estricta de privacidad.
+## Qué contiene este repo
+- web pública de la app
+- páginas legales y soporte
+- documentación y recursos del hardware open source
 
-## Estructura
-- `prints/` → STL/STEP listos para imprimir por versión.
-- `cad/` → fuentes editables.
-- `hardware/` → BOM, mecánica y cableado.
-- `grbl/` → documentación GRBL.
-- `docs/` → guías, límites, compatibilidad, fuentes/créditos.
-- `images/` → fotos/renders/diagramas.
+## Qué no hace este repo
+Este repositorio no compila la app Android; la app Smart Timelapse AI vive en un repositorio separado.
 
-## Flujo de fotos (IMPORTANTE)
-1) Sube TODO primero a: `images/inbox/` (tal cual del móvil).
-2) Tras recortar/limpiar (sin datos personales) → `images/photos/v1/clean/`.
-3) Renders → `images/renders/v1/` | Diagramas → `images/diagrams/`.
-
-## Versionado (releases)
-- `v1.0` → pack mínimo estable (piezas + BOM + guía básica).
-- `v1.1` → mejoras compatibles.
-- `v2.0` → cambios grandes (ruptura de compatibilidad).
-
-## Licencia
-Ver `LICENSE` (CC BY-SA 4.0). Todo el contenido del repo se distribuye como libre, manteniendo atribución y compartir-igual.
-
-## Cómo pedir ayuda
-Lee `SUPPORT.md` (qué info aportar, dónde preguntar y cómo subir fotos).
+## Contacto
+odos3d.Lab@gmail.com

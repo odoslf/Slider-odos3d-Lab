@@ -1,39 +1,43 @@
 ---
 layout: default
-title: "Slider-odos3d Lab"
-permalink: /
+title: "Hardware open source"
+permalink: /hardware/
 ---
 
-{% include topnav.html %}
+# Hardware open source
 
-# Slider-odos3d Lab
+Esta es la parte pública del hardware del proyecto, con recursos técnicos, piezas, descargas y referencia GRBL para montar o entender el sistema físico que acompaña a Smart Timelapse AI.
 
-> **Alcance del repo:** solo hardware / piezas 3D / GRBL / documentación.<br>
-> La app se llama Smart Timelapse AI y vive en un repositorio aparte (repositorio separado).
-> Este repo es solo hardware/piezas/GRBL/documentación del slider Slider-odos3d.
+## Accesos rápidos
+- [Piezas]({{ '/parts/' | relative_url }})
+- [Descargas]({{ '/downloads/' | relative_url }})
+- [GRBL 1.1]({{ '/grbl/' | relative_url }})
+- [Galería técnica](https://github.com/odoslf/Slider-odos3d-Lab)
+- [GitHub](https://github.com/odoslf/Slider-odos3d-Lab)
 
-Repositorio público para **descargar piezas** y consultar documentación del slider.
+## Piezas
+Aquí se centralizan las piezas físicas del proyecto, listas para consultar, imprimir o adaptar según el montaje del slider.
 
-## Enlaces importantes (Web)
-- **Política de privacidad (App):** [ver]({{ "/privacy-policy/" | relative_url }})
-- **Términos de uso (App):** [ver]({{ "/terms/" | relative_url }})
-- **Firmware (GRBL 1.1):** [ver]({{ "/grbl/" | relative_url }})
-- **Checklist publicación:** [ver]({{ "/publish-checklist/" | relative_url }})
-- **Descargas oficiales:** [ver]({{ "/downloads/" | relative_url }})
-- **Soporte:** [ver]({{ "/support/" | relative_url }})
+Abrir piezas: {{ '/parts/' | relative_url }}
 
-## Enlaces importantes (Repo)
-- **Repositorio (GitHub):** [odoslf/Slider-odos3d-Lab](https://github.com/odoslf/Slider-odos3d-Lab)
-- **PRIVACY.md del repo:** [ver](https://github.com/odoslf/Slider-odos3d-Lab/blob/main/PRIVACY.md)
+## Descargas
+Esta sección reúne archivos públicos relacionados con el hardware, documentación y material técnico útil para el montaje o la referencia del sistema.
 
-## Contacto
-- **Email:** [odos3d@gmail.com](mailto:odos3d@gmail.com)
+Abrir descargas: {{ '/downloads/' | relative_url }}
 
-> **Nota:** este repositorio está pensado como **distribución** (descargas/docs).<br>
-> El soporte oficial es por **email**. Si Issues/PR están desactivadas en GitHub, es intencional.
+## GRBL 1.1
+El hardware está pensado para trabajar con GRBL 1.1 como referencia recomendada para control, homing y movimiento en flujos compatibles.
 
-## Publicación v1 (sin pensar)
-- Montaje rápido: {{ "/quick-assembly/" | relative_url }}
-- Guía de fotos: {{ "/photo-guidelines/" | relative_url }}
-- Mapa de subida: {{ "/upload-map/" | relative_url }}
-- Checklist v1: {{ "/release-checklist-v1/" | relative_url }}
+Abrir guía GRBL: {{ '/grbl/' | relative_url }}
+
+## Galería técnica
+Aquí se reúne la parte visual del hardware real: montaje, electrónica, slider, piezas impresas y resultados físicos del sistema.
+
+Ver repositorio: https://github.com/odoslf/Slider-odos3d-Lab
+
+## Repositorio
+Si quieres revisar el conjunto completo del proyecto público, el repositorio central reúne hardware, documentación y recursos abiertos relacionados con el sistema.
+
+Abrir GitHub: https://github.com/odoslf/Slider-odos3d-Lab
+
+La parte hardware queda separada de la landing principal de la app, pero conectada con ella como base open source del ecosistema.

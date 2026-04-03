@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Política de privacidad — Smart Timelapse AI"
 permalink: /privacy-policy/
 ---
@@ -9,8 +10,7 @@ permalink: /privacy-policy/
 
 **Última actualización:** 2026-02-16  
 **Responsable:** Javier López Flores  
-Responsable: Javier López Flores  
-**Contacto:** odos3d@gmail.com  
+**Contacto:** odos3d.Lab@gmail.com  
 **Modelo:** pago único, sin anuncios, sin analíticas, sin cuentas.
 
 ## 1) Alcance
@@ -50,19 +50,4 @@ Si se modifica esta política, se actualizará esta misma página y su fecha de 
 ## 8) Contacto
 Responsable del proyecto: **ODOS3D (odoslf)**.
 
-Para dudas de privacidad: **odos3d@gmail.com**
-
----
-
-## Resumen (en español)
-- Smart Timelapse AI es una app de compra única, sin anuncios, sin analíticas y sin cuentas.
-- Fotos/vídeos se procesan y guardan localmente en tu dispositivo.
-- Bluetooth/Wi-Fi/LAN se usan solo para control local del slider.
-- Audio opcional (si lo añade el usuario) se procesa localmente durante la exportación.
-- No recopilamos edad, ubicación, ID de publicidad, telemetría ni analítica.
-- Los permisos se solicitan solo para cámara/medios/Bluetooth/red local.
-- No se usa permiso de micrófono.
-- Google Play gestiona distribución y facturación.
-- No hay servidores propios para subir tu contenido.
-- Puedes borrar tus archivos locales cuando quieras.
-- Contacto: odos3d@gmail.com.
+Para dudas de privacidad: **odos3d.Lab@gmail.com**
