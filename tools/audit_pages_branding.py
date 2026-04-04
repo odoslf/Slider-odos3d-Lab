@@ -53,11 +53,16 @@ for required_file in [
 topnav_path = must_exist("docs/_includes/topnav.html")
 if topnav_path.is_file():
     topnav = topnav_path.read_text(encoding="utf-8")
-    for route in ["/downloads/", "/gallery/", "/parts/"]:
+    for route in ["/hardware/", "/downloads/", "/parts/", "/grbl/", "/privacy-policy/", "/terms/", "/support/"]:
         if f"'{route}'" not in topnav and f'"{route}"' not in topnav:
             fail(f"{route} link not found in docs/_includes/topnav.html")
         else:
             ok(f"{route} link found in docs/_includes/topnav.html")
+    github_repo = "https://github.com/odoslf/Slider-odos3d-Lab"
+    if github_repo not in topnav:
+        fail("GitHub repo link not found in docs/_includes/topnav.html")
+    else:
+        ok("GitHub repo link found in docs/_includes/topnav.html")
 
 privacy_path = must_exist("docs/privacy-policy.md")
 privacy = privacy_path.read_text(encoding="utf-8") if privacy_path.is_file() else ""
@@ -90,9 +95,9 @@ for rel in ["docs/privacy-policy.md", "docs/terms.md"]:
 
 if privacy:
     for required in [
-        "Responsable: Javier López Flores",
-        "ODOS3D (odoslf)",
-        "odos3d@gmail.com",
+        "Silvia Díaz Celaya",
+        "odos3d-Lab",
+        "odos3d.Lab@gmail.com",
     ]:
         if required not in privacy:
             fail(f"'{required}' not found in docs/privacy-policy.md")
