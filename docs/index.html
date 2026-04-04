@@ -14,14 +14,25 @@ permalink: /
     *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#080d1a,#0c1327);color:var(--text)}
     a{color:inherit;text-decoration:none} .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
     header{position:sticky;top:0;z-index:20;background:rgba(8,13,26,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;min-height:74px;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:40px;height:40px;border-radius:10px}
-    .brand-copy{display:flex;flex-direction:column;line-height:1.2}
+    .nav{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;min-height:74px;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{width:40px;height:40px;border-radius:10px;flex:0 0 40px}
+    .brand-copy{display:flex;flex-direction:column;line-height:1.2;min-width:0}
     .brand-title{font-weight:800;font-size:1rem}
     .brand-subtitle{font-size:.74rem;color:var(--muted)}
-    .menu{display:flex;flex-wrap:wrap;gap:14px;font-size:.95rem;color:var(--muted)} .menu a:hover{color:var(--text)}
+    .menu{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:14px;font-size:.95rem;color:var(--muted)}
+    .menu a{white-space:nowrap}
+    .menu a:hover{color:var(--text)}
     .header-cta{white-space:nowrap}
+    @media (max-width: 860px){
+      .nav{grid-template-columns:1fr;align-items:start;padding:14px 0}
+      .menu{display:grid;grid-template-columns:repeat(2,minmax(0,max-content));justify-content:start;gap:10px 18px}
+      .header-cta{width:100%;text-align:center}
+    }
+    @media (max-width: 560px){
+      .brand-title{font-size:1.05rem}
+      .brand-subtitle{font-size:.70rem;line-height:1.35;max-width:240px}
+    }
     section{padding:72px 0}.hero{padding:88px 0 70px}.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.78rem}
     h1,h2,h3{margin:.2em 0 .45em}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.08}h2{font-size:clamp(1.6rem,3vw,2.2rem)}
     p{color:var(--muted);line-height:1.6}.lead{font-size:1.08rem;max-width:840px}.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
@@ -41,7 +52,7 @@ permalink: /
         <img src="{{ '/assets/img/app-logo-placeholder.svg' | relative_url }}" alt="Smart Timelapse AI Slider logo">
         <span class="brand-copy">
           <span class="brand-title">Smart Timelapse AI Slider</span>
-          <span class="brand-subtitle">SmartCapture AI · Slider GRBL · Flujo DSLR · Editor 4K</span>
+          <span class="brand-subtitle">SmartCapture AI · GRBL · DSLR · 4K</span>
         </span>
       </a>
       <nav class="menu" aria-label="Navegación principal">
