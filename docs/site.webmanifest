@@ -1,0 +1,27 @@
+---
+layout: null
+permalink: /site.webmanifest
+---
+{% assign links = site.data.public-links %}
+{% assign favicon_media = site.data.public-media.site_media.favicon %}
+{% assign favicon_src = favicon_media.placeholder_path %}
+{% if favicon_media.active_source == "final" %}
+  {% assign favicon_src = favicon_media.final_path %}
+{% endif %}
+{
+  "name": "{{ links.site_identity.product_name | escape }}",
+  "short_name": "SmartTimelapse",
+  "start_url": "{{ site.baseurl }}/",
+  "scope": "{{ site.baseurl }}/",
+  "display": "standalone",
+  "background_color": "#F5F7FA",
+  "theme_color": "#F5F7FA",
+  "icons": [
+    {
+      "src": "{{ site.baseurl }}{{ favicon_src }}",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

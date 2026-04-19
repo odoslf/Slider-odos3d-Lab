@@ -1,0 +1,23 @@
+Smart Timelapse AI Slider
+
+This repository contains the public website and documentation for Smart Timelapse AI Slider.
+The public site is bilingual (Spanish and English):
+- Spanish default layer: /
+- English layer: /en/
+
+The product landing is the main home page:
+- ES landing: /
+- EN landing: /en/
+
+Main public pages:
+- Hardware: /hardware/ and /en/hardware/
+- Downloads: /downloads/ and /en/downloads/
+- Support: /support/ and /en/support/
+- Privacy policy: /privacy-policy/ and /en/privacy-policy/
+- Terms: /terms/ and /en/terms/
+
+This repo also includes open-source hardware resources and technical documentation (parts, GRBL references, printable files, assembly references).
+
+Redirect-only routes (not independent landings):
+- /smart-timelapse-ai/ redirects to /
+- /en/smart-timelapse-ai/ redirects to /en/

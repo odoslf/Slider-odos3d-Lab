@@ -1,0 +1,35 @@
+{% assign media = site.data.public-media.site_media[include.media_key] %}
+{% assign lang = include.lang | default: 'es' %}
+{% assign loading_mode = include.loading | default: media.loading_default | default: 'lazy' %}
+{% assign show_caption = include.show_caption | default: 'false' %}
+{% assign show_placeholder_badge = include.show_placeholder_badge | default: 'false' %}
+{% assign media_alt = media.alt_es %}
+{% assign media_caption = media.caption_es %}
+{% assign class_name = include.class_name | default: '' %}
+{% assign media_src = media.placeholder_path %}
+{% assign active_is_placeholder = true %}
+{% if media.active_source == 'final' %}
+  {% assign media_src = media.final_path %}
+  {% assign active_is_placeholder = false %}
+{% endif %}
+{% if lang == 'en' %}
+  {% assign media_alt = media.alt_en %}
+  {% assign media_caption = media.caption_en %}
+{% endif %}
+<figure class="public-media-item {{ class_name }}" data-placeholder="{{ active_is_placeholder }}" data-kind="{{ media.kind }}" data-source="{{ media.active_source }}">
+  <div class="public-media-frame" style="aspect-ratio: {{ media.ratio | default: '16/9' | replace: ':', ' / ' }};">
+    <img
+      src="{{ media_src | relative_url }}"
+      alt="{{ media_alt }}"
+      loading="{{ loading_mode }}"
+      width="{{ media.width }}"
+      height="{{ media.height }}"
+      decoding="async">
+    {% if show_placeholder_badge == 'true' and active_is_placeholder %}
+      <span class="public-media-placeholder-badge">placeholder</span>
+    {% endif %}
+  </div>
+  {% if show_caption == 'true' and media_caption != '' %}
+    <figcaption>{{ media_caption }}</figcaption>
+  {% endif %}
+</figure>

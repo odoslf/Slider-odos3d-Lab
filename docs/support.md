@@ -1,39 +1,55 @@
 ---
-layout: default
-title: "Soporte"
+layout: public-page
+title: "Soporte técnico | Smart Timelapse AI"
+description: "Centro oficial de soporte Smart Timelapse AI con ayuda para Bluetooth, GRBL, exportación, remoto local y contacto técnico."
 permalink: /support/
+lang: es
+lang_page: es
+alt_url: /en/support/
+og_title: "Soporte Smart Timelapse AI"
+og_description: "Guía rápida de soporte y contacto técnico para flujo móvil, slider GRBL y DSLR."
+nav_key: support
+page_heading: "Centro de ayuda"
+page_intro: "Guía de soporte para arrancar rápido, resolver incidencias y mantener el flujo estable."
 ---
 
-{% include topnav.html %}
+{% assign links = site.data.public-links %}
+{% assign identity = links.site_identity %}
+{% assign external = links.external_links %}
+{% assign routes = links.internal_routes_es %}
 
-# Soporte
 
-## FAQ
+<div class="public-media-card" style="margin-bottom:14px;">{% include public-media-item.html media_key='app_screenshot' lang='es' loading='lazy' show_caption='true' %}</div>
+<div class="public-grid cols-2">
+  <article class="public-card">
+    <p class="public-kicker">Primeros pasos</p>
+    <h3>Conexión inicial y permisos</h3>
+    <p>Activa Bluetooth y ubicación, revisa permisos de Bluetooth cercano en Android 12/13 y confirma que el slider aparece al escanear.</p>
+  </article>
+  <article class="public-card">
+    <p class="public-kicker">Flujo con slider GRBL</p>
+    <h3>Estado ALARM y estabilidad</h3>
+    <p>Si GRBL entra en ALARM, usa <code>$X</code> y verifica topes/homing. Para remoto Wi‑Fi, valida red común y ausencia de AP isolation o VPN.</p>
+  </article>
+  <article class="public-card">
+    <p class="public-kicker">Exportación y formatos</p>
+    <h3>Rendimiento de salida</h3>
+    <p>Si exportar es lento o falla, libera espacio, evita ahorro energético y reduce resolución cuando el proyecto sea largo.</p>
+  </article>
+  <article class="public-card">
+    <p class="public-kicker">Soporte y contacto</p>
+    <h3>Qué enviar al contactar</h3>
+    <p>Comparte captura + diagnóstico copiado para acelerar soporte técnico.</p>
+    <div class="public-links-list"><a href="mailto:{{ identity.support_email }}">{{ identity.support_email }}</a></div>
+  </article>
+</div>
 
-### No aparece el slider por Bluetooth
-Activa Bluetooth y ubicación en Android, acerca el móvil al slider y vuelve a escanear desde la app. Si sigue sin aparecer, reinicia el módulo Bluetooth del slider y repite el emparejamiento.
-
-### Android 12/13: permisos Bluetooth
-En Android 12/13 debes aceptar permisos de **Bluetooth cercano** para escanear y conectar. Revisa Ajustes > Apps > Smart Timelapse AI > Permisos y habilita Bluetooth.
-
-### GRBL en ALARM: cómo desbloquear ($X)
-Si GRBL está en **ALARM**, abre consola y envía `$X` para desbloquear. Después ejecuta un homing o mueve ejes con cuidado para confirmar que no hay topes mecánicos.
-
-### Exportación lenta o falla
-Comprueba espacio libre en el dispositivo y desactiva ahorro de energía para la app durante la exportación. Si el proyecto es largo, prueba una resolución menor y cierra otras apps.
-
-### Remoto Wi-Fi no conecta
-Verifica que móvil y slider estén en la misma red. En hotspot o routers con **AP isolation** activo, los dispositivos pueden no verse entre sí. También revisa que no haya VPN activa.
-
-### Simulación (sin slider): qué es
-La simulación permite preparar tomas y tiempos sin hardware conectado. Sirve para planificar secuencias antes de ejecutar el movimiento real.
-
-### DSLR: requiere relé/opto (no es USB directo)
-El disparo DSLR requiere interfaz de relé/opto compatible con tu cámara. La app no dispara DSLR por USB directo; necesitas el cableado y electrónica adecuados.
-
-### Eje Z no aparece
-El eje Z solo aparece si tu hardware/firmware lo soporta. Actívalo en ajustes avanzados y confirma en GRBL que el eje está habilitado.
-
-## Contacto
-- Email: **[odos3d.Lab@gmail.com](mailto:odos3d.Lab@gmail.com)**
-- Qué enviar: **captura + diagnóstico copiado**
+<div class="public-cta-band">
+  <h3>Accesos rápidos de soporte</h3>
+  <div class="public-cta-actions">
+    <a class="public-btn" href="{{ routes.downloads | relative_url }}">Ver descargas</a>
+    <a class="public-btn" href="{{ routes.hardware | relative_url }}">Ver hardware</a>
+    <a class="public-btn" href="{{ routes.privacy | relative_url }}">Privacidad</a>
+    <a class="public-btn" href="{{ routes.terms | relative_url }}">Términos</a>
+  </div>
+</div>

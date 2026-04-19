@@ -1,0 +1,349 @@
+---
+layout: null
+permalink: /en/
+---
+<!doctype html>
+<html lang="en">
+<head>
+  {% assign og_media = site.data.public-media.site_media.og_image %}
+  {% assign favicon_media = site.data.public-media.site_media.favicon %}
+  {% assign favicon_src = favicon_media.placeholder_path %}
+  {% assign og_image_src = og_media.placeholder_path %}
+  {% if favicon_media.active_source == 'final' %}
+    {% assign favicon_src = favicon_media.final_path %}
+  {% endif %}
+  {% if og_media.active_source == 'final' %}
+    {% assign og_image_src = og_media.final_path %}
+  {% endif %}
+{% assign links = site.data.public-links %}
+  {% assign identity = links.site_identity %}
+  {% assign external = links.external_links %}
+  {% assign routes = links.internal_routes_en %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ identity.product_name }} | Phone timelapse, GRBL slider, and DSLR workflow</title>
+  <meta name="description" content="{{ identity.product_name }} unifies phone timelapse, Bluetooth GRBL slider control, DSLR workflow, local PIN remote, and MP4/GIF export up to 4K depending on device.">
+  <meta name="theme-color" content="#F5F7FA">
+  <meta property="og:title" content="{{ identity.product_name }} | Capture, control, and export in one app">
+  <meta property="og:description" content="One app for timelapse with phone, GRBL slider, and DSLR workflow, with SmartCapture AI, local remote control, and final editing/export.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/en/">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ og_image_src }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ identity.product_name }} | Capture, control, and export in one app">
+  <meta name="twitter:description" content="One app for timelapse with phone, GRBL slider, and DSLR workflow, with SmartCapture AI, local remote control, and final editing/export.">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ og_image_src }}">
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ favicon_src | relative_url }}">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/en/">
+  <link rel="alternate" hreflang="es" href="{{ site.url }}{{ site.baseurl }}/">
+  <link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/en/">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.baseurl }}/">
+  <link rel="stylesheet" href="{{ '/assets/css/public-shell.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/smart-timelapse-home.css' | relative_url }}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "{{ identity.product_name }}",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Android",
+    "description": "App to create timelapses with phone, Bluetooth GRBL slider, or DSLR workflow, with SmartCapture AI, local PIN remote, and MP4/GIF export.",
+    "featureList": [
+      "SmartCapture AI",
+      "QuickStart",
+      "Phone-only timelapse",
+      "Bluetooth GRBL slider",
+      "DSLR workflow",
+      "Automatic DSLR trigger through M3/M5 relay",
+      "Scenes and 360 Product",
+      "XY / XYZ keyframes",
+      "Local web remote with PIN",
+      "X/Y/Z jog depending on hardware",
+      "Unlock $X in ALARM state",
+      "Logs and diagnostics",
+      "MP4 / GIF export",
+      "Original / 9:16 / 1:1 profiles",
+      "Text, timestamp, audio, trim, speed, reverse, rotate, flip, loop, and fade in/out"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  {% include public-site-header.html lang='en' current='home' es_url=links.internal_routes_es.home en_url=routes.home %}
+
+  <main id="content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="hero-copy panel">
+          <p class="eyebrow">Mobile + GRBL slider + DSLR</p>
+          <h1>One app to create timelapses from start to finish.</h1>
+          <p>Start with just your phone, add motion whenever you want with a GRBL slider, and scale to a DSLR workflow without leaving the same experience.</p>
+          <p>{{ identity.product_name }} brings capture, control, and export together in a workflow built for creators, product photography, studio setups, and advanced projects.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#export">See export options</a>
+            <a class="btn btn-secondary" href="{{ routes.hardware | relative_url }}">See open hardware</a>
+            {% if links.flags.has_play_store and external.play_store_url != "" %}<a class="btn btn-secondary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Google Play</a>{% endif %}
+          </div>
+          <p class="microcopy">One-time payment, local workflow, and a clear experience from day one.</p>
+        </article>
+        <aside class="hero-visual panel" aria-label="Main visual">
+          {% include public-media-item.html media_key='hero' lang='en' class_name='home-hero-media' loading='eager' show_caption='false' %}
+        </aside>
+      </div>
+    </section>
+
+
+    <section class="trust-strip">
+      <div class="container trust-strip-grid">
+        <article class="trust-pill">Start on phone and scale to GRBL or DSLR</article>
+        <article class="trust-pill">Local remote control protected by PIN</article>
+        <article class="trust-pill">MP4/GIF export with publishing-ready profiles</article>
+      </div>
+    </section>
+
+    <section class="kpis">
+      <div class="container grid kpi-grid">
+        <article class="panel kpi-card"><strong>3</strong><p>work modes inside one product</p></article>
+        <article class="panel kpi-card"><strong>11</strong><p>built-in scenes to move faster</p></article>
+        <article class="panel kpi-card"><strong>4K</strong><p>depending on device, with automatic fallback when needed</p></article>
+        <article class="panel kpi-card"><strong>100%</strong><p>local workflow for capture, control, and project handling</p></article>
+      </div>
+    </section>
+
+    <section id="modes" class="section-block">
+      <div class="container">
+        <header class="section-head">
+          <h2>Start where you are today. Scale when you need it.</h2>
+          <p>Start quickly and keep the same workflow as projects move from simple to advanced.</p>
+        </header>
+        <div class="grid three-col">
+          <article class="panel card">
+            <p class="chip">Phone only</p>
+            <h3>The fastest way to start</h3>
+            <p>A fixed timelapse mode with SmartCapture AI that detects scene change with adjustable sensitivity and captures only when the scene is worth it.</p>
+            <ul>
+              <li>Great for sunrises, skies, crowds, or product work.</li>
+              <li>Clear entry point for creators and first tests.</li>
+              <li>Editing and export stay in the same flow.</li>
+            </ul>
+          </article>
+          <article class="panel card">
+            <p class="chip">Bluetooth slider</p>
+            <h3>Precision motion over GRBL</h3>
+            <p>Connect compatible sliders and work with scenes, keyframes, and motion planning inside a more advanced workflow.</p>
+            <ul>
+              <li>GRBL 1.1 recommended.</li>
+              <li>11 built-in scenes, including a calibratable 360 Product mode.</li>
+              <li>STOP, PANIC, live diagnostics, and logs.</li>
+            </ul>
+          </article>
+          <article class="panel card">
+            <p class="chip">DSLR workflow</p>
+            <h3>The camera captures. The app coordinates.</h3>
+            <p>The phone manages the workflow and accompanies the project. The camera stores the photos on its card and the app continues the process with compatible material.</p>
+            <ul>
+              <li>Automatic shutter trigger through M3/M5 relay.</li>
+              <li>Ideal for long intervals and delicate sequences.</li>
+              <li>RAW is not processed inside the app.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section-block alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>Capture, control, and final output inside the same experience.</h2>
+          <p>{{ identity.product_name }} does not stop at triggering the shot. It also handles the part that turns a sequence into something usable.</p>
+        </header>
+        <div class="grid two-col">
+          <article class="panel card"><h3>SmartCapture AI</h3><p>Detects useful scene change so the app triggers when a capture actually adds value.</p></article>
+          <article class="panel card"><h3>QuickStart</h3><p>Guided entry to start fast and keep the workflow organized from the first run.</p></article>
+          <article class="panel card"><h3>Scenes and 360 Product</h3><p>Built-in structures to speed up production, including a calibratable 360 Product mode.</p></article>
+          <article class="panel card"><h3>XY / XYZ keyframes</h3><p>Repeatable and precise motion control according to available hardware.</p></article>
+          <article class="panel card"><h3>Local remote control</h3><p>LAN web panel with PIN to run the setup from another device on the same local network.</p></article>
+          <article class="panel card"><h3>Diagnostics and safety</h3><p>Status, logs, STOP, PANIC, and support utilities for safer operation.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section-block">
+      <div class="container">
+        <header class="section-head">
+          <h2>What makes {{ identity.product_name }} different</h2>
+          <p>It is not just a trigger tool or just a slider controller. It combines capture, motion, remote control, and export in a far more coherent workflow.</p>
+        </header>
+        <div class="difference-grid">
+          <article class="panel card"><h3>One workflow instead of separate tools</h3><p>From capture to final output, projects move forward under one operating logic.</p></article>
+          <article class="panel card"><h3>Scales from phone to hardware</h3><p>Start without hardware and add GRBL slider or DSLR workflow when you need more physical control.</p></article>
+          <article class="panel card"><h3>Lets you close the project inside the app</h3><p>Export, profiles, and final edits stay in the same ecosystem to reduce friction.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="container">
+        <header class="section-head">
+          <h2>SmartCapture AI explained clearly.</h2>
+          <p>It is not a generic motion detector. It is designed to decide better when a capture is actually worth taking.</p>
+        </header>
+        <div class="grid three-col">
+          <article class="panel card">
+            <h3>It analyzes the scene in a light and consistent way</h3>
+            <p>It works on an optimized luminance representation to keep decisions fast and stable without depending on huge resolutions.</p>
+          </article>
+          <article class="panel card">
+            <h3>It combines global, area-based, and local change</h3>
+            <p>It does not rely on a simple image-to-image difference. It takes into account structural scene change and relevant motion in specific areas.</p>
+          </article>
+          <article class="panel card">
+            <h3>It accumulates signal and adjusts threshold</h3>
+            <p>It can detect progressive change, compensate better for noise, and explain why it triggers instead of behaving like an opaque or arbitrary system.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="remote" class="section-block alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>A real web panel to control the slider from another device.</h2>
+          <p>The app can launch a local network remote panel that you open from another phone, tablet, or PC on the same Wi-Fi or hotspot. This is not a vague “remote” claim: it is a real web interface designed to run the setup without touching the main phone.</p>
+        </header>
+        <div class="grid three-col">
+          <article class="panel card">
+            <p class="chip">How it works</p>
+            <h3>LAN web panel with PIN</h3>
+            <ul>
+              <li>Phone and remote client on the same Wi-Fi or hotspot.</li>
+              <li>Mandatory PIN.</li>
+              <li>URL ready to copy and open from another device.</li>
+            </ul>
+          </article>
+          <article class="panel card">
+            <p class="chip">Slider control</p>
+            <h3>What you can do</h3>
+            <ul>
+              <li>View live status.</li>
+              <li>Jog X/Y and Z when the hardware supports it.</li>
+              <li>Stop jog and fast moves.</li>
+              <li>Unlock GRBL with <code>$X</code> when it is in ALARM.</li>
+            </ul>
+          </article>
+          <article class="panel card">
+            <p class="chip">Work and support</p>
+            <h3>Scenes, logs, and diagnostics</h3>
+            <ul>
+              <li>List available scenes.</li>
+              <li>Run and stop scenes.</li>
+              <li>View logs and diagnostics.</li>
+              <li>Copy useful support information.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="export" class="section-block">
+      <div class="container">
+        <header class="section-head">
+          <h2>Everything you can do when closing the project.</h2>
+          <p>Export is one of the strongest parts of the product. The app lets you turn a sequence into a usable final output without leaving the same ecosystem.</p>
+        </header>
+        <div class="grid three-col">
+          <article class="panel card">
+            <p class="chip">Resolution and format</p>
+            <h3>MP4 or GIF, from 720p to 4K</h3>
+            <ul>
+              <li>Export in 720p, 1080p, or 4K UHD depending on the device.</li>
+              <li>If 4K is not available or the device cannot handle it, the app warns you and falls back to 1080p.</li>
+              <li>GIF for short sequences and quick output.</li>
+              <li>MP4 for longer pieces or final publishing.</li>
+            </ul>
+          </article>
+          <article class="panel card">
+            <p class="chip">Profiles and composition</p>
+            <h3>Original, 9:16, and 1:1</h3>
+            <ul>
+              <li>Original profile to keep the base framing.</li>
+              <li>9:16 for Reels, TikTok, and Shorts.</li>
+              <li>1:1 for square and Instagram Feed.</li>
+              <li>Adjustable FPS to define final speed.</li>
+            </ul>
+          </article>
+          <article class="panel card">
+            <p class="chip">Built-in editing</p>
+            <h3>Useful adjustments that matter</h3>
+            <ul>
+              <li>Text and timestamp.</li>
+              <li>Music or audio with customizable start point.</li>
+              <li>Trim and speed control.</li>
+              <li>Reverse, rotate, and flip.</li>
+              <li>Loop and fade in/out.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="grid two-col extra-row">
+          <article class="panel card"><h3>From material to final video</h3><p>The app concentrates project flow, editing, and final output so closing each sequence requires fewer steps.</p></article>
+          <article class="panel card"><h3>Ready for publishing or review</h3><p>The output is prepared for review, delivery, or publishing depending on the project context.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section-block alt">
+      <div class="container">
+        <header class="section-head">
+          <h2>Ready for your real photos, screenshots, and videos</h2>
+          <p>The visual structure is already prepared so these blocks can later be replaced with real media without rebuilding the landing.</p>
+        </header>
+        <div class="proof-grid">
+          <article class="proof-card proof-hero">{% include public-media-item.html media_key='hero' lang='en' class_name='proof-media' loading='lazy' show_caption='true' %}</article>
+          <article class="proof-card proof-hw">{% include public-media-item.html media_key='slider_mobile' lang='en' class_name='proof-media' loading='lazy' show_caption='true' %}</article>
+          <article class="proof-card proof-hw">{% include public-media-item.html media_key='slider_dslr' lang='en' class_name='proof-media' loading='lazy' show_caption='true' %}</article>
+          <article class="proof-card proof-app">{% include public-media-item.html media_key='app_screenshot' lang='en' class_name='proof-media' loading='lazy' show_caption='true' %}</article>
+          <article class="proof-card proof-video">{% include public-video-card.html lang='en' class_name='proof-media' loading='lazy' %}</article>
+          <article class="proof-card proof-text">
+            <h3>Slots already integrated in real UX structure</h3>
+            <p>Hero, hardware setups, app screenshot, and demo video are already positioned in the final product narrative so only media files need to be replaced later.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section-block">
+      <div class="container">
+        <header class="section-head">
+          <h2>Clear answers before you start.</h2>
+        </header>
+        <div class="grid two-col">
+          <article class="panel faq-item"><h3>Do I need a slider to use {{ identity.product_name }}?</h3><p>No. You can start with phone-only timelapse and add slider motion later.</p></article>
+          <article class="panel faq-item"><h3>Does the app work with GRBL hardware?</h3><p>Yes. It supports Bluetooth GRBL sliders with scenes, keyframes, and jog control depending on hardware.</p></article>
+          <article class="panel faq-item"><h3>Does remote control work over the Internet?</h3><p>No. The remote panel works on a local network (Wi-Fi or hotspot) with a mandatory PIN.</p></article>
+          <article class="panel faq-item"><h3>What exactly can I do when exporting?</h3><p>You can export MP4 or GIF in 720p, 1080p, or 4K depending on device; use Original/9:16/1:1 profiles; and apply text, timestamp, music, trim, speed, reverse, rotate, flip, loop, and fade in/out.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="container">
+        <article class="panel final-cta">
+          <h2>Start with what you already have. Scale when you need it.</h2>
+          <p>{{ identity.product_name }} brings together phone timelapse, GRBL slider workflow, DSLR workflow, local remote control, advanced export, and open-source hardware under one identity. A clearer experience from the very first visit and a stronger base to keep growing.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#export">See export options</a>
+            <a class="btn btn-secondary" href="{{ routes.hardware | relative_url }}">See open hardware</a>
+            {% if links.flags.has_play_store and external.play_store_url != "" %}<a class="btn btn-secondary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Google Play</a>{% endif %}
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  {% include public-site-footer.html lang='en' %}
+</body>
+</html>

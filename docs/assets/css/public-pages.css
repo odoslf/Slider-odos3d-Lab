@@ -1,0 +1,184 @@
+.public-prose { color: var(--text); }
+
+.public-prose h2,
+.public-prose h3 { margin-top: 0; margin-bottom: 10px; letter-spacing: -0.02em; }
+
+.public-prose p,
+.public-prose li { color: var(--muted); line-height: 1.64; }
+
+.public-prose ul,
+.public-prose ol { padding-left: 20px; }
+
+.public-grid { display: grid; gap: 14px; }
+.public-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.public-grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.public-card { padding: 18px; }
+.public-card h3 { margin: 0 0 8px; }
+.public-card p { margin: 0; max-width: 70ch; }
+
+.public-note {
+  margin-top: 12px;
+  border-radius: 14px;
+  background: #FFF8E8;
+  border: 1px solid color-mix(in srgb, var(--orange) 35%, transparent);
+  color: var(--warm);
+  padding: 10px 12px;
+  font-size: .94rem;
+}
+
+.public-kicker {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  border-radius: 999px;
+  background: #FFF4DA;
+  border: 1px solid color-mix(in srgb, var(--orange) 36%, transparent);
+  color: var(--warm);
+  font-size: .76rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .03em;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.public-links-list { display: grid; gap: 8px; margin-top: 10px; }
+.public-links-list a { color: var(--blue); font-weight: 700; }
+
+.public-cta-band {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #EEF3F8 100%);
+  border: 1px solid var(--line-soft);
+}
+
+.public-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+
+.public-btn {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 14px;
+  border: 1px solid var(--line-solid);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.public-btn.primary {
+  background: linear-gradient(180deg, var(--orange-warm), var(--orange));
+  color: #5F3909;
+  border-color: color-mix(in srgb, var(--orange) 40%, transparent);
+}
+
+.public-media-grid { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0,1fr)); }
+.public-media-grid .wide { grid-column: span 2; }
+.public-media-card { padding: 10px; }
+.public-media-card img { width: 100%; height: auto; border-radius: 12px; display: block; }
+
+.public-prose.legal .public-band,
+.public-prose.legal .public-card { padding: 22px; }
+.public-prose.legal p,
+.public-prose.legal li { max-width: 86ch; }
+
+@media (max-width: 940px) {
+  .public-grid.cols-2,
+  .public-grid.cols-3,
+  .public-media-grid,
+  .public-media-grid .wide { grid-template-columns: 1fr; grid-column: auto; }
+}
+
+.public-media-item { margin: 0; }
+.public-media-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.public-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.public-media-item figcaption,
+.public-video-caption {
+  margin-top: 8px;
+  font-size: .86rem;
+  color: var(--muted);
+}
+
+.public-video-fallback {
+  margin: 8px 0 0;
+  font-size: .82rem;
+  color: var(--warm);
+}
+
+.nav-pill:focus-visible,
+.lang-pill:focus-visible,
+.public-btn:focus-visible,
+.public-links-list a:focus-visible,
+.public-video-link:focus-visible,
+.public-footer a:focus-visible,
+.public-nav a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--blue) 45%, transparent);
+  outline-offset: 2px;
+}
+
+.nav-pill:hover,
+.public-btn:hover,
+.lang-pill:hover {
+  border-color: var(--line-solid);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nav-pill,
+  .public-btn,
+  .lang-pill {
+    transition: transform .16s ease, border-color .16s ease, background .16s ease;
+  }
+}
+
+
+.public-media-placeholder-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: .68rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  background: rgba(15, 23, 42, .66);
+  color: #fff;
+}
+
+.public-video-link {
+  position: relative;
+  display: block;
+}
+
+.public-video-cta {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background: rgba(15, 23, 42, .72);
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.public-band h3 + p { margin-top: 0; }
+.public-prose.legal .public-band { margin-top: 18px; }
+.public-prose.legal .public-grid { margin-top: 14px; }
