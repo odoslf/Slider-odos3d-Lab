@@ -1,0 +1,14 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">AQUÍ CAPTURA REAL DE LA APP</title>
+  <desc id="d">Slot de galería para captura real de la app.</desc>
+  <rect width="1200" height="760" fill="#FBFCFD"/>
+  <rect x="36" y="36" width="1128" height="688" rx="32" fill="#FFFFFF" stroke="#D5DEE8"/>
+  <rect x="130" y="130" width="940" height="500" rx="24" fill="#EEF3F8"/>
+  <rect x="160" y="166" width="300" height="428" rx="18" fill="#FFFFFF" stroke="#D5DEE8"/>
+  <rect x="492" y="166" width="544" height="140" rx="18" fill="#FFFFFF" stroke="#D5DEE8"/>
+  <rect x="492" y="326" width="260" height="268" rx="18" fill="#FFFFFF" stroke="#D5DEE8"/>
+  <rect x="776" y="326" width="260" height="268" rx="18" fill="#FFFFFF" stroke="#D5DEE8"/>
+  <rect x="186" y="218" width="248" height="16" rx="8" fill="#F2B23B"/>
+  <rect x="186" y="250" width="160" height="12" rx="6" fill="#475569"/>
+  <text x="600" y="678" text-anchor="middle" font-size="44" font-family="Inter, Arial, sans-serif" font-weight="800" fill="#0F172A">AQUÍ CAPTURA REAL DE LA APP</text>
+</svg>

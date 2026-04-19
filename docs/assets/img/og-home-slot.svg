@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">AQUÍ SOCIAL IMAGE / OG IMAGE FINAL</title>
+  <desc id="d">Placeholder premium para imagen social de Smart Timelapse AI.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBFCFD"/>
+      <stop offset="100%" stop-color="#F2F6FA"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="42" y="42" width="1116" height="546" rx="28" fill="#FFFFFF" stroke="#D5DEE8"/>
+  <rect x="96" y="108" width="624" height="368" rx="24" fill="#EEF3F8"/>
+  <rect x="760" y="108" width="344" height="102" rx="18" fill="#F5F7FA" stroke="#D5DEE8"/>
+  <rect x="760" y="232" width="344" height="102" rx="18" fill="#F5F7FA" stroke="#D5DEE8"/>
+  <rect x="760" y="356" width="344" height="120" rx="18" fill="#0F172A"/>
+  <text x="932" y="425" text-anchor="middle" font-size="26" font-family="Inter, Arial, sans-serif" fill="#FFFFFF" font-weight="700">Smart Timelapse AI</text>
+  <text x="600" y="538" text-anchor="middle" font-size="42" font-family="Inter, Arial, sans-serif" fill="#0F172A" font-weight="800">AQUÍ SOCIAL IMAGE / OG IMAGE FINAL</text>
+  <circle cx="188" cy="188" r="30" fill="#F2B23B"/>
+  <rect x="236" y="172" width="300" height="24" rx="12" fill="#1D4ED8"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">AQUÍ FOTO REAL SLIDER + MÓVIL</title>
+  <desc id="d">Slot de galería para foto real slider y móvil.</desc>
+  <rect width="1200" height="760" fill="#FBFCFD"/>
+  <rect x="36" y="36" width="1128" height="688" rx="32" fill="#FFFFFF" stroke="#D5DEE8"/>
+  <rect x="140" y="430" width="840" height="18" rx="9" fill="#334155"/>
+  <rect x="190" y="392" width="70" height="96" rx="14" fill="#EEF3F8"/>
+  <rect x="860" y="392" width="70" height="96" rx="14" fill="#EEF3F8"/>
+  <rect x="510" y="320" width="104" height="172" rx="16" fill="#F5F7FA" stroke="#D5DEE8"/>
+  <rect x="524" y="344" width="76" height="112" rx="10" fill="#0F172A"/>
+  <rect x="540" y="364" width="44" height="12" rx="6" fill="#F2B23B"/>
+  <text x="600" y="585" text-anchor="middle" font-size="44" font-family="Inter, Arial, sans-serif" font-weight="800" fill="#0F172A">AQUÍ FOTO REAL SLIDER + MÓVIL</text>
+</svg>

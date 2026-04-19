@@ -1,0 +1,34 @@
+site_identity:
+  product_name: "Smart Timelapse AI"
+  product_name_short: "Smart Timelapse AI"
+  support_email: "odos3d.Lab@gmail.com"
+  legal_responsible_name: "Silvia Díaz Celaya"
+
+external_links:
+  github_repo: "https://github.com/odoslf/Slider-odos3d-Lab"
+  github_tree_main: "https://github.com/odoslf/Slider-odos3d-Lab/tree/main"
+  github_pages_base: "https://odoslf.github.io/Slider-odos3d-Lab"
+  youtube_url: ""
+  play_store_url: ""
+
+internal_routes_es:
+  home: "/"
+  hardware: "/hardware/"
+  downloads: "/downloads/"
+  support: "/support/"
+  privacy: "/privacy-policy/"
+  terms: "/terms/"
+  smart_timelapse_redirect: "/smart-timelapse-ai/"
+
+internal_routes_en:
+  home: "/en/"
+  hardware: "/en/hardware/"
+  downloads: "/en/downloads/"
+  support: "/en/support/"
+  privacy: "/en/privacy-policy/"
+  terms: "/en/terms/"
+  smart_timelapse_redirect: "/en/smart-timelapse-ai/"
+
+flags:
+  has_play_store: false
+  has_youtube: false

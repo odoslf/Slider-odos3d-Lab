@@ -1,43 +1,57 @@
 ---
-layout: default
-title: "Hardware open source"
+layout: public-page
+title: "Hardware abierto | Smart Timelapse AI"
+description: "Hardware abierto para Smart Timelapse AI: piezas, descargas STL/STEP/BOM y referencias GRBL para escalar del móvil al control físico."
 permalink: /hardware/
+lang: es
+lang_page: es
+alt_url: /en/hardware/
+og_title: "Hardware abierto para timelapse | Smart Timelapse AI"
+og_description: "Piezas, descargas y referencia GRBL para escalar tu flujo de Smart Timelapse AI con hardware open source."
+nav_key: hardware
+page_heading: "Hardware abierto para escalar el ecosistema"
+page_intro: "Puedes empezar solo con móvil. El hardware abierto no es obligatorio, pero te permite escalar cuando necesitas más control físico y movimiento."
 ---
 
-# Hardware open source
+{% assign links = site.data.public-links %}
+{% assign identity = links.site_identity %}
+{% assign external = links.external_links %}
+{% assign routes = links.internal_routes_es %}
 
-Esta es la parte pública del hardware del proyecto, con recursos técnicos, piezas, descargas y referencia GRBL para montar o entender el sistema físico que acompaña a Smart Timelapse AI.
 
-## Accesos rápidos
-- [Piezas]({{ '/parts/' | relative_url }})
-- [Descargas]({{ '/downloads/' | relative_url }})
-- [GRBL 1.1]({{ '/grbl/' | relative_url }})
-- [Galería técnica](https://github.com/odoslf/Slider-odos3d-Lab)
-- [GitHub](https://github.com/odoslf/Slider-odos3d-Lab)
+<div class="public-media-grid" style="margin-bottom:14px;">
+  <article class="public-media-card">{% include public-media-item.html media_key='slider_mobile' lang='es' loading='lazy' show_caption='true' %}</article>
+  <article class="public-media-card">{% include public-media-item.html media_key='slider_dslr' lang='es' loading='lazy' show_caption='true' %}</article>
+</div>
+<div class="public-grid cols-3">
+  <article class="public-card">
+    <p class="public-kicker">Qué es</p>
+    <h3>Hardware abierto conectado a la app</h3>
+    <p>El sistema open source amplía Smart Timelapse AI con control físico y movimiento sobre GRBL en proyectos más exigentes.</p>
+  </article>
+  <article class="public-card">
+    <p class="public-kicker">Qué puedes consultar</p>
+    <h3>Descargas, piezas y referencia técnica</h3>
+    <p>Desde aquí accedes a STL/STEP/BOM, piezas del proyecto y referencias GRBL para montaje y ajustes.</p>
+    <div class="public-links-list">
+      <a href="{{ routes.downloads | relative_url }}">Ver descargas</a>
+      <a href="{{ '/parts/' | relative_url }}">Ver piezas</a>
+      <a href="{{ '/grbl/' | relative_url }}">Ver GRBL 1.1</a>
+    </div>
+  </article>
+  <article class="public-card">
+    <p class="public-kicker">Conexión con la app</p>
+    <h3>Escala cuando quieres más control</h3>
+    <p>El hardware añade movimiento y precisión, pero mantiene la misma identidad de flujo con captura, control y cierre de proyecto.</p>
+  </article>
+</div>
 
-## Piezas
-Aquí se centralizan las piezas físicas del proyecto, listas para consultar, imprimir o adaptar según el montaje del slider.
-
-Abrir piezas: {{ '/parts/' | relative_url }}
-
-## Descargas
-Esta sección reúne archivos públicos relacionados con el hardware, documentación y material técnico útil para el montaje o la referencia del sistema.
-
-Abrir descargas: {{ '/downloads/' | relative_url }}
-
-## GRBL 1.1
-El hardware está pensado para trabajar con GRBL 1.1 como referencia recomendada para control, homing y movimiento en flujos compatibles.
-
-Abrir guía GRBL: {{ '/grbl/' | relative_url }}
-
-## Galería técnica
-Aquí se reúne la parte visual del hardware real: montaje, electrónica, slider, piezas impresas y resultados físicos del sistema.
-
-Ver repositorio: https://github.com/odoslf/Slider-odos3d-Lab
-
-## Repositorio
-Si quieres revisar el conjunto completo del proyecto público, el repositorio central reúne hardware, documentación y recursos abiertos relacionados con el sistema.
-
-Abrir GitHub: https://github.com/odoslf/Slider-odos3d-Lab
-
-La parte hardware queda separada de la landing principal de la app, pero conectada con ella como base open source del ecosistema.
+<div class="public-cta-band">
+  <h3>Siguiente paso en el ecosistema</h3>
+  <p>Revisa recursos disponibles y vuelve a la home cuando quieras continuar con la parte app.</p>
+  <div class="public-cta-actions">
+    <a class="public-btn primary" href="{{ routes.downloads | relative_url }}">Ir a descargas</a>
+    <a class="public-btn" href="{{ routes.home | relative_url }}">Volver a home</a>
+    <a class="public-btn" href="{{ routes.support | relative_url }}">Necesitas ayuda</a>
+  </div>
+</div>

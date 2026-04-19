@@ -1,0 +1,31 @@
+{% assign media = site.data.public-media.site_media.video_thumb %}
+{% assign links = site.data.public-links %}
+{% assign lang = include.lang | default: 'es' %}
+{% assign youtube_url = links.external_links.youtube_url | default: media.youtube_url | default: '' %}
+{% assign has_youtube = links.flags.has_youtube and youtube_url != '' %}
+{% assign active_is_placeholder = true %}
+{% if media.active_source == 'final' %}
+  {% assign active_is_placeholder = false %}
+{% endif %}
+{% assign caption = media.caption_es %}
+{% assign fallback = 'Vídeo demo disponible próximamente' %}
+{% assign cta_label = 'Abrir demo en YouTube' %}
+{% assign cta_aria = 'Abrir vídeo demo' %}
+{% if lang == 'en' %}
+  {% assign caption = media.caption_en %}
+  {% assign fallback = 'Demo video coming soon' %}
+  {% assign cta_label = 'Open demo on YouTube' %}
+  {% assign cta_aria = 'Open demo video' %}
+{% endif %}
+<div class="public-video-card {{ include.class_name }}" data-placeholder="{{ active_is_placeholder }}" data-source="{{ media.active_source }}">
+  {% if has_youtube %}
+    <a href="{{ youtube_url }}" target="_blank" rel="noopener noreferrer" class="public-video-link" aria-label="{{ cta_aria }}">
+      {% include public-media-item.html media_key='video_thumb' lang=lang loading=include.loading show_caption='false' %}
+      <span class="public-video-cta">{{ cta_label }}</span>
+    </a>
+  {% else %}
+    {% include public-media-item.html media_key='video_thumb' lang=lang loading=include.loading show_caption='false' %}
+    <p class="public-video-fallback">{{ fallback }}</p>
+  {% endif %}
+  <p class="public-video-caption">{{ caption }}</p>
+</div>

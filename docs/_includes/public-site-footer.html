@@ -1,0 +1,36 @@
+{% assign lang = include.lang | default: 'es' %}
+{% assign links = site.data.public-links %}
+{% assign identity = links.site_identity %}
+{% assign external = links.external_links %}
+{% if lang == 'en' %}
+  {% assign routes = links.internal_routes_en %}
+  {% assign support_label = 'support' %}
+  {% assign downloads_label = 'downloads' %}
+  {% assign privacy_label = 'privacy' %}
+  {% assign terms_label = 'terms' %}
+  {% assign hardware_label = 'hardware' %}
+{% else %}
+  {% assign routes = links.internal_routes_es %}
+  {% assign support_label = 'soporte' %}
+  {% assign downloads_label = 'descargas' %}
+  {% assign privacy_label = 'privacidad' %}
+  {% assign terms_label = 'términos' %}
+  {% assign hardware_label = 'hardware' %}
+{% endif %}
+{% assign media_logo = site.data.public-media.site_media.logo %}
+<footer class="public-footer">
+  <div class="public-container public-footer-inner">
+    <p>
+      {{ identity.product_name_short }} · <a href="mailto:{{ identity.support_email }}">{{ identity.support_email }}</a>
+      {% if media_logo.is_placeholder %} · <span class="footer-note">media placeholder activo</span>{% endif %}
+    </p>
+    <nav aria-label="Footer links">
+      <a href="{{ routes.support | relative_url }}">{{ support_label }}</a>
+      <a href="{{ routes.downloads | relative_url }}">{{ downloads_label }}</a>
+      <a href="{{ routes.privacy | relative_url }}">{{ privacy_label }}</a>
+      <a href="{{ routes.terms | relative_url }}">{{ terms_label }}</a>
+      <a href="{{ routes.hardware | relative_url }}">{{ hardware_label }}</a>
+      <a href="{{ external.github_repo }}" target="_blank" rel="noopener noreferrer" aria-label="Repositorio público en GitHub">GitHub</a>
+    </nav>
+  </div>
+</footer>

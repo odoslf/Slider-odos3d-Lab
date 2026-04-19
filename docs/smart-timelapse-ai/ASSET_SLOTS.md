@@ -1,34 +1,51 @@
-# Smart Timelapse AI — Asset slots
+# ASSET SLOTS — Smart Timelapse AI
 
-Esta rama deja la landing en `docs/smart-timelapse-ai/index.html`.
+## Configuración central real
 
-## Qué sustituir después
+La capa pública se gobierna desde dos fuentes:
 
-### Logo / marca
-- Logo principal de cabecera
-- Icono cuadrado / favicon
+- Media: `docs/_data/public-media.yml`
+- Links y datos públicos: `docs/_data/public-links.yml`
 
-### Hero
-- Banner principal de la app
-- Imagen principal del sistema con slider + móvil o slider + DSLR
+## Mapeo real de assets por bloque visual
 
-### Capturas de la app
-- Inicio / QuickStart
-- SmartCapture AI
-- Escenas / Producto 360
-- Remoto local web
-- Exportación
+- `logo` → logo de header en `/`, `/en/` y páginas públicas secundarias.
+- `hero` → hero principal y apoyo visual en bloques de prueba.
+- `slider_mobile` → bloques de hardware/proof (slider + móvil).
+- `slider_dslr` → bloques de hardware/proof (slider + DSLR).
+- `app_screenshot` → bloques de app en home/downloads/support.
+- `video_thumb` → bloque de vídeo demo en home ES/EN.
+- `favicon` → head global y `site.webmanifest`.
+- `og_image` → `og:image` y `twitter:image` de páginas públicas.
 
-### Fotos reales del hardware
-- Slider con móvil
-- Slider con DSLR
-- Detalle del montaje
-- Vista general del sistema
+## Home real y redirecciones
 
-### Vídeo
-- Demo corta del slider en uso
-- Demo de Producto 360
-- Demo de exportación o resultado final
+- Landings reales: `/` y `/en/`.
+- Redirecciones (no canónicas): `/smart-timelapse-ai/` y `/en/smart-timelapse-ai/`.
 
-## Nota
-La landing subida en esta rama está en `docs/smart-timelapse-ai/index.html` y no toca las rutas legales existentes.
+## Nombres finales congelados y carpeta definitiva
+
+Carpeta final obligatoria:
+- `docs/assets/media/app/`
+
+Nombres finales exactos:
+- `logo-final.svg`
+- `hero-final.jpg`
+- `slider-mobile-final.jpg`
+- `slider-dslr-final.jpg`
+- `app-screenshot-final.png`
+- `video-thumb-final.jpg`
+- `favicon-final.svg`
+- `og-home-final.jpg`
+
+## Flujo operativo
+
+1. Sustituir archivo final en `docs/assets/media/app/`.
+2. Cambiar `active_source` de `placeholder` a `final` en el `media_key` correspondiente de `docs/_data/public-media.yml`.
+3. Ajustar `is_placeholder: false` para ese asset y, si aplica, activar YouTube/Play en `docs/_data/public-links.yml`.
+4. Ejecutar auditoría: `python scripts/public_site_audit.py`.
+
+## Documentación complementaria
+
+- Guía operativa completa: `docs/ASSET_INGESTION_GUIDE.md`
+- Ficha técnica de carpeta final: `docs/assets/media/app/ASSET_TARGETS.md`

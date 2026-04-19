@@ -1,0 +1,27 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+  <title id="t">AQUÍ HERO / BANNER APP</title>
+  <desc id="d">Placeholder premium para hero principal.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBFCFD"/>
+      <stop offset="100%" stop-color="#F2F6FA"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect x="70" y="90" width="1460" height="820" rx="44" fill="#FFFFFF" stroke="#D5DEE8"/>
+  <rect x="120" y="160" width="860" height="680" rx="36" fill="url(#dark)"/>
+  <rect x="1020" y="160" width="460" height="320" rx="28" fill="#EEF3F8" stroke="#D5DEE8"/>
+  <rect x="1020" y="520" width="460" height="320" rx="28" fill="#EEF3F8" stroke="#D5DEE8"/>
+  <rect x="190" y="690" width="720" height="16" rx="8" fill="#334155"/>
+  <rect x="220" y="635" width="110" height="220" rx="18" fill="#FFFFFF"/>
+  <rect x="770" y="635" width="110" height="220" rx="18" fill="#FFFFFF"/>
+  <rect x="480" y="560" width="170" height="250" rx="22" fill="#F5F7FA"/>
+  <rect x="500" y="588" width="130" height="160" rx="14" fill="#0F172A"/>
+  <rect x="520" y="610" width="90" height="18" rx="9" fill="#F2B23B"/>
+  <text x="1248" y="314" text-anchor="middle" font-size="46" font-family="Inter, Arial, sans-serif" font-weight="800" fill="#0F172A">AQUÍ HERO / BANNER APP</text>
+  <text x="1248" y="384" text-anchor="middle" font-size="28" font-family="Inter, Arial, sans-serif" font-weight="600" fill="#475569">Visual principal de producto</text>
+</svg>

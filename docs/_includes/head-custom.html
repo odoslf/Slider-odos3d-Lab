@@ -1,6 +1,50 @@
-<meta name="theme-color" content="#0B1020" />
-<meta name="color-scheme" content="dark light" />
+{% assign links = site.data.public-links %}
+{% assign identity = links.site_identity %}
+{% assign favicon_media = site.data.public-media.site_media.favicon %}
+{% assign og_media = site.data.public-media.site_media.og_image %}
+{% assign favicon_src = favicon_media.placeholder_path %}
+{% assign og_image_src = og_media.placeholder_path %}
+{% if favicon_media.active_source == "final" %}
+  {% assign favicon_src = favicon_media.final_path %}
+{% endif %}
+{% if og_media.active_source == "final" %}
+  {% assign og_image_src = og_media.final_path %}
+{% endif %}
+{% assign page_description = page.description | default: site.description %}
+{% assign og_title = page.og_title | default: page.title | default: site.title %}
+{% assign og_description = page.og_description | default: page_description %}
+{% assign twitter_title = page.twitter_title | default: og_title %}
+{% assign twitter_description = page.twitter_description | default: og_description %}
+<meta name="theme-color" content="#F5F7FA" />
+<meta name="color-scheme" content="light" />
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}" />
+<link rel="icon" type="image/svg+xml" href="{{ favicon_src | relative_url }}" />
+<meta name="description" content="{{ page_description | escape }}" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+{% assign canonical_url = site.url | append: site.baseurl | append: page.url %}
+<link rel="canonical" href="{{ canonical_url }}" />
+
+<meta property="og:title" content="{{ og_title | escape }}" />
+<meta property="og:description" content="{{ og_description | escape }}" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{{ identity.product_name }}" />
+<meta property="og:url" content="{{ canonical_url }}" />
+<meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ og_image_src }}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ twitter_title | escape }}" />
+<meta name="twitter:description" content="{{ twitter_description | escape }}" />
+<meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}{{ og_image_src }}" />
+
+{% if page.alt_url %}
+  {% assign alt_url_full = site.url | append: site.baseurl | append: page.alt_url %}
+  {% if page.lang_page == 'es' %}
+<link rel="alternate" hreflang="es" href="{{ canonical_url }}" />
+<link rel="alternate" hreflang="en" href="{{ alt_url_full }}" />
+<link rel="alternate" hreflang="x-default" href="{{ canonical_url }}" />
+  {% elsif page.lang_page == 'en' %}
+<link rel="alternate" hreflang="en" href="{{ canonical_url }}" />
+<link rel="alternate" hreflang="es" href="{{ alt_url_full }}" />
+<link rel="alternate" hreflang="x-default" href="{{ alt_url_full }}" />
+  {% endif %}
+{% endif %}

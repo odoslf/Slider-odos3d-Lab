@@ -1,18 +1,18 @@
 ---
 layout: null
-permalink: /smart-timelapse-ai/
+permalink: /en/smart-timelapse-ai/
 ---
 {% assign links = site.data.public-links %}
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url={{ links.internal_routes_es.home | relative_url }}">
+  <meta http-equiv="refresh" content="0; url={{ links.internal_routes_en.home | relative_url }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Redirección | {{ links.site_identity.product_name }}</title>
+  <title>Redirect | {{ links.site_identity.product_name }}</title>
   <meta name="robots" content="noindex,follow">
   <meta http-equiv="x-robots-tag" content="noindex, follow">
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ links.internal_routes_es.home }}">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ links.internal_routes_en.home }}">
   <style>
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#F5F7FA;color:#0F172A;display:grid;place-items:center;min-height:100vh}
     .card{background:#FFFFFF;border:1px solid rgba(15,23,42,.07);border-radius:16px;padding:24px;max-width:640px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
@@ -21,10 +21,10 @@ permalink: /smart-timelapse-ai/
 </head>
 <body>
   <article class="card" role="status">
-    <h1>La landing principal está en la home</h1>
-    <p>Esta ruta redirige automáticamente a <a href="{{ links.internal_routes_es.home | relative_url }}">{{ links.internal_routes_es.home | relative_url }}</a>.</p>
-    <p><small>Si la redirección no arranca, usa el enlace superior.</small></p>
+    <h1>The main landing is at /en/</h1>
+    <p>This route redirects automatically to <a href="{{ links.internal_routes_en.home | relative_url }}">{{ links.internal_routes_en.home | relative_url }}</a>.</p>
+    <p><small>If redirect does not start, use the link above.</small></p>
   </article>
-  <script>window.location.replace("{{ links.internal_routes_es.home | relative_url }}");</script>
+  <script>window.location.replace("{{ links.internal_routes_en.home | relative_url }}");</script>
 </body>
 </html>

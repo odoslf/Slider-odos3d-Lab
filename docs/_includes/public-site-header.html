@@ -1,0 +1,48 @@
+{% assign lang = include.lang | default: 'es' %}
+{% assign current = include.current | default: 'home' %}
+{% assign links = site.data.public-links %}
+{% assign identity = links.site_identity %}
+{% if lang == 'en' %}
+  {% assign routes = links.internal_routes_en %}
+  {% assign home_label = 'Home' %}
+  {% assign hardware_label = 'Hardware' %}
+  {% assign downloads_label = 'Downloads' %}
+  {% assign support_label = 'Support' %}
+  {% assign product_hint = 'Phone · GRBL · DSLR workflow' %}
+{% else %}
+  {% assign routes = links.internal_routes_es %}
+  {% assign home_label = 'Inicio' %}
+  {% assign hardware_label = 'Hardware' %}
+  {% assign downloads_label = 'Descargas' %}
+  {% assign support_label = 'Soporte' %}
+  {% assign product_hint = 'Móvil · GRBL · Flujo DSLR' %}
+{% endif %}
+{% assign media_logo = site.data.public-media.site_media.logo %}
+{% assign logo_src = media_logo.placeholder_path %}
+{% if media_logo.active_source == 'final' %}
+  {% assign logo_src = media_logo.final_path %}
+{% endif %}
+{% assign logo_alt = media_logo.alt_es %}
+{% if lang == 'en' %}
+  {% assign logo_alt = media_logo.alt_en %}
+{% endif %}
+<header class="public-header">
+  <div class="public-container public-header-inner">
+    <a class="public-brand" href="{{ routes.home | relative_url }}" aria-label="{{ identity.product_name }}">
+      <img src="{{ logo_src | relative_url }}" alt="{{ logo_alt }}" width="{{ media_logo.width }}" height="{{ media_logo.height }}" loading="{{ media_logo.loading_default }}" decoding="async">
+      <span>
+        <strong>{{ identity.product_name_short }}</strong>
+        <small>{{ product_hint }}</small>
+      </span>
+    </a>
+
+    <nav class="public-nav" aria-label="{% if lang == 'en' %}Main navigation{% else %}Navegación principal{% endif %}">
+      <a href="{{ routes.home | relative_url }}" class="nav-pill {% if current == 'home' %}is-active{% endif %}">{{ home_label }}</a>
+      <a href="{{ routes.hardware | relative_url }}" class="nav-pill {% if current == 'hardware' %}is-active{% endif %}">{{ hardware_label }}</a>
+      <a href="{{ routes.downloads | relative_url }}" class="nav-pill {% if current == 'downloads' %}is-active{% endif %}">{{ downloads_label }}</a>
+      <a href="{{ routes.support | relative_url }}" class="nav-pill {% if current == 'support' %}is-active{% endif %}">{{ support_label }}</a>
+    </nav>
+
+    {% include public-lang-switch.html lang=lang es_url=include.es_url en_url=include.en_url %}
+  </div>
+</header>
