@@ -8,12 +8,14 @@ permalink: /sitemap.xml
   <url><loc>{{ site.url }}{{ site.baseurl }}/hardware/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/downloads/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/support/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/gallery/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/privacy-policy/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/terms/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/en/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/en/hardware/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/en/downloads/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/en/support/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/en/gallery/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/en/privacy-policy/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/en/terms/</loc></url>
 </urlset>

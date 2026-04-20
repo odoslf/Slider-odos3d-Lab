@@ -59,6 +59,7 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
     <p>Contexto de soporte y hardware para quienes escalan desde la app móvil al ecosistema completo.</p>
     <div class="public-links-list">
       <a href="{{ routes.hardware | relative_url }}">Ver página hardware</a>
+      <a href="{{ routes.gallery | relative_url }}">Abrir galería técnica</a>
       <a href="{{ routes.support | relative_url }}">Ir a soporte</a>
     </div>
   </article>

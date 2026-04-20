@@ -1,43 +1,43 @@
 ---
-title: "Workflow de subida"
+title: "Workflow de subida interno"
 permalink: /upload-workflow/
 ---
 
-# Guía rápida de subida (STL / STEP / BOM / Fotos)
+# Workflow de subida (hardware + media pública)
 
-## 1) Subir STL / STEP / BOM (v1 actual)
+## 1) Subida de archivos STL / STEP / BOM
 
 - STL: `prints/STL/v1/`
 - STEP: `prints/STEP/v1/`
 - BOM: `prints/BOM/v1/`
 
-Pasos rápidos:
-1. Arrastra archivos a la carpeta correcta.
-2. Verifica nombres limpios (sin espacios raros ni acentos extraños).
-3. Commit y push.
+Pasos:
+1. Subir archivos en la carpeta correcta.
+2. Validar nombres limpios y consistentes.
+3. Commit + push.
+4. Mantener histórico al abrir nuevas versiones (`v2`, `v3`, …).
 
-## 2) Crear una nueva versión (v2, v3…)
+## 2) Assets de app/site pública
 
-1. Crear carpetas nuevas:
-   - `prints/STL/v2/`
-   - `prints/STEP/v2/`
-   - `prints/BOM/v2/`
-2. Copiar/subir archivos de la nueva versión.
-3. Mantener la versión anterior para histórico.
-4. Actualizar `docs/downloads.md` para que la sección "Última versión" apunte a `v2`.
+- Carpeta final: `docs/assets/media/app/`
+- Registro: `docs/_data/public-media.yml`
 
-## 3) Añadir fotos a galería
+Este flujo sigue vigente para home, branding y media general del sitio público.
 
-- Carpeta: `images/gallery/`
-- Sube solo fotos técnicas limpias del producto/proceso.
+## 3) Assets de galería pública nueva
 
-## 4) Nombres de archivo recomendados
+- Carpeta final: `docs/assets/media/gallery/`
+- Registro: `docs/_data/gallery-media.yml`
 
-Formato sugerido:
-- STL/STEP: `slider-odos3d_<pieza>_v1.stl` / `slider-odos3d_<pieza>_v1.step`
-- BOM: `slider-odos3d_bom_v1.csv` o `slider-odos3d_bom_v1.xlsx`
-- Fotos: `slider-odos3d_<tema>_v1_01.jpg`
+La galería pública premium `/gallery/` y `/en/gallery/` se alimenta **solo** desde ese registro.
 
-Evitar:
-- Espacios dobles o nombres genéricos (`final-final-ok.stl`).
-- Caracteres problemáticos para rutas (`#`, `?`, `&`).
+## 4) Sustitución de placeholder por foto real de galería
+
+1. Subir la foto real con el **nombre final exacto** en `docs/assets/media/gallery/`.
+2. Cambiar `active_source` del slot correspondiente a `final` en `docs/_data/gallery-media.yml`.
+3. Ejecutar auditoría: `python scripts/public_site_audit.py`.
+4. Revisar visualmente ES/EN:
+   - `/gallery/`
+   - `/en/gallery/`
+
+> Si el archivo final ya tiene nombre congelado correcto, no hay que tocar HTML ni CSS estructural.

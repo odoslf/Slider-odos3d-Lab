@@ -1,23 +1,32 @@
 ---
-title: "Mapa de subida"
+title: "Mapa de subida interno"
 permalink: /upload-map/
 ---
 
-{% include topnav.html %}
+# Mapa de subida alineado con la web pública nueva
 
-# Mapa de subida (para no liarse)
+## Dónde vive cada tipo de asset
 
-## Si es… → va aquí
-- Fotos finales → `images/gallery/`
-- Fotos sin revisar → `images/inbox/`
-- Diagramas → `images/diagrams/`
-- Renders → `images/renders/`
+- **Assets de app/site pública general** (logo, hero, screenshot, etc.):
+  - `docs/assets/media/app/`
+  - Registro fuente: `docs/_data/public-media.yml`
+- **Assets de galería pública premium** (slots de hardware):
+  - `docs/assets/media/gallery/`
+  - Registro fuente: `docs/_data/gallery-media.yml`
 
-- STL v1 → `prints/STL/v1/`
-- STEP v1 → `prints/STEP/v1/`
-- BOM v1 → `prints/BOM/v1/`
+## Flujo cuando llega una foto real de galería
 
-## Nota de versiones
-Cuando saques v2:
-- crea `prints/STL/v2/`, `prints/STEP/v2/`, `prints/BOM/v2/`
-- cambia `latest_pack` en `docs/_config.yml` a "v2"
+1. Subir la imagen final al nombre exacto congelado en `docs/assets/media/gallery/`.
+2. Abrir `docs/_data/gallery-media.yml` y cambiar `active_source` del slot correspondiente a `final`.
+3. Ejecutar auditoría: `python scripts/public_site_audit.py`.
+4. Revisar visualmente las dos rutas públicas:
+   - `/gallery/`
+   - `/en/gallery/`
+
+## Paquetes de hardware versionados (se mantiene)
+
+- STL: `prints/STL/v1/`
+- STEP: `prints/STEP/v1/`
+- BOM: `prints/BOM/v1/`
+
+Al crear `v2`, `v3`, etc., mantener histórico y actualizar solo `latest_pack` en `docs/_config.yml`.

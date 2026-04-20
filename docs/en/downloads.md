@@ -59,6 +59,7 @@ page_intro: "Resource center for hardware files, documentation, and references i
     <p>Support and hardware context for users scaling from mobile app to full ecosystem.</p>
     <div class="public-links-list">
       <a href="{{ routes.hardware | relative_url }}">Open hardware page</a>
+      <a href="{{ routes.gallery | relative_url }}">Open technical gallery</a>
       <a href="{{ routes.support | relative_url }}">Go to support</a>
     </div>
   </article>

@@ -49,6 +49,7 @@ page_intro: "Support guidance to start quickly, solve issues, and keep workflow 
   <div class="public-cta-actions">
     <a class="public-btn" href="{{ routes.downloads | relative_url }}">View downloads</a>
     <a class="public-btn" href="{{ routes.hardware | relative_url }}">View hardware</a>
+    <a class="public-btn" href="{{ routes.gallery | relative_url }}">Technical gallery</a>
     <a class="public-btn" href="{{ routes.privacy | relative_url }}">Privacy</a>
     <a class="public-btn" href="{{ routes.terms | relative_url }}">Terms</a>
   </div>
