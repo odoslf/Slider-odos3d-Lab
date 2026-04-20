@@ -13,12 +13,14 @@ EXPECTED_CANONICAL_MAP = {
     "/hardware/": "docs/index.md",
     "/downloads/": "docs/downloads.md",
     "/support/": "docs/support.md",
+    "/gallery/": "docs/gallery.md",
     "/privacy-policy/": "docs/privacy-policy.md",
     "/terms/": "docs/terms.md",
     "/en/": "docs/en/index.html",
     "/en/hardware/": "docs/en/hardware.md",
     "/en/downloads/": "docs/en/downloads.md",
     "/en/support/": "docs/en/support.md",
+    "/en/gallery/": "docs/en/gallery.md",
     "/en/privacy-policy/": "docs/en/privacy-policy.md",
     "/en/terms/": "docs/en/terms.md",
     "/smart-timelapse-ai/": "docs/smart-timelapse-ai/index.html",
@@ -42,12 +44,14 @@ CANONICAL_PAGES = [
     "docs/index.md",
     "docs/downloads.md",
     "docs/support.md",
+    "docs/gallery.md",
     "docs/privacy-policy.md",
     "docs/terms.md",
     "docs/en/index.html",
     "docs/en/hardware.md",
     "docs/en/downloads.md",
     "docs/en/support.md",
+    "docs/en/gallery.md",
     "docs/en/privacy-policy.md",
     "docs/en/terms.md",
 ]
@@ -60,6 +64,7 @@ CRITICAL_FILES = [
     "docs/_includes/public-site-header.html",
     "docs/_includes/public-site-footer.html",
     "docs/_includes/public-lang-switch.html",
+    "docs/_includes/gallery-media-item.html",
     "docs/_layouts/public-page.html",
     "docs/assets/css/public-shell.css",
     "docs/assets/css/public-pages.css",
@@ -69,9 +74,81 @@ CRITICAL_FILES = [
     "docs/llms.txt",
     "docs/site.webmanifest",
     "docs/404.html",
+    "docs/_data/gallery-media.yml",
+    "docs/_data/asset-status.yml",
+    "docs/ASSET_REQUEST_ORDER.md",
+    "docs/GALLERY_INGESTION_GUIDE.md",
+    "docs/assets/media/gallery/.gitkeep",
+    "docs/gallery.md",
+    "docs/en/gallery.md",
     "docs/smart-timelapse-ai/index.html",
     "docs/en/smart-timelapse-ai/index.html",
 ]
+
+APP_ASSET_KEYS = [
+    "logo",
+    "hero",
+    "app_screenshot",
+    "slider_mobile",
+    "slider_dslr",
+    "video_thumb",
+    "favicon",
+    "og_image",
+]
+
+GALLERY_ASSET_KEYS = [
+    "slot_overview_a",
+    "slot_overview_b",
+    "slot_carriage_a",
+    "slot_carriage_b",
+    "slot_belt_a",
+    "slot_belt_b",
+    "slot_electronics",
+    "slot_endstop_x",
+    "slot_phone_mount",
+]
+
+ASSET_STATUS_REQUIRED_FIELDS = [
+    "asset_key",
+    "family",
+    "final_filename",
+    "final_directory",
+    "source_registry",
+    "source_slot_key",
+    "public_usage",
+    "priority",
+    "request_order",
+    "status",
+    "requested_from_user",
+    "file_received",
+    "uploaded_to_repo",
+    "activated_in_yaml",
+    "notes",
+]
+
+GALLERY_SLOT_KEYS = [
+    "slot_overview_a",
+    "slot_overview_b",
+    "slot_carriage_a",
+    "slot_carriage_b",
+    "slot_belt_a",
+    "slot_belt_b",
+    "slot_electronics",
+    "slot_endstop_x",
+    "slot_phone_mount",
+]
+
+GALLERY_FROZEN_FILENAMES = {
+    "slot_overview_a": "slider-gallery-01-overview-a.jpg",
+    "slot_overview_b": "slider-gallery-02-overview-b.jpg",
+    "slot_carriage_a": "slider-gallery-03-carriage-a.jpg",
+    "slot_carriage_b": "slider-gallery-04-carriage-b.jpg",
+    "slot_belt_a": "slider-gallery-05-belt-a.jpg",
+    "slot_belt_b": "slider-gallery-06-belt-b.jpg",
+    "slot_electronics": "slider-gallery-07-electronics.jpg",
+    "slot_endstop_x": "slider-gallery-08-endstop-x.jpg",
+    "slot_phone_mount": "slider-gallery-09-phone-mount.jpg",
+}
 
 HARD_CODE_PATTERNS = {
     "odos3d.Lab@gmail.com": ["odos3d.Lab@gmail.com"],
@@ -194,6 +271,63 @@ def parse_simple_yaml(rel: str) -> Dict[str, Any]:
     return root
 
 
+def parse_ordered_list_yaml(rel: str) -> Dict[str, List[Dict[str, Any]]]:
+    text = read_text(rel)
+    data: Dict[str, List[Dict[str, Any]]] = {}
+    current_section: str | None = None
+    current_item: Dict[str, Any] | None = None
+
+    def parse_scalar(value: str) -> Any:
+        val = value.strip()
+        if val.startswith('"') and val.endswith('"'):
+            return val[1:-1]
+        if val.startswith("'") and val.endswith("'"):
+            return val[1:-1]
+        if val.lower() == "true":
+            return True
+        if val.lower() == "false":
+            return False
+        if re.fullmatch(r"[0-9]+", val):
+            return int(val)
+        return val
+
+    for lineno, raw in enumerate(text.splitlines(), start=1):
+        if not raw.strip() or raw.strip().startswith("#"):
+            continue
+
+        if raw.endswith(":") and not raw.startswith(" "):
+            section = raw[:-1].strip()
+            data[section] = []
+            current_section = section
+            current_item = None
+            continue
+
+        if raw.startswith("  - "):
+            if current_section is None:
+                raise ValueError(f"List item outside section at {rel}:{lineno}")
+            kv = raw[4:]
+            if ":" not in kv:
+                raise ValueError(f"Invalid list item key/value at {rel}:{lineno}")
+            key, value = kv.split(":", 1)
+            current_item = {key.strip(): parse_scalar(value)}
+            data[current_section].append(current_item)
+            continue
+
+        if raw.startswith("    "):
+            if current_item is None:
+                raise ValueError(f"Field outside list item at {rel}:{lineno}")
+            kv = raw.strip()
+            if ":" not in kv:
+                raise ValueError(f"Invalid field at {rel}:{lineno}")
+            key, value = kv.split(":", 1)
+            current_item[key.strip()] = parse_scalar(value)
+            continue
+
+        raise ValueError(f"Unsupported YAML structure at {rel}:{lineno}: {raw}")
+
+    return data
+
+
 def all_docs_files() -> List[Path]:
     out: List[Path] = []
     for p in (ROOT / "docs").rglob("*"):
@@ -212,8 +346,8 @@ def validate_public_links(audit: Audit) -> Dict[str, Any]:
     required = {
         "site_identity": ["product_name", "product_name_short", "support_email", "legal_responsible_name"],
         "external_links": ["github_repo", "github_pages_base", "youtube_url", "play_store_url"],
-        "internal_routes_es": ["home", "hardware", "downloads", "support", "privacy", "terms"],
-        "internal_routes_en": ["home", "hardware", "downloads", "support", "privacy", "terms"],
+        "internal_routes_es": ["home", "hardware", "downloads", "support", "gallery", "privacy", "terms"],
+        "internal_routes_en": ["home", "hardware", "downloads", "support", "gallery", "privacy", "terms"],
         "flags": ["has_play_store", "has_youtube"],
     }
     for section, keys in required.items():
@@ -310,6 +444,50 @@ def validate_public_media(audit: Audit) -> Dict[str, Any]:
     return data
 
 
+def validate_gallery_media(audit: Audit) -> Dict[str, Any]:
+    data = parse_simple_yaml("docs/_data/gallery-media.yml")
+    gallery_media = data.get("gallery_media", {}) if isinstance(data.get("gallery_media"), dict) else {}
+    for key in GALLERY_SLOT_KEYS:
+        audit.require("GALLERY_MEDIA", key in gallery_media and isinstance(gallery_media[key], dict), f"Missing gallery slot {key}")
+
+    required_fields = [
+        "placeholder_path", "final_path", "active_source", "target_filename", "target_directory",
+        "alt_es", "alt_en", "caption_es", "caption_en", "section_es", "section_en", "ratio", "width", "height",
+    ]
+
+    for key in GALLERY_SLOT_KEYS:
+        slot = gallery_media.get(key, {})
+        if not isinstance(slot, dict):
+            continue
+        for field in required_fields:
+            audit.require("GALLERY_MEDIA", field in slot, f"Missing {key}.{field}")
+
+        target_directory = str(slot.get("target_directory", "")).strip()
+        target_filename = str(slot.get("target_filename", "")).strip()
+        final_path = str(slot.get("final_path", "")).strip()
+        placeholder_path = str(slot.get("placeholder_path", "")).strip()
+        active_source = str(slot.get("active_source", "")).strip()
+
+        audit.require("GALLERY_MEDIA", active_source in {"placeholder", "final"}, f"{key}.active_source must be placeholder/final")
+        audit.require("GALLERY_MEDIA", target_directory == "docs/assets/media/gallery/", f"{key}.target_directory must be docs/assets/media/gallery/")
+        audit.require("GALLERY_MEDIA", target_filename == GALLERY_FROZEN_FILENAMES[key], f"{key}.target_filename must be {GALLERY_FROZEN_FILENAMES[key]}")
+        audit.require("GALLERY_MEDIA", final_path == f"/assets/media/gallery/{GALLERY_FROZEN_FILENAMES[key]}", f"{key}.final_path must match frozen filename in gallery folder")
+
+        if placeholder_path.startswith("/") and not placeholder_path.startswith("//"):
+            local_placeholder = placeholder_path.lstrip("/")
+            audit.require("GALLERY_MEDIA", (ROOT / "docs" / local_placeholder).exists(), f"Placeholder path not found for {key}: {placeholder_path}")
+        if active_source == "final" and final_path.startswith("/") and not final_path.startswith("//"):
+            local_final = final_path.lstrip("/")
+            audit.require("GALLERY_MEDIA", (ROOT / "docs" / local_final).exists(), f"Final path not found for {key}: {final_path}")
+
+        width = slot.get("width")
+        height = slot.get("height")
+        audit.require("GALLERY_MEDIA", isinstance(width, int) and width > 0, f"{key}.width must be positive int")
+        audit.require("GALLERY_MEDIA", isinstance(height, int) and height > 0, f"{key}.height must be positive int")
+
+    return data
+
+
 def validate_routes(audit: Audit) -> None:
     seen: Dict[str, List[str]] = {}
     for p in all_docs_files():
@@ -346,8 +524,8 @@ def validate_redirects(audit: Audit) -> None:
 def validate_sitemap(audit: Audit) -> None:
     text = read_text("docs/sitemap.xml")
     expected = [
-        "/", "/hardware/", "/downloads/", "/support/", "/privacy-policy/", "/terms/",
-        "/en/", "/en/hardware/", "/en/downloads/", "/en/support/", "/en/privacy-policy/", "/en/terms/",
+        "/", "/hardware/", "/downloads/", "/support/", "/gallery/", "/privacy-policy/", "/terms/",
+        "/en/", "/en/hardware/", "/en/downloads/", "/en/support/", "/en/gallery/", "/en/privacy-policy/", "/en/terms/",
     ]
     for route in expected:
         audit.require("SITEMAP", f"{route}</loc>" in text, f"sitemap missing route {route}")
@@ -458,6 +636,124 @@ def validate_media_registry_usage(audit: Audit) -> None:
     audit.require("MEDIA_REGISTRY", "public-media-item.html" in en_home and "public-video-card.html" in en_home, "Home EN must use media/video includes")
 
 
+def validate_gallery_integration(audit: Audit) -> None:
+    es_gallery = read_text("docs/gallery.md")
+    en_gallery = read_text("docs/en/gallery.md")
+    gallery_include = read_text("docs/_includes/gallery-media-item.html")
+    links_data = read_text("docs/_data/public-links.yml")
+    targets = [
+        "docs/index.md",
+        "docs/downloads.md",
+        "docs/support.md",
+        "docs/en/hardware.md",
+        "docs/en/downloads.md",
+        "docs/en/support.md",
+    ]
+
+    audit.require("GALLERY_INTEGRATION", "layout: public-page" in es_gallery, "docs/gallery.md must use public-page layout")
+    audit.require("GALLERY_INTEGRATION", "layout: public-page" in en_gallery, "docs/en/gallery.md must use public-page layout")
+    audit.require("GALLERY_INTEGRATION", "gallery-media-item.html" in es_gallery, "docs/gallery.md must use gallery-media-item include")
+    audit.require("GALLERY_INTEGRATION", "gallery-media-item.html" in en_gallery, "docs/en/gallery.md must use gallery-media-item include")
+    audit.require("GALLERY_INTEGRATION", "site.data.gallery-media.gallery_media" in gallery_include, "gallery-media-item include must source data from docs/_data/gallery-media.yml")
+    audit.require("GALLERY_INTEGRATION", "/gallery/" in links_data and "/en/gallery/" in links_data, "public-links must include gallery routes")
+
+    linked_pages = 0
+    for rel in targets:
+        text = read_text(rel)
+        if "routes.gallery" in text or "/gallery/" in text or "/en/gallery/" in text:
+            linked_pages += 1
+    audit.require("GALLERY_INTEGRATION", linked_pages >= 4, "Hardware/downloads/support pages must include gallery links in both languages")
+
+    forbidden_tokens = [
+        "raw.githubusercontent.com",
+        "site.raw_base }}/images/gallery/",
+        "/images/gallery/",
+    ]
+    for token in forbidden_tokens:
+        audit.require("GALLERY_INTEGRATION", token not in es_gallery, f"docs/gallery.md contains forbidden legacy token: {token}")
+        audit.require("GALLERY_INTEGRATION", token not in en_gallery, f"docs/en/gallery.md contains forbidden legacy token: {token}")
+
+
+def validate_asset_status_master(audit: Audit) -> None:
+    status_data = parse_ordered_list_yaml("docs/_data/asset-status.yml")
+    app_items = status_data.get("app_assets", [])
+    gallery_items = status_data.get("gallery_assets", [])
+
+    audit.require("ASSET_STATUS", isinstance(app_items, list), "asset-status.yml must include app_assets list")
+    audit.require("ASSET_STATUS", isinstance(gallery_items, list), "asset-status.yml must include gallery_assets list")
+
+    app_by_key = {str(item.get("asset_key", "")).strip(): item for item in app_items if isinstance(item, dict)}
+    gallery_by_key = {str(item.get("asset_key", "")).strip(): item for item in gallery_items if isinstance(item, dict)}
+
+    for key in APP_ASSET_KEYS:
+        audit.require("ASSET_STATUS", key in app_by_key, f"Missing app asset in asset-status.yml: {key}")
+    for key in GALLERY_ASSET_KEYS:
+        audit.require("ASSET_STATUS", key in gallery_by_key, f"Missing gallery asset in asset-status.yml: {key}")
+
+    valid_status = {"pending", "requested", "received", "uploaded", "activated"}
+    valid_priority = {"high", "medium", "low"}
+
+    public_media = parse_simple_yaml("docs/_data/public-media.yml").get("site_media", {})
+    gallery_media = parse_simple_yaml("docs/_data/gallery-media.yml").get("gallery_media", {})
+
+    request_orders: List[int] = []
+    for key, item in list(app_by_key.items()) + list(gallery_by_key.items()):
+        if not isinstance(item, dict):
+            continue
+        for field in ASSET_STATUS_REQUIRED_FIELDS:
+            audit.require("ASSET_STATUS", field in item, f"Missing field for {key}: {field}")
+
+        family = str(item.get("family", "")).strip()
+        source_registry = str(item.get("source_registry", "")).strip()
+        status = str(item.get("status", "")).strip()
+        priority = str(item.get("priority", "")).strip()
+        final_directory = str(item.get("final_directory", "")).strip()
+        source_slot_key = str(item.get("source_slot_key", "")).strip()
+        order = item.get("request_order")
+        final_filename = str(item.get("final_filename", "")).strip()
+
+        audit.require("ASSET_STATUS", family in {"app", "gallery"}, f"{key}.family must be app/gallery")
+        audit.require("ASSET_STATUS", source_registry in {"public-media", "gallery-media"}, f"{key}.source_registry must be public-media/gallery-media")
+        audit.require("ASSET_STATUS", status in valid_status, f"{key}.status invalid: {status}")
+        audit.require("ASSET_STATUS", priority in valid_priority, f"{key}.priority invalid: {priority}")
+        audit.require("ASSET_STATUS", isinstance(order, int) and order > 0, f"{key}.request_order must be positive int")
+        if isinstance(order, int):
+            request_orders.append(order)
+
+        for bool_field in ["requested_from_user", "file_received", "uploaded_to_repo", "activated_in_yaml"]:
+            audit.require("ASSET_STATUS", isinstance(item.get(bool_field), bool), f"{key}.{bool_field} must be boolean")
+
+        if key in APP_ASSET_KEYS:
+            audit.require("ASSET_STATUS", family == "app", f"{key}.family must be app")
+            audit.require("ASSET_STATUS", source_registry == "public-media", f"{key}.source_registry must be public-media")
+            audit.require("ASSET_STATUS", final_directory == "docs/assets/media/app/", f"{key}.final_directory must be docs/assets/media/app/")
+            audit.require("ASSET_STATUS", source_slot_key in public_media, f"{key}.source_slot_key must exist in public-media.yml")
+            if source_slot_key in public_media and isinstance(public_media[source_slot_key], dict):
+                target_filename = str(public_media[source_slot_key].get("target_filename", "")).strip()
+                audit.require("ASSET_STATUS", final_filename == target_filename, f"{key}.final_filename must match public-media target_filename")
+        if key in GALLERY_ASSET_KEYS:
+            audit.require("ASSET_STATUS", family == "gallery", f"{key}.family must be gallery")
+            audit.require("ASSET_STATUS", source_registry == "gallery-media", f"{key}.source_registry must be gallery-media")
+            audit.require("ASSET_STATUS", final_directory == "docs/assets/media/gallery/", f"{key}.final_directory must be docs/assets/media/gallery/")
+            audit.require("ASSET_STATUS", source_slot_key in gallery_media, f"{key}.source_slot_key must exist in gallery-media.yml")
+            if source_slot_key in gallery_media and isinstance(gallery_media[source_slot_key], dict):
+                target_filename = str(gallery_media[source_slot_key].get("target_filename", "")).strip()
+                audit.require("ASSET_STATUS", final_filename == target_filename, f"{key}.final_filename must match gallery-media target_filename")
+
+    expected_orders = list(range(1, 18))
+    audit.require("ASSET_STATUS", sorted(request_orders) == expected_orders, f"request_order must cover exactly {expected_orders}")
+
+
+def validate_asset_request_order_doc(audit: Audit) -> None:
+    text = read_text("docs/ASSET_REQUEST_ORDER.md")
+    expected_sequence = APP_ASSET_KEYS + GALLERY_ASSET_KEYS
+    pos = -1
+    for key in expected_sequence:
+        new_pos = text.find(key, pos + 1)
+        audit.require("ASSET_STATUS_DOC", new_pos != -1, f"ASSET_REQUEST_ORDER.md missing asset key: {key}")
+        if new_pos != -1:
+            pos = new_pos
+
 def validate_asset_ingestion_docs(audit: Audit) -> None:
     guide_rel = "docs/ASSET_INGESTION_GUIDE.md"
     targets_rel = "docs/assets/media/app/ASSET_TARGETS.md"
@@ -514,6 +810,7 @@ def main() -> int:
     validate_critical_files(audit)
     validate_public_links(audit)
     validate_public_media(audit)
+    validate_gallery_media(audit)
     validate_routes(audit)
     validate_redirects(audit)
     validate_sitemap(audit)
@@ -522,6 +819,9 @@ def main() -> int:
     validate_bilingual(audit)
     validate_metadata(audit)
     validate_media_registry_usage(audit)
+    validate_gallery_integration(audit)
+    validate_asset_status_master(audit)
+    validate_asset_request_order_doc(audit)
     validate_asset_ingestion_docs(audit)
     validate_checklist(audit)
     return audit.summary()

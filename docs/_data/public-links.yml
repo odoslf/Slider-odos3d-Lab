@@ -15,6 +15,7 @@ internal_routes_es:
   hardware: "/hardware/"
   downloads: "/downloads/"
   support: "/support/"
+  gallery: "/gallery/"
   privacy: "/privacy-policy/"
   terms: "/terms/"
 
@@ -23,6 +24,7 @@ internal_routes_en:
   hardware: "/en/hardware/"
   downloads: "/en/downloads/"
   support: "/en/support/"
+  gallery: "/en/gallery/"
   privacy: "/en/privacy-policy/"
   terms: "/en/terms/"
 

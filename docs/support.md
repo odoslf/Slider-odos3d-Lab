@@ -49,6 +49,7 @@ page_intro: "Guía de soporte para arrancar rápido, resolver incidencias y mant
   <div class="public-cta-actions">
     <a class="public-btn" href="{{ routes.downloads | relative_url }}">Ver descargas</a>
     <a class="public-btn" href="{{ routes.hardware | relative_url }}">Ver hardware</a>
+    <a class="public-btn" href="{{ routes.gallery | relative_url }}">Galería técnica</a>
     <a class="public-btn" href="{{ routes.privacy | relative_url }}">Privacidad</a>
     <a class="public-btn" href="{{ routes.terms | relative_url }}">Términos</a>
   </div>

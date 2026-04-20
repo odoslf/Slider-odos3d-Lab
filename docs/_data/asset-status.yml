@@ -1,0 +1,273 @@
+app_assets:
+  - asset_key: logo
+    family: app
+    final_filename: logo-final.svg
+    final_directory: docs/assets/media/app/
+    source_registry: public-media
+    source_slot_key: logo
+    public_usage: Header y branding global ES/EN.
+    priority: high
+    request_order: 1
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Requiere transparencia y lectura clara en tamaños pequeños.
+
+  - asset_key: hero
+    family: app
+    final_filename: hero-final.jpg
+    final_directory: docs/assets/media/app/
+    source_registry: public-media
+    source_slot_key: hero
+    public_usage: Hero principal en home ES/EN y apoyo en descargas.
+    priority: high
+    request_order: 2
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Encuadre horizontal premium con foco central.
+
+  - asset_key: app_screenshot
+    family: app
+    final_filename: app-screenshot-final.png
+    final_directory: docs/assets/media/app/
+    source_registry: public-media
+    source_slot_key: app_screenshot
+    public_usage: Bloques de app en home/downloads/support ES/EN.
+    priority: high
+    request_order: 3
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Captura real limpia de interfaz.
+
+  - asset_key: slider_mobile
+    family: app
+    final_filename: slider-mobile-final.jpg
+    final_directory: docs/assets/media/app/
+    source_registry: public-media
+    source_slot_key: slider_mobile
+    public_usage: Bloques hardware/proof ES/EN.
+    priority: medium
+    request_order: 4
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Debe mostrar slider y móvil con claridad.
+
+  - asset_key: slider_dslr
+    family: app
+    final_filename: slider-dslr-final.jpg
+    final_directory: docs/assets/media/app/
+    source_registry: public-media
+    source_slot_key: slider_dslr
+    public_usage: Bloques hardware/proof ES/EN.
+    priority: medium
+    request_order: 5
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Debe mostrar flujo DSLR real con slider.
+
+  - asset_key: video_thumb
+    family: app
+    final_filename: video-thumb-final.jpg
+    final_directory: docs/assets/media/app/
+    source_registry: public-media
+    source_slot_key: video_thumb
+    public_usage: Tarjeta de video demo en home ES/EN.
+    priority: medium
+    request_order: 6
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Reservar zona para overlay de play/CTA.
+
+  - asset_key: favicon
+    family: app
+    final_filename: favicon-final.svg
+    final_directory: docs/assets/media/app/
+    source_registry: public-media
+    source_slot_key: favicon
+    public_usage: Head global, manifest y 404.
+    priority: low
+    request_order: 7
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Transparencia obligatoria y legibilidad 16-32px.
+
+  - asset_key: og_image
+    family: app
+    final_filename: og-home-final.jpg
+    final_directory: docs/assets/media/app/
+    source_registry: public-media
+    source_slot_key: og_image
+    public_usage: OG/Twitter para páginas públicas ES/EN.
+    priority: low
+    request_order: 8
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Formato social 1200x630 estable.
+
+gallery_assets:
+  - asset_key: slot_overview_a
+    family: gallery
+    final_filename: slider-gallery-01-overview-a.jpg
+    final_directory: docs/assets/media/gallery/
+    source_registry: gallery-media
+    source_slot_key: slot_overview_a
+    public_usage: /gallery/ y /en/gallery/ sección Visión general/Overview.
+    priority: high
+    request_order: 9
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Foto general principal del slider montado.
+
+  - asset_key: slot_overview_b
+    family: gallery
+    final_filename: slider-gallery-02-overview-b.jpg
+    final_directory: docs/assets/media/gallery/
+    source_registry: gallery-media
+    source_slot_key: slot_overview_b
+    public_usage: /gallery/ y /en/gallery/ sección Visión general/Overview.
+    priority: high
+    request_order: 10
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Segunda vista general complementaria.
+
+  - asset_key: slot_carriage_a
+    family: gallery
+    final_filename: slider-gallery-03-carriage-a.jpg
+    final_directory: docs/assets/media/gallery/
+    source_registry: gallery-media
+    source_slot_key: slot_carriage_a
+    public_usage: /gallery/ y /en/gallery/ sección Carro y guiado/Carriage and guidance.
+    priority: high
+    request_order: 11
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Carro en plano técnico principal.
+
+  - asset_key: slot_carriage_b
+    family: gallery
+    final_filename: slider-gallery-04-carriage-b.jpg
+    final_directory: docs/assets/media/gallery/
+    source_registry: gallery-media
+    source_slot_key: slot_carriage_b
+    public_usage: /gallery/ y /en/gallery/ sección Carro y guiado/Carriage and guidance.
+    priority: medium
+    request_order: 12
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Vista técnica secundaria del carro.
+
+  - asset_key: slot_belt_a
+    family: gallery
+    final_filename: slider-gallery-05-belt-a.jpg
+    final_directory: docs/assets/media/gallery/
+    source_registry: gallery-media
+    source_slot_key: slot_belt_a
+    public_usage: /gallery/ y /en/gallery/ sección Correa y transmisión/Belt and drive.
+    priority: medium
+    request_order: 13
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Vista funcional de correa/poleas.
+
+  - asset_key: slot_belt_b
+    family: gallery
+    final_filename: slider-gallery-06-belt-b.jpg
+    final_directory: docs/assets/media/gallery/
+    source_registry: gallery-media
+    source_slot_key: slot_belt_b
+    public_usage: /gallery/ y /en/gallery/ sección Correa y transmisión/Belt and drive.
+    priority: medium
+    request_order: 14
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Vista complementaria del tren de transmisión.
+
+  - asset_key: slot_electronics
+    family: gallery
+    final_filename: slider-gallery-07-electronics.jpg
+    final_directory: docs/assets/media/gallery/
+    source_registry: gallery-media
+    source_slot_key: slot_electronics
+    public_usage: /gallery/ y /en/gallery/ sección Electrónica y control/Electronics and control.
+    priority: medium
+    request_order: 15
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Electrónica principal sin oclusiones.
+
+  - asset_key: slot_endstop_x
+    family: gallery
+    final_filename: slider-gallery-08-endstop-x.jpg
+    final_directory: docs/assets/media/gallery/
+    source_registry: gallery-media
+    source_slot_key: slot_endstop_x
+    public_usage: /gallery/ y /en/gallery/ sección Electrónica y control/Electronics and control.
+    priority: low
+    request_order: 16
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Detalle claro del final de carrera X.
+
+  - asset_key: slot_phone_mount
+    family: gallery
+    final_filename: slider-gallery-09-phone-mount.jpg
+    final_directory: docs/assets/media/gallery/
+    source_registry: gallery-media
+    source_slot_key: slot_phone_mount
+    public_usage: /gallery/ y /en/gallery/ sección Accesorios/Accessories.
+    priority: low
+    request_order: 17
+    status: pending
+    requested_from_user: false
+    file_received: false
+    uploaded_to_repo: false
+    activated_in_yaml: false
+    notes: Accesorio soporte móvil con anclaje visible.

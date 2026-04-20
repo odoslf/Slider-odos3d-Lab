@@ -35,6 +35,7 @@ page_intro: "Puedes empezar solo con móvil. El hardware abierto no es obligator
     <p>Desde aquí accedes a STL/STEP/BOM, piezas del proyecto y referencias GRBL para montaje y ajustes.</p>
     <div class="public-links-list">
       <a href="{{ routes.downloads | relative_url }}">Ver descargas</a>
+      <a href="{{ routes.gallery | relative_url }}">Ver galería técnica</a>
       <a href="{{ '/parts/' | relative_url }}">Ver piezas</a>
       <a href="{{ '/grbl/' | relative_url }}">Ver GRBL 1.1</a>
     </div>
@@ -51,6 +52,7 @@ page_intro: "Puedes empezar solo con móvil. El hardware abierto no es obligator
   <p>Revisa recursos disponibles y vuelve a la home cuando quieras continuar con la parte app.</p>
   <div class="public-cta-actions">
     <a class="public-btn primary" href="{{ routes.downloads | relative_url }}">Ir a descargas</a>
+    <a class="public-btn" href="{{ routes.gallery | relative_url }}">Abrir galería</a>
     <a class="public-btn" href="{{ routes.home | relative_url }}">Volver a home</a>
     <a class="public-btn" href="{{ routes.support | relative_url }}">Necesitas ayuda</a>
   </div>

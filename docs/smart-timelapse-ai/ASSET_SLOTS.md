@@ -2,12 +2,15 @@
 
 ## Configuración central real
 
-La capa pública se gobierna desde dos fuentes:
+La capa pública se gobierna desde fuentes registradas:
 
-- Media: `docs/_data/public-media.yml`
+- Media app/site: `docs/_data/public-media.yml`
+- Media galería técnica: `docs/_data/gallery-media.yml`
+- Estado maestro de assets: `docs/_data/asset-status.yml`
+- Orden de solicitud: `docs/ASSET_REQUEST_ORDER.md`
 - Links y datos públicos: `docs/_data/public-links.yml`
 
-## Mapeo real de assets por bloque visual
+## Mapeo real de assets app por bloque visual
 
 - `logo` → logo de header en `/`, `/en/` y páginas públicas secundarias.
 - `hero` → hero principal y apoyo visual en bloques de prueba.
@@ -18,34 +21,27 @@ La capa pública se gobierna desde dos fuentes:
 - `favicon` → head global y `site.webmanifest`.
 - `og_image` → `og:image` y `twitter:image` de páginas públicas.
 
-## Home real y redirecciones
+## Mapeo real de slots de galería técnica
 
-- Landings reales: `/` y `/en/`.
-- Redirecciones (no canónicas): `/smart-timelapse-ai/` y `/en/smart-timelapse-ai/`.
+- `slot_overview_a`, `slot_overview_b` → Visión general / Overview.
+- `slot_carriage_a`, `slot_carriage_b` → Carro y guiado / Carriage and guidance.
+- `slot_belt_a`, `slot_belt_b` → Correa y transmisión / Belt and drive.
+- `slot_electronics`, `slot_endstop_x` → Electrónica y control / Electronics and control.
+- `slot_phone_mount` → Accesorios / Accessories.
 
-## Nombres finales congelados y carpeta definitiva
+## Flujo operativo unificado
 
-Carpeta final obligatoria:
-- `docs/assets/media/app/`
-
-Nombres finales exactos:
-- `logo-final.svg`
-- `hero-final.jpg`
-- `slider-mobile-final.jpg`
-- `slider-dslr-final.jpg`
-- `app-screenshot-final.png`
-- `video-thumb-final.jpg`
-- `favicon-final.svg`
-- `og-home-final.jpg`
-
-## Flujo operativo
-
-1. Sustituir archivo final en `docs/assets/media/app/`.
-2. Cambiar `active_source` de `placeholder` a `final` en el `media_key` correspondiente de `docs/_data/public-media.yml`.
-3. Ajustar `is_placeholder: false` para ese asset y, si aplica, activar YouTube/Play en `docs/_data/public-links.yml`.
-4. Ejecutar auditoría: `python scripts/public_site_audit.py`.
+1. Identificar asset en `docs/_data/asset-status.yml`.
+2. Pedirlo según `docs/ASSET_REQUEST_ORDER.md`.
+3. Subir con nombre final congelado en carpeta final (`docs/assets/media/app/` o `docs/assets/media/gallery/`).
+4. Marcar `uploaded_to_repo: true` en `asset-status.yml`.
+5. Cambiar `active_source` a `final` en el registry correspondiente.
+6. Marcar `activated_in_yaml: true` en `asset-status.yml`.
+7. Ejecutar auditoría: `python scripts/public_site_audit.py`.
+8. Revisión visual ES/EN.
 
 ## Documentación complementaria
 
-- Guía operativa completa: `docs/ASSET_INGESTION_GUIDE.md`
-- Ficha técnica de carpeta final: `docs/assets/media/app/ASSET_TARGETS.md`
+- Guía operativa app: `docs/ASSET_INGESTION_GUIDE.md`
+- Guía operativa galería: `docs/GALLERY_INGESTION_GUIDE.md`
+- Ficha técnica app: `docs/assets/media/app/ASSET_TARGETS.md`

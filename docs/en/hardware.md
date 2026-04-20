@@ -35,6 +35,7 @@ page_intro: "You can start phone-only. Open hardware is optional, but it lets yo
     <p>From here you access STL/STEP/BOM, project parts, and GRBL references for assembly and adjustment.</p>
     <div class="public-links-list">
       <a href="{{ routes.downloads | relative_url }}">Open downloads</a>
+      <a href="{{ routes.gallery | relative_url }}">Open technical gallery</a>
       <a href="{{ '/parts/' | relative_url }}">Open parts</a>
       <a href="{{ '/grbl/' | relative_url }}">Open GRBL 1.1</a>
     </div>
@@ -51,6 +52,7 @@ page_intro: "You can start phone-only. Open hardware is optional, but it lets yo
   <p>Review available resources and return to the home page when you want to continue on the app side.</p>
   <div class="public-cta-actions">
     <a class="public-btn primary" href="{{ routes.downloads | relative_url }}">Go to downloads</a>
+    <a class="public-btn" href="{{ routes.gallery | relative_url }}">Open gallery</a>
     <a class="public-btn" href="{{ routes.home | relative_url }}">Back to home</a>
     <a class="public-btn" href="{{ routes.support | relative_url }}">Need help</a>
   </div>
