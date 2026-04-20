@@ -23,25 +23,25 @@ site_media:
     transparency_required: true
     used_on_pages: "/,/en/,/hardware/,/downloads/,/support/,/privacy-policy/,/terms/,/en/hardware/,/en/downloads/,/en/support/,/en/privacy-policy/,/en/terms/"
     used_in_sections: Header público
-    current_slot_source: /assets/img/app-logo-slot.svg
+    current_slot_source: /assets/media/app/logo-final.png
 
   hero:
     placeholder_path: /assets/img/app-hero-slot.svg
-    final_path: /assets/media/app/hero-final.jpg
-    active_source: placeholder
-    is_placeholder: true
-    alt_es: Hero temporal Smart Timelapse AI
-    alt_en: Temporary Smart Timelapse AI hero
-    caption_es: Slot temporal del hero
-    caption_en: Temporary hero slot
+    final_path: /assets/media/app/hero-final.png
+    active_source: final
+    is_placeholder: false
+    alt_es: Hero principal Smart Timelapse AI
+    alt_en: Smart Timelapse AI main hero
+    caption_es: Hero final de producto
+    caption_en: Final product hero
     kind: hero
     ratio: "16:10"
     width: 1920
     height: 1200
     loading_default: eager
-    target_filename: hero-final.jpg
+    target_filename: hero-final.png
     target_directory: docs/assets/media/app/
-    preferred_format: jpg
+    preferred_format: png
     recommended_min_width: 1920
     recommended_min_height: 1200
     crop_strategy: Cover horizontal con foco central.
@@ -49,7 +49,7 @@ site_media:
     transparency_required: false
     used_on_pages: "/,/en/,/downloads/,/en/downloads/"
     used_in_sections: Hero principal
-    current_slot_source: /assets/img/app-hero-slot.svg
+    current_slot_source: /assets/media/app/hero-final.png
 
   slider_mobile:
     placeholder_path: /assets/img/app-gallery-slider-mobile-slot.svg
