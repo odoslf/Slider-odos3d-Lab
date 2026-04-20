@@ -1,210 +1,209 @@
 site_media:
   logo:
-    kind: logo
     placeholder_path: /assets/img/app-logo-slot.svg
     final_path: /assets/media/app/logo-final.svg
     active_source: placeholder
+    is_placeholder: true
+    alt_es: Logo temporal Smart Timelapse AI
+    alt_en: Temporary Smart Timelapse AI logo
+    caption_es: Slot temporal de logo
+    caption_en: Temporary logo slot
+    kind: logo
+    ratio: "1:1"
+    width: 512
+    height: 512
+    loading_default: eager
     target_filename: logo-final.svg
     target_directory: docs/assets/media/app/
     preferred_format: svg
-    ratio: "1:1"
-    width: 512
-    height: 512
     recommended_min_width: 512
     recommended_min_height: 512
-    crop_strategy: "Sin recorte; mantener marca centrada completa."
-    safe_area_notes: "Mantener márgenes internos limpios (10% perimetral) para evitar corte visual en tamaños pequeños."
+    crop_strategy: Sin recorte; mantener marca completa centrada.
+    safe_area_notes: Mantener un margen limpio del 10% alrededor del logo.
     transparency_required: true
-    loading_default: eager
-    is_placeholder: true
-    alt_es: Logo temporal Smart Timelapse AI
-    alt_en: Smart Timelapse AI temporary logo
-    caption_es: Slot de logo pendiente de versión final
-    caption_en: Logo slot pending final version
     used_on_pages: "/,/en/,/hardware/,/downloads/,/support/,/privacy-policy/,/terms/,/en/hardware/,/en/downloads/,/en/support/,/en/privacy-policy/,/en/terms/"
-    used_in_sections: "Header de shell pública"
+    used_in_sections: Header público
     current_slot_source: /assets/img/app-logo-slot.svg
 
   hero:
-    kind: hero
     placeholder_path: /assets/img/app-hero-slot.svg
     final_path: /assets/media/app/hero-final.jpg
     active_source: placeholder
-    target_filename: hero-final.jpg
-    target_directory: docs/assets/media/app/
-    preferred_format: jpg
+    is_placeholder: true
+    alt_es: Hero temporal Smart Timelapse AI
+    alt_en: Temporary Smart Timelapse AI hero
+    caption_es: Slot temporal del hero
+    caption_en: Temporary hero slot
+    kind: hero
     ratio: "16:10"
     width: 1920
     height: 1200
+    loading_default: eager
+    target_filename: hero-final.jpg
+    target_directory: docs/assets/media/app/
+    preferred_format: jpg
     recommended_min_width: 1920
     recommended_min_height: 1200
-    crop_strategy: "Cover horizontal; foco visual en zona central para preservar composición en 16:10 y recortes derivados."
-    safe_area_notes: "Evitar texto relevante en bordes superiores/laterales; reservar zona segura central 60%."
+    crop_strategy: Cover horizontal con foco central.
+    safe_area_notes: Mantener contenido importante en el 60% central.
     transparency_required: false
-    loading_default: eager
-    is_placeholder: true
-    alt_es: Visual principal temporal de Smart Timelapse AI
-    alt_en: Smart Timelapse AI temporary hero visual
-    caption_es: Slot hero principal para sustituir por foto/banner real
-    caption_en: Main hero slot to be replaced with real photo/banner
     used_on_pages: "/,/en/,/downloads/,/en/downloads/"
-    used_in_sections: "Hero principal y proof grid"
+    used_in_sections: Hero principal
     current_slot_source: /assets/img/app-hero-slot.svg
 
   slider_mobile:
-    kind: gallery
     placeholder_path: /assets/img/app-gallery-slider-mobile-slot.svg
     final_path: /assets/media/app/slider-mobile-final.jpg
     active_source: placeholder
+    is_placeholder: true
+    alt_es: Slot temporal slider con móvil
+    alt_en: Temporary slider with mobile slot
+    caption_es: Slot temporal de slider móvil
+    caption_en: Temporary mobile slider slot
+    kind: gallery
+    ratio: "16:9"
+    width: 1920
+    height: 1080
+    loading_default: lazy
     target_filename: slider-mobile-final.jpg
     target_directory: docs/assets/media/app/
     preferred_format: jpg
-    ratio: "16:9"
-    width: 1920
-    height: 1080
     recommended_min_width: 1920
     recommended_min_height: 1080
-    crop_strategy: "Cover 16:9; priorizar el carril y dispositivo móvil en eje central."
-    safe_area_notes: "Mantener sujeto principal fuera del 5% de bordes para evitar recorte agresivo en cards."
+    crop_strategy: Cover 16:9 priorizando sujeto central.
+    safe_area_notes: Evitar contenido crítico en los bordes.
     transparency_required: false
-    loading_default: lazy
-    is_placeholder: true
-    alt_es: Slot temporal slider con móvil
-    alt_en: Temporary slider and phone slot
-    caption_es: Setup hardware 1: slider + móvil
-    caption_en: Hardware setup 1: slider + phone
     used_on_pages: "/,/en/,/hardware/,/en/hardware/"
-    used_in_sections: "Proof grid y tarjetas de hardware"
+    used_in_sections: Galería pública
     current_slot_source: /assets/img/app-gallery-slider-mobile-slot.svg
 
   slider_dslr:
-    kind: gallery
     placeholder_path: /assets/img/app-gallery-slider-dslr-slot.svg
     final_path: /assets/media/app/slider-dslr-final.jpg
     active_source: placeholder
+    is_placeholder: true
+    alt_es: Slot temporal slider con DSLR
+    alt_en: Temporary slider with DSLR slot
+    caption_es: Slot temporal de slider DSLR
+    caption_en: Temporary DSLR slider slot
+    kind: gallery
+    ratio: "16:9"
+    width: 1920
+    height: 1080
+    loading_default: lazy
     target_filename: slider-dslr-final.jpg
     target_directory: docs/assets/media/app/
     preferred_format: jpg
-    ratio: "16:9"
-    width: 1920
-    height: 1080
     recommended_min_width: 1920
     recommended_min_height: 1080
-    crop_strategy: "Cover 16:9; mantener cámara/slider con lectura clara en centro y tercio superior."
-    safe_area_notes: "Evitar elementos críticos pegados a esquinas; conservar zona central dominante."
+    crop_strategy: Cover 16:9 manteniendo foco visual central.
+    safe_area_notes: Dejar márgenes de seguridad en las esquinas.
     transparency_required: false
-    loading_default: lazy
-    is_placeholder: true
-    alt_es: Slot temporal slider con DSLR
-    alt_en: Temporary slider and DSLR slot
-    caption_es: Setup hardware 2: slider + DSLR
-    caption_en: Hardware setup 2: slider + DSLR
     used_on_pages: "/,/en/,/hardware/,/en/hardware/"
-    used_in_sections: "Proof grid y tarjetas de hardware"
+    used_in_sections: Galería pública
     current_slot_source: /assets/img/app-gallery-slider-dslr-slot.svg
 
   app_screenshot:
-    kind: screenshot
     placeholder_path: /assets/img/app-gallery-app-screenshot-slot.svg
     final_path: /assets/media/app/app-screenshot-final.png
     active_source: placeholder
+    is_placeholder: true
+    alt_es: Captura temporal de app
+    alt_en: Temporary app screenshot
+    caption_es: Slot temporal de captura de app
+    caption_en: Temporary app screenshot slot
+    kind: screenshot
+    ratio: "16:9"
+    width: 1920
+    height: 1080
+    loading_default: lazy
     target_filename: app-screenshot-final.png
     target_directory: docs/assets/media/app/
     preferred_format: png
-    ratio: "16:9"
-    width: 1920
-    height: 1080
     recommended_min_width: 1600
     recommended_min_height: 900
-    crop_strategy: "Cover 16:9 con prioridad a contenido UI central; evitar recorte de elementos de navegación relevantes."
-    safe_area_notes: "Mantener controles clave dentro del área central 70%; evitar barras externas sin valor."
+    crop_strategy: Cover 16:9 priorizando la UI central.
+    safe_area_notes: Mantener elementos clave dentro del 70% central.
     transparency_required: false
-    loading_default: lazy
-    is_placeholder: true
-    alt_es: Slot temporal de captura de app
-    alt_en: Temporary app screenshot slot
-    caption_es: Captura real de app pendiente de sustituir
-    caption_en: Real app screenshot pending replacement
     used_on_pages: "/,/en/,/downloads/,/support/,/en/downloads/,/en/support/"
-    used_in_sections: "Proof grid, cabeceras visuales de soporte y downloads"
+    used_in_sections: Descargas y soporte
     current_slot_source: /assets/img/app-gallery-app-screenshot-slot.svg
 
   video_thumb:
-    kind: video
     placeholder_path: /assets/img/app-video-slot.svg
     final_path: /assets/media/app/video-thumb-final.jpg
     active_source: placeholder
-    target_filename: video-thumb-final.jpg
-    target_directory: docs/assets/media/app/
-    preferred_format: jpg
+    is_placeholder: true
+    alt_es: Miniatura temporal de vídeo
+    alt_en: Temporary video thumbnail
+    caption_es: Slot temporal de miniatura de vídeo
+    caption_en: Temporary video thumbnail slot
+    kind: video
     ratio: "16:9"
     width: 1920
     height: 1080
+    loading_default: lazy
+    target_filename: video-thumb-final.jpg
+    target_directory: docs/assets/media/app/
+    preferred_format: jpg
     recommended_min_width: 1920
     recommended_min_height: 1080
-    crop_strategy: "Cover 16:9 con punto focal central; prever overlay CTA/play en esquina inferior izquierda."
-    safe_area_notes: "No colocar texto crítico en franja inferior izquierda (overlay de CTA) ni en bordes extremos."
+    crop_strategy: Cover 16:9 con foco central.
+    safe_area_notes: Reservar espacio para icono de play sin tapar contenido.
     transparency_required: false
-    loading_default: lazy
-    is_placeholder: true
-    youtube_url: ""
-    youtube_url_source: "public-links.external_links.youtube_url"
-    alt_es: Slot temporal de vídeo demo
-    alt_en: Temporary demo video slot
-    caption_es: Miniatura temporal de vídeo demo
-    caption_en: Temporary demo video thumbnail
     used_on_pages: "/,/en/"
-    used_in_sections: "Proof grid / bloque de vídeo demo"
+    used_in_sections: Bloque de vídeo
+    youtube_url_source: public-links.external_links.youtube_url
     current_slot_source: /assets/img/app-video-slot.svg
 
   favicon:
-    kind: favicon
     placeholder_path: /assets/img/favicon-slot.svg
     final_path: /assets/media/app/favicon-final.svg
     active_source: placeholder
-    target_filename: favicon-final.svg
-    target_directory: docs/assets/media/app/
-    preferred_format: svg
-    ratio: "1:1"
-    width: 512
-    height: 512
-    recommended_min_width: 512
-    recommended_min_height: 512
-    crop_strategy: "Sin recorte; icono centrado y legible a tamaños pequeños."
-    safe_area_notes: "Mantener símbolo principal dentro de zona central 70% para lectura en pestaña/navegador."
-    transparency_required: true
-    loading_default: eager
     is_placeholder: true
     alt_es: Favicon temporal
     alt_en: Temporary favicon
-    caption_es: ""
-    caption_en: ""
+    caption_es: Slot temporal de favicon
+    caption_en: Temporary favicon slot
+    kind: favicon
+    ratio: "1:1"
+    width: 512
+    height: 512
+    loading_default: eager
+    target_filename: favicon-final.svg
+    target_directory: docs/assets/media/app/
+    preferred_format: svg
+    recommended_min_width: 512
+    recommended_min_height: 512
+    crop_strategy: Sin recorte; icono centrado y legible.
+    safe_area_notes: Mantener símbolo principal en el 70% central.
+    transparency_required: true
     used_on_pages: "/,/en/,/hardware/,/downloads/,/support/,/privacy-policy/,/terms/,/en/hardware/,/en/downloads/,/en/support/,/en/privacy-policy/,/en/terms/,/404.html"
-    used_in_sections: "Head global y webmanifest"
+    used_in_sections: Head global
     current_slot_source: /assets/img/favicon-slot.svg
 
   og_image:
-    kind: og
     placeholder_path: /assets/img/og-home-slot.svg
     final_path: /assets/media/app/og-home-final.jpg
     active_source: placeholder
-    target_filename: og-home-final.jpg
-    target_directory: docs/assets/media/app/
-    preferred_format: jpg
+    is_placeholder: true
+    alt_es: Imagen OG temporal de home
+    alt_en: Temporary home OG image
+    caption_es: Slot temporal de imagen social
+    caption_en: Temporary social image slot
+    kind: og
     ratio: "1200:630"
     width: 1200
     height: 630
+    loading_default: eager
+    target_filename: og-home-final.jpg
+    target_directory: docs/assets/media/app/
+    preferred_format: jpg
     recommended_min_width: 1200
     recommended_min_height: 630
-    crop_strategy: "Lienzo social fijo 1200x630; composición horizontal estable sin recorte dinámico."
-    safe_area_notes: "Mantener información relevante en zona central (aprox. 80% ancho, 70% alto) para previews truncados."
+    crop_strategy: Lienzo social fijo 1200x630 sin recorte dinámico.
+    safe_area_notes: Mantener texto y logo dentro del 80% central.
     transparency_required: false
-    loading_default: eager
-    is_placeholder: true
-    alt_es: Imagen social temporal de la home
-    alt_en: Temporary home social image
-    caption_es: ""
-    caption_en: ""
     used_on_pages: "/,/en/,/hardware/,/downloads/,/support/,/privacy-policy/,/terms/,/en/hardware/,/en/downloads/,/en/support/,/en/privacy-policy/,/en/terms/"
-    used_in_sections: "Head Open Graph y Twitter Cards"
+    used_in_sections: Metadatos sociales
     current_slot_source: /assets/img/og-home-slot.svg
