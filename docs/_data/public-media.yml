@@ -1,21 +1,21 @@
 site_media:
   logo:
     placeholder_path: /assets/img/app-logo-slot.svg
-    final_path: /assets/media/app/logo-final.svg
-    active_source: placeholder
-    is_placeholder: true
-    alt_es: Logo temporal Smart Timelapse AI
-    alt_en: Temporary Smart Timelapse AI logo
-    caption_es: Slot temporal de logo
-    caption_en: Temporary logo slot
+    final_path: /assets/media/app/logo-final.png
+    active_source: final
+    is_placeholder: false
+    alt_es: Logo principal Smart Timelapse AI
+    alt_en: Smart Timelapse AI primary logo
+    caption_es: Logo final de marca
+    caption_en: Final brand logo
     kind: logo
     ratio: "1:1"
     width: 512
     height: 512
     loading_default: eager
-    target_filename: logo-final.svg
+    target_filename: logo-final.png
     target_directory: docs/assets/media/app/
-    preferred_format: svg
+    preferred_format: png
     recommended_min_width: 512
     recommended_min_height: 512
     crop_strategy: Sin recorte; mantener marca completa centrada.
