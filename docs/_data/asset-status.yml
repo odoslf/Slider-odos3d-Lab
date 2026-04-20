@@ -17,19 +17,19 @@ app_assets:
 
   - asset_key: hero
     family: app
-    final_filename: hero-final.jpg
+    final_filename: hero-final.png
     final_directory: docs/assets/media/app/
     source_registry: public-media
     source_slot_key: hero
     public_usage: Hero principal en home ES/EN y apoyo en descargas.
     priority: high
     request_order: 2
-    status: pending
-    requested_from_user: false
-    file_received: false
-    uploaded_to_repo: false
-    activated_in_yaml: false
-    notes: Encuadre horizontal premium con foco central.
+    status: activated
+    requested_from_user: true
+    file_received: true
+    uploaded_to_repo: true
+    activated_in_yaml: true
+    notes: PNG horizontal final ya subido y activado en el registry.
 
   - asset_key: app_screenshot
     family: app
