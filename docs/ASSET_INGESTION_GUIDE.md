@@ -12,7 +12,7 @@ Guía interna para sustituir placeholders por assets finales **sin tocar plantil
 | media_key | archivo final | formato esperado | tamaño mínimo recomendado | ratio | transparencia | dónde se usa | observaciones de recorte / zona segura |
 |---|---|---|---|---|---|---|---|
 | logo | `logo-final.png` | png | 512x512 | 1:1 | Sí | Header público ES/EN y páginas secundarias | Mantener marca centrada con margen interno (10%). |
-| hero | `hero-final.jpg` | jpg | 1920x1200 | 16:10 | No | Home `/` y `/en/`, bloque visual y apoyo en downloads | Foco central; evitar texto en bordes. |
+| hero | `hero-final.png` | png | 1920x1200 | 16:10 | No | Home `/` y `/en/`, bloque visual y apoyo en downloads | Foco central; evitar texto en bordes. |
 | slider_mobile | `slider-mobile-final.jpg` | jpg | 1920x1080 | 16:9 | No | Home y páginas hardware ES/EN | Carril + móvil centrados, sin elementos críticos en bordes. |
 | slider_dslr | `slider-dslr-final.jpg` | jpg | 1920x1080 | 16:9 | No | Home y páginas hardware ES/EN | Cámara/slider legibles en zona central. |
 | app_screenshot | `app-screenshot-final.png` | png | 1600x900 | 16:9 | No | Home, downloads y support ES/EN | Captura limpia; evitar barras ajenas sin valor. |
