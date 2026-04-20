@@ -4,7 +4,7 @@ Ruta productiva final de assets:
 - `docs/assets/media/app/`
 
 Nombres finales congelados:
-- `logo-final.svg` (svg, transparencia: sí) — uso: logo de header público.
+- `logo-final.png` (png, transparencia: sí) — uso: logo de header público.
 - `hero-final.jpg` (jpg, transparencia: no) — uso: hero principal home ES/EN.
 - `slider-mobile-final.jpg` (jpg, transparencia: no) — uso: media de hardware/proof.
 - `slider-dslr-final.jpg` (jpg, transparencia: no) — uso: media de hardware/proof.
@@ -15,7 +15,6 @@ Nombres finales congelados:
 
 Nota técnica:
 - Mientras no existan assets reales, el sistema usa placeholders definidos en `docs/_data/public-media.yml`.
-
 
 Flujo de activación:
 1. Subir archivo final con nombre congelado.
