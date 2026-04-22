@@ -56,10 +56,10 @@ site_media:
     final_path: /assets/media/app/slider-mobile-final.jpg
     active_source: final
     is_placeholder: false
-    alt_es: Slot temporal slider con móvil
-    alt_en: Temporary slider with mobile slot
-    caption_es: Slot temporal de slider móvil
-    caption_en: Temporary mobile slider slot
+    alt_es: Slider real con móvil montado
+    alt_en: Real slider with mounted phone
+    caption_es: Slider con móvil dentro del flujo real
+    caption_en: Slider with phone in the real workflow
     kind: gallery
     ratio: "16:9"
     width: 1920
@@ -82,10 +82,10 @@ site_media:
     final_path: /assets/media/app/slider-dslr-final.jpg
     active_source: final
     is_placeholder: false
-    alt_es: Slot temporal slider con DSLR
-    alt_en: Temporary slider with DSLR slot
-    caption_es: Slot temporal de slider DSLR
-    caption_en: Temporary DSLR slider slot
+    alt_es: Slider real con DSLR montada
+    alt_en: Real slider with mounted DSLR
+    caption_es: Slider con DSLR dentro del flujo real
+    caption_en: Slider with DSLR in the real workflow
     kind: gallery
     ratio: "16:9"
     width: 1920
@@ -108,10 +108,10 @@ site_media:
     final_path: /assets/media/app/app-screenshot-final.jpg
     active_source: final
     is_placeholder: false
-    alt_es: Captura temporal de app
-    alt_en: Temporary app screenshot
-    caption_es: Slot temporal de captura de app
-    caption_en: Temporary app screenshot slot
+    alt_es: Captura real de la app
+    alt_en: Real app screenshot
+    caption_es: Captura real de la app
+    caption_en: Real app screenshot
     kind: screenshot
     ratio: "16:9"
     width: 1920
@@ -134,10 +134,10 @@ site_media:
     final_path: /assets/media/app/video-thumb-final.jpg
     active_source: final
     is_placeholder: false
-    alt_es: Miniatura temporal de vídeo
-    alt_en: Temporary video thumbnail
-    caption_es: Slot temporal de miniatura de vídeo
-    caption_en: Temporary video thumbnail slot
+    alt_es: Miniatura real de vídeo demo
+    alt_en: Real demo video thumbnail
+    caption_es: Miniatura real de vídeo demo
+    caption_en: Real demo video thumbnail
     kind: video
     ratio: "16:9"
     width: 1920
@@ -161,10 +161,10 @@ site_media:
     final_path: /assets/media/app/favicon-final.png
     active_source: final
     is_placeholder: false
-    alt_es: Favicon temporal
-    alt_en: Temporary favicon
-    caption_es: Slot temporal de favicon
-    caption_en: Temporary favicon slot
+    alt_es: Favicon final de marca
+    alt_en: Final brand favicon
+    caption_es: Favicon final
+    caption_en: Final favicon
     kind: favicon
     ratio: "1:1"
     width: 512
@@ -187,10 +187,10 @@ site_media:
     final_path: /assets/media/app/og-home-final.jpg
     active_source: final
     is_placeholder: false
-    alt_es: Imagen OG temporal de home
-    alt_en: Temporary home OG image
-    caption_es: Slot temporal de imagen social
-    caption_en: Temporary social image slot
+    alt_es: Imagen social final de la web
+    alt_en: Final social image for the website
+    caption_es: Imagen social final
+    caption_en: Final social image
     kind: og
     ratio: "1200:630"
     width: 1200

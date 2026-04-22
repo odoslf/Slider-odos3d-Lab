@@ -20,8 +20,8 @@ page_intro: "Puedes empezar solo con móvil. El hardware abierto no es obligator
 
 
 <div class="public-media-grid" style="margin-bottom:14px;">
-  <article class="public-media-card">{% include public-media-item.html media_key='slider_mobile' lang='es' loading='lazy' show_caption='true' %}</article>
-  <article class="public-media-card">{% include public-media-item.html media_key='slider_dslr' lang='es' loading='lazy' show_caption='true' %}</article>
+  <article class="public-media-card">{% include public-media-item.html media_key='slider_mobile' lang='es' loading='lazy' show_caption='false' %}</article>
+  <article class="public-media-card">{% include public-media-item.html media_key='slider_dslr' lang='es' loading='lazy' show_caption='false' %}</article>
 </div>
 <div class="public-grid cols-3">
   <article class="public-card">

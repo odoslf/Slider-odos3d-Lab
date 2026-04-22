@@ -819,6 +819,34 @@ def validate_checklist(audit: Audit) -> None:
         audit.require("CHECKLIST", phrase.lower() in text.lower(), f"Checklist missing: {phrase}")
 
 
+def validate_forbidden_public_copy(audit: Audit) -> None:
+    forbidden_visible_tokens = [
+        "Slot temporal",
+        "Temporary slot",
+        "provisional",
+        "app-screenshot-final.png",
+        "favicon-final.svg",
+        "slider-gallery-03-carriage-a.jpg",
+        "slider-gallery-04-carriage-b.jpg",
+    ]
+
+    scope = [
+        "docs/index.html",
+        "docs/en/index.html",
+        "docs/index.md",
+        "docs/en/hardware.md",
+        "docs/downloads.md",
+        "docs/en/downloads.md",
+        "docs/support.md",
+        "docs/en/support.md",
+        "docs/_data/public-media.yml",
+    ]
+
+    for rel in scope:
+        text = read_text(rel)
+        for token in forbidden_visible_tokens:
+            audit.require("FORBIDDEN_COPY", token not in text, f"{rel} contains forbidden visible token: {token}")
+
 def validate_downloads_real_inventory(audit: Audit) -> None:
     es = read_text("docs/downloads.md")
     en = read_text("docs/en/downloads.md")
@@ -869,6 +897,7 @@ def main() -> int:
     validate_asset_request_order_doc(audit)
     validate_asset_ingestion_docs(audit)
     validate_checklist(audit)
+    validate_forbidden_public_copy(audit)
     validate_downloads_real_inventory(audit)
     return audit.summary()
 

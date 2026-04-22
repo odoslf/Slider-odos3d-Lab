@@ -18,11 +18,6 @@ page_intro: "Resource center for hardware files, documentation, and references i
 {% assign external = links.external_links %}
 {% assign routes = links.internal_routes_en %}
 
-
-<div class="public-media-grid" style="margin-bottom:14px;">
-  <article class="public-media-card">{% include public-media-item.html media_key='hero' lang='en' loading='lazy' show_caption='false' %}</article>
-  <article class="public-media-card">{% include public-media-item.html media_key='app_screenshot' lang='en' loading='lazy' show_caption='true' %}</article>
-</div>
 <div class="public-grid cols-2">
   <article class="public-card">
     <p class="public-kicker">Real files currently available in the repo</p>
