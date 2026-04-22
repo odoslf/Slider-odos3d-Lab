@@ -30,3 +30,21 @@ permalink: /upload-map/
 - BOM: `prints/BOM/v1/`
 
 Al crear `v2`, `v3`, etc., mantener histórico y actualizar solo `latest_pack` en `docs/_config.yml`.
+
+Estado actual de galería pública:
+- 01–04 subidos y activados en registry.
+- 05–09 pendientes y en placeholder.
+
+Estado actual de descargas hardware:
+- STL v1 disponible con estos archivos reales:
+  - `Slider ODOS3D Lab caja electroniica.stl`
+  - `Slider ODOS3D Lab carro.stl`
+  - `Slider ODOS3D Lab escuadra.stl`
+  - `Slider ODOS3D Lab separador.stl`
+  - `Slider ODOS3D Lab soporte correa.stl`
+  - `Slider ODOS3D Lab soporte derecho.stl`
+  - `Slider ODOS3D Lab soporte izquierdo.stl`
+  - `Slider ODOS3D Lab tubo camara.stl`
+  - `Slider ODOS3D Labtapa electroniica.stl`
+- BOM v1 disponible (`slider-odos3d_bom_v1.csv` y `README.md`).
+- STEP v1 sigue pendiente de archivos finales.

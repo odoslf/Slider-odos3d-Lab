@@ -20,7 +20,7 @@ permalink: /site.webmanifest
     {
       "src": "{{ site.baseurl }}{{ favicon_src }}",
       "sizes": "any",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any"
     }
   ]

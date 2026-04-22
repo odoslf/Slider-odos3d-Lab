@@ -9,21 +9,21 @@ Este documento define el orden único en que se pedirán los archivos reales.
 ## Lista ordenada exacta
 
 1. **Logo de marca** (`asset_key: logo`)
-   - Archivo final: `logo-final.svg`
+   - Archivo final: `logo-final.png`
    - Dónde se usa: header global ES/EN y páginas públicas secundarias.
    - Imagen esperada: logo vectorial limpio de marca.
    - Transparencia: **sí**.
    - Encuadre: **cuadrado (1:1)**.
 
 2. **Hero principal app** (`asset_key: hero`)
-   - Archivo final: `hero-final.jpg`
+   - Archivo final: `hero-final.png`
    - Dónde se usa: home ES/EN y apoyo en descargas.
    - Imagen esperada: foto horizontal premium del ecosistema.
    - Transparencia: no.
    - Encuadre: **horizontal (16:10)**.
 
 3. **Captura principal de app** (`asset_key: app_screenshot`)
-   - Archivo final: `app-screenshot-final.png`
+   - Archivo final: `app-screenshot-final.jpg`
    - Dónde se usa: home, downloads y support ES/EN.
    - Imagen esperada: screenshot real y limpio de UI.
    - Transparencia: no.
@@ -51,7 +51,7 @@ Este documento define el orden único en que se pedirán los archivos reales.
    - Encuadre: **horizontal (16:9)**.
 
 7. **Favicon** (`asset_key: favicon`)
-   - Archivo final: `favicon-final.svg`
+   - Archivo final: `favicon-final.png`
    - Dónde se usa: head global + manifest + 404.
    - Imagen esperada: icono simplificado de marca.
    - Transparencia: **sí**.
@@ -64,63 +64,63 @@ Este documento define el orden único en que se pedirán los archivos reales.
    - Transparencia: no.
    - Encuadre: **horizontal social (1200:630)**.
 
-9. **Galería overview A** (`asset_key: slot_overview_a`)
+9. **Galería overview A** (`asset_key: overview_a`)
    - Archivo final: `slider-gallery-01-overview-a.jpg`
    - Dónde se usa: sección Visión general / Overview.
    - Imagen esperada: vista general principal del slider.
    - Transparencia: no.
    - Encuadre: **horizontal (16:9)**.
 
-10. **Galería overview B** (`asset_key: slot_overview_b`)
+10. **Galería overview B** (`asset_key: overview_b`)
     - Archivo final: `slider-gallery-02-overview-b.jpg`
     - Dónde se usa: sección Visión general / Overview.
     - Imagen esperada: segunda vista general del slider.
     - Transparencia: no.
     - Encuadre: **horizontal (16:9)**.
 
-11. **Galería carriage A** (`asset_key: slot_carriage_a`)
-    - Archivo final: `slider-gallery-03-carriage-a.jpg`
+11. **Galería carriage A** (`asset_key: carriage_a`)
+    - Archivo final: `slider-gallery-03-in-use-mobile.jpg`
     - Dónde se usa: sección Carro y guiado / Carriage and guidance.
     - Imagen esperada: detalle técnico de carro.
     - Transparencia: no.
     - Encuadre: **horizontal (4:3)**.
 
-12. **Galería carriage B** (`asset_key: slot_carriage_b`)
-    - Archivo final: `slider-gallery-04-carriage-b.jpg`
+12. **Galería carriage B** (`asset_key: carriage_b`)
+    - Archivo final: `slider-gallery-04-in-use-dslr.jpg`
     - Dónde se usa: sección Carro y guiado / Carriage and guidance.
     - Imagen esperada: detalle alternativo de guiado.
     - Transparencia: no.
     - Encuadre: **horizontal (4:3)**.
 
-13. **Galería belt A** (`asset_key: slot_belt_a`)
+13. **Galería belt A** (`asset_key: belt_a`)
     - Archivo final: `slider-gallery-05-belt-a.jpg`
     - Dónde se usa: sección Correa y transmisión / Belt and drive.
     - Imagen esperada: transmisión principal con correa/poleas.
     - Transparencia: no.
     - Encuadre: **horizontal (16:9)**.
 
-14. **Galería belt B** (`asset_key: slot_belt_b`)
+14. **Galería belt B** (`asset_key: belt_b`)
     - Archivo final: `slider-gallery-06-belt-b.jpg`
     - Dónde se usa: sección Correa y transmisión / Belt and drive.
     - Imagen esperada: vista secundaria de transmisión.
     - Transparencia: no.
     - Encuadre: **horizontal (16:9)**.
 
-15. **Galería electronics** (`asset_key: slot_electronics`)
+15. **Galería electronics** (`asset_key: electronics`)
     - Archivo final: `slider-gallery-07-electronics.jpg`
     - Dónde se usa: sección Electrónica y control / Electronics and control.
     - Imagen esperada: electrónica y control en plano claro.
     - Transparencia: no.
     - Encuadre: **horizontal (4:3)**.
 
-16. **Galería endstop X** (`asset_key: slot_endstop_x`)
+16. **Galería endstop X** (`asset_key: endstop_x`)
     - Archivo final: `slider-gallery-08-endstop-x.jpg`
     - Dónde se usa: sección Electrónica y control / Electronics and control.
     - Imagen esperada: detalle del final de carrera X.
     - Transparencia: no.
     - Encuadre: **cuadrado (1:1)**.
 
-17. **Galería phone mount** (`asset_key: slot_phone_mount`)
+17. **Galería phone mount** (`asset_key: phone_mount`)
     - Archivo final: `slider-gallery-09-phone-mount.jpg`
     - Dónde se usa: sección Accesorios / Accessories.
     - Imagen esperada: accesorio soporte móvil montado.

@@ -25,13 +25,22 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
 </div>
 <div class="public-grid cols-2">
   <article class="public-card">
-    <p class="public-kicker">Piezas y archivos del hardware</p>
-    <h3>STL, STEP y BOM versionados</h3>
-    <p>Paquetes públicos del hardware para imprimir, adaptar y montar.</p>
+    <p class="public-kicker">Archivos reales disponibles en el repo</p>
+    <h3>Estado actual de STL, STEP y BOM ({{ site.latest_pack }})</h3>
+    <p>Listado real de lo que está subido ahora mismo en el repositorio público.</p>
     <div class="public-links-list">
-      <a href="{{ external.github_tree_main }}/prints/STL/{{ site.latest_pack }}/">STL {{ site.latest_pack }}</a>
-      <a href="{{ external.github_tree_main }}/prints/STEP/{{ site.latest_pack }}/">STEP {{ site.latest_pack }}</a>
-      <a href="{{ external.github_tree_main }}/prints/BOM/{{ site.latest_pack }}/">BOM {{ site.latest_pack }}</a>
+      <a href="{{ site.blob_base }}/prints/BOM/{{ site.latest_pack }}/slider-odos3d_bom_v1.csv">BOM CSV real (v1)</a>
+      <a href="{{ site.blob_base }}/prints/BOM/{{ site.latest_pack }}/README.md">BOM README (v1)</a>
+      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20caja%20electroniica.stl">Slider ODOS3D Lab caja electroniica.stl</a>
+      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20carro.stl">Slider ODOS3D Lab carro.stl</a>
+      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20escuadra.stl">Slider ODOS3D Lab escuadra.stl</a>
+      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20separador.stl">Slider ODOS3D Lab separador.stl</a>
+      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20correa.stl">Slider ODOS3D Lab soporte correa.stl</a>
+      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20derecho.stl">Slider ODOS3D Lab soporte derecho.stl</a>
+      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20izquierdo.stl">Slider ODOS3D Lab soporte izquierdo.stl</a>
+      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20tubo%20camara.stl">Slider ODOS3D Lab tubo camara.stl</a>
+      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Labtapa%20electroniica.stl">Slider ODOS3D Labtapa electroniica.stl</a>
+      <a href="{{ site.tree_base }}/prints/STEP/{{ site.latest_pack }}/">STEP {{ site.latest_pack }} (sin archivos finales publicados)</a>
     </div>
   </article>
   <article class="public-card">
@@ -74,7 +83,7 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
     <li>Mantener histórico.</li>
     <li>Actualizar solo `latest_pack` en `docs/_config.yml`.</li>
   </ol>
-  <p class="public-note">Estado de algunos contenidos: en preparación hasta completar subidas definitivas.</p>
+  <p class="public-note">Estado actual real: STL v1 y BOM v1 publicados. STEP {{ site.latest_pack }} sigue en preparación sin archivos finales.</p>
 </div>
 
 <div class="public-cta-band">

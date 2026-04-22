@@ -8,9 +8,9 @@ Nombres finales congelados:
 - `hero-final.png` (png, transparencia: no) — uso: hero principal home ES/EN.
 - `slider-mobile-final.jpg` (jpg, transparencia: no) — uso: media de hardware/proof.
 - `slider-dslr-final.jpg` (jpg, transparencia: no) — uso: media de hardware/proof.
-- `app-screenshot-final.png` (png, transparencia: no) — uso: captura app en home/support/downloads.
+- `app-screenshot-final.jpg` (jpg, transparencia: no) — uso: captura app en home/support/downloads.
 - `video-thumb-final.jpg` (jpg, transparencia: no) — uso: thumbnail bloque vídeo demo en home.
-- `favicon-final.svg` (svg, transparencia: sí) — uso: favicon head + webmanifest.
+- `favicon-final.png` (png, transparencia: sí) — uso: favicon head + webmanifest.
 - `og-home-final.jpg` (jpg, transparencia: no) — uso: og/twitter image.
 
 Nota técnica:

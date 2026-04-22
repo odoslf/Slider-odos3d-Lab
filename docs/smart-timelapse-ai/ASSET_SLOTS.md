@@ -45,3 +45,7 @@ La capa pública se gobierna desde fuentes registradas:
 - Guía operativa app: `docs/ASSET_INGESTION_GUIDE.md`
 - Guía operativa galería: `docs/GALLERY_INGESTION_GUIDE.md`
 - Ficha técnica app: `docs/assets/media/app/ASSET_TARGETS.md`
+
+Estado actual de galería pública:
+- 01–04 subidos y activados en registry.
+- 05–09 pendientes y en placeholder.
