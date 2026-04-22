@@ -29,13 +29,13 @@ EXPECTED_CANONICAL_MAP = {
 
 
 FROZEN_TARGET_FILENAMES = {
-    "logo": "logo-final.svg",
-    "hero": "hero-final.jpg",
+    "logo": "logo-final.png",
+    "hero": "hero-final.png",
     "slider_mobile": "slider-mobile-final.jpg",
     "slider_dslr": "slider-dslr-final.jpg",
-    "app_screenshot": "app-screenshot-final.png",
+    "app_screenshot": "app-screenshot-final.jpg",
     "video_thumb": "video-thumb-final.jpg",
-    "favicon": "favicon-final.svg",
+    "favicon": "favicon-final.png",
     "og_image": "og-home-final.jpg",
 }
 
@@ -97,15 +97,15 @@ APP_ASSET_KEYS = [
 ]
 
 GALLERY_ASSET_KEYS = [
-    "slot_overview_a",
-    "slot_overview_b",
-    "slot_carriage_a",
-    "slot_carriage_b",
-    "slot_belt_a",
-    "slot_belt_b",
-    "slot_electronics",
-    "slot_endstop_x",
-    "slot_phone_mount",
+    "overview_a",
+    "overview_b",
+    "carriage_a",
+    "carriage_b",
+    "belt_a",
+    "belt_b",
+    "electronics",
+    "endstop_x",
+    "phone_mount",
 ]
 
 ASSET_STATUS_REQUIRED_FIELDS = [
@@ -141,8 +141,8 @@ GALLERY_SLOT_KEYS = [
 GALLERY_FROZEN_FILENAMES = {
     "slot_overview_a": "slider-gallery-01-overview-a.jpg",
     "slot_overview_b": "slider-gallery-02-overview-b.jpg",
-    "slot_carriage_a": "slider-gallery-03-carriage-a.jpg",
-    "slot_carriage_b": "slider-gallery-04-carriage-b.jpg",
+    "slot_carriage_a": "slider-gallery-03-in-use-mobile.jpg",
+    "slot_carriage_b": "slider-gallery-04-in-use-dslr.jpg",
     "slot_belt_a": "slider-gallery-05-belt-a.jpg",
     "slot_belt_b": "slider-gallery-06-belt-b.jpg",
     "slot_electronics": "slider-gallery-07-electronics.jpg",
@@ -740,6 +740,20 @@ def validate_asset_status_master(audit: Audit) -> None:
                 target_filename = str(gallery_media[source_slot_key].get("target_filename", "")).strip()
                 audit.require("ASSET_STATUS", final_filename == target_filename, f"{key}.final_filename must match gallery-media target_filename")
 
+
+    activated_gallery = {"overview_a", "overview_b", "carriage_a", "carriage_b"}
+    pending_gallery = {"belt_a", "belt_b", "electronics", "endstop_x", "phone_mount"}
+    for key in activated_gallery:
+        if key in gallery_by_key:
+            item = gallery_by_key[key]
+            audit.require("ASSET_STATUS", str(item.get("status", "")).strip() == "activated", f"{key}.status must be activated")
+            for bool_field in ["requested_from_user", "file_received", "uploaded_to_repo", "activated_in_yaml"]:
+                audit.require("ASSET_STATUS", item.get(bool_field) is True, f"{key}.{bool_field} must be true")
+    for key in pending_gallery:
+        if key in gallery_by_key:
+            item = gallery_by_key[key]
+            audit.require("ASSET_STATUS", str(item.get("status", "")).strip() == "pending", f"{key}.status must be pending")
+
     expected_orders = list(range(1, 18))
     audit.require("ASSET_STATUS", sorted(request_orders) == expected_orders, f"request_order must cover exactly {expected_orders}")
 
@@ -764,8 +778,8 @@ def validate_asset_ingestion_docs(audit: Audit) -> None:
     audit.require("ASSET_INGESTION", targets_path.exists(), f"Missing file: {targets_rel}")
 
     required_names = [
-        "logo-final.svg", "hero-final.jpg", "slider-mobile-final.jpg", "slider-dslr-final.jpg",
-        "app-screenshot-final.png", "video-thumb-final.jpg", "favicon-final.svg", "og-home-final.jpg",
+        "logo-final.png", "hero-final.png", "slider-mobile-final.jpg", "slider-dslr-final.jpg",
+        "app-screenshot-final.jpg", "video-thumb-final.jpg", "favicon-final.png", "og-home-final.jpg",
     ]
 
     if guide_path.exists():
@@ -805,6 +819,37 @@ def validate_checklist(audit: Audit) -> None:
         audit.require("CHECKLIST", phrase.lower() in text.lower(), f"Checklist missing: {phrase}")
 
 
+def validate_downloads_real_inventory(audit: Audit) -> None:
+    es = read_text("docs/downloads.md")
+    en = read_text("docs/en/downloads.md")
+
+    required_tokens = [
+        "prints/BOM/{{ site.latest_pack }}/slider-odos3d_bom_v1.csv",
+        "prints/BOM/{{ site.latest_pack }}/README.md",
+        "Slider%20ODOS3D%20Lab%20caja%20electroniica.stl",
+        "Slider%20ODOS3D%20Lab%20carro.stl",
+        "Slider%20ODOS3D%20Lab%20escuadra.stl",
+        "Slider%20ODOS3D%20Lab%20separador.stl",
+        "Slider%20ODOS3D%20Lab%20soporte%20correa.stl",
+        "Slider%20ODOS3D%20Lab%20soporte%20derecho.stl",
+        "Slider%20ODOS3D%20Lab%20soporte%20izquierdo.stl",
+        "Slider%20ODOS3D%20Lab%20tubo%20camara.stl",
+        "Slider%20ODOS3D%20Labtapa%20electroniica.stl",
+        "prints/STEP/{{ site.latest_pack }}/",
+    ]
+    for token in required_tokens:
+        audit.require("DOWNLOADS", token in es, f"docs/downloads.md missing real inventory link token: {token}")
+        audit.require("DOWNLOADS", token in en, f"docs/en/downloads.md missing real inventory link token: {token}")
+
+    forbidden_tokens = ["external.github_tree_main", "external.github_blob_main"]
+    for token in forbidden_tokens:
+        audit.require("DOWNLOADS", token not in es, f"docs/downloads.md contains deprecated token: {token}")
+        audit.require("DOWNLOADS", token not in en, f"docs/en/downloads.md contains deprecated token: {token}")
+
+    audit.require("DOWNLOADS", "STL v1 y BOM v1 publicados" in es and "STEP {{ site.latest_pack }} sigue en preparación" in es, "docs/downloads.md must reflect STL/BOM published and STEP pending")
+    audit.require("DOWNLOADS", "STL v1 and BOM v1 are published" in en and "STEP {{ site.latest_pack }} is still in preparation" in en, "docs/en/downloads.md must reflect STL/BOM published and STEP pending")
+
+
 def main() -> int:
     audit = Audit()
     validate_critical_files(audit)
@@ -824,6 +869,7 @@ def main() -> int:
     validate_asset_request_order_doc(audit)
     validate_asset_ingestion_docs(audit)
     validate_checklist(audit)
+    validate_downloads_real_inventory(audit)
     return audit.summary()
 
 

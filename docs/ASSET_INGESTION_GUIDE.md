@@ -15,9 +15,9 @@ Guía interna para sustituir placeholders por assets finales **sin tocar plantil
 | hero | `hero-final.png` | png | 1920x1200 | 16:10 | No | Home `/` y `/en/`, bloque visual y apoyo en downloads | Foco central; evitar texto en bordes. |
 | slider_mobile | `slider-mobile-final.jpg` | jpg | 1920x1080 | 16:9 | No | Home y páginas hardware ES/EN | Carril + móvil centrados, sin elementos críticos en bordes. |
 | slider_dslr | `slider-dslr-final.jpg` | jpg | 1920x1080 | 16:9 | No | Home y páginas hardware ES/EN | Cámara/slider legibles en zona central. |
-| app_screenshot | `app-screenshot-final.png` | png | 1600x900 | 16:9 | No | Home, downloads y support ES/EN | Captura limpia; evitar barras ajenas sin valor. |
+| app_screenshot | `app-screenshot-final.jpg` | jpg | 1600x900 | 16:9 | No | Home, downloads y support ES/EN | Captura limpia; evitar barras ajenas sin valor. |
 | video_thumb | `video-thumb-final.jpg` | jpg | 1920x1080 | 16:9 | No | Home ES/EN (bloque vídeo) | Reservar esquina inferior izquierda para overlay CTA/play. |
-| favicon | `favicon-final.svg` | svg | 512x512 | 1:1 | Sí | Head global + `site.webmanifest` + 404 | Debe leerse a tamaño pequeño (zona central 70%). |
+| favicon | `favicon-final.png` | png | 512x512 | 1:1 | Sí | Head global + `site.webmanifest` + 404 | Debe leerse a tamaño pequeño (zona central 70%). |
 | og_image | `og-home-final.jpg` | jpg | 1200x630 | 1200:630 | No | Open Graph/Twitter en capa pública | Composición social estable, sin texto pegado a bordes. |
 
 ## Flujo operativo real (app + maestro)

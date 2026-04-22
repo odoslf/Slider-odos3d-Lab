@@ -19,8 +19,8 @@ Todas las fotos reales de galería van en:
 |---|---|---|---|---|
 | slot_overview_a | slider-gallery-01-overview-a.jpg | Visión general | 16:9 | Vista principal del slider montado |
 | slot_overview_b | slider-gallery-02-overview-b.jpg | Visión general | 16:9 | Vista general complementaria |
-| slot_carriage_a | slider-gallery-03-carriage-a.jpg | Carro y guiado | 4:3 | Carro en primer plano técnico |
-| slot_carriage_b | slider-gallery-04-carriage-b.jpg | Carro y guiado | 4:3 | Detalle alternativo del guiado |
+| slot_carriage_a | slider-gallery-03-in-use-mobile.jpg | Carro y guiado | 4:3 | Carro en primer plano técnico |
+| slot_carriage_b | slider-gallery-04-in-use-dslr.jpg | Carro y guiado | 4:3 | Detalle alternativo del guiado |
 | slot_belt_a | slider-gallery-05-belt-a.jpg | Correa y transmisión | 16:9 | Correa/poleas en vista funcional |
 | slot_belt_b | slider-gallery-06-belt-b.jpg | Correa y transmisión | 16:9 | Vista secundaria de transmisión |
 | slot_electronics | slider-gallery-07-electronics.jpg | Electrónica y control | 4:3 | Controladora, drivers y cableado |

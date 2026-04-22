@@ -21,13 +21,13 @@ Checklist interno para publicar la capa pública cuando lleguen assets reales y 
 ## Sustitución de assets reales APP
 
 Sustituir en `docs/assets/media/app/`:
-- logo real → `logo-final.svg`
-- hero real → `hero-final.jpg`
+- logo real → `logo-final.png`
+- hero real → `hero-final.png`
 - slider mobile real → `slider-mobile-final.jpg`
 - slider dslr real → `slider-dslr-final.jpg`
-- screenshot app real → `app-screenshot-final.png`
+- screenshot app real → `app-screenshot-final.jpg`
 - video thumb real → `video-thumb-final.jpg`
-- favicon real → `favicon-final.svg`
+- favicon real → `favicon-final.png`
 - og image real → `og-home-final.jpg`
 
 ## Sustitución de assets reales GALERÍA
@@ -35,8 +35,8 @@ Sustituir en `docs/assets/media/app/`:
 Sustituir en `docs/assets/media/gallery/`:
 - overview a real → `slider-gallery-01-overview-a.jpg`
 - overview b real → `slider-gallery-02-overview-b.jpg`
-- carriage a real → `slider-gallery-03-carriage-a.jpg`
-- carriage b real → `slider-gallery-04-carriage-b.jpg`
+- carriage a real → `slider-gallery-03-in-use-mobile.jpg`
+- carriage b real → `slider-gallery-04-in-use-dslr.jpg`
 - belt a real → `slider-gallery-05-belt-a.jpg`
 - belt b real → `slider-gallery-06-belt-b.jpg`
 - electronics real → `slider-gallery-07-electronics.jpg`
@@ -66,3 +66,12 @@ Sustituir en `docs/assets/media/gallery/`:
 ## Revisión final antes de publicar
 
 Confirmar checklist completo, auditoría en PASS y revisión visual ES/EN cerrada.
+
+
+Estado actual confirmado:
+- Gallery 01–04 ya están subidos y activados.
+- Gallery 05–09 siguen pendientes en placeholder.
+- Descargas reales actuales:
+  - STL v1 publicado con 9 archivos finales (`Slider ODOS3D Lab caja electroniica.stl`, `Slider ODOS3D Lab carro.stl`, `Slider ODOS3D Lab escuadra.stl`, `Slider ODOS3D Lab separador.stl`, `Slider ODOS3D Lab soporte correa.stl`, `Slider ODOS3D Lab soporte derecho.stl`, `Slider ODOS3D Lab soporte izquierdo.stl`, `Slider ODOS3D Lab tubo camara.stl`, `Slider ODOS3D Labtapa electroniica.stl`).
+  - BOM v1 publicado (`slider-odos3d_bom_v1.csv` + `README.md`).
+  - STEP v1 aún pendiente de archivos finales.

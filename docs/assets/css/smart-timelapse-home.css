@@ -71,22 +71,22 @@ a { color: inherit; text-decoration: none; }
 }
 
 .brand img {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
   border: 1px solid var(--line-soft);
 }
 
 .brand strong {
   display: block;
-  font-size: 1rem;
+  font-size: 1.08rem;
   letter-spacing: -0.01em;
 }
 
 .brand small {
   display: block;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
 }
 
 .main-nav {
@@ -343,6 +343,11 @@ a { color: inherit; text-decoration: none; }
 
   .lang-switch {
     justify-self: start;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 52px;
   }
 
   .hero-copy,

@@ -4,8 +4,8 @@ gallery_media:
     order: 1
     placeholder_path: /assets/img/gallery-slot-overview-a.svg
     final_path: /assets/media/gallery/slider-gallery-01-overview-a.jpg
-    active_source: placeholder
-    is_placeholder: true
+    active_source: final
+    is_placeholder: false
     target_filename: slider-gallery-01-overview-a.jpg
     target_directory: docs/assets/media/gallery/
     alt_es: Vista general del slider montado, toma A.
@@ -24,15 +24,15 @@ gallery_media:
     crop_strategy: center-safe
     safe_area_notes: Mantener rail y carro dentro de la zona central útil.
     transparency_required: false
-    current_slot_source: gallery slot placeholder overview a
+    current_slot_source: /assets/media/gallery/slider-gallery-01-overview-a.jpg
 
   slot_overview_b:
     slot_key: slot_overview_b
     order: 2
     placeholder_path: /assets/img/gallery-slot-overview-b.svg
     final_path: /assets/media/gallery/slider-gallery-02-overview-b.jpg
-    active_source: placeholder
-    is_placeholder: true
+    active_source: final
+    is_placeholder: false
     target_filename: slider-gallery-02-overview-b.jpg
     target_directory: docs/assets/media/gallery/
     alt_es: Vista general del slider montado, toma B.
@@ -51,61 +51,61 @@ gallery_media:
     crop_strategy: center-safe
     safe_area_notes: Evitar recortes de extremos del perfil en ambos lados.
     transparency_required: false
-    current_slot_source: gallery slot placeholder overview b
+    current_slot_source: /assets/media/gallery/slider-gallery-02-overview-b.jpg
 
   slot_carriage_a:
     slot_key: slot_carriage_a
     order: 3
     placeholder_path: /assets/img/gallery-slot-carriage-a.svg
-    final_path: /assets/media/gallery/slider-gallery-03-carriage-a.jpg
-    active_source: placeholder
-    is_placeholder: true
-    target_filename: slider-gallery-03-carriage-a.jpg
+    final_path: /assets/media/gallery/slider-gallery-03-in-use-mobile.jpg
+    active_source: final
+    is_placeholder: false
+    target_filename: slider-gallery-03-in-use-mobile.jpg
     target_directory: docs/assets/media/gallery/
-    alt_es: Carro y guiado del slider, toma A.
-    alt_en: Slider carriage and guidance, shot A.
-    caption_es: Carro principal y zona de guiado lineal.
-    caption_en: Main carriage and linear guidance area.
-    section_es: Carro y guiado
-    section_en: Carriage and guidance
-    ratio: 4:3
+    alt_es: Slider en uso con móvil y app visible.
+    alt_en: Slider in use with phone and app visible.
+    caption_es: Slider en uso con móvil dentro del flujo real.
+    caption_en: Slider in use with phone in the real workflow.
+    section_es: En uso
+    section_en: In use
+    ratio: 16:9
     width: 1600
-    height: 1200
+    height: 900
     loading_default: lazy
     preferred_format: jpg
-    recommended_min_width: 2200
-    recommended_min_height: 1650
+    recommended_min_width: 2400
+    recommended_min_height: 1350
     crop_strategy: center-safe
     safe_area_notes: Priorizar nitidez en rodamientos y placa de carro.
     transparency_required: false
-    current_slot_source: gallery slot placeholder carriage a
+    current_slot_source: /assets/media/gallery/slider-gallery-03-in-use-mobile.jpg
 
   slot_carriage_b:
     slot_key: slot_carriage_b
     order: 4
     placeholder_path: /assets/img/gallery-slot-carriage-b.svg
-    final_path: /assets/media/gallery/slider-gallery-04-carriage-b.jpg
-    active_source: placeholder
-    is_placeholder: true
-    target_filename: slider-gallery-04-carriage-b.jpg
+    final_path: /assets/media/gallery/slider-gallery-04-in-use-dslr.jpg
+    active_source: final
+    is_placeholder: false
+    target_filename: slider-gallery-04-in-use-dslr.jpg
     target_directory: docs/assets/media/gallery/
-    alt_es: Detalle de carro y guiado del slider, toma B.
-    alt_en: Slider carriage and guidance detail, shot B.
-    caption_es: Detalle alternativo de carro para documentación técnica.
-    caption_en: Alternate carriage detail for technical documentation.
-    section_es: Carro y guiado
-    section_en: Carriage and guidance
-    ratio: 4:3
+    alt_es: Slider en uso con DSLR montada.
+    alt_en: Slider in use with mounted DSLR.
+    caption_es: Flujo DSLR real sobre el slider.
+    caption_en: Real DSLR workflow on the slider.
+    section_es: En uso
+    section_en: In use
+    ratio: 16:9
     width: 1600
-    height: 1200
+    height: 900
     loading_default: lazy
     preferred_format: jpg
-    recommended_min_width: 2200
-    recommended_min_height: 1650
+    recommended_min_width: 2400
+    recommended_min_height: 1350
     crop_strategy: center-safe
     safe_area_notes: Mantener foco en acople y elementos de deslizamiento.
     transparency_required: false
-    current_slot_source: gallery slot placeholder carriage b
+    current_slot_source: /assets/media/gallery/slider-gallery-04-in-use-dslr.jpg
 
   slot_belt_a:
     slot_key: slot_belt_a

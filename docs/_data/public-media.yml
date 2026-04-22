@@ -54,8 +54,8 @@ site_media:
   slider_mobile:
     placeholder_path: /assets/img/app-gallery-slider-mobile-slot.svg
     final_path: /assets/media/app/slider-mobile-final.jpg
-    active_source: placeholder
-    is_placeholder: true
+    active_source: final
+    is_placeholder: false
     alt_es: Slot temporal slider con móvil
     alt_en: Temporary slider with mobile slot
     caption_es: Slot temporal de slider móvil
@@ -75,13 +75,13 @@ site_media:
     transparency_required: false
     used_on_pages: "/,/en/,/hardware/,/en/hardware/"
     used_in_sections: Galería pública
-    current_slot_source: /assets/img/app-gallery-slider-mobile-slot.svg
+    current_slot_source: /assets/media/app/slider-mobile-final.jpg
 
   slider_dslr:
     placeholder_path: /assets/img/app-gallery-slider-dslr-slot.svg
     final_path: /assets/media/app/slider-dslr-final.jpg
-    active_source: placeholder
-    is_placeholder: true
+    active_source: final
+    is_placeholder: false
     alt_es: Slot temporal slider con DSLR
     alt_en: Temporary slider with DSLR slot
     caption_es: Slot temporal de slider DSLR
@@ -101,13 +101,13 @@ site_media:
     transparency_required: false
     used_on_pages: "/,/en/,/hardware/,/en/hardware/"
     used_in_sections: Galería pública
-    current_slot_source: /assets/img/app-gallery-slider-dslr-slot.svg
+    current_slot_source: /assets/media/app/slider-dslr-final.jpg
 
   app_screenshot:
     placeholder_path: /assets/img/app-gallery-app-screenshot-slot.svg
-    final_path: /assets/media/app/app-screenshot-final.png
-    active_source: placeholder
-    is_placeholder: true
+    final_path: /assets/media/app/app-screenshot-final.jpg
+    active_source: final
+    is_placeholder: false
     alt_es: Captura temporal de app
     alt_en: Temporary app screenshot
     caption_es: Slot temporal de captura de app
@@ -117,9 +117,9 @@ site_media:
     width: 1920
     height: 1080
     loading_default: lazy
-    target_filename: app-screenshot-final.png
+    target_filename: app-screenshot-final.jpg
     target_directory: docs/assets/media/app/
-    preferred_format: png
+    preferred_format: jpg
     recommended_min_width: 1600
     recommended_min_height: 900
     crop_strategy: Cover 16:9 priorizando la UI central.
@@ -127,13 +127,13 @@ site_media:
     transparency_required: false
     used_on_pages: "/,/en/,/downloads/,/support/,/en/downloads/,/en/support/"
     used_in_sections: Descargas y soporte
-    current_slot_source: /assets/img/app-gallery-app-screenshot-slot.svg
+    current_slot_source: /assets/media/app/app-screenshot-final.jpg
 
   video_thumb:
     placeholder_path: /assets/img/app-video-slot.svg
     final_path: /assets/media/app/video-thumb-final.jpg
-    active_source: placeholder
-    is_placeholder: true
+    active_source: final
+    is_placeholder: false
     alt_es: Miniatura temporal de vídeo
     alt_en: Temporary video thumbnail
     caption_es: Slot temporal de miniatura de vídeo
@@ -154,13 +154,13 @@ site_media:
     used_on_pages: "/,/en/"
     used_in_sections: Bloque de vídeo
     youtube_url_source: public-links.external_links.youtube_url
-    current_slot_source: /assets/img/app-video-slot.svg
+    current_slot_source: /assets/media/app/video-thumb-final.jpg
 
   favicon:
     placeholder_path: /assets/img/favicon-slot.svg
-    final_path: /assets/media/app/favicon-final.svg
-    active_source: placeholder
-    is_placeholder: true
+    final_path: /assets/media/app/favicon-final.png
+    active_source: final
+    is_placeholder: false
     alt_es: Favicon temporal
     alt_en: Temporary favicon
     caption_es: Slot temporal de favicon
@@ -170,9 +170,9 @@ site_media:
     width: 512
     height: 512
     loading_default: eager
-    target_filename: favicon-final.svg
+    target_filename: favicon-final.png
     target_directory: docs/assets/media/app/
-    preferred_format: svg
+    preferred_format: png
     recommended_min_width: 512
     recommended_min_height: 512
     crop_strategy: Sin recorte; icono centrado y legible.
@@ -180,13 +180,13 @@ site_media:
     transparency_required: true
     used_on_pages: "/,/en/,/hardware/,/downloads/,/support/,/privacy-policy/,/terms/,/en/hardware/,/en/downloads/,/en/support/,/en/privacy-policy/,/en/terms/,/404.html"
     used_in_sections: Head global
-    current_slot_source: /assets/img/favicon-slot.svg
+    current_slot_source: /assets/media/app/favicon-final.png
 
   og_image:
     placeholder_path: /assets/img/og-home-slot.svg
     final_path: /assets/media/app/og-home-final.jpg
-    active_source: placeholder
-    is_placeholder: true
+    active_source: final
+    is_placeholder: false
     alt_es: Imagen OG temporal de home
     alt_en: Temporary home OG image
     caption_es: Slot temporal de imagen social
@@ -206,4 +206,4 @@ site_media:
     transparency_required: false
     used_on_pages: "/,/en/,/hardware/,/downloads/,/support/,/privacy-policy/,/terms/,/en/hardware/,/en/downloads/,/en/support/,/en/privacy-policy/,/en/terms/"
     used_in_sections: Metadatos sociales
-    current_slot_source: /assets/img/og-home-slot.svg
+    current_slot_source: /assets/media/app/og-home-final.jpg
