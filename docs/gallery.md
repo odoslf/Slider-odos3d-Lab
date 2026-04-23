@@ -1,16 +1,16 @@
 ---
 layout: public-page
 title: "Galería técnica del slider | Smart Timelapse AI"
-description: "Galería técnica premium del Slider-odos3d preparada para fotos reales de montaje, carro, transmisión, electrónica y accesorios."
+description: "Galería pública con vistas reales del slider y su uso dentro del flujo Smart Timelapse AI."
 permalink: /gallery/
 lang: es
 lang_page: es
 alt_url: /en/gallery/
 og_title: "Galería técnica del slider | Smart Timelapse AI"
-og_description: "Selección visual premium preparada para integrar fotos reales del ecosistema Slider-odos3d."
+og_description: "Vistas reales del hardware y del flujo en uso dentro del ecosistema Smart Timelapse AI."
 nav_key: gallery
-page_heading: "Galería técnica del slider"
-page_intro: "Una selección visual preparada para mostrar montaje, carro, transmisión, electrónica y detalles del hardware real del ecosistema Slider-odos3d."
+page_heading: "Galería real del slider"
+page_intro: "Vistas reales ya publicadas del hardware y del flujo en uso."
 ---
 
 {% assign links = site.data.public-links %}
@@ -31,4 +31,4 @@ La galería pública muestra las vistas reales ya disponibles del hardware y su 
 
 ### Siguiente paso del flujo técnico
 
-[Hardware]({{ routes.hardware }}) [Descargas]({{ routes.downloads }}) [Soporte]({{ routes.support }})
+[Hardware]({{ routes.hardware }}) · [Descargas]({{ routes.downloads }}) · [Soporte]({{ routes.support }})
