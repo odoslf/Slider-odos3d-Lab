@@ -1,41 +1,45 @@
 <!doctype html>
 <html lang="{{ page.lang_page | default: 'es' }}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title | escape }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/public-shell.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/public-pages.css' | relative_url }}">
-  {% include head-custom.html %}
-</head>
-<body>
-  {% assign lang = page.lang_page | default: 'es' %}
-  {% assign es_equiv = page.alt_url %}
-  {% assign en_equiv = page.alt_url %}
-  {% if lang == 'es' %}
-    {% assign es_equiv = page.url %}
-  {% else %}
-    {% assign en_equiv = page.url %}
-  {% endif %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    {% include head-custom.html %}
+  </head>
+  <body class="public-site-body">
+    {% assign lang = page.lang_page | default: 'es' %}
+    {% assign es_equiv = page.alt_url %}
+    {% assign en_equiv = page.alt_url %}
+    {% if lang == 'es' %}
+      {% assign es_equiv = page.url %}
+    {% else %}
+      {% assign en_equiv = page.url %}
+    {% endif %}
 
-  <a class="skip-link" href="#public-content">{% if lang == 'en' %}Skip to content{% else %}Saltar al contenido{% endif %}</a>
-  {% include public-site-header.html lang=lang current=page.nav_key es_url=es_equiv en_url=en_equiv %}
+    <a class="skip-link" href="#main-content">
+      {% if lang == 'en' %}Skip to content{% else %}Saltar al contenido{% endif %}
+    </a>
 
-  <main id="public-content" class="public-main">
-    <section class="public-page-hero">
-      <div class="public-container">
-        <h1>{{ page.page_heading | default: page.title }}</h1>
-        {% if page.page_intro %}<p>{{ page.page_intro }}</p>{% endif %}
-      </div>
-    </section>
+    {% include public-site-header.html lang=lang current=page.nav_key es_url=es_equiv en_url=en_equiv %}
 
-    <section class="public-page-body">
-      <div class="public-container public-prose {% if page.page_variant %}{{ page.page_variant }}{% endif %}">
-        {{ content }}
-      </div>
-    </section>
-  </main>
+    <main id="main-content" class="public-main">
+      <section class="public-page-hero">
+        <div class="public-container">
+          <p class="public-kicker">{{ site.data.public-links.site_identity.product_name }}</p>
+          <h1>{{ page.page_heading | default: page.title }}</h1>
+          {% if page.page_intro %}
+            <p class="public-intro">{{ page.page_intro }}</p>
+          {% endif %}
+        </div>
+      </section>
 
-  {% include public-site-footer.html lang=lang %}
-</body>
+      <section class="public-page-body">
+        <div class="public-container">
+          {{ content }}
+        </div>
+      </section>
+    </main>
+
+    {% include public-site-footer.html lang=lang %}
+  </body>
 </html>
