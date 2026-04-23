@@ -19,7 +19,6 @@ page_intro: "Support guidance to start quickly, solve issues, and keep workflow 
 {% assign routes = links.internal_routes_en %}
 
 
-<div class="public-media-card" style="margin-bottom:14px;">{% include public-media-item.html media_key='app_screenshot' lang='en' loading='lazy' show_caption='true' %}</div>
 <div class="public-grid cols-2">
   <article class="public-card">
     <p class="public-kicker">First steps</p>

@@ -50,7 +50,7 @@ a { color: inherit; text-decoration: none; }
 
 
 .public-container {
-  width: min(1160px, calc(100% - 32px));
+  width: min(1160px, calc(100% - 24px));
   margin: 0 auto;
 }
 
@@ -64,7 +64,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .public-header-inner {
-  min-height: 78px;
+  min-height: 72px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -137,18 +137,18 @@ a { color: inherit; text-decoration: none; }
 
 .public-main { padding-bottom: 18px; }
 
-.public-page-hero { padding: 38px 0 14px; }
+.public-page-hero { padding: 24px 0 8px; }
 
 .public-page-hero h1 {
-  margin: 0 0 10px;
-  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  margin: 0 0 8px;
+  font-size: clamp(1.8rem, 6vw, 2.35rem);
   line-height: 1.06;
   letter-spacing: -0.03em;
 }
 
 .public-page-hero p {
   margin: 0;
-  max-width: 78ch;
+  max-width: 62ch;
   color: var(--muted);
 }
 
@@ -192,12 +192,49 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 940px) {
   .public-header-inner {
-    grid-template-columns: 1fr;
-    align-items: flex-start;
-    padding: 12px 0;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0 8px;
+    min-height: auto;
   }
 
-  .public-nav { justify-content: flex-start; }
+  .public-brand img {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .public-brand strong {
+    font-size: 1rem;
+  }
+
+  .public-brand small {
+    font-size: .8rem;
+    line-height: 1.2;
+  }
+
+  .public-nav {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .nav-pill {
+    min-height: 36px;
+    padding: 0 12px;
+  }
+
+  .public-header-inner > .public-lang-switch {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: 2px;
+  }
+
+  .public-page-hero {
+    padding: 18px 0 6px;
+  }
 }
 
 .footer-note {
@@ -211,6 +248,8 @@ a { color: inherit; text-decoration: none; }
 
 .public-footer nav a:hover { color: var(--text); }
 
-@media (max-width: 940px) {
-  .public-header-inner > .public-lang-switch { justify-self: start; }
+
+@media (max-width: 640px) {
+  .public-container { width: calc(100% - 20px); }
+  .public-page-hero h1 { font-size: clamp(1.7rem, 9vw, 2.2rem); }
 }

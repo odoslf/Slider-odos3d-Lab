@@ -16,44 +16,18 @@ page_intro: "A curated visual selection prepared to showcase assembly, carriage,
 {% assign links = site.data.public-links %}
 {% assign routes = links.internal_routes_en %}
 
-<div class="public-band">
-  <p>This public gallery is now wired to a central registry and ready to receive real photos without template or structural CSS rework.</p>
-</div>
+The public gallery shows the real hardware views currently available, including real workflow usage.
 
-<h2>Overview</h2>
-<div class="public-media-grid" style="margin-bottom:14px;">
-  <article class="public-media-card">{% include gallery-media-item.html slot_key='slot_overview_a' lang='en' show_caption='true' %}</article>
-  <article class="public-media-card">{% include gallery-media-item.html slot_key='slot_overview_b' lang='en' show_caption='true' %}</article>
-</div>
+## Overview
 
-<h2>Carriage and guidance</h2>
-<div class="public-media-grid" style="margin-bottom:14px;">
-  <article class="public-media-card">{% include gallery-media-item.html slot_key='slot_carriage_a' lang='en' show_caption='true' %}</article>
-  <article class="public-media-card">{% include gallery-media-item.html slot_key='slot_carriage_b' lang='en' show_caption='true' %}</article>
-</div>
+{% include gallery-media-item.html slot_key='slot_overview_a' lang='en' show_caption='false' %}
+{% include gallery-media-item.html slot_key='slot_overview_b' lang='en' show_caption='false' %}
 
-<h2>Belt and drive</h2>
-<div class="public-media-grid" style="margin-bottom:14px;">
-  <article class="public-media-card">{% include gallery-media-item.html slot_key='slot_belt_a' lang='en' show_caption='true' %}</article>
-  <article class="public-media-card">{% include gallery-media-item.html slot_key='slot_belt_b' lang='en' show_caption='true' %}</article>
-</div>
+## In use
 
-<h2>Electronics and control</h2>
-<div class="public-media-grid" style="margin-bottom:14px;">
-  <article class="public-media-card">{% include gallery-media-item.html slot_key='slot_electronics' lang='en' show_caption='true' %}</article>
-  <article class="public-media-card">{% include gallery-media-item.html slot_key='slot_endstop_x' lang='en' show_caption='true' %}</article>
-</div>
+{% include gallery-media-item.html slot_key='slot_carriage_a' lang='en' show_caption='false' %}
+{% include gallery-media-item.html slot_key='slot_carriage_b' lang='en' show_caption='false' %}
 
-<h2>Accessories</h2>
-<div class="public-media-grid" style="margin-bottom:14px;">
-  <article class="public-media-card wide">{% include gallery-media-item.html slot_key='slot_phone_mount' lang='en' show_caption='true' %}</article>
-</div>
+### Continue the technical flow
 
-<div class="public-cta-band">
-  <h3>Continue the technical flow</h3>
-  <div class="public-cta-actions">
-    <a class="public-btn" href="{{ routes.hardware | relative_url }}">Hardware</a>
-    <a class="public-btn" href="{{ routes.downloads | relative_url }}">Downloads</a>
-    <a class="public-btn primary" href="{{ routes.support | relative_url }}">Support</a>
-  </div>
-</div>
+[Hardware]({{ routes.hardware }}) [Downloads]({{ routes.downloads }}) [Support]({{ routes.support }})

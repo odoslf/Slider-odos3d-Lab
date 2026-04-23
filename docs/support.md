@@ -19,7 +19,6 @@ page_intro: "Guía de soporte para arrancar rápido, resolver incidencias y mant
 {% assign routes = links.internal_routes_es %}
 
 
-<div class="public-media-card" style="margin-bottom:14px;">{% include public-media-item.html media_key='app_screenshot' lang='es' loading='lazy' show_caption='true' %}</div>
 <div class="public-grid cols-2">
   <article class="public-card">
     <p class="public-kicker">Primeros pasos</p>
