@@ -19,9 +19,9 @@ page_intro: "Puedes empezar solo con móvil. El hardware abierto no es obligator
 {% assign routes = links.internal_routes_es %}
 
 
-<div class="public-media-grid" style="margin-bottom:14px;">
-  <article class="public-media-card">{% include public-media-item.html media_key='slider_mobile' lang='es' loading='lazy' show_caption='false' %}</article>
-  <article class="public-media-card">{% include public-media-item.html media_key='slider_dslr' lang='es' loading='lazy' show_caption='false' %}</article>
+<div class="media-stack media-stack--hardware">
+  {% include public-media-item.html media_key='slider_mobile' lang='es' loading='lazy' show_caption='false' %}
+  {% include public-media-item.html media_key='slider_dslr' lang='es' loading='lazy' show_caption='false' %}
 </div>
 <div class="public-grid cols-2">
   <article class="public-card">
