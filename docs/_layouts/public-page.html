@@ -1,49 +1,47 @@
 <!doctype html>
 <html lang="{{ page.lang_page | default: page.lang | default: 'es' }}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-    {% if page.description %}
-    <meta name="description" content="{{ page.description | escape }}">
-    {% endif %}
-    <link rel="stylesheet" href="{{ '/assets/css/public-shell.css' | relative_url }}">
-    {% include head-custom.html %}
-  </head>
-  <body class="public-site-body">
-    {% assign lang = page.lang_page | default: page.lang | default: 'es' %}
-    {% assign es_equiv = page.alt_url %}
-    {% assign en_equiv = page.alt_url %}
-    {% if lang == 'es' %}
-      {% assign es_equiv = page.url %}
-    {% else %}
-      {% assign en_equiv = page.url %}
-    {% endif %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/public-shell.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/public-pages.css' | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body class="public-site-body">
+    {% assign lang = page.lang_page | default: page.lang | default: 'es' %}
+    {% assign es_equiv = page.alt_url %}
+    {% assign en_equiv = page.alt_url %}
+    {% if lang == 'es' %}
+      {% assign es_equiv = page.url %}
+    {% else %}
+      {% assign en_equiv = page.url %}
+    {% endif %}
 
-    <a class="skip-link" href="#main-content">
-      {% if lang == 'en' %}Skip to content{% else %}Saltar al contenido{% endif %}
-    </a>
+    <a class="skip-link" href="#main-content">
+      {% if lang == 'en' %}Skip to content{% else %}Saltar al contenido{% endif %}
+    </a>
 
-    {% include public-site-header.html lang=lang current=page.nav_key es_url=es_equiv en_url=en_equiv %}
+    {% include public-site-header.html lang=lang current=page.nav_key es_url=es_equiv en_url=en_equiv %}
 
-    <main id="main-content" class="public-main">
-      <section class="public-page-hero">
-        <div class="public-container">
-          <p class="public-kicker">Smart Timelapse AI Slider</p>
-          <h1>{{ page.page_heading | default: page.title }}</h1>
-          {% if page.page_intro %}
-          <p class="public-intro">{{ page.page_intro }}</p>
-          {% endif %}
-        </div>
-      </section>
+    <main id="main-content" class="public-main">
+      <section class="public-page-hero">
+        <div class="public-container">
+          <p class="public-kicker">Smart Timelapse AI Slider</p>
+          <h1>{{ page.page_heading | default: page.title }}</h1>
+          {% if page.page_intro %}
+            <p class="public-intro">{{ page.page_intro }}</p>
+          {% endif %}
+        </div>
+      </section>
 
-      <section class="public-page-body">
-        <div class="public-container">
-          {{ content }}
-        </div>
-      </section>
-    </main>
+      <section class="public-page-body">
+        <div class="public-container">
+          {{ content }}
+        </div>
+      </section>
+    </main>
 
-    {% include public-site-footer.html lang=lang %}
-  </body>
+    {% include public-site-footer.html lang=lang %}
+  </body>
 </html>

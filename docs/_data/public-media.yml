@@ -61,16 +61,16 @@ site_media:
     caption_es: Slider con móvil dentro del flujo real
     caption_en: Slider with phone in the real workflow
     kind: gallery
-    ratio: "16:9"
-    width: 1920
-    height: 1080
+    ratio: "3:2"
+    width: 1536
+    height: 1024
     loading_default: lazy
     target_filename: slider-mobile-final.jpg
     target_directory: docs/assets/media/app/
     preferred_format: jpg
     recommended_min_width: 1920
     recommended_min_height: 1080
-    crop_strategy: Cover 16:9 priorizando sujeto central.
+    crop_strategy: Cover 3:2 priorizando el sujeto central.
     safe_area_notes: Evitar contenido crítico en los bordes.
     transparency_required: false
     used_on_pages: "/,/en/,/hardware/,/en/hardware/"
@@ -87,16 +87,16 @@ site_media:
     caption_es: Slider con DSLR dentro del flujo real
     caption_en: Slider with DSLR in the real workflow
     kind: gallery
-    ratio: "16:9"
-    width: 1920
-    height: 1080
+    ratio: "3:2"
+    width: 1536
+    height: 1024
     loading_default: lazy
     target_filename: slider-dslr-final.jpg
     target_directory: docs/assets/media/app/
     preferred_format: jpg
     recommended_min_width: 1920
     recommended_min_height: 1080
-    crop_strategy: Cover 16:9 manteniendo foco visual central.
+    crop_strategy: Cover 3:2 priorizando el sujeto central.
     safe_area_notes: Dejar márgenes de seguridad en las esquinas.
     transparency_required: false
     used_on_pages: "/,/en/,/hardware/,/en/hardware/"
@@ -113,16 +113,16 @@ site_media:
     caption_es: Captura real de la app
     caption_en: Real app screenshot
     kind: screenshot
-    ratio: "16:9"
-    width: 1920
-    height: 1080
+    ratio: "9:20"
+    width: 1080
+    height: 2400
     loading_default: lazy
     target_filename: app-screenshot-final.jpg
     target_directory: docs/assets/media/app/
     preferred_format: jpg
     recommended_min_width: 1600
     recommended_min_height: 900
-    crop_strategy: Cover 16:9 priorizando la UI central.
+    crop_strategy: Vertical 9:20 priorizando la UI dentro de márgenes seguros.
     safe_area_notes: Mantener elementos clave dentro del 70% central.
     transparency_required: false
     used_on_pages: "/,/en/,/downloads/,/support/,/en/downloads/,/en/support/"
@@ -139,16 +139,16 @@ site_media:
     caption_es: Miniatura real de vídeo demo
     caption_en: Real demo video thumbnail
     kind: video
-    ratio: "16:9"
-    width: 1920
-    height: 1080
+    ratio: "3:2"
+    width: 1536
+    height: 1024
     loading_default: lazy
     target_filename: video-thumb-final.jpg
     target_directory: docs/assets/media/app/
     preferred_format: jpg
     recommended_min_width: 1920
     recommended_min_height: 1080
-    crop_strategy: Cover 16:9 con foco central.
+    crop_strategy: Cover 3:2 con foco central.
     safe_area_notes: Reservar espacio para icono de play sin tapar contenido.
     transparency_required: false
     used_on_pages: "/,/en/"
