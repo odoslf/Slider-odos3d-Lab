@@ -30,8 +30,8 @@ site_media:
     final_path: /assets/media/app/hero-final.png
     active_source: final
     is_placeholder: false
-    alt_es: Hero principal Smart Timelapse AI
-    alt_en: Smart Timelapse AI main hero
+    alt_es: Hero final de producto
+    alt_en: Final product hero
     caption_es: Hero final de producto
     caption_en: Final product hero
     kind: hero

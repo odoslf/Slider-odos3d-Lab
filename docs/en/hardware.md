@@ -23,7 +23,7 @@ page_intro: "You can start phone-only. Open hardware is optional, but it lets yo
   <article class="public-media-card">{% include public-media-item.html media_key='slider_mobile' lang='en' loading='lazy' show_caption='false' %}</article>
   <article class="public-media-card">{% include public-media-item.html media_key='slider_dslr' lang='en' loading='lazy' show_caption='false' %}</article>
 </div>
-<div class="public-grid cols-3">
+<div class="public-grid cols-2">
   <article class="public-card">
     <p class="public-kicker">What it is</p>
     <h3>Open hardware connected to the app</h3>
@@ -39,17 +39,11 @@ page_intro: "You can start phone-only. Open hardware is optional, but it lets yo
       <a href="{{ '/parts/' | relative_url }}">Open parts</a>
       <a href="{{ '/grbl/' | relative_url }}">Open GRBL 1.1</a>
     </div>
-  </article>
-  <article class="public-card">
-    <p class="public-kicker">How it connects to the app</p>
-    <h3>Scale when you need more control</h3>
-    <p>Hardware adds motion and precision while keeping the same workflow identity for capture, control, and project closing.</p>
-  </article>
-</div>
+  </article></div>
 
 <div class="public-cta-band">
   <h3>Next step in the ecosystem</h3>
-  <p>Review available resources and return to the home page when you want to continue on the app side.</p>
+  <p>Open downloads, gallery, or support depending on where you are in the workflow.</p>
   <div class="public-cta-actions">
     <a class="public-btn primary" href="{{ routes.downloads | relative_url }}">Go to downloads</a>
     <a class="public-btn" href="{{ routes.gallery | relative_url }}">Open gallery</a>

@@ -23,7 +23,7 @@ page_intro: "Puedes empezar solo con móvil. El hardware abierto no es obligator
   <article class="public-media-card">{% include public-media-item.html media_key='slider_mobile' lang='es' loading='lazy' show_caption='false' %}</article>
   <article class="public-media-card">{% include public-media-item.html media_key='slider_dslr' lang='es' loading='lazy' show_caption='false' %}</article>
 </div>
-<div class="public-grid cols-3">
+<div class="public-grid cols-2">
   <article class="public-card">
     <p class="public-kicker">Qué es</p>
     <h3>Hardware abierto conectado a la app</h3>
@@ -39,17 +39,11 @@ page_intro: "Puedes empezar solo con móvil. El hardware abierto no es obligator
       <a href="{{ '/parts/' | relative_url }}">Ver piezas</a>
       <a href="{{ '/grbl/' | relative_url }}">Ver GRBL 1.1</a>
     </div>
-  </article>
-  <article class="public-card">
-    <p class="public-kicker">Conexión con la app</p>
-    <h3>Escala cuando quieres más control</h3>
-    <p>El hardware añade movimiento y precisión, pero mantiene la misma identidad de flujo con captura, control y cierre de proyecto.</p>
-  </article>
-</div>
+  </article></div>
 
 <div class="public-cta-band">
   <h3>Siguiente paso en el ecosistema</h3>
-  <p>Revisa recursos disponibles y vuelve a la home cuando quieras continuar con la parte app.</p>
+  <p>Revisa descargas, galería y soporte según el punto del flujo en el que estés.</p>
   <div class="public-cta-actions">
     <a class="public-btn primary" href="{{ routes.downloads | relative_url }}">Ir a descargas</a>
     <a class="public-btn" href="{{ routes.gallery | relative_url }}">Abrir galería</a>
