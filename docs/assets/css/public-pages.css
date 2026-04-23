@@ -187,15 +187,14 @@
   .public-media-card { padding: 8px; }
 
   .public-media-frame {
-    aspect-ratio: auto;
-    overflow: visible;
-    background: transparent;
+    overflow: hidden;
+    background: var(--surface-2);
   }
 
   .public-media-frame img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     border-radius: 12px;
   }
 
@@ -207,7 +206,22 @@
   }
 }
 
-/* === PUBLIC PAGES MEDIA FINAL FIX === */
+/* PUBLIC PAGES MEDIA FINAL LOCK */
+
+.media-stack--hardware .public-media-frame {
+  aspect-ratio: 3 / 2 !important;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--surface-2);
+}
+
+.media-stack--hardware .public-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
 
 @media (max-width: 760px) {
   .public-page-body .public-media-frame {
