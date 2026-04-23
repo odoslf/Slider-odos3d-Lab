@@ -21,8 +21,8 @@ page_intro: "Resource center for hardware files, documentation, and references i
 <div class="public-grid cols-2">
   <article class="public-card">
     <p class="public-kicker">Real files currently available in the repo</p>
-    <h3>Current STL, STEP, and BOM status ({{ site.latest_pack }})</h3>
-    <p>Real-time list of what is already uploaded in the public repository.</p>
+    <h3>STL, STEP, and BOM available right now</h3>
+    <p>This page concentrates the published parts, BOM, and the real status of the hardware technical files.</p>
     <div class="public-links-list">
       <a href="{{ site.blob_base }}/prints/BOM/{{ site.latest_pack }}/slider-odos3d_bom_v1.csv">Real BOM CSV (v1)</a>
       <a href="{{ site.blob_base }}/prints/BOM/{{ site.latest_pack }}/README.md">BOM README (v1)</a>

@@ -769,6 +769,40 @@ def validate_downloads_real_inventory(audit: Audit) -> None:
         audit.require("DOWNLOADS", token not in en, f"docs/en/downloads.md contains deprecated token: {token}")
     audit.require("DOWNLOADS", "STL v1 y BOM v1 publicados" in es and "STEP {{ site.latest_pack }} sigue en preparación" in es, "docs/downloads.md must reflect STL/BOM published and STEP pending")
     audit.require("DOWNLOADS", "STL v1 and BOM v1 are published" in en and "STEP {{ site.latest_pack }} is still in preparation" in en, "docs/en/downloads.md must reflect STL/BOM published and STEP pending")
+def validate_parts_redirect_and_flow(audit: Audit) -> None:
+    files_without_parts = [
+        "docs/index.md",
+        "docs/en/hardware.md",
+        "docs/index.html",
+        "docs/en/index.html",
+        "docs/downloads.md",
+        "docs/en/downloads.md",
+        "docs/_includes/topnav.html",
+    ]
+    for rel in files_without_parts:
+        text = read_text(rel)
+        audit.require("PARTS_FLOW", "/parts/" not in text, f"{rel} must not contain visible links to /parts/")
+
+    parts = read_text("docs/parts.md")
+    required_tokens = [
+        "layout: null",
+        "permalink: /parts/",
+        "http-equiv=\"refresh\" content=\"0; url={{ '/downloads/' | relative_url }}\"",
+        "window.location.replace(\"{{ '/downloads/' | relative_url }}\");",
+        "<link rel=\"canonical\" href=\"{{ '/downloads/' | relative_url }}\">",
+    ]
+    for token in required_tokens:
+        audit.require("PARTS_FLOW", token in parts, f"docs/parts.md must include redirect token: {token}")
+
+    forbidden_legacy_tokens = [
+        "Descargas por versión",
+        "Pack actual",
+        "View on GitHub",
+        "docs/parts/_TEMPLATE_PART.md",
+        "Documentación de piezas",
+    ]
+    for token in forbidden_legacy_tokens:
+        audit.require("PARTS_FLOW", token not in parts, f"docs/parts.md contains legacy content token: {token}")
 def main() -> int:
     audit = Audit()
     validate_critical_files(audit)
@@ -791,6 +825,7 @@ def main() -> int:
     validate_forbidden_public_copy(audit)
     validate_round_definitiva_guards(audit)
     validate_downloads_real_inventory(audit)
+    validate_parts_redirect_and_flow(audit)
     return audit.summary()
 if __name__ == "__main__":
     sys.exit(main())

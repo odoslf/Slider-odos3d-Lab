@@ -1,13 +1,13 @@
 ---
 layout: public-page
 title: "Open hardware | Smart Timelapse AI"
-description: "Open hardware for Smart Timelapse AI with parts, STL/STEP/BOM access, and GRBL references to scale from phone-only to motion control."
+description: "Open hardware for Smart Timelapse AI with STL/STEP/BOM downloads and GRBL references to scale from phone-only to motion control."
 permalink: /en/hardware/
 lang: en
 lang_page: en
 alt_url: /hardware/
 og_title: "Open hardware for timelapse | Smart Timelapse AI"
-og_description: "Parts, downloads, and GRBL references to scale Smart Timelapse AI with open-source hardware."
+og_description: "Downloads and GRBL references to scale Smart Timelapse AI with open-source hardware."
 nav_key: hardware
 page_heading: "Open hardware to scale the ecosystem"
 page_intro: "You can start phone-only. Open hardware is optional, but it lets you scale when you need more physical control and motion."
@@ -31,12 +31,11 @@ page_intro: "You can start phone-only. Open hardware is optional, but it lets yo
   </article>
   <article class="public-card">
     <p class="public-kicker">What you can access</p>
-    <h3>Downloads, parts, and technical reference</h3>
-    <p>From here you access STL/STEP/BOM, project parts, and GRBL references for assembly and adjustment.</p>
+    <h3>Downloads and technical reference</h3>
+    <p>From here you access STL/STEP/BOM and GRBL references for assembly and adjustment.</p>
     <div class="public-links-list">
       <a href="{{ routes.downloads | relative_url }}">Open downloads</a>
       <a href="{{ routes.gallery | relative_url }}">Open technical gallery</a>
-      <a href="{{ '/parts/' | relative_url }}">Open parts</a>
       <a href="{{ '/grbl/' | relative_url }}">Open GRBL 1.1</a>
     </div>
   </article></div>

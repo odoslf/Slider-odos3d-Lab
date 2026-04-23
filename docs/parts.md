@@ -1,32 +1,21 @@
 ---
-title: "Piezas"
+layout: null
 permalink: /parts/
 ---
 
-{% include topnav.html %}
-
-# Piezas
-
-Este repo contiene las piezas y documentación del hardware **Slider-odos3d**.
-
-## Descargas por versión
-
-### Pack actual ({{ site.latest_pack }})
-- STL: [`prints/STL/{{ site.latest_pack }}/`]({{ site.tree_base }}/prints/STL/{{ site.latest_pack }}/)
-- STEP: [`prints/STEP/{{ site.latest_pack }}/`]({{ site.tree_base }}/prints/STEP/{{ site.latest_pack }}/)
-- BOM: [`prints/BOM/{{ site.latest_pack }}/`]({{ site.tree_base }}/prints/BOM/{{ site.latest_pack }}/)
-
-> Para publicar v2/v3, crea carpetas nuevas `v2`, `v3` y luego cambia `latest_pack` en `docs/_config.yml`.
-
----
-
-## Documentación de piezas (plantillas)
-
-Para documentar una pieza, copia la plantilla:
-
-- [`docs/parts/_TEMPLATE_PART.md`](./parts/_TEMPLATE_PART.md)
-
-Ejemplos (cuando los crees):
-- `docs/parts/carro.md`
-- `docs/parts/soporte_movil.md`
-- `docs/parts/fin_de_carrera.md`
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url={{ '/downloads/' | relative_url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirigiendo a Descargas</title>
+  <link rel="canonical" href="{{ '/downloads/' | relative_url }}">
+  <script>
+    window.location.replace("{{ '/downloads/' | relative_url }}");
+  </script>
+</head>
+<body>
+  <p>Redirigiendo a <a href="{{ '/downloads/' | relative_url }}">Descargas</a>…</p>
+</body>
+</html>
