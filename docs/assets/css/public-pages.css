@@ -208,6 +208,12 @@
 
 /* PUBLIC PAGES MEDIA FINAL LOCK */
 
+.media-stack--hardware {
+  display: grid;
+  gap: 16px;
+  margin: 0 0 20px;
+}
+
 .media-stack--hardware .public-media-frame {
   aspect-ratio: 3 / 2 !important;
   overflow: hidden;
@@ -216,6 +222,28 @@
 }
 
 .media-stack--hardware .public-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.gallery-grid-public {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 0 20px;
+}
+
+.gallery-photo .public-media-frame {
+  aspect-ratio: 3 / 2 !important;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--surface-2);
+}
+
+.gallery-photo .public-media-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -234,5 +262,9 @@
     height: 100%;
     object-fit: cover;
     border-radius: 12px;
+  }
+
+  .gallery-grid-public {
+    grid-template-columns: 1fr;
   }
 }

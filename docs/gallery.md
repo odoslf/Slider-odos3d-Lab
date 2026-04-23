@@ -15,20 +15,26 @@ page_intro: "Vistas reales ya publicadas del hardware y del flujo en uso."
 
 {% assign links = site.data.public-links %}
 {% assign routes = links.internal_routes_es %}
-{% assign gallery = site.data.gallery-media.gallery_media %}
 
-La galería pública muestra las vistas reales ya disponibles del hardware y su uso dentro del flujo Smart Timelapse AI.
+<p>La galería pública muestra las vistas reales ya disponibles del hardware y su uso dentro del flujo Smart Timelapse AI.</p>
 
-## Visión general
+<h2>Visión general</h2>
+<div class="gallery-grid-public">
+  {% include gallery-media-item.html slot_key='slot_overview_a' lang='es' class_name='gallery-photo' show_caption='false' %}
+  {% include gallery-media-item.html slot_key='slot_overview_b' lang='es' class_name='gallery-photo' show_caption='false' %}
+</div>
 
-{% include gallery-media-item.html slot_key='slot_overview_a' lang='es' show_caption='false' %}
-{% include gallery-media-item.html slot_key='slot_overview_b' lang='es' show_caption='false' %}
+<h2>En uso</h2>
+<div class="gallery-grid-public">
+  {% include gallery-media-item.html slot_key='slot_carriage_a' lang='es' class_name='gallery-photo' show_caption='false' %}
+  {% include gallery-media-item.html slot_key='slot_carriage_b' lang='es' class_name='gallery-photo' show_caption='false' %}
+</div>
 
-## En uso
-
-{% include gallery-media-item.html slot_key='slot_carriage_a' lang='es' show_caption='false' %}
-{% include gallery-media-item.html slot_key='slot_carriage_b' lang='es' show_caption='false' %}
-
-### Siguiente paso del flujo técnico
-
-[Hardware]({{ routes.hardware }}) · [Descargas]({{ routes.downloads }}) · [Soporte]({{ routes.support }})
+<div class="public-cta-band">
+  <h3>Siguiente paso del flujo técnico</h3>
+  <div class="public-cta-actions">
+    <a class="public-btn" href="{{ routes.hardware | relative_url }}">Hardware</a>
+    <a class="public-btn" href="{{ routes.downloads | relative_url }}">Descargas</a>
+    <a class="public-btn" href="{{ routes.support | relative_url }}">Soporte</a>
+  </div>
+</div>
