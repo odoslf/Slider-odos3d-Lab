@@ -18,14 +18,9 @@ page_intro: "Published real views of the hardware and the in-use workflow."
 
 <p>The public gallery shows the real hardware views currently available, including real workflow usage.</p>
 
-<h2>Overview</h2>
 <div class="gallery-grid-public">
   {% include gallery-media-item.html slot_key='slot_overview_a' lang='en' class_name='gallery-photo' show_caption='false' %}
   {% include gallery-media-item.html slot_key='slot_overview_b' lang='en' class_name='gallery-photo' show_caption='false' %}
-</div>
-
-<h2>In use</h2>
-<div class="gallery-grid-public">
   {% include gallery-media-item.html slot_key='slot_carriage_a' lang='en' class_name='gallery-photo' show_caption='false' %}
   {% include gallery-media-item.html slot_key='slot_carriage_b' lang='en' class_name='gallery-photo' show_caption='false' %}
 </div>
