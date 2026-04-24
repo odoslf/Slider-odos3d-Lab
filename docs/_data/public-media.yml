@@ -35,9 +35,9 @@ site_media:
     caption_es: Hero final de producto
     caption_en: Final product hero
     kind: hero
-    ratio: "16:10"
-    width: 1920
-    height: 1200
+    ratio: "1024:500"
+    width: 1024
+    height: 500
     loading_default: eager
     target_filename: hero-final.png
     target_directory: docs/assets/media/app/
@@ -105,7 +105,7 @@ site_media:
 
   app_screenshot:
     placeholder_path: /assets/img/app-gallery-app-screenshot-slot.svg
-    final_path: "/assets/media/app/app-screenshot-final.jpg"
+    final_path: /assets/media/app/app-screenshot-final.jpg
     active_source: final
     is_placeholder: false
     alt_es: Captura real de la app
