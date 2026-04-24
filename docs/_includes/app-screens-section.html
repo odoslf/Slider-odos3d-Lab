@@ -1,45 +1,71 @@
 {% assign lang = include.lang | default: 'es' %}
+{% assign mode = include.mode | default: 'featured' %}
 {% assign screens = site.data.app-screenshots.screens %}
+
 {% if lang == 'en' %}
   {% assign eyebrow = 'App screenshots' %}
-  {% assign heading = 'The app in action' %}
-  {% assign intro = 'Real screens showing SmartCapture, project flow, DSLR preparation, remote control, and export.' %}
+  {% assign heading_featured = 'The app in action' %}
+  {% assign heading_all = 'All app screenshots' %}
+  {% assign intro_featured = 'A quick look at SmartCapture, export, and local remote control.' %}
+  {% assign intro_all = 'Real screens from the Android app: capture, project flow, export, DSLR, remote control, and diagnostics.' %}
+  {% assign all_label = 'See all screenshots' %}
 {% else %}
   {% assign eyebrow = 'Capturas de la app' %}
-  {% assign heading = 'La app en acción' %}
-  {% assign intro = 'Pantallas reales de SmartCapture, flujo de proyecto, preparación DSLR, remoto local y exportación.' %}
+  {% assign heading_featured = 'La app en acción' %}
+  {% assign heading_all = 'Todas las capturas de la app' %}
+  {% assign intro_featured = 'Un vistazo rápido a SmartCapture, exportación y control remoto local.' %}
+  {% assign intro_all = 'Pantallas reales de la app Android: captura, flujo de proyecto, exportación, DSLR, remoto y diagnóstico.' %}
+  {% assign all_label = 'Ver todas las capturas' %}
 {% endif %}
 
-<section id="app-screens" class="section-block">
-  <div class="container">
-    <header class="section-head">
-      <p class="eyebrow">{{ eyebrow }}</p>
-      <h2>{{ heading }}</h2>
-      <p>{{ intro }}</p>
-    </header>
+{% if mode == 'all' %}
+  {% assign heading = heading_all %}
+  {% assign intro = intro_all %}
+{% else %}
+  {% assign heading = heading_featured %}
+  {% assign intro = intro_featured %}
+{% endif %}
 
-    <div class="app-screens-grid">
-      {% for screen in screens %}
-        {% assign title = screen.title_es %}
-        {% assign caption = screen.caption_es %}
-        {% assign alt = screen.alt_es %}
+<section id="app-screens" class="app-screens-section app-screens-section--{{ mode }}">
+  <div class="section-copy">
+    <p class="eyebrow">{{ eyebrow }}</p>
+    <h2>{{ heading }}</h2>
+    <p>{{ intro }}</p>
+  </div>
+
+  <div class="app-screens-grid">
+    {% for screen in screens %}
+      {% if mode == 'all' or screen.featured %}
         {% if lang == 'en' %}
           {% assign title = screen.title_en %}
           {% assign caption = screen.caption_en %}
           {% assign alt = screen.alt_en %}
+        {% else %}
+          {% assign title = screen.title_es %}
+          {% assign caption = screen.caption_es %}
+          {% assign alt = screen.alt_es %}
         {% endif %}
-        <article class="panel app-screen-card">
-          <figure class="public-media-item app-screen-item">
-            <div class="public-media-frame">
-              <img src="{{ screen.src | relative_url }}" alt="{{ alt | escape }}" loading="lazy" width="{{ screen.width }}" height="{{ screen.height }}">
-            </div>
-            <figcaption>
-              <strong>{{ title }}</strong>
-              <span>{{ caption }}</span>
-            </figcaption>
-          </figure>
-        </article>
-      {% endfor %}
-    </div>
+
+        <figure class="app-screen-card">
+          <div class="app-screen-frame">
+            <img src="{{ screen.src | relative_url }}" alt="{{ alt | escape }}" loading="lazy" width="{{ screen.width }}" height="{{ screen.height }}">
+          </div>
+          <figcaption>
+            <strong>{{ title }}</strong>
+            <span>{{ caption }}</span>
+          </figcaption>
+        </figure>
+      {% endif %}
+    {% endfor %}
   </div>
+
+  {% if mode != 'all' %}
+    <div class="app-screens-actions">
+      {% if lang == 'en' %}
+        <a class="btn btn-secondary" href="{{ '/en/app-screens/' | relative_url }}">{{ all_label }}</a>
+      {% else %}
+        <a class="btn btn-secondary" href="{{ '/app-screens/' | relative_url }}">{{ all_label }}</a>
+      {% endif %}
+    </div>
+  {% endif %}
 </section>
