@@ -1123,3 +1123,108 @@ a { color: inherit; text-decoration: none; }
     max-width: 260px;
   }
 }
+
+/* HOME + APP SCREENS FINAL ROUND */
+.app-screens-section--featured .app-screens-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+}
+
+.app-screens-section--featured .app-screen-frame {
+  max-width: 200px;
+}
+
+.app-screens-section--all .app-screens-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  justify-items: center;
+}
+
+.app-screens-section--all .app-screen-frame {
+  aspect-ratio: 9 / 20;
+  max-width: 200px;
+}
+
+.proof-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.proof-grid .proof-overview,
+.proof-grid .proof-app,
+.proof-grid .proof-video {
+  grid-column: span 4;
+}
+
+.proof-overview .public-media-frame,
+.proof-video .public-media-frame {
+  aspect-ratio: 3 / 2 !important;
+}
+
+.proof-app .public-media-frame {
+  aspect-ratio: 9 / 20 !important;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+  .app-screens-section--featured .app-screens-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-grid .proof-overview,
+  .proof-grid .proof-app,
+  .proof-grid .proof-video {
+    grid-column: auto;
+  }
+}
+
+
+/* SMART TIMELAPSE HOME FINAL */
+
+.app-screens-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+}
+
+.app-screen-card {
+  margin: 0;
+  padding: 12px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 10px 30px rgba(15,23,42,.06);
+}
+
+.app-screen-frame {
+  aspect-ratio: 9 / 20;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #0F172A;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.app-screen-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .app-screens-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-screen-frame {
+    max-width: 240px;
+  }
+}

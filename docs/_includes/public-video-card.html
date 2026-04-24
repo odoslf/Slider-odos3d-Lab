@@ -1,10 +1,9 @@
-{% assign media = site.data.public-media.site_media.video_thumb %}
 {% assign links = site.data.public-links %}
 {% assign lang = include.lang | default: 'es' %}
 {% assign youtube_url = links.external_links.youtube_url | default: '' %}
 {% assign has_youtube = links.flags.has_youtube and youtube_url != '' %}
 {% assign cta_label = 'Abrir demo en YouTube' %}
-{% assign fallback = 'Vídeo demo disponible próximamente' %}
+{% assign fallback = 'Vídeo demo próximamente' %}
 {% if lang == 'en' %}
   {% assign cta_label = 'Open demo on YouTube' %}
   {% assign fallback = 'Demo video coming soon' %}
