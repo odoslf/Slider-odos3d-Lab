@@ -105,7 +105,7 @@ site_media:
 
   app_screenshot:
     placeholder_path: /assets/img/app-gallery-app-screenshot-slot.svg
-    final_path: /assets/media/app/app-screenshot-final.jpg
+    final_path: "/assets/media/app/app-screenshot-final.jpg"
     active_source: final
     is_placeholder: false
     alt_es: Captura real de la app
