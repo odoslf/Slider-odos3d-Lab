@@ -33,4 +33,4 @@ Adjunta como assets (archivos) en la Release:
 ## Notas de soporte
 Este repo es **solo lectura**:
 - No se ofrece soporte público.
-- Contacto: odos3d@gmail.com
+- Contacto: odos3d.Lab@gmail.com

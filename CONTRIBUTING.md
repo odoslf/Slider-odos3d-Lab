@@ -1,5 +1,5 @@
 > ⚠️ Este repositorio es **solo distribución** (descargas/documentación).<br>
-> No se aceptan **Issues** ni **Pull Requests**. Para contacto/soporte: **odos3d@gmail.com**.
+> No se aceptan **Issues** ni **Pull Requests**. Para contacto/soporte: **odos3d.Lab@gmail.com**.
 
 # Contribuir
 
@@ -11,7 +11,7 @@ Este repositorio es **solo lectura** para la comunidad.
 - ❌ No se aceptan Issues
 - ❌ No se aceptan Discussions
 
-Contacto: odos3d@gmail.com
+Contacto: odos3d.Lab@gmail.com
 
 ## Reglas
 - Este repo es hardware/piezas/docs/GRBL. No se sube código de la app aquí.
