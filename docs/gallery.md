@@ -16,11 +16,10 @@ page_intro: "Vistas reales ya publicadas del hardware y del flujo en uso."
 {% assign links = site.data.public-links %}
 {% assign routes = links.internal_routes_es %}
 
-<p>La galería pública muestra las vistas reales ya disponibles del hardware y su uso dentro del flujo Smart Timelapse AI.</p>
+<p>La galería pública muestra una selección limpia de fotos reales del hardware y su uso dentro del flujo Smart Timelapse AI.</p>
 
 <div class="gallery-grid-public">
   {% include gallery-media-item.html slot_key='slot_overview_a' lang='es' class_name='gallery-photo' show_caption='false' %}
-  {% include gallery-media-item.html slot_key='slot_overview_b' lang='es' class_name='gallery-photo' show_caption='false' %}
   {% include gallery-media-item.html slot_key='slot_carriage_a' lang='es' class_name='gallery-photo' show_caption='false' %}
   {% include gallery-media-item.html slot_key='slot_carriage_b' lang='es' class_name='gallery-photo' show_caption='false' %}
 </div>
