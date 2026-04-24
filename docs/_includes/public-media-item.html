@@ -13,6 +13,7 @@
   {% assign media_alt = media.alt_en %}
   {% assign media_caption = media.caption_en %}
 {% endif %}
+
 <figure class="public-media-item {{ class_name }}">
   <div class="public-media-frame">
     <img src="{{ media_src | relative_url }}" alt="{{ media_alt | escape }}" loading="{{ loading_mode }}" width="{{ media.width }}" height="{{ media.height }}">

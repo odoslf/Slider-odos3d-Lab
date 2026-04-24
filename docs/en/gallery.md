@@ -10,7 +10,7 @@ og_title: "Slider technical gallery | Smart Timelapse AI"
 og_description: "Real hardware and in-use workflow views inside the Smart Timelapse AI ecosystem."
 nav_key: gallery
 page_heading: "Real slider gallery"
-page_intro: "Published real views of the hardware and the in-use workflow."
+page_intro: "Three real views: one overview, one with phone and one with DSLR."
 ---
 
 {% assign links = site.data.public-links %}

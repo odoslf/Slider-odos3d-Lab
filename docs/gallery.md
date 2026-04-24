@@ -10,7 +10,7 @@ og_title: "Galería técnica del slider | Smart Timelapse AI"
 og_description: "Vistas reales del hardware y del flujo en uso dentro del ecosistema Smart Timelapse AI."
 nav_key: gallery
 page_heading: "Galería real del slider"
-page_intro: "Vistas reales ya publicadas del hardware y del flujo en uso."
+page_intro: "Tres vistas reales: una general, una con móvil y una con DSLR."
 ---
 
 {% assign links = site.data.public-links %}
