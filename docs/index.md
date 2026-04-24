@@ -38,14 +38,3 @@ page_intro: "Puedes empezar solo con móvil. El hardware abierto no es obligator
     </div>
   </article>
 </div>
-
-<div class="public-cta-band">
-  <h3>Siguiente paso en el ecosistema</h3>
-  <p>Revisa descargas, galería y soporte según el punto del flujo en el que estés.</p>
-  <div class="public-cta-actions">
-    <a class="public-btn primary" href="{{ routes.downloads | relative_url }}">Ir a descargas</a>
-    <a class="public-btn" href="{{ routes.gallery | relative_url }}">Abrir galería</a>
-    <a class="public-btn" href="{{ routes.home | relative_url }}">Volver a home</a>
-    <a class="public-btn" href="{{ routes.support | relative_url }}">Necesitas ayuda</a>
-  </div>
-</div>

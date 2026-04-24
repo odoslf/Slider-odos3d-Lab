@@ -620,3 +620,51 @@ a { color: inherit; text-decoration: none; }
     width: min(100%, 280px);
   }
 }
+
+/* FINAL HOME GALLERY LOCK */
+.proof-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.proof-grid .proof-hw,
+.proof-grid .proof-app,
+.proof-grid .proof-video { grid-column: span 6; }
+.proof-card {
+  padding: 12px;
+  background: #fff;
+  border: 1px solid rgba(15,23,42,.07);
+  border-radius: 16px;
+}
+.proof-hw .public-media-frame,
+.proof-video .public-media-frame {
+  aspect-ratio: 3 / 2 !important;
+  overflow: hidden;
+}
+.proof-hw .public-media-frame img,
+.proof-video .public-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.proof-app .public-media-frame {
+  aspect-ratio: 9 / 20 !important;
+  width: min(100%, 280px);
+  margin: 0 auto;
+  overflow: hidden;
+}
+.proof-app .public-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+@media (max-width: 960px) {
+  .proof-grid,
+  .proof-grid .proof-hw,
+  .proof-grid .proof-app,
+  .proof-grid .proof-video {
+    grid-template-columns: 1fr;
+    grid-column: auto;
+  }
+}

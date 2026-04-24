@@ -4,27 +4,19 @@
 {% assign class_name = include.class_name | default: '' %}
 {% assign loading_mode = include.loading | default: item.loading_default | default: 'lazy' %}
 {% assign show_caption = include.show_caption | default: 'false' %}
+{% assign media_src = item.placeholder_path %}
 {% assign media_alt = item.alt_es %}
 {% assign media_caption = item.caption_es %}
-{% assign media_src = item.placeholder_path %}
-{% assign active_is_placeholder = true %}
 {% if item.active_source == 'final' %}
   {% assign media_src = item.final_path %}
-  {% assign active_is_placeholder = false %}
 {% endif %}
 {% if lang == 'en' %}
   {% assign media_alt = item.alt_en %}
   {% assign media_caption = item.caption_en %}
 {% endif %}
-<figure class="public-media-item {{ class_name }}" data-gallery-slot="{{ item.slot_key }}" data-placeholder="{{ active_is_placeholder }}" data-source="{{ item.active_source }}">
-  <div class="public-media-frame" style="aspect-ratio: {{ item.ratio | default: '16/9' | replace: ':', ' / ' }};">
-    <img
-      src="{{ media_src | relative_url }}"
-      alt="{{ media_alt }}"
-      loading="{{ loading_mode }}"
-      width="{{ item.width }}"
-      height="{{ item.height }}"
-      decoding="async">
+<figure class="public-media-item {{ class_name }}">
+  <div class="public-media-frame">
+    <img src="{{ media_src | relative_url }}" alt="{{ media_alt | escape }}" loading="{{ loading_mode }}" width="{{ item.width }}" height="{{ item.height }}">
   </div>
   {% if show_caption == 'true' and media_caption != '' %}
     <figcaption>{{ media_caption }}</figcaption>
