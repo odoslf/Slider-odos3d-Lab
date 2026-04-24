@@ -1,15 +1,4 @@
 screens:
-  - id: "app-screen-01"
-    src: "/assets/media/app/screenshots/app-screen-01-smartcapture.jpg"
-    title_es: "Captura 01"
-    title_en: "Screenshot 01"
-    caption_es: "Pantalla real de Smart Timelapse AI."
-    caption_en: "Real Smart Timelapse AI app screen."
-    alt_es: "Captura 01 de la app Smart Timelapse AI"
-    alt_en: "Smart Timelapse AI app screenshot 01"
-    width: 1080
-    height: 2400
-    featured: true
   - id: "app-screen-02"
     src: "/assets/media/app/screenshots/app-screen-02-smartcapture.jpg"
     title_es: "Captura 02"
@@ -32,6 +21,28 @@ screens:
     width: 921
     height: 2048
     featured: true
+  - id: "app-screen-08"
+    src: "/assets/media/app/screenshots/app-screen-08-smartcapture.jpg"
+    title_es: "Captura 08"
+    title_en: "Screenshot 08"
+    caption_es: "Pantalla real de Smart Timelapse AI."
+    caption_en: "Real Smart Timelapse AI app screen."
+    alt_es: "Captura 08 de la app Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI app screenshot 08"
+    width: 921
+    height: 2048
+    featured: true
+  - id: "app-screen-01"
+    src: "/assets/media/app/screenshots/app-screen-01-smartcapture.jpg"
+    title_es: "Captura 01"
+    title_en: "Screenshot 01"
+    caption_es: "Pantalla real de Smart Timelapse AI."
+    caption_en: "Real Smart Timelapse AI app screen."
+    alt_es: "Captura 01 de la app Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI app screenshot 01"
+    width: 1080
+    height: 2400
+    featured: false
   - id: "app-screen-04"
     src: "/assets/media/app/screenshots/app-screen-04-smartcapture.jpg"
     title_es: "Captura 04"
@@ -73,17 +84,6 @@ screens:
     caption_en: "Real Smart Timelapse AI app screen."
     alt_es: "Captura 07 de la app Smart Timelapse AI"
     alt_en: "Smart Timelapse AI app screenshot 07"
-    width: 921
-    height: 2048
-    featured: false
-  - id: "app-screen-08"
-    src: "/assets/media/app/screenshots/app-screen-08-smartcapture.jpg"
-    title_es: "Captura 08"
-    title_en: "Screenshot 08"
-    caption_es: "Pantalla real de Smart Timelapse AI."
-    caption_en: "Real Smart Timelapse AI app screen."
-    alt_es: "Captura 08 de la app Smart Timelapse AI"
-    alt_en: "Smart Timelapse AI app screenshot 08"
     width: 921
     height: 2048
     featured: false
