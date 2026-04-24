@@ -86,7 +86,11 @@ permalink: /
             <a class="btn btn-primary" href="#exportacion">Ver exportación</a>
             <a class="btn btn-secondary" href="{{ routes.hardware | relative_url }}">Ver hardware open source</a>
             <a class="btn btn-secondary" href="{{ routes.gallery | relative_url }}">Ver galería técnica</a>
-            {% if links.flags.has_play_store and external.play_store_url != "" %}<a class="btn btn-secondary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Google Play</a>{% endif %}
+            {% if links.flags.has_play_store and external.play_store_url != "" %}
+  <a class="btn btn-secondary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Google Play</a>
+{% else %}
+  <span class="btn btn-secondary btn-disabled" aria-disabled="true">Google Play próximamente</span>
+{% endif %}
           </div>
           <p class="microcopy">Pago único, flujo local y una experiencia clara desde el primer uso.</p>
         </article>
@@ -334,7 +338,11 @@ permalink: /
             <a class="btn btn-primary" href="#exportacion">Ver exportación</a>
             <a class="btn btn-secondary" href="{{ routes.hardware | relative_url }}">Ver hardware open source</a>
             <a class="btn btn-secondary" href="{{ routes.gallery | relative_url }}">Ver galería técnica</a>
-            {% if links.flags.has_play_store and external.play_store_url != "" %}<a class="btn btn-secondary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Google Play</a>{% endif %}
+            {% if links.flags.has_play_store and external.play_store_url != "" %}
+  <a class="btn btn-secondary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Google Play</a>
+{% else %}
+  <span class="btn btn-secondary btn-disabled" aria-disabled="true">Google Play próximamente</span>
+{% endif %}
           </div>
         </article>
       </div>
