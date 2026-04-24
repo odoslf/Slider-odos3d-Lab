@@ -795,3 +795,144 @@ a { color: inherit; text-decoration: none; }
   display: block;
 }
 
+
+.app-screens-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.app-screen-card {
+  padding: 10px;
+}
+
+.app-screen-item .public-media-frame {
+  aspect-ratio: 9 / 20;
+}
+
+.app-screen-item figcaption {
+  margin-top: 8px;
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+.app-screen-item figcaption strong {
+  color: var(--text);
+  font-size: .92rem;
+}
+
+@media (max-width: 1100px) {
+  .app-screens-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .app-screens-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .app-screens-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* APP SCREENSHOTS SECTION FINAL */
+
+.app-screens-section {
+  margin: 34px 0 30px;
+  padding: 28px 0;
+}
+
+.app-screens-section .section-copy {
+  max-width: 760px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.app-screens-section .section-copy .eyebrow {
+  margin: 0 0 8px;
+  color: #B7791F;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .78rem;
+}
+
+.app-screens-section .section-copy h2 {
+  margin: 0;
+  color: #0F172A;
+}
+
+.app-screens-section .section-copy p:not(.eyebrow) {
+  margin: 10px auto 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.app-screens-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  align-items: start;
+}
+
+.app-screen-card {
+  margin: 0;
+  padding: 12px;
+  border-radius: 20px;
+  background: #FFFFFF;
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 10px 30px rgba(15,23,42,.06);
+}
+
+.app-screen-frame {
+  aspect-ratio: 9 / 20;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #0F172A;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.app-screen-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.app-screen-card figcaption {
+  display: grid;
+  gap: 4px;
+  padding: 12px 4px 2px;
+  color: #475569;
+  font-size: .92rem;
+  line-height: 1.35;
+}
+
+.app-screen-card figcaption strong {
+  color: #0F172A;
+  font-size: 1rem;
+}
+
+@media (max-width: 760px) {
+  .app-screens-section {
+    margin: 26px 0 24px;
+    padding: 18px 0;
+  }
+
+  .app-screens-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .app-screen-frame {
+    max-width: 280px;
+  }
+}

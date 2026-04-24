@@ -1,0 +1,45 @@
+{% assign lang = include.lang | default: 'es' %}
+{% assign screens = site.data.app-screenshots.screens %}
+{% if lang == 'en' %}
+  {% assign eyebrow = 'App screenshots' %}
+  {% assign heading = 'The app in action' %}
+  {% assign intro = 'Real screens showing SmartCapture, project flow, DSLR preparation, remote control, and export.' %}
+{% else %}
+  {% assign eyebrow = 'Capturas de la app' %}
+  {% assign heading = 'La app en acción' %}
+  {% assign intro = 'Pantallas reales de SmartCapture, flujo de proyecto, preparación DSLR, remoto local y exportación.' %}
+{% endif %}
+
+<section id="app-screens" class="section-block">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">{{ eyebrow }}</p>
+      <h2>{{ heading }}</h2>
+      <p>{{ intro }}</p>
+    </header>
+
+    <div class="app-screens-grid">
+      {% for screen in screens %}
+        {% assign title = screen.title_es %}
+        {% assign caption = screen.caption_es %}
+        {% assign alt = screen.alt_es %}
+        {% if lang == 'en' %}
+          {% assign title = screen.title_en %}
+          {% assign caption = screen.caption_en %}
+          {% assign alt = screen.alt_en %}
+        {% endif %}
+        <article class="panel app-screen-card">
+          <figure class="public-media-item app-screen-item">
+            <div class="public-media-frame">
+              <img src="{{ screen.src | relative_url }}" alt="{{ alt | escape }}" loading="lazy" width="{{ screen.width }}" height="{{ screen.height }}">
+            </div>
+            <figcaption>
+              <strong>{{ title }}</strong>
+              <span>{{ caption }}</span>
+            </figcaption>
+          </figure>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

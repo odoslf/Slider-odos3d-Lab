@@ -1,0 +1,111 @@
+screens:
+  - id: "app-screen-01"
+    src: "/assets/media/app/screenshots/app-screen-01-smartcapture.jpg"
+    title_es: "SmartCapture AI"
+    title_en: "SmartCapture AI"
+    caption_es: "Captura solo cuando la escena cambia de verdad."
+    caption_en: "Capture only when the scene really changes."
+    alt_es: "Pantalla SmartCapture AI de Smart Timelapse AI"
+    alt_en: "SmartCapture AI screen in Smart Timelapse AI"
+    width: 1080
+    height: 2400
+  - id: "app-screen-02"
+    src: "/assets/media/app/screenshots/app-screen-02-smartcapture.jpg"
+    title_es: "Proyecto y fotos"
+    title_en: "Project and photos"
+    caption_es: "Organiza el material antes de exportar."
+    caption_en: "Organize the material before exporting."
+    alt_es: "Pantalla de proyecto y fotos para exportar"
+    alt_en: "Project photos screen before export"
+    width: 921
+    height: 2048
+  - id: "app-screen-03"
+    src: "/assets/media/app/screenshots/app-screen-03-smartcapture.jpg"
+    title_es: "Exportación"
+    title_en: "Export"
+    caption_es: "Prepara la salida final en MP4, GIF y formatos sociales."
+    caption_en: "Prepare final output in MP4, GIF, and social formats."
+    alt_es: "Pantalla de exportación de Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI export screen"
+    width: 921
+    height: 2048
+  - id: "app-screen-04"
+    src: "/assets/media/app/screenshots/app-screen-04-smartcapture.jpg"
+    title_es: "Escenas"
+    title_en: "Scenes"
+    caption_es: "Usa escenas preconfiguradas para acelerar el trabajo."
+    caption_en: "Use built-in scenes to move faster."
+    alt_es: "Pantalla de escenas de Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI scenes screen"
+    width: 921
+    height: 2048
+  - id: "app-screen-05"
+    src: "/assets/media/app/screenshots/app-screen-05-smartcapture.jpg"
+    title_es: "Flujo DSLR"
+    title_en: "DSLR workflow"
+    caption_es: "Prepara el disparo DSLR con conexión y prueba de pulso."
+    caption_en: "Prepare DSLR shooting with connection and pulse test."
+    alt_es: "Pantalla de preparación DSLR"
+    alt_en: "DSLR preparation screen"
+    width: 921
+    height: 2048
+  - id: "app-screen-06"
+    src: "/assets/media/app/screenshots/app-screen-06-smartcapture.jpg"
+    title_es: "Edición avanzada"
+    title_en: "Advanced editing"
+    caption_es: "Ajusta formato, velocidad, filtros y transformación."
+    caption_en: "Adjust format, speed, filters, and transformation."
+    alt_es: "Pantalla de edición avanzada"
+    alt_en: "Advanced editing screen"
+    width: 921
+    height: 2048
+  - id: "app-screen-07"
+    src: "/assets/media/app/screenshots/app-screen-07-smartcapture.jpg"
+    title_es: "Disparo DSLR"
+    title_en: "DSLR trigger"
+    caption_es: "Configura cable, duración del pulso y disparo real."
+    caption_en: "Configure cable, pulse duration, and real trigger."
+    alt_es: "Pantalla de disparo DSLR"
+    alt_en: "DSLR trigger screen"
+    width: 921
+    height: 2048
+  - id: "app-screen-08"
+    src: "/assets/media/app/screenshots/app-screen-08-smartcapture.jpg"
+    title_es: "Remoto Wi-Fi"
+    title_en: "Wi-Fi remote"
+    caption_es: "Controla el flujo desde otro dispositivo en la misma red."
+    caption_en: "Control the workflow from another device on the same network."
+    alt_es: "Pantalla de remoto Wi-Fi"
+    alt_en: "Wi-Fi remote screen"
+    width: 921
+    height: 2048
+  - id: "app-screen-09"
+    src: "/assets/media/app/screenshots/app-screen-09-smartcapture.jpg"
+    title_es: "Control y estado"
+    title_en: "Control and status"
+    caption_es: "Consulta estado, conexión y acciones del flujo."
+    caption_en: "Check status, connection, and workflow actions."
+    alt_es: "Pantalla de control y estado"
+    alt_en: "Control and status screen"
+    width: 921
+    height: 2048
+  - id: "app-screen-10"
+    src: "/assets/media/app/screenshots/app-screen-10-smartcapture.jpg"
+    title_es: "Ajustes del flujo"
+    title_en: "Workflow settings"
+    caption_es: "Ajusta opciones importantes sin salir de la app."
+    caption_en: "Tune important options without leaving the app."
+    alt_es: "Pantalla de ajustes del flujo"
+    alt_en: "Workflow settings screen"
+    width: 921
+    height: 2048
+  - id: "app-screen-11"
+    src: "/assets/media/app/screenshots/app-screen-11-smartcapture.jpg"
+    title_es: "Diagnóstico y ayuda"
+    title_en: "Diagnostics and help"
+    caption_es: "Accede a ayuda y datos útiles para resolver incidencias."
+    caption_en: "Access help and useful data for troubleshooting."
+    alt_es: "Pantalla de diagnóstico y ayuda"
+    alt_en: "Diagnostics and help screen"
+    width: 921
+    height: 2048

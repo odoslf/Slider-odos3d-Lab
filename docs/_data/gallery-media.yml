@@ -1,243 +1,56 @@
 gallery_media:
   slot_overview_a:
     slot_key: slot_overview_a
-    order: 1
-    placeholder_path: /assets/img/gallery-slot-overview-a.svg
-    final_path: /assets/media/gallery/slider-gallery-01-overview-a.jpg
+    final_path: "/assets/media/gallery/slider-gallery-01-overview-a.jpg"
+    placeholder_path: "/assets/img/gallery-slot-overview-a.svg"
     active_source: final
-    is_placeholder: false
-    target_filename: slider-gallery-01-overview-a.jpg
-    target_directory: docs/assets/media/gallery/
-    alt_es: Vista general del slider montado, toma A.
-    alt_en: Overall view of the assembled slider, shot A.
-    caption_es: Visión general del sistema, ángulo principal.
-    caption_en: Overall system view from the primary angle.
-    section_es: Visión general
-    section_en: Overview
-    ratio: 16:9
-    width: 1600
-    height: 900
+    alt_es: "Vista general del slider montado"
+    alt_en: "Overall view of the assembled slider"
+    caption_es: "Vista general del sistema"
+    caption_en: "Overall system view"
+    ratio: "3:2"
+    width: 1536
+    height: 1024
     loading_default: lazy
-    preferred_format: jpg
-    recommended_min_width: 2400
-    recommended_min_height: 1350
-    crop_strategy: center-safe
-    safe_area_notes: Mantener rail y carro dentro de la zona central útil.
-    transparency_required: false
-    current_slot_source: /assets/media/gallery/slider-gallery-01-overview-a.jpg
 
   slot_overview_b:
     slot_key: slot_overview_b
-    order: 2
-    placeholder_path: /assets/img/gallery-slot-overview-b.svg
-    final_path: /assets/media/gallery/slider-gallery-02-overview-b.jpg
+    final_path: "/assets/media/gallery/slider-gallery-02-overview-b.jpg"
+    placeholder_path: "/assets/img/gallery-slot-overview-b.svg"
     active_source: final
-    is_placeholder: false
-    target_filename: slider-gallery-02-overview-b.jpg
-    target_directory: docs/assets/media/gallery/
-    alt_es: Vista general del slider montado, toma B.
-    alt_en: Overall view of the assembled slider, shot B.
-    caption_es: Visión general complementaria para contexto de montaje.
-    caption_en: Secondary overview for assembly context.
-    section_es: Visión general
-    section_en: Overview
-    ratio: 16:9
-    width: 1600
-    height: 900
+    alt_es: "Vista general alternativa del slider"
+    alt_en: "Alternative overall view of the slider"
+    caption_es: "Vista alternativa no mostrada por defecto"
+    caption_en: "Alternative view not shown by default"
+    ratio: "3:2"
+    width: 1536
+    height: 1024
     loading_default: lazy
-    preferred_format: jpg
-    recommended_min_width: 2400
-    recommended_min_height: 1350
-    crop_strategy: center-safe
-    safe_area_notes: Evitar recortes de extremos del perfil en ambos lados.
-    transparency_required: false
-    current_slot_source: /assets/media/gallery/slider-gallery-02-overview-b.jpg
 
   slot_carriage_a:
     slot_key: slot_carriage_a
-    order: 3
-    placeholder_path: /assets/img/gallery-slot-carriage-a.svg
-    final_path: /assets/media/gallery/slider-gallery-03-in-use-mobile.jpg
+    final_path: "/assets/media/gallery/slider-gallery-03-in-use-mobile.jpg"
+    placeholder_path: "/assets/img/gallery-slot-carriage-a.svg"
     active_source: final
-    is_placeholder: false
-    target_filename: slider-gallery-03-in-use-mobile.jpg
-    target_directory: docs/assets/media/gallery/
-    alt_es: Slider en uso con móvil y app visible.
-    alt_en: Slider in use with phone and app visible.
-    caption_es: Slider en uso con móvil dentro del flujo real.
-    caption_en: Slider in use with phone in the real workflow.
-    section_es: En uso
-    section_en: In use
-    ratio: 16:9
-    width: 1600
-    height: 900
+    alt_es: "Slider en uso con móvil y app visible"
+    alt_en: "Slider in use with phone and app visible"
+    caption_es: "Slider en uso con móvil"
+    caption_en: "Slider in use with phone"
+    ratio: "3:2"
+    width: 1536
+    height: 1024
     loading_default: lazy
-    preferred_format: jpg
-    recommended_min_width: 2400
-    recommended_min_height: 1350
-    crop_strategy: center-safe
-    safe_area_notes: Priorizar nitidez en rodamientos y placa de carro.
-    transparency_required: false
-    current_slot_source: /assets/media/gallery/slider-gallery-03-in-use-mobile.jpg
 
   slot_carriage_b:
     slot_key: slot_carriage_b
-    order: 4
-    placeholder_path: /assets/img/gallery-slot-carriage-b.svg
-    final_path: /assets/media/gallery/slider-gallery-04-in-use-dslr.jpg
+    final_path: "/assets/media/gallery/slider-gallery-04-in-use-dslr.jpg"
+    placeholder_path: "/assets/img/gallery-slot-carriage-b.svg"
     active_source: final
-    is_placeholder: false
-    target_filename: slider-gallery-04-in-use-dslr.jpg
-    target_directory: docs/assets/media/gallery/
-    alt_es: Slider en uso con DSLR montada.
-    alt_en: Slider in use with mounted DSLR.
-    caption_es: Flujo DSLR real sobre el slider.
-    caption_en: Real DSLR workflow on the slider.
-    section_es: En uso
-    section_en: In use
-    ratio: 16:9
-    width: 1600
-    height: 900
+    alt_es: "Slider en uso con DSLR montada"
+    alt_en: "Slider in use with mounted DSLR"
+    caption_es: "Flujo DSLR real sobre el slider"
+    caption_en: "Real DSLR workflow on the slider"
+    ratio: "3:2"
+    width: 1536
+    height: 1024
     loading_default: lazy
-    preferred_format: jpg
-    recommended_min_width: 2400
-    recommended_min_height: 1350
-    crop_strategy: center-safe
-    safe_area_notes: Mantener foco en acople y elementos de deslizamiento.
-    transparency_required: false
-    current_slot_source: /assets/media/gallery/slider-gallery-04-in-use-dslr.jpg
-
-  slot_belt_a:
-    slot_key: slot_belt_a
-    order: 5
-    placeholder_path: /assets/img/gallery-slot-belt-a.svg
-    final_path: /assets/media/gallery/slider-gallery-05-belt-a.jpg
-    active_source: placeholder
-    is_placeholder: true
-    target_filename: slider-gallery-05-belt-a.jpg
-    target_directory: docs/assets/media/gallery/
-    alt_es: Correa y transmisión del slider, toma A.
-    alt_en: Slider belt and drive, shot A.
-    caption_es: Correa y poleas en vista funcional principal.
-    caption_en: Belt and pulleys in the primary functional view.
-    section_es: Correa y transmisión
-    section_en: Belt and drive
-    ratio: 16:9
-    width: 1600
-    height: 900
-    loading_default: lazy
-    preferred_format: jpg
-    recommended_min_width: 2400
-    recommended_min_height: 1350
-    crop_strategy: center-safe
-    safe_area_notes: Mostrar tensión de correa sin cortar poleas.
-    transparency_required: false
-    current_slot_source: gallery slot placeholder belt a
-
-  slot_belt_b:
-    slot_key: slot_belt_b
-    order: 6
-    placeholder_path: /assets/img/gallery-slot-belt-b.svg
-    final_path: /assets/media/gallery/slider-gallery-06-belt-b.jpg
-    active_source: placeholder
-    is_placeholder: true
-    target_filename: slider-gallery-06-belt-b.jpg
-    target_directory: docs/assets/media/gallery/
-    alt_es: Correa y transmisión del slider, toma B.
-    alt_en: Slider belt and drive, shot B.
-    caption_es: Vista complementaria del tren de transmisión.
-    caption_en: Complementary view of the drive train.
-    section_es: Correa y transmisión
-    section_en: Belt and drive
-    ratio: 16:9
-    width: 1600
-    height: 900
-    loading_default: lazy
-    preferred_format: jpg
-    recommended_min_width: 2400
-    recommended_min_height: 1350
-    crop_strategy: center-safe
-    safe_area_notes: Mantener visibles anclajes y recorrido de correa.
-    transparency_required: false
-    current_slot_source: gallery slot placeholder belt b
-
-  slot_electronics:
-    slot_key: slot_electronics
-    order: 7
-    placeholder_path: /assets/img/gallery-slot-electronics.svg
-    final_path: /assets/media/gallery/slider-gallery-07-electronics.jpg
-    active_source: placeholder
-    is_placeholder: true
-    target_filename: slider-gallery-07-electronics.jpg
-    target_directory: docs/assets/media/gallery/
-    alt_es: Electrónica y control del slider.
-    alt_en: Slider electronics and control.
-    caption_es: Controladora, drivers y cableado principal.
-    caption_en: Controller, drivers, and main wiring.
-    section_es: Electrónica y control
-    section_en: Electronics and control
-    ratio: 4:3
-    width: 1600
-    height: 1200
-    loading_default: lazy
-    preferred_format: jpg
-    recommended_min_width: 2200
-    recommended_min_height: 1650
-    crop_strategy: center-safe
-    safe_area_notes: Evitar reflejos sobre electrónica crítica.
-    transparency_required: false
-    current_slot_source: gallery slot placeholder electronics
-
-  slot_endstop_x:
-    slot_key: slot_endstop_x
-    order: 8
-    placeholder_path: /assets/img/gallery-slot-endstop-x.svg
-    final_path: /assets/media/gallery/slider-gallery-08-endstop-x.jpg
-    active_source: placeholder
-    is_placeholder: true
-    target_filename: slider-gallery-08-endstop-x.jpg
-    target_directory: docs/assets/media/gallery/
-    alt_es: Final de carrera X del slider.
-    alt_en: Slider X endstop detail.
-    caption_es: Detalle del endstop X y su integración mecánica.
-    caption_en: X endstop detail and mechanical integration.
-    section_es: Electrónica y control
-    section_en: Electronics and control
-    ratio: 1:1
-    width: 1200
-    height: 1200
-    loading_default: lazy
-    preferred_format: jpg
-    recommended_min_width: 1800
-    recommended_min_height: 1800
-    crop_strategy: center-safe
-    safe_area_notes: Dejar margen para tornillería y microswitch completo.
-    transparency_required: false
-    current_slot_source: gallery slot placeholder endstop x
-
-  slot_phone_mount:
-    slot_key: slot_phone_mount
-    order: 9
-    placeholder_path: /assets/img/gallery-slot-phone-mount.svg
-    final_path: /assets/media/gallery/slider-gallery-09-phone-mount.jpg
-    active_source: placeholder
-    is_placeholder: true
-    target_filename: slider-gallery-09-phone-mount.jpg
-    target_directory: docs/assets/media/gallery/
-    alt_es: Soporte para móvil del slider.
-    alt_en: Slider phone mount accessory.
-    caption_es: Accesorio de montaje para teléfono en el ecosistema slider.
-    caption_en: Phone mounting accessory within the slider ecosystem.
-    section_es: Accesorios
-    section_en: Accessories
-    ratio: 4:3
-    width: 1600
-    height: 1200
-    loading_default: lazy
-    preferred_format: jpg
-    recommended_min_width: 2200
-    recommended_min_height: 1650
-    crop_strategy: center-safe
-    safe_area_notes: Mostrar anclaje completo y área de sujeción.
-    transparency_required: false
-    current_slot_source: gallery slot placeholder phone mount

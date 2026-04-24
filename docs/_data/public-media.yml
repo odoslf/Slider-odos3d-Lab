@@ -1,209 +1,112 @@
 site_media:
   logo:
-    placeholder_path: /assets/img/app-logo-slot.svg
-    final_path: /assets/media/app/logo-final.png
+    placeholder_path: "/assets/img/app-logo-slot.svg"
+    final_path: "/assets/media/app/logo-final.png"
     active_source: final
-    is_placeholder: false
-    alt_es: Logo principal Smart Timelapse AI
-    alt_en: Smart Timelapse AI primary logo
-    caption_es: Logo final de marca
-    caption_en: Final brand logo
+    alt_es: "Logo principal Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI primary logo"
+    caption_es: "Logo final de marca"
+    caption_en: "Final brand logo"
     kind: logo
     ratio: "1:1"
     width: 512
     height: 512
     loading_default: eager
-    target_filename: logo-final.png
-    target_directory: docs/assets/media/app/
-    preferred_format: png
-    recommended_min_width: 512
-    recommended_min_height: 512
-    crop_strategy: Sin recorte; mantener marca completa centrada.
-    safe_area_notes: Mantener un margen limpio del 10% alrededor del logo.
-    transparency_required: true
-    used_on_pages: "/,/en/,/hardware/,/downloads/,/support/,/privacy-policy/,/terms/,/en/hardware/,/en/downloads/,/en/support/,/en/privacy-policy/,/en/terms/"
-    used_in_sections: Header público
-    current_slot_source: /assets/media/app/logo-final.png
 
   hero:
-    placeholder_path: /assets/img/app-hero-slot.svg
-    final_path: /assets/media/app/hero-final.png
+    placeholder_path: "/assets/img/app-hero-slot.svg"
+    final_path: "/assets/media/app/hero-final.png"
     active_source: final
-    is_placeholder: false
-    alt_es: Hero final de producto
-    alt_en: Final product hero
-    caption_es: Hero final de producto
-    caption_en: Final product hero
+    alt_es: "Hero final de producto"
+    alt_en: "Final product hero"
+    caption_es: "Hero final de producto"
+    caption_en: "Final product hero"
     kind: hero
     ratio: "1024:500"
     width: 1024
     height: 500
     loading_default: eager
-    target_filename: hero-final.png
-    target_directory: docs/assets/media/app/
-    preferred_format: png
-    recommended_min_width: 1920
-    recommended_min_height: 1200
-    crop_strategy: Cover horizontal con foco central.
-    safe_area_notes: Mantener contenido importante en el 60% central.
-    transparency_required: false
-    used_on_pages: "/,/en/,/downloads/,/en/downloads/"
-    used_in_sections: Hero principal
-    current_slot_source: /assets/media/app/hero-final.png
 
   slider_mobile:
-    placeholder_path: /assets/img/app-gallery-slider-mobile-slot.svg
-    final_path: /assets/media/app/slider-mobile-final.jpg
+    placeholder_path: "/assets/img/app-gallery-slider-mobile-slot.svg"
+    final_path: "/assets/media/app/slider-mobile-final.jpg"
     active_source: final
-    is_placeholder: false
-    alt_es: Slider real con móvil montado
-    alt_en: Real slider with mounted phone
-    caption_es: Slider con móvil dentro del flujo real
-    caption_en: Slider with phone in the real workflow
+    alt_es: "Slider real con móvil montado"
+    alt_en: "Real slider with mounted phone"
+    caption_es: "Slider con móvil dentro del flujo real"
+    caption_en: "Slider with phone in the real workflow"
     kind: gallery
     ratio: "3:2"
     width: 1536
     height: 1024
     loading_default: lazy
-    target_filename: slider-mobile-final.jpg
-    target_directory: docs/assets/media/app/
-    preferred_format: jpg
-    recommended_min_width: 1920
-    recommended_min_height: 1080
-    crop_strategy: Cover 3:2 priorizando el sujeto central.
-    safe_area_notes: Evitar contenido crítico en los bordes.
-    transparency_required: false
-    used_on_pages: "/,/en/,/hardware/,/en/hardware/"
-    used_in_sections: Galería pública
-    current_slot_source: /assets/media/app/slider-mobile-final.jpg
 
   slider_dslr:
-    placeholder_path: /assets/img/app-gallery-slider-dslr-slot.svg
-    final_path: /assets/media/app/slider-dslr-final.jpg
+    placeholder_path: "/assets/img/app-gallery-slider-dslr-slot.svg"
+    final_path: "/assets/media/app/slider-dslr-final.jpg"
     active_source: final
-    is_placeholder: false
-    alt_es: Slider real con DSLR montada
-    alt_en: Real slider with mounted DSLR
-    caption_es: Slider con DSLR dentro del flujo real
-    caption_en: Slider with DSLR in the real workflow
+    alt_es: "Slider real con DSLR montada"
+    alt_en: "Real slider with mounted DSLR"
+    caption_es: "Slider con DSLR dentro del flujo real"
+    caption_en: "Slider with DSLR in the real workflow"
     kind: gallery
     ratio: "3:2"
     width: 1536
     height: 1024
     loading_default: lazy
-    target_filename: slider-dslr-final.jpg
-    target_directory: docs/assets/media/app/
-    preferred_format: jpg
-    recommended_min_width: 1920
-    recommended_min_height: 1080
-    crop_strategy: Cover 3:2 priorizando el sujeto central.
-    safe_area_notes: Dejar márgenes de seguridad en las esquinas.
-    transparency_required: false
-    used_on_pages: "/,/en/,/hardware/,/en/hardware/"
-    used_in_sections: Galería pública
-    current_slot_source: /assets/media/app/slider-dslr-final.jpg
 
   app_screenshot:
-    placeholder_path: /assets/img/app-gallery-app-screenshot-slot.svg
-    final_path: /assets/media/app/app-screenshot-final.jpg
+    placeholder_path: "/assets/img/app-gallery-app-screenshot-slot.svg"
+    final_path: "/assets/media/app/app-screenshot-final.jpg"
     active_source: final
-    is_placeholder: false
-    alt_es: Captura real de la app
-    alt_en: Real app screenshot
-    caption_es: Captura real de la app
-    caption_en: Real app screenshot
+    alt_es: "Captura real de SmartCapture AI"
+    alt_en: "Real SmartCapture AI screenshot"
+    caption_es: "Captura real de SmartCapture AI"
+    caption_en: "Real SmartCapture AI screenshot"
     kind: screenshot
     ratio: "9:20"
     width: 1080
     height: 2400
     loading_default: lazy
-    target_filename: app-screenshot-final.jpg
-    target_directory: docs/assets/media/app/
-    preferred_format: jpg
-    recommended_min_width: 1600
-    recommended_min_height: 900
-    crop_strategy: Vertical 9:20 priorizando la UI dentro de márgenes seguros.
-    safe_area_notes: Mantener elementos clave dentro del 70% central.
-    transparency_required: false
-    used_on_pages: "/,/en/,/downloads/,/support/,/en/downloads/,/en/support/"
-    used_in_sections: Descargas y soporte
-    current_slot_source: /assets/media/app/app-screenshot-final.jpg
 
   video_thumb:
-    placeholder_path: /assets/img/app-video-slot.svg
-    final_path: /assets/media/app/video-thumb-final.jpg
+    placeholder_path: "/assets/img/app-video-slot.svg"
+    final_path: "/assets/media/app/video-thumb-final.jpg"
     active_source: final
-    is_placeholder: false
-    alt_es: Miniatura real de vídeo demo
-    alt_en: Real demo video thumbnail
-    caption_es: Miniatura real de vídeo demo
-    caption_en: Real demo video thumbnail
+    alt_es: "Miniatura real de vídeo demo"
+    alt_en: "Real demo video thumbnail"
+    caption_es: "Miniatura real de vídeo demo"
+    caption_en: "Real demo video thumbnail"
     kind: video
     ratio: "3:2"
     width: 1536
     height: 1024
     loading_default: lazy
-    target_filename: video-thumb-final.jpg
-    target_directory: docs/assets/media/app/
-    preferred_format: jpg
-    recommended_min_width: 1920
-    recommended_min_height: 1080
-    crop_strategy: Cover 3:2 con foco central.
-    safe_area_notes: Reservar espacio para icono de play sin tapar contenido.
-    transparency_required: false
-    used_on_pages: "/,/en/"
-    used_in_sections: Bloque de vídeo
-    youtube_url_source: public-links.external_links.youtube_url
-    current_slot_source: /assets/media/app/video-thumb-final.jpg
 
   favicon:
-    placeholder_path: /assets/img/favicon-slot.svg
-    final_path: /assets/media/app/favicon-final.png
+    placeholder_path: "/assets/img/favicon-slot.svg"
+    final_path: "/assets/media/app/favicon-final.png"
     active_source: final
-    is_placeholder: false
-    alt_es: Favicon final de marca
-    alt_en: Final brand favicon
-    caption_es: Favicon final
-    caption_en: Final favicon
+    alt_es: "Favicon final de marca"
+    alt_en: "Final brand favicon"
+    caption_es: "Favicon final"
+    caption_en: "Final favicon"
     kind: favicon
     ratio: "1:1"
     width: 512
     height: 512
     loading_default: eager
-    target_filename: favicon-final.png
-    target_directory: docs/assets/media/app/
-    preferred_format: png
-    recommended_min_width: 512
-    recommended_min_height: 512
-    crop_strategy: Sin recorte; icono centrado y legible.
-    safe_area_notes: Mantener símbolo principal en el 70% central.
-    transparency_required: true
-    used_on_pages: "/,/en/,/hardware/,/downloads/,/support/,/privacy-policy/,/terms/,/en/hardware/,/en/downloads/,/en/support/,/en/privacy-policy/,/en/terms/,/404.html"
-    used_in_sections: Head global
-    current_slot_source: /assets/media/app/favicon-final.png
 
   og_image:
-    placeholder_path: /assets/img/og-home-slot.svg
-    final_path: /assets/media/app/og-home-final.jpg
+    placeholder_path: "/assets/img/og-home-slot.svg"
+    final_path: "/assets/media/app/og-home-final.jpg"
     active_source: final
-    is_placeholder: false
-    alt_es: Imagen social final de la web
-    alt_en: Final social image for the website
-    caption_es: Imagen social final
-    caption_en: Final social image
+    alt_es: "Imagen social final de la web"
+    alt_en: "Final social image for the website"
+    caption_es: "Imagen social final"
+    caption_en: "Final social image"
     kind: og
     ratio: "1200:630"
     width: 1200
     height: 630
     loading_default: eager
-    target_filename: og-home-final.jpg
-    target_directory: docs/assets/media/app/
-    preferred_format: jpg
-    recommended_min_width: 1200
-    recommended_min_height: 630
-    crop_strategy: Lienzo social fijo 1200x630 sin recorte dinámico.
-    safe_area_notes: Mantener texto y logo dentro del 80% central.
-    transparency_required: false
-    used_on_pages: "/,/en/,/hardware/,/downloads/,/support/,/privacy-policy/,/terms/,/en/hardware/,/en/downloads/,/en/support/,/en/privacy-policy/,/en/terms/"
-    used_in_sections: Metadatos sociales
-    current_slot_source: /assets/media/app/og-home-final.jpg

@@ -13,18 +13,18 @@ external_links:
 internal_routes_es:
   home: "/"
   hardware: "/hardware/"
+  gallery: "/gallery/"
   downloads: "/downloads/"
   support: "/support/"
-  gallery: "/gallery/"
   privacy: "/privacy-policy/"
   terms: "/terms/"
 
 internal_routes_en:
   home: "/en/"
   hardware: "/en/hardware/"
+  gallery: "/en/gallery/"
   downloads: "/en/downloads/"
   support: "/en/support/"
-  gallery: "/en/gallery/"
   privacy: "/en/privacy-policy/"
   terms: "/en/terms/"
 
