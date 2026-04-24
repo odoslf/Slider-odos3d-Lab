@@ -1,0 +1,9 @@
+Placeholder temporal para que GitHub conserve la carpeta.
+
+Sube aquí el ZIP final con este nombre exacto:
+slider-odos3d-lab-stl-pack-v1.zip
+
+Ruta esperada:
+docs/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip
+
+Cuando el ZIP esté subido, este archivo se puede borrar.

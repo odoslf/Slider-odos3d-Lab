@@ -1,7 +1,7 @@
 ---
 layout: public-page
 title: "Descargas de hardware | Smart Timelapse AI"
-description: "Descarga STL, STEP y BOM del hardware Slider-odos3d con flujo versionado y enlaces técnicos del ecosistema Smart Timelapse AI."
+description: "Descarga STL, STEP y BOM del hardware Slider-odos3d con enlaces directos, guías públicas y pack ZIP preparado."
 permalink: /downloads/
 lang: es
 lang_page: es
@@ -14,40 +14,56 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
 ---
 
 {% assign links = site.data.public-links %}
-{% assign identity = links.site_identity %}
-{% assign external = links.external_links %}
 {% assign routes = links.internal_routes_es %}
+{% assign zip_path = "/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip" %}
+{% assign zip_file = site.static_files | where: "path", zip_path | first %}
 
 <div class="public-grid cols-2">
   <article class="public-card">
-    <p class="public-kicker">Archivos reales disponibles en el repo</p>
-    <h3>STL, STEP y BOM disponibles ahora mismo</h3>
-    <p>Aquí se concentran las piezas publicadas, el BOM y el estado real de los archivos técnicos del hardware.</p>
+    <p class="public-kicker">Descarga recomendada</p>
+    <h3>Pack STL v1 completo</h3>
+    <p>Descarga todas las piezas STL del slider en un único archivo cuando el ZIP esté publicado.</p>
+    <div class="public-cta-actions">
+      {% if zip_file %}
+        <a class="public-btn primary" href="{{ zip_path | relative_url }}" download>Descargar pack STL v1 (.zip)</a>
+      {% else %}
+        <span class="public-btn is-disabled" aria-disabled="true">ZIP pendiente: slider-odos3d-lab-stl-pack-v1.zip</span>
+      {% endif %}
+    </div>
+    <p class="public-note">Nombre exacto esperado: <code>slider-odos3d-lab-stl-pack-v1.zip</code></p>
+  </article>
+
+  <article class="public-card">
+    <p class="public-kicker">Archivos individuales</p>
+    <h3>STL y BOM disponibles ahora mismo</h3>
+    <p>Enlaces directos a los archivos publicados. Los nombres visibles están normalizados aunque el archivo original conserve su nombre real.</p>
     <div class="public-links-list">
-      <a href="{{ site.blob_base }}/prints/BOM/{{ site.latest_pack }}/slider-odos3d_bom_v1.csv">BOM CSV real (v1)</a>
-      <a href="{{ site.blob_base }}/prints/BOM/{{ site.latest_pack }}/README.md">BOM README (v1)</a>
-      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20caja%20electroniica.stl">Slider ODOS3D Lab caja electroniica.stl</a>
-      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20carro.stl">Slider ODOS3D Lab carro.stl</a>
-      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20escuadra.stl">Slider ODOS3D Lab escuadra.stl</a>
-      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20separador.stl">Slider ODOS3D Lab separador.stl</a>
-      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20correa.stl">Slider ODOS3D Lab soporte correa.stl</a>
-      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20derecho.stl">Slider ODOS3D Lab soporte derecho.stl</a>
-      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20izquierdo.stl">Slider ODOS3D Lab soporte izquierdo.stl</a>
-      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20tubo%20camara.stl">Slider ODOS3D Lab tubo camara.stl</a>
-      <a href="{{ site.blob_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Labtapa%20electroniica.stl">Slider ODOS3D Labtapa electroniica.stl</a>
-      <a href="{{ site.tree_base }}/prints/STEP/{{ site.latest_pack }}/">STEP {{ site.latest_pack }} (sin archivos finales publicados)</a>
+      <a href="{{ site.raw_base }}/prints/BOM/{{ site.latest_pack }}/slider-odos3d_bom_v1.csv">BOM CSV v1</a>
+      <a href="{{ site.raw_base }}/prints/BOM/{{ site.latest_pack }}/README.md">BOM README v1</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20caja%20electroniica.stl">Caja electrónica STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20carro.stl">Carro STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20escuadra.stl">Escuadra STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20separador.stl">Separador STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20correa.stl">Soporte de correa STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20derecho.stl">Soporte derecho STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20izquierdo.stl">Soporte izquierdo STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20tubo%20camara.stl">Tubo cámara STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Labtapa%20electroniica.stl">Tapa electrónica STL</a>
+      <a href="{{ site.tree_base }}/prints/STEP/{{ site.latest_pack }}/">STEP {{ site.latest_pack }} en preparación</a>
     </div>
   </article>
+
   <article class="public-card">
     <p class="public-kicker">Guías y documentación</p>
-    <h3>Montaje, calibración y uso</h3>
-    <p>Guías públicas para montaje y preparación del sistema físico.</p>
+    <h3>Montaje, ensamblado y calibración</h3>
+    <p>Guías públicas para preparar el sistema físico sin depender de documentación interna del repositorio.</p>
     <div class="public-links-list">
-      <a href="{{ '/quick_assembly/' | relative_url }}">Guía rápida de montaje</a>
-      <a href="{{ '/assembly_guide/' | relative_url }}">Guía de ensamblado</a>
+      <a href="{{ '/quick-assembly/' | relative_url }}">Guía rápida de montaje</a>
+      <a href="{{ '/assembly-guide/' | relative_url }}">Guía de ensamblado</a>
       <a href="{{ '/calibration/' | relative_url }}">Calibración</a>
     </div>
   </article>
+
   <article class="public-card">
     <p class="public-kicker">Referencias GRBL</p>
     <h3>Control y comportamiento del slider</h3>
@@ -57,28 +73,12 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
       <a href="{{ '/troubleshooting/' | relative_url }}">Resolución de problemas</a>
     </div>
   </article>
-  <article class="public-card">
-    <p class="public-kicker">Recursos relacionados con la app</p>
-    <h3>Conecta descargas con flujo de producto</h3>
-    <p>Contexto de soporte y hardware para quienes escalan desde la app móvil al ecosistema completo.</p>
-    <div class="public-links-list">
-      <a href="{{ routes.hardware | relative_url }}">Ver página hardware</a>
-      <a href="{{ routes.gallery | relative_url }}">Abrir galería técnica</a>
-      <a href="{{ routes.support | relative_url }}">Ir a soporte</a>
-    </div>
-  </article>
 </div>
 
 <div class="public-band">
-  <h3>Versiones y mantenimiento</h3>
-  <p>Cuando publiquemos nuevas versiones (`v2`, `v3`, etc.), las anteriores se mantendrán disponibles para trazabilidad.</p>
-  <ol>
-    <li>Crear carpetas de versión en STL, STEP y BOM.</li>
-    <li>Subir archivos definitivos.</li>
-    <li>Mantener histórico.</li>
-    <li>Actualizar solo `latest_pack` en `docs/_config.yml`.</li>
-  </ol>
-  <p class="public-note">Estado actual real: STL v1 y BOM v1 publicados. STEP {{ site.latest_pack }} sigue en preparación sin archivos finales.</p>
+  <h3>Estado del pack v1</h3>
+  <p>STL v1 y BOM v1 están publicados. STEP {{ site.latest_pack }} sigue en preparación hasta que existan archivos finales revisados.</p>
+  <p class="public-note">El ZIP único se activará automáticamente cuando se suba <code>docs/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip</code>.</p>
 </div>
 
 <div class="public-cta-band">
