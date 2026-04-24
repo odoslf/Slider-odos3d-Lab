@@ -84,6 +84,7 @@ permalink: /
           <p>{{ identity.product_name }} reúne captura, control y exportación dentro de un flujo pensado para creadores, fotografía de producto, estudio y proyectos avanzados.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#exportacion">Ver exportación</a>
+            <a class="btn btn-secondary" href="#app-screens">Ver capturas de la app</a>
             <a class="btn btn-secondary" href="{{ routes.hardware | relative_url }}">Ver hardware open source</a>
             <a class="btn btn-secondary" href="{{ routes.gallery | relative_url }}">Ver galería técnica</a>
             {% if links.flags.has_play_store and external.play_store_url != "" %}
@@ -313,6 +314,8 @@ permalink: /
 </div>
       </div>
     </section>
+
+    {% include app-screens-section.html lang='es' %}
 
     <section id="faq" class="section-block">
       <div class="container">
