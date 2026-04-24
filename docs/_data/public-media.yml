@@ -73,10 +73,10 @@ site_media:
     placeholder_path: "/assets/img/app-video-slot.svg"
     final_path: "/assets/media/app/video-thumb-final.jpg"
     active_source: final
-    alt_es: "Miniatura real de vídeo demo"
-    alt_en: "Real demo video thumbnail"
-    caption_es: "Miniatura real de vídeo demo"
-    caption_en: "Real demo video thumbnail"
+    alt_es: "Miniatura de vídeo demo Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI demo video thumbnail"
+    caption_es: "Vídeo demo"
+    caption_en: "Demo video"
     kind: video
     ratio: "3:2"
     width: 1536
