@@ -3,14 +3,14 @@
 {% assign lang = include.lang | default: 'es' %}
 {% assign youtube_url = links.external_links.youtube_url | default: '' %}
 {% assign has_youtube = links.flags.has_youtube and youtube_url != '' %}
-{% assign caption = media.caption_es %}
 {% assign cta_label = 'Abrir demo en YouTube' %}
+{% assign fallback = 'Vídeo demo disponible próximamente' %}
 {% if lang == 'en' %}
-  {% assign caption = media.caption_en %}
   {% assign cta_label = 'Open demo on YouTube' %}
+  {% assign fallback = 'Demo video coming soon' %}
 {% endif %}
 
-<div class="{{ include.class_name }}">
+<div class="public-video-card {{ include.class_name }}">
   {% if has_youtube %}
     <a class="public-video-link" href="{{ youtube_url }}" target="_blank" rel="noopener noreferrer">
       {% include public-media-item.html media_key='video_thumb' lang=lang loading=include.loading show_caption='false' %}
@@ -18,6 +18,6 @@
     </a>
   {% else %}
     {% include public-media-item.html media_key='video_thumb' lang=lang loading=include.loading show_caption='false' %}
+    <p class="public-video-fallback">{{ fallback }}</p>
   {% endif %}
-  <p class="public-video-caption">{{ caption }}</p>
 </div>
