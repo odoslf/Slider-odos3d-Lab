@@ -9,6 +9,7 @@ screens:
     alt_en: "SmartCapture AI screen in Smart Timelapse AI"
     width: 1080
     height: 2400
+    featured: true
   - id: "app-screen-02"
     src: "/assets/media/app/screenshots/app-screen-02-smartcapture.jpg"
     title_es: "Proyecto y fotos"
@@ -19,6 +20,7 @@ screens:
     alt_en: "Project photos screen before export"
     width: 921
     height: 2048
+    featured: false
   - id: "app-screen-03"
     src: "/assets/media/app/screenshots/app-screen-03-smartcapture.jpg"
     title_es: "Exportación"
@@ -29,6 +31,7 @@ screens:
     alt_en: "Smart Timelapse AI export screen"
     width: 921
     height: 2048
+    featured: true
   - id: "app-screen-04"
     src: "/assets/media/app/screenshots/app-screen-04-smartcapture.jpg"
     title_es: "Escenas"
@@ -39,6 +42,7 @@ screens:
     alt_en: "Smart Timelapse AI scenes screen"
     width: 921
     height: 2048
+    featured: false
   - id: "app-screen-05"
     src: "/assets/media/app/screenshots/app-screen-05-smartcapture.jpg"
     title_es: "Flujo DSLR"
@@ -49,6 +53,7 @@ screens:
     alt_en: "DSLR preparation screen"
     width: 921
     height: 2048
+    featured: false
   - id: "app-screen-06"
     src: "/assets/media/app/screenshots/app-screen-06-smartcapture.jpg"
     title_es: "Edición avanzada"
@@ -59,6 +64,7 @@ screens:
     alt_en: "Advanced editing screen"
     width: 921
     height: 2048
+    featured: false
   - id: "app-screen-07"
     src: "/assets/media/app/screenshots/app-screen-07-smartcapture.jpg"
     title_es: "Disparo DSLR"
@@ -69,6 +75,7 @@ screens:
     alt_en: "DSLR trigger screen"
     width: 921
     height: 2048
+    featured: false
   - id: "app-screen-08"
     src: "/assets/media/app/screenshots/app-screen-08-smartcapture.jpg"
     title_es: "Remoto Wi-Fi"
@@ -79,6 +86,7 @@ screens:
     alt_en: "Wi-Fi remote screen"
     width: 921
     height: 2048
+    featured: true
   - id: "app-screen-09"
     src: "/assets/media/app/screenshots/app-screen-09-smartcapture.jpg"
     title_es: "Control y estado"
@@ -89,6 +97,7 @@ screens:
     alt_en: "Control and status screen"
     width: 921
     height: 2048
+    featured: false
   - id: "app-screen-10"
     src: "/assets/media/app/screenshots/app-screen-10-smartcapture.jpg"
     title_es: "Ajustes del flujo"
@@ -99,6 +108,7 @@ screens:
     alt_en: "Workflow settings screen"
     width: 921
     height: 2048
+    featured: false
   - id: "app-screen-11"
     src: "/assets/media/app/screenshots/app-screen-11-smartcapture.jpg"
     title_es: "Diagnóstico y ayuda"
@@ -109,3 +119,4 @@ screens:
     alt_en: "Diagnostics and help screen"
     width: 921
     height: 2048
+    featured: false
