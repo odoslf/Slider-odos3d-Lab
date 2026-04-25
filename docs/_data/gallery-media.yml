@@ -8,9 +8,9 @@ gallery_media:
     alt_en: "Overall view of the assembled slider"
     caption_es: "Vista general del sistema"
     caption_en: "Overall system view"
-    ratio: "3:2"
-    width: 1536
-    height: 1024
+    ratio: "1672:941"
+    width: 1672
+    height: 941
     loading_default: lazy
 
   slot_overview_b:
@@ -22,9 +22,9 @@ gallery_media:
     alt_en: "Alternative overall view of the slider"
     caption_es: "Vista alternativa no mostrada por defecto"
     caption_en: "Alternative view not shown by default"
-    ratio: "3:2"
-    width: 1536
-    height: 1024
+    ratio: "1672:941"
+    width: 1672
+    height: 941
     loading_default: lazy
 
   slot_carriage_a:
@@ -36,9 +36,9 @@ gallery_media:
     alt_en: "Slider in use with phone and app visible"
     caption_es: "Slider en uso con móvil"
     caption_en: "Slider in use with phone"
-    ratio: "3:2"
-    width: 1536
-    height: 1024
+    ratio: "1672:941"
+    width: 1672
+    height: 941
     loading_default: lazy
 
   slot_carriage_b:

@@ -17,7 +17,7 @@ app_assets:
 
   - asset_key: hero
     family: app
-    final_filename: hero-final.png
+    final_filename: hero-final.jpg
     final_directory: docs/assets/media/app/
     source_registry: public-media
     source_slot_key: hero
@@ -29,7 +29,7 @@ app_assets:
     file_received: true
     uploaded_to_repo: true
     activated_in_yaml: true
-    notes: PNG horizontal final ya subido y activado en el registry.
+    notes: JPEG horizontal final 1024x500 activado en el registry.
 
   - asset_key: app_screenshot
     family: app
@@ -109,7 +109,7 @@ app_assets:
     file_received: true
     uploaded_to_repo: true
     activated_in_yaml: true
-    notes: Transparencia obligatoria y legibilidad 16-32px.
+    notes: Favicon PNG 512x512 generado desde el logo final, con derivados 32x32, 16x16 y Apple touch icon 180x180.
 
   - asset_key: og_image
     family: app
@@ -125,7 +125,7 @@ app_assets:
     file_received: true
     uploaded_to_repo: true
     activated_in_yaml: true
-    notes: Formato social 1200x630 estable.
+    notes: JPEG social 1200x630 estable para OG/Twitter.
 
 gallery_assets:
   - asset_key: overview_a

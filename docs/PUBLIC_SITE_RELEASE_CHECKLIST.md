@@ -22,7 +22,7 @@ Checklist interno para publicar la capa pública cuando lleguen assets reales y 
 
 Sustituir en `docs/assets/media/app/`:
 - logo real → `logo-final.png`
-- hero real → `hero-final.png`
+- hero real → `hero-final.jpg`
 - slider mobile real → `slider-mobile-final.jpg`
 - slider dslr real → `slider-dslr-final.jpg`
 - screenshot app real → `app-screenshot-final.jpg`

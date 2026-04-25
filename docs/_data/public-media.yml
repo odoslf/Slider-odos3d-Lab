@@ -9,13 +9,13 @@ site_media:
     caption_en: "Final brand logo"
     kind: logo
     ratio: "1:1"
-    width: 512
-    height: 512
+    width: 1024
+    height: 1024
     loading_default: eager
 
   hero:
     placeholder_path: "/assets/img/app-hero-slot.svg"
-    final_path: "/assets/media/app/hero-final.png"
+    final_path: "/assets/media/app/hero-final.jpg"
     active_source: final
     alt_es: "Hero final de producto"
     alt_en: "Final product hero"
@@ -64,9 +64,9 @@ site_media:
     caption_es: "Captura real de SmartCapture AI"
     caption_en: "Real SmartCapture AI screenshot"
     kind: screenshot
-    ratio: "9:20"
-    width: 1080
-    height: 2400
+    ratio: "921:2048"
+    width: 921
+    height: 2048
     loading_default: lazy
 
   video_thumb:
@@ -109,4 +109,46 @@ site_media:
     ratio: "1200:630"
     width: 1200
     height: 630
+    loading_default: eager
+
+  favicon_32:
+    placeholder_path: "/assets/img/favicon-slot.svg"
+    final_path: "/assets/media/app/favicon-32.png"
+    active_source: final
+    alt_es: "Favicon 32 px de Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI 32 px favicon"
+    caption_es: "Favicon 32 px"
+    caption_en: "32 px favicon"
+    kind: favicon
+    ratio: "1:1"
+    width: 32
+    height: 32
+    loading_default: eager
+
+  favicon_16:
+    placeholder_path: "/assets/img/favicon-slot.svg"
+    final_path: "/assets/media/app/favicon-16.png"
+    active_source: final
+    alt_es: "Favicon 16 px de Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI 16 px favicon"
+    caption_es: "Favicon 16 px"
+    caption_en: "16 px favicon"
+    kind: favicon
+    ratio: "1:1"
+    width: 16
+    height: 16
+    loading_default: eager
+
+  apple_touch_icon:
+    placeholder_path: "/assets/img/favicon-slot.svg"
+    final_path: "/assets/media/app/apple-touch-icon.png"
+    active_source: final
+    alt_es: "Icono táctil de Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI touch icon"
+    caption_es: "Apple touch icon"
+    caption_en: "Apple touch icon"
+    kind: favicon
+    ratio: "1:1"
+    width: 180
+    height: 180
     loading_default: eager
