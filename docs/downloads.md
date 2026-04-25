@@ -27,28 +27,28 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
       {% if zip_file %}
         <a class="public-btn primary" href="{{ zip_path | relative_url }}" download>Descargar pack STL v1 (.zip)</a>
       {% else %}
-        <span class="public-btn is-disabled" aria-disabled="true">ZIP pendiente: slider-odos3d-lab-stl-pack-v1.zip</span>
+        <span class="public-btn is-disabled" aria-disabled="true">Pack ZIP pendiente de publicar</span>
       {% endif %}
     </div>
-    <p class="public-note">Nombre exacto esperado: <code>slider-odos3d-lab-stl-pack-v1.zip</code></p>
+    <p class="public-note">El botón se activará automáticamente cuando se suba el archivo <code>docs/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip</code>.</p>
   </article>
 
   <article class="public-card">
     <p class="public-kicker">Archivos individuales</p>
     <h3>STL y BOM disponibles ahora mismo</h3>
-    <p>Enlaces directos a los archivos publicados. Los nombres visibles están normalizados aunque el archivo original conserve su nombre real.</p>
+    <p>Enlaces directos a los archivos publicados.</p>
     <div class="public-links-list">
       <a href="{{ site.raw_base }}/prints/BOM/{{ site.latest_pack }}/slider-odos3d_bom_v1.csv">BOM CSV v1</a>
       <a href="{{ site.raw_base }}/prints/BOM/{{ site.latest_pack }}/README.md">BOM README v1</a>
-      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20caja%20electroniica.stl">Caja electrónica STL</a>
-      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20carro.stl">Carro STL</a>
-      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20escuadra.stl">Escuadra STL</a>
-      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20separador.stl">Separador STL</a>
-      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20correa.stl">Soporte de correa STL</a>
-      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20derecho.stl">Soporte derecho STL</a>
-      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20soporte%20izquierdo.stl">Soporte izquierdo STL</a>
-      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Lab%20tubo%20camara.stl">Tubo cámara STL</a>
-      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/Slider%20ODOS3D%20Labtapa%20electroniica.stl">Tapa electrónica STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/slider-odos3d-lab-caja-electronica-v1.stl">Caja electrónica STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/slider-odos3d-lab-carro-v1.stl">Carro STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/slider-odos3d-lab-escuadra-v1.stl">Escuadra STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/slider-odos3d-lab-separador-v1.stl">Separador STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/slider-odos3d-lab-soporte-correa-v1.stl">Soporte de correa STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/slider-odos3d-lab-soporte-derecho-v1.stl">Soporte derecho STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/slider-odos3d-lab-soporte-izquierdo-v1.stl">Soporte izquierdo STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/slider-odos3d-lab-tubo-camara-v1.stl">Tubo cámara STL</a>
+      <a href="{{ site.raw_base }}/prints/STL/{{ site.latest_pack }}/slider-odos3d-lab-tapa-electronica-v1.stl">Tapa electrónica STL</a>
       <a href="{{ site.tree_base }}/prints/STEP/{{ site.latest_pack }}/">STEP {{ site.latest_pack }} en preparación</a>
     </div>
   </article>
@@ -77,8 +77,8 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
 
 <div class="public-band">
   <h3>Estado del pack v1</h3>
-  <p>STL v1 y BOM v1 están publicados. STEP {{ site.latest_pack }} sigue en preparación hasta que existan archivos finales revisados.</p>
-  <p class="public-note">El ZIP único se activará automáticamente cuando se suba <code>docs/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip</code>.</p>
+  <p>Los STL individuales y el BOM v1 están disponibles. Los STEP v1 y el pack ZIP único quedan preparados para publicación cuando existan los archivos finales revisados.</p>
+  <p class="public-note">El botón se activará automáticamente cuando se suba <code>docs/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip</code>.</p>
 </div>
 
 <div class="public-cta-band">
