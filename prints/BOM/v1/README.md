@@ -1,22 +1,24 @@
-# BOM v1 — Slider-odos3d (lista de materiales)
+# BOM v1 — Slider-odos3d
 
-Este BOM es una lista sencilla de lo que necesitas para montar el slider.
+Este BOM v1 es orientativo y sirve como base de compra inicial para el montaje del slider.
 
-## Lo más importante
-✅ **El diseño lo mandan los STL/STEP.**  
-La tornillería exacta y algunas piezas pueden variar según tu versión, así que este BOM está pensado para que la gente lo entienda sin volverse loca con números.
+## Alcance
+- El diseño final lo mandan los STL/STEP.
+- Este BOM ayuda a preparar materiales, pero no sustituye la revisión del montaje real.
+- No se incluyen enlaces de proveedor porque cambian por país, disponibilidad y revisiones de catálogo.
 
-## Dónde están las piezas
+## Rutas de referencia
 - STL: `prints/STL/v1/`
 - STEP: `prints/STEP/v1/`
-- BOM: `prints/BOM/v1/slider-odos3d_bom_v1.csv`
+- BOM CSV: `prints/BOM/v1/slider-odos3d_bom_v1.csv`
 
-## Consejos prácticos (para no fallar)
+## Recomendaciones prácticas
 - Tornillería: compra un **pack surtido M3** (con tuercas y arandelas).
-- Correa GT2: compra “de sobra” (para 60cm suele ir bien 1.2–1.5m).
-- Drivers: A4988 (barato) o TMC2209 (más fino/silencioso).
-- Fuente: mejor con margen (si dudas, más amperaje).
+- Correa GT2: compra de sobra para tensado y ajuste.
+- Drivers: **A4988** o **TMC2209** según prioridad (coste/suavidad).
+- Alimentación: fuente **12V** con margen de corriente.
 
-## Soporte móvil
-Referencia barata (~2€). El modelo exacto lo decide cada uno.  
-Cuando esté la foto, se verá en la galería del repo.
+## Validación antes de compra
+Comprueba medidas reales del montaje antes de comprar tornillería, varillas y longitudes de cable para evitar incompatibilidades.
+
+Las fotos públicas de referencia se muestran en la galería del sitio cuando están disponibles.

@@ -72,6 +72,6 @@ Estado actual confirmado:
 - Gallery 01–04 ya están subidos y activados.
 - Gallery 05–09 siguen pendientes en placeholder.
 - Descargas reales actuales:
-  - STL v1 publicado con 9 archivos finales (`Slider ODOS3D Lab caja electroniica.stl`, `Slider ODOS3D Lab carro.stl`, `Slider ODOS3D Lab escuadra.stl`, `Slider ODOS3D Lab separador.stl`, `Slider ODOS3D Lab soporte correa.stl`, `Slider ODOS3D Lab soporte derecho.stl`, `Slider ODOS3D Lab soporte izquierdo.stl`, `Slider ODOS3D Lab tubo camara.stl`, `Slider ODOS3D Labtapa electroniica.stl`).
+  - STL v1 publicado con 9 archivos finales (`slider-odos3d-lab-caja-electronica-v1.stl`, `slider-odos3d-lab-carro-v1.stl`, `slider-odos3d-lab-escuadra-v1.stl`, `slider-odos3d-lab-separador-v1.stl`, `slider-odos3d-lab-soporte-correa-v1.stl`, `slider-odos3d-lab-soporte-derecho-v1.stl`, `slider-odos3d-lab-soporte-izquierdo-v1.stl`, `slider-odos3d-lab-tubo-camara-v1.stl`, `slider-odos3d-lab-tapa-electronica-v1.stl`).
   - BOM v1 publicado (`slider-odos3d_bom_v1.csv` + `README.md`).
   - STEP v1 aún pendiente de archivos finales.

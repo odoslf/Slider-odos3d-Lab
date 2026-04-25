@@ -9,6 +9,12 @@ Este repositorio público reúne la web oficial de Smart Timelapse AI, la docume
 - Términos: https://odoslf.github.io/Slider-odos3d-Lab/terms/
 - Soporte: https://odoslf.github.io/Slider-odos3d-Lab/support/
 
+## Estado de descargas
+- STL v1: disponible como archivos individuales.
+- BOM v1: disponible.
+- STEP v1: en preparación.
+- Pack ZIP STL v1: preparado para activarse cuando se suba `docs/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip`.
+
 ## Qué contiene este repo
 - web pública de la app
 - páginas legales y soporte
