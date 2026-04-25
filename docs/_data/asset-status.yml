@@ -29,7 +29,7 @@ app_assets:
     file_received: true
     uploaded_to_repo: true
     activated_in_yaml: true
-    notes: JPEG horizontal final 1024x500 activado en el registry.
+    notes: Asset renombrado a hero-final.jpg para alinear extensión con contenido JPEG detectado.
 
   - asset_key: app_screenshot
     family: app
@@ -109,7 +109,7 @@ app_assets:
     file_received: true
     uploaded_to_repo: true
     activated_in_yaml: true
-    notes: Favicon PNG 512x512 generado desde el logo final, con derivados 32x32, 16x16 y Apple touch icon 180x180.
+    notes: Asset principal existente. Derivados 32x32, 16x16 y Apple touch icon pendientes de generación manual fuera de Codex.
 
   - asset_key: og_image
     family: app
@@ -125,7 +125,7 @@ app_assets:
     file_received: true
     uploaded_to_repo: true
     activated_in_yaml: true
-    notes: JPEG social 1200x630 estable para OG/Twitter.
+    notes: Imagen social pendiente de normalización binaria manual a JPEG 1200x630 fuera de Codex.
 
 gallery_assets:
   - asset_key: overview_a

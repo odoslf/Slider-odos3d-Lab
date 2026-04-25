@@ -92,9 +92,9 @@ site_media:
     caption_es: "Favicon final"
     caption_en: "Final favicon"
     kind: favicon
-    ratio: "1:1"
-    width: 512
-    height: 512
+    ratio: "3:2"
+    width: 1536
+    height: 1024
     loading_default: eager
 
   og_image:
@@ -114,7 +114,7 @@ site_media:
   favicon_32:
     placeholder_path: "/assets/img/favicon-slot.svg"
     final_path: "/assets/media/app/favicon-32.png"
-    active_source: final
+    active_source: placeholder
     alt_es: "Favicon 32 px de Smart Timelapse AI"
     alt_en: "Smart Timelapse AI 32 px favicon"
     caption_es: "Favicon 32 px"
@@ -128,7 +128,7 @@ site_media:
   favicon_16:
     placeholder_path: "/assets/img/favicon-slot.svg"
     final_path: "/assets/media/app/favicon-16.png"
-    active_source: final
+    active_source: placeholder
     alt_es: "Favicon 16 px de Smart Timelapse AI"
     alt_en: "Smart Timelapse AI 16 px favicon"
     caption_es: "Favicon 16 px"
@@ -142,7 +142,7 @@ site_media:
   apple_touch_icon:
     placeholder_path: "/assets/img/favicon-slot.svg"
     final_path: "/assets/media/app/apple-touch-icon.png"
-    active_source: final
+    active_source: placeholder
     alt_es: "Icono táctil de Smart Timelapse AI"
     alt_en: "Smart Timelapse AI touch icon"
     caption_es: "Apple touch icon"

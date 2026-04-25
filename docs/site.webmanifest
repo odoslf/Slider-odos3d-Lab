@@ -4,7 +4,10 @@ permalink: /site.webmanifest
 ---
 {% assign links = site.data.public-links %}
 {% assign favicon_media = site.data.public-media.site_media.favicon %}
-{% assign apple_touch_media = site.data.public-media.site_media.apple_touch_icon %}
+{% assign favicon_src = favicon_media.placeholder_path %}
+{% if favicon_media.active_source == "final" %}
+  {% assign favicon_src = favicon_media.final_path %}
+{% endif %}
 {
   "name": "{{ links.site_identity.product_name | escape }}",
   "short_name": "Timelapse AI",
@@ -15,14 +18,8 @@ permalink: /site.webmanifest
   "theme_color": "#F5F7FA",
   "icons": [
     {
-      "src": "{{ site.baseurl }}{{ favicon_media.final_path }}",
+      "src": "{{ site.baseurl }}{{ favicon_src }}",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "{{ site.baseurl }}{{ apple_touch_media.final_path }}",
-      "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
     }
