@@ -10,16 +10,17 @@ og_title: "Galería técnica del slider | Smart Timelapse AI"
 og_description: "Vistas reales del hardware y del flujo en uso dentro del ecosistema Smart Timelapse AI."
 nav_key: gallery
 page_heading: "Galería real del slider"
-page_intro: "Tres vistas reales: una general, una con móvil y una con DSLR."
+page_intro: "Cuatro vistas reales del slider: dos generales, una con móvil y una con DSLR."
 ---
 
 {% assign links = site.data.public-links %}
 {% assign routes = links.internal_routes_es %}
 
-<p>La galería pública muestra una selección limpia de fotos reales del hardware y su uso dentro del flujo Smart Timelapse AI.</p>
+<p>La galería pública muestra cuatro fotos reales del hardware y su uso dentro del flujo Smart Timelapse AI. Las fotos de detalle restantes se añadirán conforme se publiquen nuevos assets revisados del hardware.</p>
 
 <div class="gallery-grid-public">
   {% include gallery-media-item.html slot_key='slot_overview_a' lang='es' class_name='gallery-photo' show_caption='false' %}
+  {% include gallery-media-item.html slot_key='slot_overview_b' lang='es' class_name='gallery-photo' show_caption='false' %}
   {% include gallery-media-item.html slot_key='slot_carriage_a' lang='es' class_name='gallery-photo' show_caption='false' %}
   {% include gallery-media-item.html slot_key='slot_carriage_b' lang='es' class_name='gallery-photo' show_caption='false' %}
 </div>

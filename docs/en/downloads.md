@@ -69,8 +69,8 @@ page_intro: "Resource center for hardware files, documentation, and references i
     <h3>Slider control behavior</h3>
     <p>Recommended base reference for compatible control.</p>
     <div class="public-links-list">
-      <a href="{{ '/grbl/' | relative_url }}">Open GRBL 1.1 reference</a>
-      <a href="{{ '/troubleshooting/' | relative_url }}">Troubleshooting</a>
+      <a href="{{ routes.grbl | relative_url }}">Open GRBL 1.1 reference</a>
+      <a href="{{ routes.troubleshooting | relative_url }}">Troubleshooting</a>
     </div>
   </article>
 </div>

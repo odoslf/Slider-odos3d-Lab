@@ -5,7 +5,7 @@ Ruta productiva final de assets:
 
 Nombres finales congelados:
 - `logo-final.png` (png, transparencia: sí) — uso: logo de header público.
-- `hero-final.png` (png, transparencia: no) — uso: hero principal home ES/EN.
+- `hero-final.jpg` (jpg, transparencia: no) — uso: hero principal home ES/EN.
 - `slider-mobile-final.jpg` (jpg, transparencia: no) — uso: media de hardware/proof.
 - `slider-dslr-final.jpg` (jpg, transparencia: no) — uso: media de hardware/proof.
 - `app-screenshot-final.jpg` (jpg, transparencia: no) — uso: captura app en home/support/downloads.

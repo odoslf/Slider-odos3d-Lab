@@ -69,8 +69,8 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
     <h3>Control y comportamiento del slider</h3>
     <p>Base de referencia recomendada para control compatible.</p>
     <div class="public-links-list">
-      <a href="{{ '/grbl/' | relative_url }}">Abrir referencia GRBL 1.1</a>
-      <a href="{{ '/troubleshooting/' | relative_url }}">Resolución de problemas</a>
+      <a href="{{ routes.grbl | relative_url }}">Abrir referencia GRBL 1.1</a>
+      <a href="{{ routes.troubleshooting | relative_url }}">Resolución de problemas</a>
     </div>
   </article>
 </div>

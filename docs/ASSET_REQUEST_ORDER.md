@@ -16,7 +16,7 @@ Este documento define el orden único en que se pedirán los archivos reales.
    - Encuadre: **cuadrado (1:1)**.
 
 2. **Hero principal app** (`asset_key: hero`)
-   - Archivo final: `hero-final.png`
+   - Archivo final: `hero-final.jpg`
    - Dónde se usa: home ES/EN y apoyo en descargas.
    - Imagen esperada: foto horizontal premium del ecosistema.
    - Transparencia: no.

@@ -10,7 +10,7 @@ permalink: /site.webmanifest
 {% endif %}
 {
   "name": "{{ links.site_identity.product_name | escape }}",
-  "short_name": "SmartTimelapse",
+  "short_name": "Timelapse AI",
   "start_url": "{{ site.baseurl }}/",
   "scope": "{{ site.baseurl }}/",
   "display": "standalone",
@@ -19,7 +19,7 @@ permalink: /site.webmanifest
   "icons": [
     {
       "src": "{{ site.baseurl }}{{ favicon_src }}",
-      "sizes": "any",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
