@@ -20,8 +20,8 @@ page_intro: "Resource center for hardware files, documentation, and references i
 {% assign zip_file = site.static_files | where: "path", zip_path | first %}
 
 {% assign raw_stl_base = site.repo_url | append: "/raw/main/prints/STL/" | append: site.latest_pack %}
-{% assign raw_bom_base = site.repo_url | append: "/raw/main/prints/BOM/" | append: site.latest_pack %}
 {% assign tree_stl_base = site.tree_base | append: "/prints/STL/" | append: site.latest_pack %}
+{% assign blob_bom_base = site.blob_base | append: "/prints/BOM/" | append: site.latest_pack %}
 
 <div class="public-cta-band">
   <p class="public-kicker">Android app</p>
@@ -49,23 +49,23 @@ page_intro: "Resource center for hardware files, documentation, and references i
 
   <article class="public-card">
     <p class="public-kicker">Individual files</p>
-    <h3>STL and BOM available right now</h3>
-    <p>Direct links to published files.</p>
+    <h3>STL parts and bill of materials</h3>
+    <p>Open the BOM on GitHub for a readable view, and download individual STL parts only when you do not need the full pack.</p>
     <div class="public-links-list">
-      <a href="{{ raw_bom_base }}/slider-odos3d_bom_v1.csv">BOM CSV v1</a>
-      <a href="{{ site.blob_base }}/prints/BOM/{{ site.latest_pack }}/README.md">BOM README v1</a>
-      <a href="{{ raw_stl_base }}/slider-odos3d-lab-caja-electronica-v1.stl">Electronics box STL</a>
-      <a href="{{ raw_stl_base }}/slider-odos3d-lab-carro-v1.stl">Carriage STL</a>
-      <a href="{{ raw_stl_base }}/slider-odos3d-lab-escuadra-v1.stl">Bracket STL</a>
-      <a href="{{ raw_stl_base }}/slider-odos3d-lab-separador-v1.stl">Spacer STL</a>
-      <a href="{{ raw_stl_base }}/slider-odos3d-lab-soporte-correa-v1.stl">Belt support STL</a>
-      <a href="{{ raw_stl_base }}/slider-odos3d-lab-soporte-derecho-v1.stl">Right support STL</a>
-      <a href="{{ raw_stl_base }}/slider-odos3d-lab-soporte-izquierdo-v1.stl">Left support STL</a>
-      <a href="{{ raw_stl_base }}/slider-odos3d-lab-tapa-electronica-v1.stl">Electronics lid STL</a>
-      <a href="{{ raw_stl_base }}/slider-odos3d-lab-tubo-camara-v1.stl">Camera tube STL</a>
-      <a href="{{ tree_stl_base }}">Open STL v1 folder on GitHub</a>
-      <a href="{{ site.tree_base }}/prints/STEP/{{ site.latest_pack }}/">STEP {{ site.latest_pack }} in preparation</a>
+      <a href="{{ blob_bom_base }}/slider-odos3d_bom_v1.csv" target="_blank" rel="noopener noreferrer">View BOM v1 material list</a>
+      <a href="{{ blob_bom_base }}/README.md" target="_blank" rel="noopener noreferrer">View BOM v1 notes</a>
+      <a href="{{ raw_stl_base }}/slider-odos3d-lab-caja-electronica-v1.stl">Electronics box (.stl)</a>
+      <a href="{{ raw_stl_base }}/slider-odos3d-lab-carro-v1.stl">Slider carriage (.stl)</a>
+      <a href="{{ raw_stl_base }}/slider-odos3d-lab-escuadra-v1.stl">Side bracket (.stl)</a>
+      <a href="{{ raw_stl_base }}/slider-odos3d-lab-separador-v1.stl">Spacer (.stl)</a>
+      <a href="{{ raw_stl_base }}/slider-odos3d-lab-soporte-correa-v1.stl">Belt support (.stl)</a>
+      <a href="{{ raw_stl_base }}/slider-odos3d-lab-soporte-derecho-v1.stl">Right support (.stl)</a>
+      <a href="{{ raw_stl_base }}/slider-odos3d-lab-soporte-izquierdo-v1.stl">Left support (.stl)</a>
+      <a href="{{ raw_stl_base }}/slider-odos3d-lab-tapa-electronica-v1.stl">Electronics lid (.stl)</a>
+      <a href="{{ raw_stl_base }}/slider-odos3d-lab-tubo-camara-v1.stl">Camera tube (.stl)</a>
+      <a href="{{ tree_stl_base }}" target="_blank" rel="noopener noreferrer">Open STL v1 folder on GitHub</a>
     </div>
+    <p class="public-note">STEP v1 is in preparation and will be published when the reviewed files exist.</p>
   </article>
 
   <article class="public-card">
