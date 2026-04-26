@@ -36,7 +36,7 @@ page_intro: "You can start phone-only. Open hardware is optional, but it lets yo
     <div class="public-links-list">
       <a href="{{ routes.downloads | relative_url }}">Open downloads</a>
       <a href="{{ routes.gallery | relative_url }}">Open technical gallery</a>
-      <a href="{{ '/grbl/' | relative_url }}">Open GRBL 1.1</a>
+      <a href="{{ routes.grbl | relative_url }}">Open GRBL 1.1</a>
     </div>
   </article></div>
 

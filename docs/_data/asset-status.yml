@@ -29,7 +29,7 @@ app_assets:
     file_received: true
     uploaded_to_repo: true
     activated_in_yaml: true
-    notes: Asset renombrado a hero-final.jpg para alinear extensión con contenido JPEG detectado.
+    notes: Hero principal existente usado por la web pública.
 
   - asset_key: app_screenshot
     family: app
@@ -97,7 +97,7 @@ app_assets:
 
   - asset_key: favicon
     family: app
-    final_filename: favicon-final.png
+    final_filename: logo-final.png
     final_directory: docs/assets/media/app/
     source_registry: public-media
     source_slot_key: favicon
@@ -109,11 +109,11 @@ app_assets:
     file_received: true
     uploaded_to_repo: true
     activated_in_yaml: true
-    notes: Asset principal existente. Derivados 32x32, 16x16 y Apple touch icon pendientes de generación manual fuera de Codex.
+    notes: Se reutiliza logo-final.png como icono público porque ya existe en el repositorio y es cuadrado.
 
   - asset_key: og_image
     family: app
-    final_filename: og-home-final.jpg
+    final_filename: hero-final.jpg
     final_directory: docs/assets/media/app/
     source_registry: public-media
     source_slot_key: og_image
@@ -125,7 +125,7 @@ app_assets:
     file_received: true
     uploaded_to_repo: true
     activated_in_yaml: true
-    notes: Imagen social pendiente de normalización binaria manual a JPEG 1200x630 fuera de Codex.
+    notes: Se reutiliza hero-final.jpg como imagen OG/Twitter porque ya existe en el repositorio y está enlazado como hero público.
 
 gallery_assets:
   - asset_key: overview_a

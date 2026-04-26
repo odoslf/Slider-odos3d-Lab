@@ -1,19 +1,20 @@
 ---
-title: "Cómo activar GitHub Pages"
+layout: null
 permalink: /pages-setup/
+sitemap: false
 ---
 
-# Cómo activar GitHub Pages
-
-1. Ir a **Settings → Pages** del repositorio.
-2. En **Source**, seleccionar **Deploy from a branch**.
-3. Elegir rama **main**.
-4. Elegir carpeta **/docs**.
-5. Pulsar **Save**.
-
-> Nota: GitHub Pages puede tardar unos minutos en publicar y mostrar la URL final.
->
-> URL esperada base: https://odoslf.github.io/Slider-odos3d-Lab/
->
-> Privacidad app: /privacy-policy/
-> Términos app: /terms/
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url={{ '/' | relative_url }}">
+  <link rel="canonical" href="{{ '/' | absolute_url }}">
+  <title>Redirigiendo a Smart Timelapse AI | Smart Timelapse AI</title>
+</head>
+<body>
+  <p>La web pública está en <a href="{{ '/' | relative_url }}">la página principal</a>.</p>
+</body>
+</html>
