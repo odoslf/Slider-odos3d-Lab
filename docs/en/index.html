@@ -83,15 +83,11 @@ permalink: /en/
           <p>Start with just your phone, add motion whenever you want with a GRBL slider, and scale to a DSLR workflow without leaving the same experience.</p>
           <p>{{ identity.product_name }} brings capture, control, and export together in a workflow built for creators, product photography, studio setups, and advanced projects.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#export">See export options</a>
+            <a class="btn btn-primary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
+            <a class="btn btn-secondary" href="#export">See export options</a>
             <a class="btn btn-secondary" href="#app-screens">See app screenshots</a>
             <a class="btn btn-secondary" href="{{ routes.hardware | relative_url }}">See open hardware</a>
             <a class="btn btn-secondary" href="{{ routes.gallery | relative_url }}">See technical gallery</a>
-            {% if links.flags.has_play_store and external.play_store_url != "" %}
-  <a class="btn btn-secondary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Google Play</a>
-{% else %}
-  <span class="btn btn-secondary btn-disabled" aria-disabled="true">Google Play coming soon</span>
-{% endif %}
           </div>
           <p class="microcopy">One-time payment, local workflow, and a clear experience from day one.</p>
         </article>
@@ -340,14 +336,10 @@ permalink: /en/
           <h2>Start with what you already have. Scale when you need it.</h2>
           <p>{{ identity.product_name }} brings together phone timelapse, GRBL slider workflow, DSLR workflow, local remote control, advanced export, and open-source hardware under one identity. A clearer experience from the very first visit and a stronger base to keep growing.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#export">See export options</a>
+            <a class="btn btn-primary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
+            <a class="btn btn-secondary" href="#export">See export options</a>
             <a class="btn btn-secondary" href="{{ routes.hardware | relative_url }}">See open hardware</a>
             <a class="btn btn-secondary" href="{{ routes.gallery | relative_url }}">See technical gallery</a>
-            {% if links.flags.has_play_store and external.play_store_url != "" %}
-  <a class="btn btn-secondary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Google Play</a>
-{% else %}
-  <span class="btn btn-secondary btn-disabled" aria-disabled="true">Google Play coming soon</span>
-{% endif %}
           </div>
         </article>
       </div>

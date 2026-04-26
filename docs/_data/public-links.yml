@@ -8,7 +8,7 @@ external_links:
   github_repo: "https://github.com/odoslf/Slider-odos3d-Lab"
   github_pages_base: "https://odoslf.github.io/Slider-odos3d-Lab"
   youtube_url: ""
-  play_store_url: ""
+  play_store_url: "https://play.google.com/store/search?q=Smart%20Timelapse%20AI&c=apps"
 
 internal_routes_es:
   home: "/"
@@ -33,5 +33,5 @@ internal_routes_en:
   terms: "/en/terms/"
 
 flags:
-  has_play_store: false
+  has_play_store: true
   has_youtube: false
