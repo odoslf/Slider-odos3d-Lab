@@ -15,12 +15,22 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
 
 {% assign links = site.data.public-links %}
 {% assign routes = links.internal_routes_es %}
+{% assign external = links.external_links %}
 {% assign zip_path = "/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip" %}
 {% assign zip_file = site.static_files | where: "path", zip_path | first %}
 
 {% assign raw_stl_base = site.repo_url | append: "/raw/main/prints/STL/" | append: site.latest_pack %}
 {% assign raw_bom_base = site.repo_url | append: "/raw/main/prints/BOM/" | append: site.latest_pack %}
 {% assign tree_stl_base = site.tree_base | append: "/prints/STL/" | append: site.latest_pack %}
+
+<div class="public-cta-band">
+  <p class="public-kicker">App Android</p>
+  <h3>Descarga Smart Timelapse AI</h3>
+  <p>Instala la app desde Google Play y usa esta página para descargar el hardware abierto, STL, BOM y guías públicas.</p>
+  <div class="public-cta-actions">
+    <a class="public-btn primary" href="{{ external.play_store_url }}" target="_blank" rel="noopener noreferrer">Descargar en Google Play</a>
+  </div>
+</div>
 
 <div class="public-grid cols-2">
   <article class="public-card">
