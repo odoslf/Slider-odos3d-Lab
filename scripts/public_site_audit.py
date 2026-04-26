@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 from __future__ import annotations
+
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple, Any
+
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED_CANONICAL_MAP = {
+
+
+PUBLIC_PAGES = {
     "/": "docs/index.html",
     "/hardware/": "docs/index.md",
     "/downloads/": "docs/downloads.md",
@@ -13,6 +16,12 @@ EXPECTED_CANONICAL_MAP = {
     "/gallery/": "docs/gallery.md",
     "/privacy-policy/": "docs/privacy-policy.md",
     "/terms/": "docs/terms.md",
+    "/grbl/": "docs/grbl.md",
+    "/troubleshooting/": "docs/troubleshooting.md",
+    "/app-screens/": "docs/app-screens.md",
+    "/quick-assembly/": "docs/quick_assembly.md",
+    "/assembly-guide/": "docs/assembly_guide.md",
+    "/calibration/": "docs/calibration.md",
     "/en/": "docs/en/index.html",
     "/en/hardware/": "docs/en/hardware.md",
     "/en/downloads/": "docs/en/downloads.md",
@@ -20,181 +29,129 @@ EXPECTED_CANONICAL_MAP = {
     "/en/gallery/": "docs/en/gallery.md",
     "/en/privacy-policy/": "docs/en/privacy-policy.md",
     "/en/terms/": "docs/en/terms.md",
-    "/smart-timelapse-ai/": "docs/smart-timelapse-ai/index.html",
-    "/en/smart-timelapse-ai/": "docs/en/smart-timelapse-ai/index.html",
+    "/en/grbl/": "docs/en/grbl.md",
+    "/en/troubleshooting/": "docs/en/troubleshooting.md",
+    "/en/app-screens/": "docs/en/app-screens.md",
+    "/en/quick-assembly/": "docs/en/quick-assembly.md",
+    "/en/assembly-guide/": "docs/en/assembly-guide.md",
+    "/en/calibration/": "docs/en/calibration.md",
 }
-FROZEN_TARGET_FILENAMES = {
-    "logo": "logo-final.png",
-    "hero": "hero-final.png",
-    "slider_mobile": "slider-mobile-final.jpg",
-    "slider_dslr": "slider-dslr-final.jpg",
-    "app_screenshot": "app-screenshot-final.jpg",
-    "video_thumb": "video-thumb-final.jpg",
-    "favicon": "favicon-final.png",
-    "og_image": "og-home-final.jpg",
+
+REDIRECT_PAGES = {
+    "/privacy-app/": "docs/privacy-app.md",
+    "/photo-guidelines/": "docs/photo_guidelines.md",
+    "/publish-checklist/": "docs/publish_checklist.md",
+    "/release-checklist-v1/": "docs/release_checklist_v1.md",
+    "/upload-map/": "docs/upload_map.md",
+    "/pages-setup/": "docs/README_PAGES.md",
+    "/upload-workflow/": "docs/UPLOAD_WORKFLOW.md",
+    "/parts/": "docs/parts.md",
 }
-CANONICAL_PAGES = [
-    "docs/index.html",
-    "docs/index.md",
-    "docs/downloads.md",
-    "docs/support.md",
-    "docs/gallery.md",
-    "docs/privacy-policy.md",
-    "docs/terms.md",
-    "docs/en/index.html",
-    "docs/en/hardware.md",
-    "docs/en/downloads.md",
-    "docs/en/support.md",
-    "docs/en/gallery.md",
-    "docs/en/privacy-policy.md",
-    "docs/en/terms.md",
+
+STL_NAMES = [
+    "slider-odos3d-lab-caja-electronica-v1.stl",
+    "slider-odos3d-lab-carro-v1.stl",
+    "slider-odos3d-lab-escuadra-v1.stl",
+    "slider-odos3d-lab-separador-v1.stl",
+    "slider-odos3d-lab-soporte-correa-v1.stl",
+    "slider-odos3d-lab-soporte-derecho-v1.stl",
+    "slider-odos3d-lab-soporte-izquierdo-v1.stl",
+    "slider-odos3d-lab-tapa-electronica-v1.stl",
+    "slider-odos3d-lab-tubo-camara-v1.stl",
 ]
-CRITICAL_FILES = [
-    "docs/_data/public-links.yml",
-    "docs/_data/public-media.yml",
-    "docs/_includes/public-media-item.html",
-    "docs/_includes/public-video-card.html",
-    "docs/_includes/public-site-header.html",
-    "docs/_includes/public-site-footer.html",
-    "docs/_includes/public-lang-switch.html",
-    "docs/_includes/gallery-media-item.html",
-    "docs/_layouts/public-page.html",
-    "docs/assets/css/public-shell.css",
-    "docs/assets/css/public-pages.css",
-    "docs/assets/css/smart-timelapse-home.css",
-    "docs/robots.txt",
-    "docs/sitemap.xml",
-    "docs/llms.txt",
-    "docs/site.webmanifest",
-    "docs/404.html",
-    "docs/_data/gallery-media.yml",
-    "docs/_data/asset-status.yml",
-    "docs/ASSET_REQUEST_ORDER.md",
-    "docs/GALLERY_INGESTION_GUIDE.md",
-    "docs/assets/media/gallery/.gitkeep",
-    "docs/gallery.md",
-    "docs/en/gallery.md",
-    "docs/smart-timelapse-ai/index.html",
-    "docs/en/smart-timelapse-ai/index.html",
+
+FORBIDDEN_PUBLIC_ROUTES_IN_SITEMAP = [
+    "/privacy-app/",
+    "/photo-guidelines/",
+    "/publish-checklist/",
+    "/release-checklist-v1/",
+    "/upload-map/",
+    "/pages-setup/",
+    "/upload-workflow/",
+    "/parts/",
+    "/smart-timelapse-ai/",
+    "/en/smart-timelapse-ai/",
 ]
-APP_ASSET_KEYS = [
-    "logo",
-    "hero",
-    "app_screenshot",
-    "slider_mobile",
-    "slider_dslr",
-    "video_thumb",
-    "favicon",
-    "og_image",
-]
-GALLERY_ASSET_KEYS = [
-    "overview_a",
-    "overview_b",
-    "carriage_a",
-    "carriage_b",
-    "belt_a",
-    "belt_b",
-    "electronics",
-    "endstop_x",
-    "phone_mount",
-]
-ASSET_STATUS_REQUIRED_FIELDS = [
-    "asset_key",
-    "family",
-    "final_filename",
-    "final_directory",
-    "source_registry",
-    "source_slot_key",
-    "public_usage",
-    "priority",
-    "request_order",
-    "status",
-    "requested_from_user",
-    "file_received",
-    "uploaded_to_repo",
-    "activated_in_yaml",
-    "notes",
-]
-GALLERY_SLOT_KEYS = [
-    "slot_overview_a",
-    "slot_overview_b",
-    "slot_carriage_a",
-    "slot_carriage_b",
-    "slot_belt_a",
-    "slot_belt_b",
-    "slot_electronics",
-    "slot_endstop_x",
-    "slot_phone_mount",
-]
-GALLERY_FROZEN_FILENAMES = {
-    "slot_overview_a": "slider-gallery-01-overview-a.jpg",
-    "slot_overview_b": "slider-gallery-02-overview-b.jpg",
-    "slot_carriage_a": "slider-gallery-03-in-use-mobile.jpg",
-    "slot_carriage_b": "slider-gallery-04-in-use-dslr.jpg",
-    "slot_belt_a": "slider-gallery-05-belt-a.jpg",
-    "slot_belt_b": "slider-gallery-06-belt-b.jpg",
-    "slot_electronics": "slider-gallery-07-electronics.jpg",
-    "slot_endstop_x": "slider-gallery-08-endstop-x.jpg",
-    "slot_phone_mount": "slider-gallery-09-phone-mount.jpg",
+
+TEXT_EXTENSIONS = {
+    ".md",
+    ".html",
+    ".yml",
+    ".yaml",
+    ".xml",
+    ".txt",
+    ".webmanifest",
+    ".css",
+    ".scss",
+    ".js",
+    ".json",
+    ".py",
 }
-HARD_CODE_PATTERNS = {
-    "odos3d.Lab@gmail.com": ["odos3d.Lab@gmail.com"],
-    "Silvia Díaz Celaya": ["Silvia Díaz Celaya"],
-    "github repo absolute": ["https://github.com/odoslf/Slider-odos3d-Lab"],
-    "app-hero-slot": ["/assets/img/app-hero-slot.svg", "docs/assets/img/app-hero-slot.svg"],
-    "app-gallery-slider-mobile-slot": ["/assets/img/app-gallery-slider-mobile-slot.svg", "docs/assets/img/app-gallery-slider-mobile-slot.svg"],
-    "app-gallery-slider-dslr-slot": ["/assets/img/app-gallery-slider-dslr-slot.svg", "docs/assets/img/app-gallery-slider-dslr-slot.svg"],
-    "app-gallery-app-screenshot-slot": ["/assets/img/app-gallery-app-screenshot-slot.svg", "docs/assets/img/app-gallery-app-screenshot-slot.svg"],
-    "app-video-slot": ["/assets/img/app-video-slot.svg", "docs/assets/img/app-video-slot.svg"],
-    "app-logo-slot": ["/assets/img/app-logo-slot.svg", "docs/assets/img/app-logo-slot.svg"],
-    "favicon-slot": ["/assets/img/favicon-slot.svg", "docs/assets/img/favicon-slot.svg"],
-    "og-home-slot": ["/assets/img/og-home-slot.svg", "docs/assets/img/og-home-slot.svg"],
-}
-HARD_CODE_ALLOWED_FILES = {
-    "docs/_data/public-links.yml",
-    "docs/_data/public-media.yml",
-    "docs/smart-timelapse-ai/ASSET_SLOTS.md",
-    "docs/_includes/public-media-item.html",
-    "docs/_includes/public-video-card.html",
-    "docs/_includes/public-site-header.html",
-    "docs/_includes/public-site-footer.html",
-    "docs/_includes/head-custom.html",
-}
+
+
 class Audit:
     def __init__(self) -> None:
-        self.errors: Dict[str, List[str]] = {}
+        self.errors: dict[str, list[str]] = {}
+
     def fail(self, category: str, message: str) -> None:
         self.errors.setdefault(category, []).append(message)
+
     def require(self, category: str, condition: bool, message: str) -> None:
         if not condition:
             self.fail(category, message)
+
     def summary(self) -> int:
         print("\n=== Public Site Audit Summary ===")
         if not self.errors:
             print("PASS")
             return 0
-        total = sum(len(v) for v in self.errors.values())
-        for category in sorted(self.errors.keys()):
+
+        total = sum(len(items) for items in self.errors.values())
+        for category in sorted(self.errors):
             print(f"\n[{category}] {len(self.errors[category])} issue(s)")
             for item in self.errors[category]:
                 print(f" - {item}")
+
         print(f"\nFAIL ({total} issue(s))")
         return 1
-def read_text(rel: str) -> str:
-    return (ROOT / rel).read_text(encoding="utf-8")
-def parse_front_matter(rel: str) -> Dict[str, str]:
-    text = read_text(rel)
-    lines = text.splitlines()
-    if len(lines) < 3 or lines[0].strip() != "---":
+
+
+def path(rel: str) -> Path:
+    return ROOT / rel
+
+
+def read(rel: str) -> str:
+    return path(rel).read_text(encoding="utf-8")
+
+
+def text_files() -> list[Path]:
+    result: list[Path] = []
+    for base in [ROOT / "docs", ROOT / "scripts", ROOT]:
+        if not base.exists():
+            continue
+        for p in base.rglob("*"):
+            if p.is_file() and p.suffix in TEXT_EXTENSIONS:
+                if ".git" not in p.parts:
+                    result.append(p)
+    return sorted(set(result))
+
+
+def parse_front_matter(rel: str) -> dict[str, str]:
+    txt = read(rel)
+    lines = txt.splitlines()
+    if not lines or lines[0].strip() != "---":
         return {}
+
     end = None
     for i in range(1, len(lines)):
         if lines[i].strip() == "---":
             end = i
             break
+
     if end is None:
         return {}
-    data: Dict[str, str] = {}
+
+    data: dict[str, str] = {}
     for line in lines[1:end]:
         if not line.strip() or line.strip().startswith("#"):
             continue
@@ -203,629 +160,286 @@ def parse_front_matter(rel: str) -> Dict[str, str]:
         k, v = line.split(":", 1)
         data[k.strip()] = v.strip().strip('"').strip("'")
     return data
-def parse_simple_yaml(rel: str) -> Dict[str, Any]:
-    text = read_text(rel)
-    root: Dict[str, Any] = {}
-    stack: List[Tuple[int, Dict[str, Any]]] = [(-1, root)]
-    for lineno, raw in enumerate(text.splitlines(), start=1):
-        if not raw.strip() or raw.strip().startswith("#"):
-            continue
-        indent = len(raw) - len(raw.lstrip(" "))
-        stripped = raw.strip()
-        if ":" not in stripped:
-            raise ValueError(f"Unsupported YAML at {rel}:{lineno}: {raw}")
-        key, value = stripped.split(":", 1)
-        key = key.strip()
-        value = value.strip()
-        while stack and indent <= stack[-1][0]:
-            stack.pop()
-        if not stack:
-            raise ValueError(f"YAML indentation error at {rel}:{lineno}")
-        parent = stack[-1][1]
-        if value == "":
-            obj: Dict[str, Any] = {}
-            parent[key] = obj
-            stack.append((indent, obj))
-        else:
-            parsed: Any = value
-            if parsed.startswith('"') and parsed.endswith('"'):
-                parsed = parsed[1:-1]
-            elif parsed.startswith("'") and parsed.endswith("'"):
-                parsed = parsed[1:-1]
-            elif parsed.lower() == "true":
-                parsed = True
-            elif parsed.lower() == "false":
-                parsed = False
-            elif re.fullmatch(r"[0-9]+", parsed):
-                parsed = int(parsed)
-            parent[key] = parsed
-    return root
-def parse_ordered_list_yaml(rel: str) -> Dict[str, List[Dict[str, Any]]]:
-    text = read_text(rel)
-    data: Dict[str, List[Dict[str, Any]]] = {}
-    current_section: str | None = None
-    current_item: Dict[str, Any] | None = None
-    def parse_scalar(value: str) -> Any:
-        val = value.strip()
-        if val.startswith('"') and val.endswith('"'):
-            return val[1:-1]
-        if val.startswith("'") and val.endswith("'"):
-            return val[1:-1]
-        if val.lower() == "true":
-            return True
-        if val.lower() == "false":
-            return False
-        if re.fullmatch(r"[0-9]+", val):
-            return int(val)
-        return val
-    for lineno, raw in enumerate(text.splitlines(), start=1):
-        if not raw.strip() or raw.strip().startswith("#"):
-            continue
-        if raw.endswith(":") and not raw.startswith(" "):
-            section = raw[:-1].strip()
-            data[section] = []
-            current_section = section
-            current_item = None
-            continue
-        if raw.startswith("  - "):
-            if current_section is None:
-                raise ValueError(f"List item outside section at {rel}:{lineno}")
-            kv = raw[4:]
-            if ":" not in kv:
-                raise ValueError(f"Invalid list item key/value at {rel}:{lineno}")
-            key, value = kv.split(":", 1)
-            current_item = {key.strip(): parse_scalar(value)}
-            data[current_section].append(current_item)
-            continue
-        if raw.startswith("    "):
-            if current_item is None:
-                raise ValueError(f"Field outside list item at {rel}:{lineno}")
-            kv = raw.strip()
-            if ":" not in kv:
-                raise ValueError(f"Invalid field at {rel}:{lineno}")
-            key, value = kv.split(":", 1)
-            current_item[key.strip()] = parse_scalar(value)
-            continue
-        raise ValueError(f"Unsupported YAML structure at {rel}:{lineno}: {raw}")
-    return data
-def all_docs_files() -> List[Path]:
-    out: List[Path] = []
+
+
+def collect_permalinks() -> dict[str, list[str]]:
+    routes: dict[str, list[str]] = {}
     for p in (ROOT / "docs").rglob("*"):
-        if p.is_file():
-            out.append(p)
-    return out
-def validate_critical_files(audit: Audit) -> None:
-    for rel in CRITICAL_FILES:
-        audit.require("CRITICAL_FILES", (ROOT / rel).exists(), f"Missing critical file: {rel}")
-def validate_public_links(audit: Audit) -> Dict[str, Any]:
-    data = parse_simple_yaml("docs/_data/public-links.yml")
-    required = {
-        "site_identity": ["product_name", "product_name_short", "support_email", "legal_responsible_name"],
-        "external_links": ["github_repo", "github_pages_base", "youtube_url", "play_store_url"],
-        "internal_routes_es": ["home", "hardware", "downloads", "support", "gallery", "privacy", "terms"],
-        "internal_routes_en": ["home", "hardware", "downloads", "support", "gallery", "privacy", "terms"],
-        "flags": ["has_play_store", "has_youtube"],
-    }
-    for section, keys in required.items():
-        audit.require("PUBLIC_LINKS", section in data and isinstance(data[section], dict), f"Missing section {section}")
-        if section in data and isinstance(data[section], dict):
-            for k in keys:
-                audit.require("PUBLIC_LINKS", k in data[section], f"Missing key {section}.{k}")
-    site = data.get("site_identity", {})
-    ext = data.get("external_links", {})
-    flags = data.get("flags", {})
-    audit.require("PUBLIC_LINKS", site.get("support_email") == "odos3d.Lab@gmail.com", "support_email must be odos3d.Lab@gmail.com")
-    audit.require("PUBLIC_LINKS", site.get("legal_responsible_name") == "Silvia Díaz Celaya", "legal_responsible_name must be Silvia Díaz Celaya")
-    audit.require("PUBLIC_LINKS", bool(ext.get("github_repo", "").strip()), "external_links.github_repo must not be empty")
-    audit.require("PUBLIC_LINKS", bool(ext.get("github_pages_base", "").strip()), "external_links.github_pages_base must not be empty")
-    if flags.get("has_youtube") is True:
-        audit.require("PUBLIC_LINKS", bool(str(ext.get("youtube_url", "")).strip()), "has_youtube=true requires external_links.youtube_url")
-    if flags.get("has_play_store") is True:
-        audit.require("PUBLIC_LINKS", bool(str(ext.get("play_store_url", "")).strip()), "has_play_store=true requires external_links.play_store_url")
-    return data
-def validate_public_media(audit: Audit) -> Dict[str, Any]:
-    data = parse_simple_yaml("docs/_data/public-media.yml")
-    site_media = data.get("site_media", {}) if isinstance(data.get("site_media"), dict) else {}
-    required_blocks = ["logo", "hero", "slider_mobile", "slider_dslr", "app_screenshot", "video_thumb", "favicon", "og_image"]
-    for b in required_blocks:
-        audit.require("PUBLIC_MEDIA", b in site_media and isinstance(site_media[b], dict), f"Missing media block {b}")
-    req_fields = [
-        "placeholder_path", "final_path", "active_source", "is_placeholder", "alt_es", "alt_en", "caption_es", "caption_en",
-        "kind", "ratio", "width", "height", "loading_default",
-        "target_filename", "target_directory", "preferred_format",
-        "recommended_min_width", "recommended_min_height", "crop_strategy",
-        "safe_area_notes", "transparency_required", "used_on_pages",
-        "used_in_sections", "current_slot_source",
-    ]
-    for b in required_blocks:
-        block = site_media.get(b, {})
-        if not isinstance(block, dict):
-            continue
-        for f in req_fields:
-            audit.require("PUBLIC_MEDIA", f in block, f"Missing {b}.{f}")
-        placeholder_path = str(block.get("placeholder_path", "")).strip()
-        final_path = str(block.get("final_path", "")).strip()
-        active_source = str(block.get("active_source", "")).strip()
-        audit.require("PUBLIC_MEDIA", active_source in {"placeholder", "final"}, f"{b}.active_source must be placeholder/final")
-        if placeholder_path.startswith("/") and not placeholder_path.startswith("//"):
-            local = placeholder_path.lstrip("/")
-            audit.require("PUBLIC_MEDIA", (ROOT / "docs" / local).exists(), f"Placeholder path not found for {b}: {placeholder_path}")
-        expected_final_path = f"/assets/media/app/{FROZEN_TARGET_FILENAMES[b]}"
-        audit.require("PUBLIC_MEDIA", final_path == expected_final_path, f"{b}.final_path must be {expected_final_path}")
-        if active_source == "placeholder":
-            audit.require("PUBLIC_MEDIA", block.get("is_placeholder") is True, f"{b}.is_placeholder must be true when active_source=placeholder")
-        elif active_source == "final":
-            if final_path.startswith("/") and not final_path.startswith("//"):
-                local = final_path.lstrip("/")
-                audit.require("PUBLIC_MEDIA", (ROOT / "docs" / local).exists(), f"Final path not found for {b}: {final_path}")
-            audit.require("PUBLIC_MEDIA", block.get("is_placeholder") is False, f"{b}.is_placeholder must be false when active_source=final")
-        audit.require("PUBLIC_MEDIA", str(block.get("alt_es", "")).strip() != "", f"{b}.alt_es must not be empty")
-        audit.require("PUBLIC_MEDIA", str(block.get("alt_en", "")).strip() != "", f"{b}.alt_en must not be empty")
-        audit.require("PUBLIC_MEDIA", str(block.get("kind", "")).strip() != "", f"{b}.kind must not be empty")
-        audit.require("PUBLIC_MEDIA", str(block.get("ratio", "")).strip() != "", f"{b}.ratio must not be empty")
-        width = block.get("width")
-        height = block.get("height")
-        audit.require("PUBLIC_MEDIA", isinstance(width, int) and width > 0, f"{b}.width must be positive int")
-        audit.require("PUBLIC_MEDIA", isinstance(height, int) and height > 0, f"{b}.height must be positive int")
-        audit.require("PUBLIC_MEDIA", str(block.get("loading_default", "")).strip() in {"lazy", "eager"}, f"{b}.loading_default must be lazy/eager")
-        rec_w = block.get("recommended_min_width")
-        rec_h = block.get("recommended_min_height")
-        audit.require("PUBLIC_MEDIA", isinstance(rec_w, int) and rec_w > 0, f"{b}.recommended_min_width must be positive int")
-        audit.require("PUBLIC_MEDIA", isinstance(rec_h, int) and rec_h > 0, f"{b}.recommended_min_height must be positive int")
-        audit.require("PUBLIC_MEDIA", str(block.get("target_directory", "")).strip() == "docs/assets/media/app/", f"{b}.target_directory must be docs/assets/media/app/")
-        audit.require("PUBLIC_MEDIA", str(block.get("target_filename", "")).strip() == FROZEN_TARGET_FILENAMES[b], f"{b}.target_filename must be {FROZEN_TARGET_FILENAMES[b]}")
-        expected_by_target = "/assets/media/app/" + str(block.get("target_filename", "")).strip()
-        audit.require("PUBLIC_MEDIA", final_path == expected_by_target, f"{b}.final_path must match target_directory + target_filename")
-        audit.require("PUBLIC_MEDIA", str(block.get("used_on_pages", "")).strip() != "", f"{b}.used_on_pages must not be empty")
-        audit.require("PUBLIC_MEDIA", "path" not in block, f"{b}.path legacy field should not exist")
-    video = site_media.get("video_thumb", {})
-    audit.require("PUBLIC_MEDIA", "youtube_url_source" in video and str(video.get("youtube_url_source", "")).strip() != "", "video_thumb.youtube_url_source is required")
-    return data
-def validate_gallery_media(audit: Audit) -> Dict[str, Any]:
-    data = parse_simple_yaml("docs/_data/gallery-media.yml")
-    gallery_media = data.get("gallery_media", {}) if isinstance(data.get("gallery_media"), dict) else {}
-    for key in GALLERY_SLOT_KEYS:
-        audit.require("GALLERY_MEDIA", key in gallery_media and isinstance(gallery_media[key], dict), f"Missing gallery slot {key}")
-    required_fields = [
-        "placeholder_path", "final_path", "active_source", "target_filename", "target_directory",
-        "alt_es", "alt_en", "caption_es", "caption_en", "section_es", "section_en", "ratio", "width", "height",
-    ]
-    for key in GALLERY_SLOT_KEYS:
-        slot = gallery_media.get(key, {})
-        if not isinstance(slot, dict):
-            continue
-        for field in required_fields:
-            audit.require("GALLERY_MEDIA", field in slot, f"Missing {key}.{field}")
-        target_directory = str(slot.get("target_directory", "")).strip()
-        target_filename = str(slot.get("target_filename", "")).strip()
-        final_path = str(slot.get("final_path", "")).strip()
-        placeholder_path = str(slot.get("placeholder_path", "")).strip()
-        active_source = str(slot.get("active_source", "")).strip()
-        audit.require("GALLERY_MEDIA", active_source in {"placeholder", "final"}, f"{key}.active_source must be placeholder/final")
-        audit.require("GALLERY_MEDIA", target_directory == "docs/assets/media/gallery/", f"{key}.target_directory must be docs/assets/media/gallery/")
-        audit.require("GALLERY_MEDIA", target_filename == GALLERY_FROZEN_FILENAMES[key], f"{key}.target_filename must be {GALLERY_FROZEN_FILENAMES[key]}")
-        audit.require("GALLERY_MEDIA", final_path == f"/assets/media/gallery/{GALLERY_FROZEN_FILENAMES[key]}", f"{key}.final_path must match frozen filename in gallery folder")
-        if placeholder_path.startswith("/") and not placeholder_path.startswith("//"):
-            local_placeholder = placeholder_path.lstrip("/")
-            audit.require("GALLERY_MEDIA", (ROOT / "docs" / local_placeholder).exists(), f"Placeholder path not found for {key}: {placeholder_path}")
-        if active_source == "final" and final_path.startswith("/") and not final_path.startswith("//"):
-            local_final = final_path.lstrip("/")
-            audit.require("GALLERY_MEDIA", (ROOT / "docs" / local_final).exists(), f"Final path not found for {key}: {final_path}")
-        width = slot.get("width")
-        height = slot.get("height")
-        audit.require("GALLERY_MEDIA", isinstance(width, int) and width > 0, f"{key}.width must be positive int")
-        audit.require("GALLERY_MEDIA", isinstance(height, int) and height > 0, f"{key}.height must be positive int")
-    return data
-def validate_routes(audit: Audit) -> None:
-    seen: Dict[str, List[str]] = {}
-    for p in all_docs_files():
-        if p.suffix not in {".md", ".html"}:
+        if not p.is_file() or p.suffix not in {".md", ".html"}:
             continue
         rel = p.relative_to(ROOT).as_posix()
         fm = parse_front_matter(rel)
-        if "permalink" in fm:
-            seen.setdefault(fm["permalink"], []).append(rel)
-    for route, expected_file in EXPECTED_CANONICAL_MAP.items():
-        audit.require("ROUTES", route in seen, f"Missing route {route}")
-        if route in seen:
-            audit.require("ROUTES", expected_file in seen[route], f"Route {route} must map to {expected_file}, found {seen[route]}")
-            audit.require("ROUTES", len(seen[route]) == 1, f"Route {route} has duplicate sources: {seen[route]}")
-    audit.require("ROUTES", EXPECTED_CANONICAL_MAP["/"] == "docs/index.html", "Internal invariant: / must come from docs/index.html")
-def validate_redirects(audit: Audit) -> None:
-    es = read_text("docs/smart-timelapse-ai/index.html")
-    en = read_text("docs/en/smart-timelapse-ai/index.html")
-    audit.require("REDIRECTS", "noindex" in es.lower(), "ES redirect must include noindex")
-    audit.require("REDIRECTS", "noindex" in en.lower(), "EN redirect must include noindex")
-    audit.require("REDIRECTS", "internal_routes_es.home" in es and "window.location.replace" in es, "ES redirect must target /")
-    audit.require("REDIRECTS", "internal_routes_en.home" in en and "window.location.replace" in en, "EN redirect must target /en/")
-    sitemap = read_text("docs/sitemap.xml")
-    audit.require("REDIRECTS", "/smart-timelapse-ai/" not in sitemap, "sitemap must not include /smart-timelapse-ai/")
-    audit.require("REDIRECTS", "/en/smart-timelapse-ai/" not in sitemap, "sitemap must not include /en/smart-timelapse-ai/")
-def validate_sitemap(audit: Audit) -> None:
-    text = read_text("docs/sitemap.xml")
-    expected = [
-        "/", "/hardware/", "/downloads/", "/support/", "/gallery/", "/privacy-policy/", "/terms/",
-        "/en/", "/en/hardware/", "/en/downloads/", "/en/support/", "/en/gallery/", "/en/privacy-policy/", "/en/terms/",
-    ]
-    for route in expected:
-        audit.require("SITEMAP", f"{route}</loc>" in text, f"sitemap missing route {route}")
-    forbidden = ["/smart-timelapse-ai/", "/en/smart-timelapse-ai/", "/assets/", ".png", ".jpg", ".svg"]
-    for frag in forbidden:
-        audit.require("SITEMAP", frag not in text, f"sitemap contains forbidden entry pattern: {frag}")
-def validate_robots(audit: Audit) -> None:
-    text = read_text("docs/robots.txt")
-    low = text.lower()
-    audit.require("ROBOTS", "user-agent: *" in low, "robots.txt missing User-agent: *")
-    audit.require("ROBOTS", "allow: /" in low, "robots.txt missing Allow: /")
-    audit.require("ROBOTS", "sitemap:" in low, "robots.txt missing Sitemap")
-    audit.require("ROBOTS", "/sitemap.xml" in low or "{{ site.url }}{{ site.baseurl }}/sitemap.xml" in text, "robots sitemap must reference real sitemap URL")
-def validate_hardcodes(audit: Audit) -> None:
-    audit_scope = {
-        *CANONICAL_PAGES,
+        permalink = fm.get("permalink")
+        if permalink:
+            routes.setdefault(permalink, []).append(rel)
+    return routes
+
+
+def validate_files_exist(audit: Audit) -> None:
+    required = [
+        "docs/_config.yml",
+        "docs/_data/public-links.yml",
+        "docs/_data/public-media.yml",
+        "docs/_data/gallery-media.yml",
+        "docs/_data/asset-status.yml",
         "docs/_includes/head-custom.html",
         "docs/_includes/public-site-header.html",
         "docs/_includes/public-site-footer.html",
-        "docs/_includes/public-lang-switch.html",
-        "docs/_includes/public-media-item.html",
-        "docs/_includes/public-video-card.html",
+        "docs/_includes/gallery-media-item.html",
         "docs/_layouts/public-page.html",
-        "docs/404.html",
         "docs/site.webmanifest",
-        "docs/smart-timelapse-ai/index.html",
-        "docs/en/smart-timelapse-ai/index.html",
-        "docs/smart-timelapse-ai/ASSET_SLOTS.md",
-        "docs/robots.txt",
         "docs/sitemap.xml",
-        "docs/llms.txt",
-    }
-    for rel in sorted(audit_scope):
-        path = ROOT / rel
-        if not path.exists() or rel in HARD_CODE_ALLOWED_FILES:
-            continue
-        content = path.read_text(encoding="utf-8", errors="ignore")
-        for label, tokens in HARD_CODE_PATTERNS.items():
-            for token in tokens:
-                if token and token in content:
-                    audit.fail("HARDCODES", f"Hardcoded '{label}' found in {rel}")
-                    break
-def validate_bilingual(audit: Audit) -> None:
-    for rel in CANONICAL_PAGES:
+        "docs/robots.txt",
+        "docs/404.html",
+    ]
+
+    for rel in required:
+        audit.require("FILES", path(rel).exists(), f"Missing required file: {rel}")
+
+    for rel in PUBLIC_PAGES.values():
+        audit.require("FILES", path(rel).exists(), f"Missing public page source: {rel}")
+
+    for rel in REDIRECT_PAGES.values():
+        audit.require("FILES", path(rel).exists(), f"Missing redirect page source: {rel}")
+
+    for name in STL_NAMES:
+        audit.require("STL_FILES", path(f"prints/STL/v1/{name}").exists(), f"Missing STL: {name}")
+
+
+def validate_routes(audit: Audit) -> None:
+    routes = collect_permalinks()
+
+    for route, rel in PUBLIC_PAGES.items():
+        audit.require("ROUTES", route in routes, f"Missing permalink route: {route}")
+        if route in routes:
+            audit.require("ROUTES", rel in routes[route], f"Route {route} should map to {rel}, found {routes[route]}")
+            audit.require("ROUTES", len(routes[route]) == 1, f"Route {route} has duplicate sources: {routes[route]}")
+
+    for route, rel in REDIRECT_PAGES.items():
+        audit.require("REDIRECTS", route in routes, f"Missing redirect route: {route}")
+        if route in routes:
+            audit.require("REDIRECTS", rel in routes[route], f"Redirect {route} should map to {rel}, found {routes[route]}")
+            audit.require("REDIRECTS", len(routes[route]) == 1, f"Redirect {route} has duplicate sources: {routes[route]}")
+
+
+def validate_public_pages(audit: Audit) -> None:
+    for route, rel in PUBLIC_PAGES.items():
+        txt = read(rel)
         fm = parse_front_matter(rel)
-        if rel in {"docs/index.html", "docs/en/index.html"}:
+
+        if route in {"/", "/en/"}:
+            audit.require("PUBLIC_PAGES", "<title>" in txt, f"{rel} must define title")
+            audit.require("PUBLIC_PAGES", "meta name=\"description\"" in txt, f"{rel} must define description")
             continue
-        audit.require("BILINGUAL", "lang_page" in fm and fm.get("lang_page", "").strip() != "", f"{rel} missing lang_page")
-        audit.require("BILINGUAL", "alt_url" in fm and fm.get("alt_url", "").strip() != "", f"{rel} missing alt_url")
-    header = read_text("docs/_includes/public-site-header.html")
-    audit.require("BILINGUAL", "public-lang-switch.html" in header, "Header must include language switch")
-def validate_metadata(audit: Audit) -> None:
-    for rel in CANONICAL_PAGES:
+
+        audit.require("PUBLIC_PAGES", fm.get("layout") == "public-page", f"{rel} must use layout: public-page")
+        audit.require("PUBLIC_PAGES", fm.get("permalink") == route, f"{rel} must use permalink {route}")
+        audit.require("PUBLIC_PAGES", bool(fm.get("title")), f"{rel} missing title")
+        audit.require("PUBLIC_PAGES", bool(fm.get("description")), f"{rel} missing description")
+        audit.require("PUBLIC_PAGES", bool(fm.get("lang")), f"{rel} missing lang")
+        audit.require("PUBLIC_PAGES", bool(fm.get("lang_page")), f"{rel} missing lang_page")
+
+        if route.startswith("/en/"):
+            audit.require("PUBLIC_PAGES", fm.get("lang_page") == "en", f"{rel} must have lang_page: en")
+        else:
+            audit.require("PUBLIC_PAGES", fm.get("lang_page") == "es", f"{rel} must have lang_page: es")
+
+
+def validate_redirects(audit: Audit) -> None:
+    for route, rel in REDIRECT_PAGES.items():
+        txt = read(rel)
         fm = parse_front_matter(rel)
-        if rel in {"docs/index.html", "docs/en/index.html"}:
-            text = read_text(rel)
-            audit.require("METADATA", "<title>" in text and "meta name=\"description\"" in text, f"{rel} missing title/description in source")
-            continue
-        audit.require("METADATA", "title" in fm and fm.get("title", "").strip() != "", f"{rel} missing title")
-        audit.require("METADATA", "description" in fm and fm.get("description", "").strip() != "", f"{rel} missing description")
-    head = read_text("docs/_includes/head-custom.html")
-    checks = [
-        "rel=\"canonical\"",
-        "hreflang",
-        "og:title",
-        "og:description",
-        "twitter:title",
-        "twitter:description",
+
+        audit.require("REDIRECTS", fm.get("layout") == "null", f"{rel} must use layout: null")
+        audit.require("REDIRECTS", fm.get("permalink") == route, f"{rel} must use permalink {route}")
+        audit.require("REDIRECTS", fm.get("sitemap") == "false", f"{rel} must use sitemap: false")
+        audit.require("REDIRECTS", "noindex,follow" in txt, f"{rel} must include robots noindex,follow")
+        audit.require("REDIRECTS", "http-equiv=\"refresh\"" in txt, f"{rel} must include meta refresh")
+        audit.require("REDIRECTS", "rel=\"canonical\"" in txt, f"{rel} must include canonical")
+
+
+def validate_public_links(audit: Audit) -> None:
+    txt = read("docs/_data/public-links.yml")
+
+    required = [
+        "support_email: \"odos3d.Lab@gmail.com\"",
+        "legal_responsible_name: \"Silvia Díaz Celaya\"",
+        "grbl: \"/grbl/\"",
+        "troubleshooting: \"/troubleshooting/\"",
+        "grbl: \"/en/grbl/\"",
+        "troubleshooting: \"/en/troubleshooting/\"",
     ]
-    for c in checks:
-        audit.require("METADATA", c in head, f"head-custom missing {c}")
-def validate_media_registry_usage(audit: Audit) -> None:
-    es_home = read_text("docs/index.html")
-    en_home = read_text("docs/en/index.html")
-    forbidden_tokens = [
-        "/assets/img/app-hero-slot.svg",
-        "/assets/img/app-gallery-slider-mobile-slot.svg",
-        "/assets/img/app-gallery-slider-dslr-slot.svg",
-        "/assets/img/app-gallery-app-screenshot-slot.svg",
-        "/assets/img/app-video-slot.svg",
-        "/assets/img/app-logo-slot.svg",
-        "/assets/img/favicon-slot.svg",
-        "/assets/img/og-home-slot.svg",
-    ]
-    for token in forbidden_tokens:
-        audit.require("MEDIA_REGISTRY", token not in es_home, f"Home ES references direct media path: {token}")
-        audit.require("MEDIA_REGISTRY", token not in en_home, f"Home EN references direct media path: {token}")
-    header = read_text("docs/_includes/public-site-header.html")
-    footer = read_text("docs/_includes/public-site-footer.html")
-    audit.require("MEDIA_REGISTRY", "site.data.public-media" in header, "Header must source media from registry")
-    audit.require("MEDIA_REGISTRY", "site.data.public-media" in footer, "Footer must source media from registry")
-    audit.require("MEDIA_REGISTRY", "public-media-item.html" in es_home and "public-video-card.html" in es_home, "Home ES must use media/video includes")
-    audit.require("MEDIA_REGISTRY", "public-media-item.html" in en_home and "public-video-card.html" in en_home, "Home EN must use media/video includes")
-def validate_gallery_integration(audit: Audit) -> None:
-    es_gallery = read_text("docs/gallery.md")
-    en_gallery = read_text("docs/en/gallery.md")
-    gallery_include = read_text("docs/_includes/gallery-media-item.html")
-    links_data = read_text("docs/_data/public-links.yml")
-    targets = [
-        "docs/index.md",
-        "docs/downloads.md",
-        "docs/support.md",
-        "docs/en/hardware.md",
-        "docs/en/downloads.md",
-        "docs/en/support.md",
-    ]
-    audit.require("GALLERY_INTEGRATION", "layout: public-page" in es_gallery, "docs/gallery.md must use public-page layout")
-    audit.require("GALLERY_INTEGRATION", "layout: public-page" in en_gallery, "docs/en/gallery.md must use public-page layout")
-    audit.require("GALLERY_INTEGRATION", "gallery-media-item.html" in es_gallery, "docs/gallery.md must use gallery-media-item include")
-    audit.require("GALLERY_INTEGRATION", "gallery-media-item.html" in en_gallery, "docs/en/gallery.md must use gallery-media-item include")
-    audit.require("GALLERY_INTEGRATION", "site.data.gallery-media.gallery_media" in gallery_include, "gallery-media-item include must source data from docs/_data/gallery-media.yml")
-    audit.require("GALLERY_INTEGRATION", "/gallery/" in links_data and "/en/gallery/" in links_data, "public-links must include gallery routes")
-    linked_pages = 0
-    for rel in targets:
-        text = read_text(rel)
-        if "routes.gallery" in text or "/gallery/" in text or "/en/gallery/" in text:
-            linked_pages += 1
-    audit.require("GALLERY_INTEGRATION", linked_pages >= 4, "Hardware/downloads/support pages must include gallery links in both languages")
-    forbidden_tokens = [
-        "raw.githubusercontent.com",
-        "site.raw_base }}/images/gallery/",
-        "/images/gallery/",
-    ]
-    for token in forbidden_tokens:
-        audit.require("GALLERY_INTEGRATION", token not in es_gallery, f"docs/gallery.md contains forbidden legacy token: {token}")
-        audit.require("GALLERY_INTEGRATION", token not in en_gallery, f"docs/en/gallery.md contains forbidden legacy token: {token}")
-def validate_asset_status_master(audit: Audit) -> None:
-    status_data = parse_ordered_list_yaml("docs/_data/asset-status.yml")
-    app_items = status_data.get("app_assets", [])
-    gallery_items = status_data.get("gallery_assets", [])
-    audit.require("ASSET_STATUS", isinstance(app_items, list), "asset-status.yml must include app_assets list")
-    audit.require("ASSET_STATUS", isinstance(gallery_items, list), "asset-status.yml must include gallery_assets list")
-    app_by_key = {str(item.get("asset_key", "")).strip(): item for item in app_items if isinstance(item, dict)}
-    gallery_by_key = {str(item.get("asset_key", "")).strip(): item for item in gallery_items if isinstance(item, dict)}
-    for key in APP_ASSET_KEYS:
-        audit.require("ASSET_STATUS", key in app_by_key, f"Missing app asset in asset-status.yml: {key}")
-    for key in GALLERY_ASSET_KEYS:
-        audit.require("ASSET_STATUS", key in gallery_by_key, f"Missing gallery asset in asset-status.yml: {key}")
-    valid_status = {"pending", "requested", "received", "uploaded", "activated"}
-    valid_priority = {"high", "medium", "low"}
-    public_media = parse_simple_yaml("docs/_data/public-media.yml").get("site_media", {})
-    gallery_media = parse_simple_yaml("docs/_data/gallery-media.yml").get("gallery_media", {})
-    request_orders: List[int] = []
-    for key, item in list(app_by_key.items()) + list(gallery_by_key.items()):
-        if not isinstance(item, dict):
-            continue
-        for field in ASSET_STATUS_REQUIRED_FIELDS:
-            audit.require("ASSET_STATUS", field in item, f"Missing field for {key}: {field}")
-        family = str(item.get("family", "")).strip()
-        source_registry = str(item.get("source_registry", "")).strip()
-        status = str(item.get("status", "")).strip()
-        priority = str(item.get("priority", "")).strip()
-        final_directory = str(item.get("final_directory", "")).strip()
-        source_slot_key = str(item.get("source_slot_key", "")).strip()
-        order = item.get("request_order")
-        final_filename = str(item.get("final_filename", "")).strip()
-        audit.require("ASSET_STATUS", family in {"app", "gallery"}, f"{key}.family must be app/gallery")
-        audit.require("ASSET_STATUS", source_registry in {"public-media", "gallery-media"}, f"{key}.source_registry must be public-media/gallery-media")
-        audit.require("ASSET_STATUS", status in valid_status, f"{key}.status invalid: {status}")
-        audit.require("ASSET_STATUS", priority in valid_priority, f"{key}.priority invalid: {priority}")
-        audit.require("ASSET_STATUS", isinstance(order, int) and order > 0, f"{key}.request_order must be positive int")
-        if isinstance(order, int):
-            request_orders.append(order)
-        for bool_field in ["requested_from_user", "file_received", "uploaded_to_repo", "activated_in_yaml"]:
-            audit.require("ASSET_STATUS", isinstance(item.get(bool_field), bool), f"{key}.{bool_field} must be boolean")
-        if key in APP_ASSET_KEYS:
-            audit.require("ASSET_STATUS", family == "app", f"{key}.family must be app")
-            audit.require("ASSET_STATUS", source_registry == "public-media", f"{key}.source_registry must be public-media")
-            audit.require("ASSET_STATUS", final_directory == "docs/assets/media/app/", f"{key}.final_directory must be docs/assets/media/app/")
-            audit.require("ASSET_STATUS", source_slot_key in public_media, f"{key}.source_slot_key must exist in public-media.yml")
-            if source_slot_key in public_media and isinstance(public_media[source_slot_key], dict):
-                target_filename = str(public_media[source_slot_key].get("target_filename", "")).strip()
-                audit.require("ASSET_STATUS", final_filename == target_filename, f"{key}.final_filename must match public-media target_filename")
-        if key in GALLERY_ASSET_KEYS:
-            audit.require("ASSET_STATUS", family == "gallery", f"{key}.family must be gallery")
-            audit.require("ASSET_STATUS", source_registry == "gallery-media", f"{key}.source_registry must be gallery-media")
-            audit.require("ASSET_STATUS", final_directory == "docs/assets/media/gallery/", f"{key}.final_directory must be docs/assets/media/gallery/")
-            audit.require("ASSET_STATUS", source_slot_key in gallery_media, f"{key}.source_slot_key must exist in gallery-media.yml")
-            if source_slot_key in gallery_media and isinstance(gallery_media[source_slot_key], dict):
-                target_filename = str(gallery_media[source_slot_key].get("target_filename", "")).strip()
-                audit.require("ASSET_STATUS", final_filename == target_filename, f"{key}.final_filename must match gallery-media target_filename")
-    activated_gallery = {"overview_a", "overview_b", "carriage_a", "carriage_b"}
-    pending_gallery = {"belt_a", "belt_b", "electronics", "endstop_x", "phone_mount"}
-    for key in activated_gallery:
-        if key in gallery_by_key:
-            item = gallery_by_key[key]
-            audit.require("ASSET_STATUS", str(item.get("status", "")).strip() == "activated", f"{key}.status must be activated")
-            for bool_field in ["requested_from_user", "file_received", "uploaded_to_repo", "activated_in_yaml"]:
-                audit.require("ASSET_STATUS", item.get(bool_field) is True, f"{key}.{bool_field} must be true")
-    for key in pending_gallery:
-        if key in gallery_by_key:
-            item = gallery_by_key[key]
-            audit.require("ASSET_STATUS", str(item.get("status", "")).strip() == "pending", f"{key}.status must be pending")
-    expected_orders = list(range(1, 18))
-    audit.require("ASSET_STATUS", sorted(request_orders) == expected_orders, f"request_order must cover exactly {expected_orders}")
-def validate_asset_request_order_doc(audit: Audit) -> None:
-    text = read_text("docs/ASSET_REQUEST_ORDER.md")
-    expected_sequence = APP_ASSET_KEYS + GALLERY_ASSET_KEYS
-    pos = -1
-    for key in expected_sequence:
-        new_pos = text.find(key, pos + 1)
-        audit.require("ASSET_STATUS_DOC", new_pos != -1, f"ASSET_REQUEST_ORDER.md missing asset key: {key}")
-        if new_pos != -1:
-            pos = new_pos
-def validate_asset_ingestion_docs(audit: Audit) -> None:
-    guide_rel = "docs/ASSET_INGESTION_GUIDE.md"
-    targets_rel = "docs/assets/media/app/ASSET_TARGETS.md"
-    guide_path = ROOT / guide_rel
-    targets_path = ROOT / targets_rel
-    audit.require("ASSET_INGESTION", guide_path.exists(), f"Missing file: {guide_rel}")
-    audit.require("ASSET_INGESTION", targets_path.exists(), f"Missing file: {targets_rel}")
-    required_names = [
-        "logo-final.png", "hero-final.png", "slider-mobile-final.jpg", "slider-dslr-final.jpg",
-        "app-screenshot-final.jpg", "video-thumb-final.jpg", "favicon-final.png", "og-home-final.jpg",
-    ]
-    if guide_path.exists():
-        text = guide_path.read_text(encoding="utf-8")
-        for name in required_names:
-            audit.require("ASSET_INGESTION", name in text, f"ASSET_INGESTION_GUIDE missing {name}")
-        audit.require("ASSET_INGESTION", "active_source" in text, "ASSET_INGESTION_GUIDE must document active_source flow")
-    if targets_path.exists():
-        text = targets_path.read_text(encoding="utf-8")
-        for name in required_names:
-            audit.require("ASSET_INGESTION", name in text, f"ASSET_TARGETS missing {name}")
-        audit.require("ASSET_INGESTION", "active_source" in text, "ASSET_TARGETS must mention active_source activation")
-def validate_checklist(audit: Audit) -> None:
-    rel = "docs/PUBLIC_SITE_RELEASE_CHECKLIST.md"
-    path = ROOT / rel
-    audit.require("CHECKLIST", path.exists(), f"Missing checklist file: {rel}")
-    if not path.exists():
-        return
-    text = path.read_text(encoding="utf-8")
-    required_phrases = [
-        "logo real",
-        "hero real",
-        "slider mobile real",
-        "slider dslr real",
-        "screenshot app real",
-        "video thumb real",
-        "favicon real",
-        "og image real",
-        "YouTube real",
-        "Play Store real",
-        "revisión final antes de publicar",
-    ]
-    for phrase in required_phrases:
-        audit.require("CHECKLIST", phrase.lower() in text.lower(), f"Checklist missing: {phrase}")
-def validate_forbidden_public_copy(audit: Audit) -> None:
-    forbidden_visible_tokens = [
-        "Slot temporal",
-        "Temporary slot",
-        "temporal",
-        "provisional",
-        "app-screenshot-final.png",
-        "favicon-final.svg",
-        "slider-gallery-03-carriage-a.jpg",
-        "slider-gallery-04-carriage-b.jpg",
-    ]
-    scope = [
-        "docs/index.html",
-        "docs/en/index.html",
-        "docs/index.md",
-        "docs/en/hardware.md",
-        "docs/downloads.md",
-        "docs/en/downloads.md",
-        "docs/support.md",
-        "docs/en/support.md",
-    ]
-    for rel in scope:
-        text = read_text(rel)
-        for token in forbidden_visible_tokens:
-            audit.require("FORBIDDEN_COPY", token not in text, f"{rel} contains forbidden visible token: {token}")
-def validate_round_definitiva_guards(audit: Audit) -> None:
-    es_home = read_text("docs/index.html")
-    en_home = read_text("docs/en/index.html")
-    for rel, text in [("docs/index.html", es_home), ("docs/en/index.html", en_home)]:
-        for key in ["slider_mobile", "slider_dslr", "app_screenshot"]:
-            pattern = rf"media_key='{key}'.*show_caption='true'"
-            audit.require("ROUND_DEFINITIVA", re.search(pattern, text, flags=re.DOTALL) is None, f"{rel} must keep show_caption='false' for {key}")
+
+    for token in required:
+        audit.require("PUBLIC_LINKS", token in txt, f"public-links missing: {token}")
+
+
+def validate_public_media(audit: Audit) -> None:
+    txt = read("docs/_data/public-media.yml")
+
+    audit.require("PUBLIC_MEDIA", "final_path: \"/assets/media/app/logo-final.png\"" in txt, "favicon/logo must use logo-final.png")
+    audit.require("PUBLIC_MEDIA", "final_path: \"/assets/media/app/hero-final.jpg\"" in txt, "hero/og must use hero-final.jpg")
+    audit.require("PUBLIC_MEDIA", "favicon_32:" not in txt, "public-media must not define favicon_32")
+    audit.require("PUBLIC_MEDIA", "favicon_16:" not in txt, "public-media must not define favicon_16")
+    audit.require("PUBLIC_MEDIA", "apple_touch_icon:" not in txt, "public-media must not define apple_touch_icon")
+
+    favicon_block = re.search(r"\n  favicon:\n(?P<body>(?:    .+\n)+)", txt)
+    audit.require("PUBLIC_MEDIA", favicon_block is not None, "public-media missing favicon block")
+    if favicon_block:
+        body = favicon_block.group("body")
+        audit.require("PUBLIC_MEDIA", "final_path: \"/assets/media/app/logo-final.png\"" in body, "favicon block must point to logo-final.png")
+        audit.require("PUBLIC_MEDIA", "ratio: \"1:1\"" in body, "favicon block must be 1:1")
+        audit.require("PUBLIC_MEDIA", "width: 1024" in body, "favicon block width must be 1024")
+        audit.require("PUBLIC_MEDIA", "height: 1024" in body, "favicon block height must be 1024")
+
+    og_block = re.search(r"\n  og_image:\n(?P<body>(?:    .+\n)+)", txt)
+    audit.require("PUBLIC_MEDIA", og_block is not None, "public-media missing og_image block")
+    if og_block:
+        body = og_block.group("body")
+        audit.require("PUBLIC_MEDIA", "final_path: \"/assets/media/app/hero-final.jpg\"" in body, "og_image block must point to hero-final.jpg")
+        audit.require("PUBLIC_MEDIA", "ratio: \"1024:500\"" in body, "og_image block ratio must be 1024:500")
+        audit.require("PUBLIC_MEDIA", "width: 1024" in body, "og_image block width must be 1024")
+        audit.require("PUBLIC_MEDIA", "height: 500" in body, "og_image block height must be 500")
+
+    head = read("docs/_includes/head-custom.html")
+    manifest = read("docs/site.webmanifest")
+
+    for bad in ["favicon-32.png", "favicon-16.png", "apple-touch-icon.png", "favicon_32", "favicon_16", "apple_touch"]:
+        audit.require("PUBLIC_MEDIA", bad not in head, f"head-custom must not reference {bad}")
+        audit.require("PUBLIC_MEDIA", bad not in manifest, f"site.webmanifest must not reference {bad}")
+
+    audit.require("PUBLIC_MEDIA", "logo-final.png" in manifest or "icon_src" in manifest, "manifest must use registry icon")
+    audit.require("PUBLIC_MEDIA", "sizes\": \"1024x1024\"" in manifest, "manifest icon size must be 1024x1024")
+
+
+def validate_gallery(audit: Audit) -> None:
+    es = read("docs/gallery.md")
+    en = read("docs/en/gallery.md")
+    registry = read("docs/_data/gallery-media.yml")
+
+    for txt, rel in [(es, "docs/gallery.md"), (en, "docs/en/gallery.md")]:
+        audit.require("GALLERY", "slot_overview_a" in txt, f"{rel} must show slot_overview_a")
+        audit.require("GALLERY", "slot_carriage_a" in txt, f"{rel} must show slot_carriage_a")
+        audit.require("GALLERY", "slot_carriage_b" in txt, f"{rel} must show slot_carriage_b")
+        audit.require("GALLERY", "slot_overview_b" not in txt, f"{rel} must not show duplicate slot_overview_b")
+
+    for slot in ["slot_overview_a", "slot_overview_b", "slot_carriage_a", "slot_carriage_b"]:
+        audit.require("GALLERY", f"{slot}:" in registry, f"gallery-media missing {slot}")
+
+    audit.require("GALLERY", "slot_belt_a:" not in registry, "gallery-media must not expose pending slot_belt_a")
+    audit.require("GALLERY", "slot_belt_b:" not in registry, "gallery-media must not expose pending slot_belt_b")
+    audit.require("GALLERY", "slot_electronics:" not in registry, "gallery-media must not expose pending slot_electronics")
+    audit.require("GALLERY", "slot_endstop_x:" not in registry, "gallery-media must not expose pending slot_endstop_x")
+    audit.require("GALLERY", "slot_phone_mount:" not in registry, "gallery-media must not expose pending slot_phone_mount")
+
+
+def validate_downloads(audit: Audit) -> None:
     for rel in ["docs/downloads.md", "docs/en/downloads.md"]:
-        text = read_text(rel)
-        header = text.split("---\n", 2)[-1][:800]
-        for token in ["media_key='hero'", "media_key='app_screenshot'", "public-video-card"]:
-            audit.require("ROUND_DEFINITIVA", token not in header, f"{rel} must not contain top decorative media ({token})")
-    for rel in ["docs/support.md", "docs/en/support.md"]:
-        text = read_text(rel)
-        header = text.split("---\n", 2)[-1][:500]
-        audit.require("ROUND_DEFINITIVA", "media_key='app_screenshot'" not in header, f"{rel} must not start with app_screenshot include")
-    for rel in ["docs/index.md", "docs/en/hardware.md"]:
-        text = read_text(rel)
-        for key in ["slider_mobile", "slider_dslr"]:
-            pattern = rf"media_key='{key}'.*show_caption='true'"
-            audit.require("ROUND_DEFINITIVA", re.search(pattern, text, flags=re.DOTALL) is None, f"{rel} must keep show_caption='false' for {key}")
-    for rel in ["docs/gallery.md", "docs/en/gallery.md"]:
-        text = read_text(rel)
-        for legacy in ["slot_belt", "slot_electronics", "slot_endstop", "slot_phone_mount", "belt", "electronics", "endstop", "phone_mount"]:
-            audit.require("ROUND_DEFINITIVA", legacy not in text, f"{rel} must not render legacy gallery slot/token: {legacy}")
-def validate_downloads_real_inventory(audit: Audit) -> None:
-    es = read_text("docs/downloads.md")
-    en = read_text("docs/en/downloads.md")
-    required_tokens = [
-        "prints/BOM/{{ site.latest_pack }}/slider-odos3d_bom_v1.csv",
-        "prints/BOM/{{ site.latest_pack }}/README.md",
-        "Slider%20ODOS3D%20Lab%20caja%20electroniica.stl",
-        "Slider%20ODOS3D%20Lab%20carro.stl",
-        "Slider%20ODOS3D%20Lab%20escuadra.stl",
-        "Slider%20ODOS3D%20Lab%20separador.stl",
-        "Slider%20ODOS3D%20Lab%20soporte%20correa.stl",
-        "Slider%20ODOS3D%20Lab%20soporte%20derecho.stl",
-        "Slider%20ODOS3D%20Lab%20soporte%20izquierdo.stl",
-        "Slider%20ODOS3D%20Lab%20tubo%20camara.stl",
-        "Slider%20ODOS3D%20Labtapa%20electroniica.stl",
-        "prints/STEP/{{ site.latest_pack }}/",
-    ]
-    for token in required_tokens:
-        audit.require("DOWNLOADS", token in es, f"docs/downloads.md missing real inventory link token: {token}")
-        audit.require("DOWNLOADS", token in en, f"docs/en/downloads.md missing real inventory link token: {token}")
-    forbidden_tokens = ["external.github_tree_main", "external.github_blob_main"]
-    for token in forbidden_tokens:
-        audit.require("DOWNLOADS", token not in es, f"docs/downloads.md contains deprecated token: {token}")
-        audit.require("DOWNLOADS", token not in en, f"docs/en/downloads.md contains deprecated token: {token}")
-    audit.require("DOWNLOADS", "STL v1 y BOM v1 publicados" in es and "STEP {{ site.latest_pack }} sigue en preparación" in es, "docs/downloads.md must reflect STL/BOM published and STEP pending")
-    audit.require("DOWNLOADS", "STL v1 and BOM v1 are published" in en and "STEP {{ site.latest_pack }} is still in preparation" in en, "docs/en/downloads.md must reflect STL/BOM published and STEP pending")
-def validate_parts_redirect_and_flow(audit: Audit) -> None:
-    files_without_parts = [
-        "docs/index.md",
-        "docs/en/hardware.md",
-        "docs/index.html",
-        "docs/en/index.html",
-        "docs/downloads.md",
-        "docs/en/downloads.md",
-        "docs/_includes/topnav.html",
-    ]
-    for rel in files_without_parts:
-        text = read_text(rel)
-        audit.require("PARTS_FLOW", "/parts/" not in text, f"{rel} must not contain visible links to /parts/")
+        txt = read(rel)
 
-    parts = read_text("docs/parts.md")
-    required_tokens = [
-        "layout: null",
-        "permalink: /parts/",
-        "http-equiv=\"refresh\" content=\"0; url={{ '/downloads/' | relative_url }}\"",
-        "window.location.replace(\"{{ '/downloads/' | relative_url }}\");",
-        "<link rel=\"canonical\" href=\"{{ '/downloads/' | relative_url }}\">",
-    ]
-    for token in required_tokens:
-        audit.require("PARTS_FLOW", token in parts, f"docs/parts.md must include redirect token: {token}")
+        audit.require("DOWNLOADS", "raw_stl_base" in txt, f"{rel} must define raw_stl_base")
+        audit.require("DOWNLOADS", "raw_bom_base" in txt, f"{rel} must define raw_bom_base")
+        audit.require("DOWNLOADS", "tree_stl_base" in txt, f"{rel} must define tree_stl_base")
+        audit.require("DOWNLOADS", "site.raw_base }}/prints/STL" not in txt, f"{rel} must not use site.raw_base for STL links")
+        audit.require("DOWNLOADS", "slider-odos3d-lab-stl-pack-v1.zip" in txt, f"{rel} must keep ZIP placeholder")
 
-    forbidden_legacy_tokens = [
-        "Descargas por versión",
-        "Pack actual",
-        "View on GitHub",
-        "docs/parts/_TEMPLATE_PART.md",
-        "Documentación de piezas",
-    ]
-    for token in forbidden_legacy_tokens:
-        audit.require("PARTS_FLOW", token not in parts, f"docs/parts.md contains legacy content token: {token}")
+        for name in STL_NAMES:
+            audit.require("DOWNLOADS", name in txt, f"{rel} missing STL link: {name}")
+
+    audit.require("DOWNLOADS", not path("docs/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip").exists(), "ZIP should not exist unless owner uploads it")
+
+
+def validate_sitemap(audit: Audit) -> None:
+    txt = read("docs/sitemap.xml")
+
+    for route in PUBLIC_PAGES:
+        if route in {"/404.html"}:
+            continue
+        audit.require("SITEMAP", f"{route}</loc>" in txt, f"sitemap missing public route {route}")
+
+    for route in FORBIDDEN_PUBLIC_ROUTES_IN_SITEMAP:
+        audit.require("SITEMAP", route not in txt, f"sitemap must not include internal/redirect route {route}")
+
+    for bad in [".png", ".jpg", ".jpeg", ".svg", ".stl", ".zip"]:
+        audit.require("SITEMAP", bad not in txt.lower(), f"sitemap must not include asset pattern {bad}")
+
+
+def validate_legal(audit: Audit) -> None:
+    for rel in [
+        "docs/privacy-policy.md",
+        "docs/terms.md",
+        "docs/en/privacy-policy.md",
+        "docs/en/terms.md",
+    ]:
+        txt = read(rel)
+        fm = parse_front_matter(rel)
+
+        audit.require("LEGAL", fm.get("layout") == "public-page", f"{rel} must use public-page")
+        audit.require("LEGAL", "odos3d.Lab@gmail.com" in txt or "identity.support_email" in txt, f"{rel} should expose support/legal email")
+        audit.require("LEGAL", "odos3d@gmail.com" not in txt, f"{rel} must not contain old email")
+
+
+def validate_no_old_public_artifacts(audit: Audit) -> None:
+    scanned = text_files()
+
+    for p in scanned:
+        rel = p.relative_to(ROOT).as_posix()
+        if rel == "scripts/public_site_audit.py":
+            continue
+        txt = p.read_text(encoding="utf-8", errors="ignore")
+
+        if "odos3d@gmail.com" in txt:
+            audit.fail("OLD_ARTIFACTS", f"Old email found in {rel}")
+
+        if "electroniica" in txt or "Labtapa" in txt:
+            audit.fail("OLD_ARTIFACTS", f"Old STL typo found in {rel}")
+
+        if "{% include topnav.html %}" in txt:
+            if rel != "docs/internal/README.md":
+                audit.fail("OLD_ARTIFACTS", f"Executable topnav include found in {rel}")
+
+    for rel in [
+        "docs/_includes/head-custom.html",
+        "docs/site.webmanifest",
+        "docs/_data/public-media.yml",
+    ]:
+        txt = read(rel)
+        audit.require("OLD_ARTIFACTS", "favicon-final.png" not in txt, f"{rel} must not publicly use favicon-final.png")
+        audit.require("OLD_ARTIFACTS", "og-home-final.jpg" not in txt, f"{rel} must not publicly use og-home-final.jpg")
+        audit.require("OLD_ARTIFACTS", "hero-final.png" not in txt, f"{rel} must not use old hero-final.png")
+
+
+def validate_asset_status(audit: Audit) -> None:
+    txt = read("docs/_data/asset-status.yml")
+
+    audit.require("ASSET_STATUS", "asset_key: favicon" in txt, "asset-status missing favicon")
+    audit.require("ASSET_STATUS", "final_filename: logo-final.png" in txt, "asset-status favicon must use logo-final.png")
+    audit.require("ASSET_STATUS", "asset_key: og_image" in txt, "asset-status missing og_image")
+    audit.require("ASSET_STATUS", "final_filename: hero-final.jpg" in txt, "asset-status og_image must use hero-final.jpg")
+
+    for key in ["belt_a", "belt_b", "electronics", "endstop_x", "phone_mount"]:
+        pattern = rf"asset_key: {key}[\s\S]*?status: pending"
+        audit.require("ASSET_STATUS", re.search(pattern, txt) is not None, f"asset-status {key} must remain pending")
+
+
 def main() -> int:
     audit = Audit()
-    validate_critical_files(audit)
+
+    validate_files_exist(audit)
+    validate_routes(audit)
+    validate_public_pages(audit)
+    validate_redirects(audit)
     validate_public_links(audit)
     validate_public_media(audit)
-    validate_gallery_media(audit)
-    validate_routes(audit)
-    validate_redirects(audit)
+    validate_gallery(audit)
+    validate_downloads(audit)
     validate_sitemap(audit)
-    validate_robots(audit)
-    validate_hardcodes(audit)
-    validate_bilingual(audit)
-    validate_metadata(audit)
-    validate_media_registry_usage(audit)
-    validate_gallery_integration(audit)
-    validate_asset_status_master(audit)
-    validate_asset_request_order_doc(audit)
-    validate_asset_ingestion_docs(audit)
-    validate_checklist(audit)
-    validate_forbidden_public_copy(audit)
-    validate_round_definitiva_guards(audit)
-    validate_downloads_real_inventory(audit)
-    validate_parts_redirect_and_flow(audit)
+    validate_legal(audit)
+    validate_asset_status(audit)
+    validate_no_old_public_artifacts(audit)
+
     return audit.summary()
+
+
 if __name__ == "__main__":
     sys.exit(main())

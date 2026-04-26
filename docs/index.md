@@ -34,7 +34,7 @@ page_intro: "Puedes empezar solo con móvil. El hardware abierto no es obligator
     <div class="public-links-list">
       <a href="{{ routes.downloads | relative_url }}">Ver descargas</a>
       <a href="{{ routes.gallery | relative_url }}">Ver galería técnica</a>
-      <a href="{{ '/grbl/' | relative_url }}">Ver GRBL 1.1</a>
+      <a href="{{ routes.grbl | relative_url }}">Ver GRBL 1.1</a>
     </div>
   </article>
 </div>

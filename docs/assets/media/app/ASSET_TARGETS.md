@@ -1,5 +1,7 @@
 # ASSET TARGETS (producción)
 
+Se usa el material existente del repositorio; no se requieren assets nuevos para esta fase.
+
 Ruta productiva final de assets:
 - `docs/assets/media/app/`
 
@@ -10,8 +12,8 @@ Nombres finales congelados:
 - `slider-dslr-final.jpg` (jpg, transparencia: no) — uso: media de hardware/proof.
 - `app-screenshot-final.jpg` (jpg, transparencia: no) — uso: captura app en home/support/downloads.
 - `video-thumb-final.jpg` (jpg, transparencia: no) — uso: thumbnail bloque vídeo demo en home.
-- `favicon-final.png` (png, transparencia: sí) — uso: favicon head + webmanifest.
-- `og-home-final.jpg` (jpg, transparencia: no) — uso: og/twitter image.
+- `logo-final.png` (png, transparencia: sí) — uso: favicon head + webmanifest.
+- `hero-final.jpg` (jpg, transparencia: no) — uso: og/twitter image.
 
 Nota técnica:
 - Mientras no existan assets reales, el sistema usa placeholders definidos en `docs/_data/public-media.yml`.

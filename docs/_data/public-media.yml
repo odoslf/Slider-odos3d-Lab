@@ -85,70 +85,28 @@ site_media:
 
   favicon:
     placeholder_path: "/assets/img/favicon-slot.svg"
-    final_path: "/assets/media/app/favicon-final.png"
+    final_path: "/assets/media/app/logo-final.png"
     active_source: final
-    alt_es: "Favicon final de marca"
-    alt_en: "Final brand favicon"
-    caption_es: "Favicon final"
-    caption_en: "Final favicon"
+    alt_es: "Icono de marca Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI brand icon"
+    caption_es: "Icono de marca"
+    caption_en: "Brand icon"
     kind: favicon
-    ratio: "3:2"
-    width: 1536
+    ratio: "1:1"
+    width: 1024
     height: 1024
     loading_default: eager
 
   og_image:
     placeholder_path: "/assets/img/og-home-slot.svg"
-    final_path: "/assets/media/app/og-home-final.jpg"
+    final_path: "/assets/media/app/hero-final.jpg"
     active_source: final
-    alt_es: "Imagen social final de la web"
-    alt_en: "Final social image for the website"
-    caption_es: "Imagen social final"
-    caption_en: "Final social image"
+    alt_es: "Imagen social de Smart Timelapse AI"
+    alt_en: "Smart Timelapse AI social image"
+    caption_es: "Imagen social"
+    caption_en: "Social image"
     kind: og
-    ratio: "1200:630"
-    width: 1200
-    height: 630
-    loading_default: eager
-
-  favicon_32:
-    placeholder_path: "/assets/img/favicon-slot.svg"
-    final_path: "/assets/media/app/favicon-32.png"
-    active_source: placeholder
-    alt_es: "Favicon 32 px de Smart Timelapse AI"
-    alt_en: "Smart Timelapse AI 32 px favicon"
-    caption_es: "Favicon 32 px"
-    caption_en: "32 px favicon"
-    kind: favicon
-    ratio: "1:1"
-    width: 32
-    height: 32
-    loading_default: eager
-
-  favicon_16:
-    placeholder_path: "/assets/img/favicon-slot.svg"
-    final_path: "/assets/media/app/favicon-16.png"
-    active_source: placeholder
-    alt_es: "Favicon 16 px de Smart Timelapse AI"
-    alt_en: "Smart Timelapse AI 16 px favicon"
-    caption_es: "Favicon 16 px"
-    caption_en: "16 px favicon"
-    kind: favicon
-    ratio: "1:1"
-    width: 16
-    height: 16
-    loading_default: eager
-
-  apple_touch_icon:
-    placeholder_path: "/assets/img/favicon-slot.svg"
-    final_path: "/assets/media/app/apple-touch-icon.png"
-    active_source: placeholder
-    alt_es: "Icono táctil de Smart Timelapse AI"
-    alt_en: "Smart Timelapse AI touch icon"
-    caption_es: "Apple touch icon"
-    caption_en: "Apple touch icon"
-    kind: favicon
-    ratio: "1:1"
-    width: 180
-    height: 180
+    ratio: "1024:500"
+    width: 1024
+    height: 500
     loading_default: eager

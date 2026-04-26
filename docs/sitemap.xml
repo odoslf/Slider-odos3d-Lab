@@ -18,4 +18,16 @@ permalink: /sitemap.xml
   <url><loc>{{ site.url }}{{ site.baseurl }}/en/gallery/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/en/privacy-policy/</loc></url>
   <url><loc>{{ site.url }}{{ site.baseurl }}/en/terms/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/app-screens/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/quick-assembly/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/assembly-guide/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/calibration/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/grbl/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/troubleshooting/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/en/app-screens/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/en/quick-assembly/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/en/assembly-guide/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/en/calibration/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/en/grbl/</loc></url>
+  <url><loc>{{ site.url }}{{ site.baseurl }}/en/troubleshooting/</loc></url>
 </urlset>

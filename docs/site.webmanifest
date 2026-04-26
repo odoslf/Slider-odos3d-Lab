@@ -3,10 +3,10 @@ layout: null
 permalink: /site.webmanifest
 ---
 {% assign links = site.data.public-links %}
-{% assign favicon_media = site.data.public-media.site_media.favicon %}
-{% assign favicon_src = favicon_media.placeholder_path %}
-{% if favicon_media.active_source == "final" %}
-  {% assign favicon_src = favicon_media.final_path %}
+{% assign icon_media = site.data.public-media.site_media.favicon %}
+{% assign icon_src = icon_media.placeholder_path %}
+{% if icon_media.active_source == "final" %}
+  {% assign icon_src = icon_media.final_path %}
 {% endif %}
 {
   "name": "{{ links.site_identity.product_name | escape }}",
@@ -18,8 +18,8 @@ permalink: /site.webmanifest
   "theme_color": "#F5F7FA",
   "icons": [
     {
-      "src": "{{ site.baseurl }}{{ favicon_src }}",
-      "sizes": "512x512",
+      "src": "{{ site.baseurl }}{{ icon_src }}",
+      "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any"
     }

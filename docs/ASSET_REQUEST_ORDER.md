@@ -1,9 +1,11 @@
 # ORDEN MAESTRO DE PETICIÓN DE ASSETS (1→17)
 
-Este documento define el orden único en que se pedirán los archivos reales.
+Este documento define el orden operativo de assets reales ya existentes en el repositorio.
 
-- Primero se piden los **assets de app/landing** (1→8).
-- Después se piden los **assets de galería técnica** (9→17).
+Se usa el material existente del repositorio; no se requieren assets nuevos para esta fase.
+
+- Primero se usan los **assets de app/landing** (1→8).
+- Después se usan los **assets de galería técnica** (9→17).
 - Al recibir cada archivo **no se toca HTML ni CSS**: solo subida + actualización de YAML + auditoría.
 
 ## Lista ordenada exacta
@@ -51,14 +53,14 @@ Este documento define el orden único en que se pedirán los archivos reales.
    - Encuadre: **horizontal (16:9)**.
 
 7. **Favicon** (`asset_key: favicon`)
-   - Archivo final: `favicon-final.png`
+   - Archivo final: `logo-final.png`
    - Dónde se usa: head global + manifest + 404.
    - Imagen esperada: icono simplificado de marca.
    - Transparencia: **sí**.
    - Encuadre: **cuadrado (1:1)**.
 
 8. **Imagen social OG** (`asset_key: og_image`)
-   - Archivo final: `og-home-final.jpg`
+   - Archivo final: `hero-final.jpg`
    - Dónde se usa: Open Graph/Twitter ES/EN.
    - Imagen esperada: composición social final.
    - Transparencia: no.
@@ -130,7 +132,7 @@ Este documento define el orden único en que se pedirán los archivos reales.
 ## Flujo operativo al recibir cada asset
 
 1. Identificar asset en `docs/_data/asset-status.yml`.
-2. Pedir archivo según este orden.
+2. Seleccionar el archivo existente según este orden.
 3. Subir al nombre final congelado en carpeta final.
 4. Marcar `uploaded_to_repo: true` en `asset-status.yml`.
 5. Cambiar `active_source` a `final` en su registry (`public-media.yml` o `gallery-media.yml`).

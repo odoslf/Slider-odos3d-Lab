@@ -1,6 +1,8 @@
 # PUBLIC SITE RELEASE CHECKLIST
 
-Checklist interno para publicar la capa pública cuando lleguen assets reales y URLs finales.
+Checklist interno para publicar la capa pública usando assets reales existentes y URLs finales.
+
+Se usa el material existente del repositorio; no se requieren assets nuevos para esta fase.
 
 ## Inventario maestro y orden de petición
 
@@ -10,7 +12,7 @@ Checklist interno para publicar la capa pública cuando lleguen assets reales y 
 ## Flujo operativo obligatorio
 
 1. Identificar asset en `asset-status.yml`.
-2. Pedir archivo según `ASSET_REQUEST_ORDER.md`.
+2. Usar archivo existente según `ASSET_REQUEST_ORDER.md`.
 3. Subir con nombre final congelado a carpeta final.
 4. Marcar `uploaded_to_repo: true`.
 5. Cambiar `active_source` a `final` en registry (`public-media.yml` o `gallery-media.yml`).
@@ -20,15 +22,15 @@ Checklist interno para publicar la capa pública cuando lleguen assets reales y 
 
 ## Sustitución de assets reales APP
 
-Sustituir en `docs/assets/media/app/`:
+Confirmar en `docs/assets/media/app/`:
 - logo real → `logo-final.png`
 - hero real → `hero-final.jpg`
 - slider mobile real → `slider-mobile-final.jpg`
 - slider dslr real → `slider-dslr-final.jpg`
 - screenshot app real → `app-screenshot-final.jpg`
 - video thumb real → `video-thumb-final.jpg`
-- favicon real → `favicon-final.png`
-- og image real → `og-home-final.jpg`
+- favicon real → `logo-final.png`
+- og image real → `hero-final.jpg`
 
 ## Sustitución de assets reales GALERÍA
 
