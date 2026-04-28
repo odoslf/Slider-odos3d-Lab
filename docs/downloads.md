@@ -36,7 +36,7 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
   <article class="public-card">
     <p class="public-kicker">Descarga recomendada</p>
     <h3>Pack STL v1 completo</h3>
-    <p>Descarga todas las piezas STL del slider en un único archivo cuando el ZIP esté publicado.</p>
+    <p>Descarga todas las piezas STL del slider en un único archivo ZIP listo para imprimir y revisar.</p>
     <div class="public-cta-actions">
       {% if zip_file %}
         <a class="public-btn primary" href="{{ zip_path | relative_url }}" download>Descargar pack STL v1 (.zip)</a>
@@ -44,7 +44,7 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
         <span class="public-btn is-disabled" aria-disabled="true">Pack ZIP pendiente de publicar</span>
       {% endif %}
     </div>
-    <p class="public-note">El botón se activará automáticamente cuando se suba el archivo <code>docs/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip</code>.</p>
+    <p class="public-note">Incluye las piezas STL v1 publicadas para el slider. Antes de imprimir, revisa medidas, orientación y material recomendado en tu slicer.</p>
   </article>
 
   <article class="public-card">
@@ -92,8 +92,7 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
 
 <div class="public-band">
   <h3>Estado del pack v1</h3>
-  <p>Los STL individuales y el BOM v1 están disponibles. Los STEP v1 y el pack ZIP único quedan preparados para publicación cuando existan los archivos finales revisados.</p>
-  <p class="public-note">El botón se activará automáticamente cuando se suba <code>docs/assets/downloads/slider-odos3d-lab-stl-pack-v1.zip</code>.</p>
+  <p>El pack ZIP v1, los STL individuales y el BOM v1 ya están disponibles. Los STEP v1 siguen en preparación hasta que existan los archivos revisados.</p>
 </div>
 
 <div class="public-cta-band">
