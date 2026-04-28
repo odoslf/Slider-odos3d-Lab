@@ -65,7 +65,6 @@ page_intro: "Resource center for hardware files, documentation, and references i
       <a href="{{ raw_stl_base }}/slider-odos3d-lab-tubo-camara-v1.stl">Camera tube (.stl)</a>
       <a href="{{ tree_stl_base }}" target="_blank" rel="noopener noreferrer">Open STL v1 folder on GitHub</a>
     </div>
-    <p class="public-note">STEP v1 is in preparation and will be published when the reviewed files exist.</p>
   </article>
 
   <article class="public-card">
@@ -92,7 +91,7 @@ page_intro: "Resource center for hardware files, documentation, and references i
 
 <div class="public-band">
   <h3>v1 pack status</h3>
-  <p>The ZIP v1 pack, individual STL files and BOM v1 are now available. STEP v1 remains in preparation until the reviewed files exist.</p>
+  <p>The ZIP v1 pack, individual STL files and BOM v1 are now available.</p>
   <p class="public-note">Includes the published STL v1 parts for the slider. Before printing, check dimensions, orientation and recommended material in your slicer.</p>
 </div>
 

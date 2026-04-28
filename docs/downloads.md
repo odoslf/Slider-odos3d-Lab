@@ -65,7 +65,6 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
       <a href="{{ raw_stl_base }}/slider-odos3d-lab-tubo-camara-v1.stl">Tubo de cámara (.stl)</a>
       <a href="{{ tree_stl_base }}" target="_blank" rel="noopener noreferrer">Abrir carpeta STL v1 en GitHub</a>
     </div>
-    <p class="public-note">STEP v1 está en preparación y se publicará cuando existan los archivos revisados.</p>
   </article>
 
   <article class="public-card">
@@ -92,7 +91,7 @@ page_intro: "Centro de recursos para hardware, documentación y referencias del 
 
 <div class="public-band">
   <h3>Estado del pack v1</h3>
-  <p>El pack ZIP v1, los STL individuales y el BOM v1 ya están disponibles. Los STEP v1 siguen en preparación hasta que existan los archivos revisados.</p>
+  <p>El pack ZIP v1, los STL individuales y el BOM v1 ya están disponibles.</p>
 </div>
 
 <div class="public-cta-band">
