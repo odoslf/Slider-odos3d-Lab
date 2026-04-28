@@ -1,9 +1,0 @@
-Subir únicamente el archivo final con este nombre exacto:
-slider-odos3d-lab-stl-pack-v1.zip
-
-Ruta de subida obligatoria:
-docs/assets/downloads/
-
-Cuando el ZIP exista en esa ruta, el botón de /downloads/ y /en/downloads/ se activará automáticamente.
-
-Este TXT puede borrarse después de subir el ZIP final.
